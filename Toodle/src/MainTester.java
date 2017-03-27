@@ -1,5 +1,18 @@
 import static java.lang.System.*;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+/*
+ * git add .
+ * git commit -m "comentario"
+ * (git pull si ha habido cambios previos)
+ * git push
+ * 
+ */
 public class MainTester {
+	
 	
 	public static void main(String[] args){
 	
@@ -10,7 +23,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("src/data.txt");
+		toodle = new Application("Toodle/src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -30,7 +43,7 @@ public class MainTester {
 	
 	out.println("We proceed by creating all the courses\n");
 	//Create new courses
-	for (int i=1; i<10; i++){
+	for (int i=1; i<4; i++){
 		Course c = new Course(true, "Course " + i, "This is course; "+i );
 		toodle.addCourse(c);
 	}
@@ -38,22 +51,50 @@ public class MainTester {
 	out.println("Lets display the courses");
 	out.println(toodle.getCourses());
 	
+	out.println("\nNext, we will add three units to each course");
 	//Create new units
 		//For each course, we create three subunits
 	for(Course c: toodle.getCourses()){
-		Unit u1 = new Unit(true);
-		Unit u2 = new Unit (false);
-		Unit u3 = new Unit (true);
+		Unit u1 = new Unit(true, c.toString()+ " Unit 1");
+		Unit u2 = new Unit (false, c.toString()+ " Unit 2");
+		Unit u3 = new Unit (true, c.toString()+ " Unit 3");
 		
 		c.addLearningObj(u1);
 		c.addLearningObj(u2);
 		c.addLearningObj(u3);
 	}
-	
+	out.println("\nWe can see how the courses look now: ");
 	out.println(toodle.getCourses());
 	//Create new sub-units
 	
+	out.println("\nEach Unit of each course will now have three subunits "
+			+ "appended: ");
+	for (Course c: toodle.getCourses()){
+		List<Unit> units=  c.getUnits();
+		for(Unit unit: units){
+			Unit us1= new Unit(true, unit.toString()+ " Subunit 1");
+			Unit us2= new Unit(true, unit.toString()+ " Subunit 2");
+			Unit us3= new Unit(true, unit.toString()+ " Subunit 3");
+			unit.createSubSection(us1);
+			unit.createSubSection(us2);
+			unit.createSubSection(us3);
+		}	
+	}
+	
+	out.println(toodle.getCourses());
+	
 	//Add notes
+	out.println("\nNext we will add Notes to some Units");
+	int i =0;
+	for (Course c: toodle.getCourses()){
+		Note n = new Note("This is note number "+ i, null);
+		List<Unit> units =c.getUnits();
+		Unit unit= units.get(i);
+		unit.addNotes(n);
+		i++;
+	}
+	
+	out.println(toodle.getCourses());
 	//Create tests of three types
 	//Teacher Logout
 	toodle.logOut();

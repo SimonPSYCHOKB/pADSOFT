@@ -15,7 +15,7 @@ public class Course {
 	private boolean visibility;
 	private String title;
 	private String description;
-	private List<LearningObj> objects; 
+	private List<Unit> units; 
 	private List<Test> tests;
 	private List<Student> expelledStudents;
 	private double total;
@@ -52,14 +52,17 @@ public class Course {
 		this.description = description;
 	}
 	
-	public void setObjects(List<LearningObj> objects){
-		this.objects = objects;
+	public void setObjects(List<Unit> objects){
+		this.units = objects;
 	}
 	
 	public void setExpelledStudents(List<Student> expelledStudents){
 		this.expelledStudents = expelledStudents;
 	}
 
+	public List<Unit> getUnits(){
+		return units;
+	}
 	/**
 	 * 
 	 */
@@ -67,7 +70,7 @@ public class Course {
 		this.visibility = visibility;
 		this.title = title;
 		this.description = description;
-		objects = new ArrayList<LearningObj>();
+		units = new ArrayList<Unit>();
 		tests = new ArrayList<Test>();
 		total = 0;
 	}
@@ -76,8 +79,8 @@ public class Course {
 	 * @param args
 	 */
 	
-	public void addLearningObj(LearningObj lo){
-		objects.add(lo);
+	public void addLearningObj(Unit lo){
+		units.add(lo);
 	}
 	
 	public void addTest(Test t){
@@ -87,8 +90,8 @@ public class Course {
 
 	public String toString(){
 		String str = title;
-		for (LearningObj o: objects){
-			str += "\n" + "\t"+ o.toString();
+		for (Unit u: units){
+			str += "\n" + "\t"+ u.toString();
 		}
 		return str;
 	}

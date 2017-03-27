@@ -17,10 +17,12 @@ public class Unit extends LearningObj{
 	private List<Unit> units;
 	private List<Note> notes;
 	private List<Test> tests;
+	private String name;
 	
-	public Unit(boolean visibility) {
+	public Unit(boolean visibility, String name) {
 		super(visibility);
 		units = new ArrayList<Unit>();
+		this.name = name;
 		notes = new ArrayList<Note>();
 		tests = new ArrayList<Test>();
 	}
@@ -38,7 +40,14 @@ public class Unit extends LearningObj{
 	}
 	
 	public String toString(){
-		return "This is a unit";
+		String str =name;
+		for(Note n : notes){
+			str+= "\n" + "\t"+ n.toString();
+		}
+		for (Unit u : units){
+			str+= "\n" + "\t"+"\t" + u.toString();
+		}
+		return str;
 	}
 	//public Statistic getStatistics();
 	
