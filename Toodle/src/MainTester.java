@@ -1,5 +1,7 @@
 import static java.lang.System.*;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -96,6 +98,17 @@ public class MainTester {
 	
 	out.println(toodle.getCourses());
 	//Create tests of three types
+	LocalDate d1 = LocalDate.now().minus(30, ChronoUnit.DAYS);
+	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
+	Test t1 = new Test(true, d1, d2, 0.5);
+	//Create Questions for tests
+	SingleAnswer sq1= new SingleAnswer(
+			"Who are you", 0.5, 0.3, "No one");
+	MultipleAnswer mq2= new MultipleAnswer(
+			"Do you exist", 0.5, 0.2,  new String[] {"Me", "You", "Him"} );
+	Test t2 = new Test(true, d1, d2, 0.5);
+	Test t3 = new Test(true, d1, d2, 0.5);
+	
 	//Teacher Logout
 	toodle.logOut();
 	
