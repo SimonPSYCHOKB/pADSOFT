@@ -20,7 +20,7 @@ public class Student extends User{
 	/**
 	 * 
 	 */
-	
+	private List<Course> rejectedCourses;
 	private List<Course> registeredCourses;
 	private List<Course> pendingCourses;
 	private List<Course> expelledCourses;
@@ -33,10 +33,11 @@ public class Student extends User{
 		super(fname ,lname,  password, email);
 		this.manu = manu;
 		registeredCourses = new ArrayList<Course>();
-		pendingCourses = new ArrayList<Course>();
+		pendingCourses = (new ArrayList<Course>());
 		expelledCourses = new ArrayList<Course>();
 		currentExercises = new ArrayList<Exercise>();
 		answeredTests = new ArrayList<AnsweredTest>();
+		setRejectedCourses(new ArrayList<Course> ());
 	}
 	
 	//Getters y setters
@@ -108,9 +109,15 @@ public class Student extends User{
 	
 	*/
 	public void acceptStudent(Course c){
-		pendingCourses.remove(c);
+		getPendingCourses().remove(c);
 		expelledCourses.remove(c);
 		registeredCourses.add(c);
+	}
+	
+	public void rejectStudent(Course c){
+		getPendingCourses().remove(c);
+		expelledCourses.remove(c);
+		getRejectedCourses().add(c);
 	}
 	
 	public void expellStudent(Course c){
@@ -168,10 +175,10 @@ public class Student extends User{
 				return false;
 		} else if (!manu.equals(other.manu))
 			return false;
-		if (pendingCourses == null) {
-			if (other.pendingCourses != null)
+		if (getPendingCourses() == null) {
+			if (other.getPendingCourses() != null)
 				return false;
-		} else if (!pendingCourses.equals(other.pendingCourses))
+		} else if (!getPendingCourses().equals(other.getPendingCourses()))
 			return false;
 		if (registeredCourses == null) {
 			if (other.registeredCourses != null)
@@ -186,6 +193,25 @@ public class Student extends User{
 	manu + " "+ " "+ password + "\n";
 	}
 	
+	public void apply(Course c){
+		getPendingCourses().add(c);
+	}
+
+	public List<Course> getPendingCourses() {
+		return pendingCourses;
+	}
+
+	private void setPendingCourses(List<Course> pendingCourses) {
+		this.pendingCourses = pendingCourses;
+	}
+
+	public List<Course> getRejectedCourses() {
+		return rejectedCourses;
+	}
+
+	private void setRejectedCourses(List<Course> rejectedCourses) {
+		this.rejectedCourses = rejectedCourses;
+	}
 	
 	
 	//public void getStatistics()

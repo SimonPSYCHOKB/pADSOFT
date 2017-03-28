@@ -34,6 +34,10 @@ public abstract class User {
 	public String getEmail() {
 		return email;
 	}
+	
+	public String getPassword(){
+		return password;
+	}
 
 	public List<Notification> getSentNotifications() {
 		return sentNotifications;
@@ -67,7 +71,7 @@ public abstract class User {
 	 * @param args
 	 */
 	public boolean ValidatePassword(String attempt){
-		if (this.password == attempt) {
+		if (this.password.equals(attempt)) {
 			return true;
 		}
 		else return false;

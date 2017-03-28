@@ -25,7 +25,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("src/data.txt");
+		toodle = new Application("Toodle/src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -100,7 +100,9 @@ public class MainTester {
 	//Create tests of three types
 	LocalDate d1 = LocalDate.now().minus(30, ChronoUnit.DAYS);
 	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
+	
 	Exercise t1 = new Exercise(true, d1, d2, 0.5);
+<<<<<<< HEAD
 	Exercise t2 = new Exercise(true, d1, d2, 0.5);
 	Exercise t3 = new Exercise(true, d1, d2, 0.5);
 	//Create Questions for tests
@@ -124,29 +126,118 @@ public class MainTester {
 	t3.addQuestion(ftq3);
 	t1.addQuestion(tfq4);
 	
+=======
+	
+	//Create Questions for tests
+	//Question 1
+		List<String> options = new ArrayList<String>();
+		options.add("No one"); options.add("Someone");
+		SingleAnswer sq1= new SingleAnswer(
+				"Who are you", 0.5, 0.3, "No one", options);
+	
+	//Question 2
+		options = new ArrayList<String>();
+		options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
+		List<String> s = new ArrayList<String>();
+		s.add("Me"); s.add("You"); s.add("Him");
+		MultipleAnswer mq2= new MultipleAnswer(
+				"Do you exist", 0.5, 0.2,  s, options);
+	t1.addQuestion(sq1);
+	t1.addQuestion(mq2);
+	
+	Exercise t2 = new Exercise(true, d1, d2, 0.5);
+	Exercise t3 = new Exercise(true, d1, d2, 0.5);
+>>>>>>> c5880a760f5d408c580d3a53cc0b84e66770338b
 	
 	//Teacher Logout
 	toodle.logOut();
 	
+	if(toodle.getCurrentUser()==null){
+		out.println("\nTeacher logged out successfully!");
+	}
+	
 	//...Pause...
+	out.println("\n----------------------------------------------------");
 	
 	//Students Login
+	Student stud = toodle.getStudents().get(3);
+	out.println("\nNow Lets log in with a Student");
+	if(!toodle.logIn(stud,"Coero" )){
+		out.println("\nThere was a problem logging in");
+	}
+	
+	if(toodle.getCurrentUser().equals(stud)){
+		out.println("\nStudent logged in successfully!");
+	}
 	//Students Apply for courses
+	out.println("\nWe start by appliying for three courses");
+	
+	Course c1= toodle.getCourses().get(0);
+	Course c2= toodle.getCourses().get(1);
+	Course c3= toodle.getCourses().get(2);
+	
+	//Add the exercises to the course
+	c1.addTest(t1);
+	
+	
+	
+	stud.apply(c1);
+	stud.apply(c2);
+	stud.apply(c3);
+	
+	out.println("\n Lets see the applied courses for our student:");
+	
+	out.println("\n"+stud.getPendingCourses().toString());
+	
+	out.println("\nOnce applied, we log out, and let the teacher "
+			+ "decide our fate!");
+	
 	//Students Logout
+	toodle.logOut();
 	
 	//...Pause...
+	out.println("\n----------------------------------------------------");
 	
 	//Teacher Login
+	toodle.logIn(toodle.getTeacher(), "123");
+	
 	//Teacher accept
+	Teacher tch = (Teacher)toodle.getCurrentUser();
+	tch.acceptStudent(stud, c1);
 	//Teacher reject
+	tch.rejectStudent(stud, c2);
+	tch.acceptStudent(stud, c3);
+	
 	//Teacher expel
-	//Teacher ignore
+	tch.expellStudent(stud, c3);
+
+	out.println("\nAfter the teacher has exercised its authority, he logs out");
+	out.println("Lets see the courses for wich the student has been accepted");
+	out.println(stud.getRegisteredCourses());
+	out.println("\nAs well as the expelled ones...");
+	out.println(stud.getRejectedCourses());
 	//Teacher logout
 	
+	toodle.logOut();
+	
 	//..Pause..
+	out.println("\n----------------------------------------------------");
+	
+	out.println("Now the student will answer some tests");
 	
 	//Student Login
+	if(!toodle.logIn(stud, "Coero")){
+		out.println("\nProblem when logging in");
+	}else{
+		out.println("\nStudent logged in successfully");
+	}
+	
 	//Student answer test
+	Exercise ex = c1.getTests().get(0);
+	ex.beginExercise(stud);
+	
+	
+	
 	//Student end test
 	//Student read notes
 	//Student see own statistics

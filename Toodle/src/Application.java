@@ -76,8 +76,8 @@ public class Application {
 		    {
 		    	//Parse students
 		    	String [] tokens = line.split(";");
-		    	Student s = new Student(tokens[0], tokens[1], tokens[3], tokens[2],
-		    			tokens[4]);
+		    	Student s = new Student(tokens[0], tokens[1],tokens[4],  tokens[2], 
+		    			tokens[3]);
 		    	students.add(s);
 		     
 		    }
@@ -136,6 +136,10 @@ public class Application {
 
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
+	}
+	
+	public User getCurrentUser(){
+		return currentUser;
 	}
 
 }
