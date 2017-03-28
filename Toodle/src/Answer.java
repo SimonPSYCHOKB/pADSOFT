@@ -90,6 +90,16 @@ public class Answer {
 		return true;
 	}
 	
+	public boolean isBlank(){
+		ArrayList<String> res = new ArrayList<String>();
+		res.add("");
+		if(answer.equals(res){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	
 	
 	

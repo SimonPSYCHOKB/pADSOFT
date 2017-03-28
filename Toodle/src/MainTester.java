@@ -25,7 +25,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("src/data.txt");
+		toodle = new Application("Toodle/src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -215,7 +215,7 @@ public class MainTester {
 	if(!toodle.logIn(stud, "Coero")){
 		out.println("\nProblem when logging in");
 	}else{
-		out.println("\nStudent logged in successfully");
+		out.println("\nStudent logged in successfully\n");
 	}
 	
 	//Student answer test
@@ -233,6 +233,8 @@ public class MainTester {
 	a.add(ex.answerQuestionTest(answ));
 	
 	stud.answerTest(ex, a);
+	
+	
 	
 	
 	

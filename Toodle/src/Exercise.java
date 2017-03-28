@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Exercise extends LearningObj{
 
-	
+	private Course course;
 	private LocalDate dateOfBegining;
 	private LocalDate dateOfEnd;
 	private double weight;
@@ -132,6 +132,14 @@ public class Exercise extends LearningObj{
 				.doubleToLongBits(other.weight))
 			return false;
 		return true;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
 	}	
 
 	

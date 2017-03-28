@@ -87,6 +87,7 @@ public class Course {
 	
 	public void addTest(Exercise t){
 		tests.add(t);
+		t.setCourse(this);
 		total = total + t.getWeight();
 	}
 

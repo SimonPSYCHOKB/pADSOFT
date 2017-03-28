@@ -125,7 +125,7 @@ public class Student extends User{
 		expelledCourses.add(c);
 	}
 	
-	private AnsweredTest getAnsweredTest(Exercise t){
+	public AnsweredTest getAnsweredTest(Exercise t){
 		int i = 0;
 		for( ; i < answeredTests.size(); i++)
 			if(answeredTests.get(i).getTest().equals(t))
