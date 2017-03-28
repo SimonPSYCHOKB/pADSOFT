@@ -88,7 +88,23 @@ public class Answer {
 		} else if (!question.equals(other.question))
 			return false;
 		return true;
+<<<<<<< HEAD
 	}	
+=======
+	}
+	
+	public boolean isBlank(){
+		
+		if(answer.isEmpty()){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	
+	
+>>>>>>> 4721d1d07c5fdbf6a187562ee8f4f360884a1861
 	
 
 }
