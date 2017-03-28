@@ -19,7 +19,6 @@ public class Test1 {
 		Student student = new Student("Paco", "Peres", "1234", "hola@gmail.com", "123");
 		
 		Course course = new Course(true, "Maths", "Smth");
-		student.applyForCourse(course);
 		student.acceptStudent(course);
 		
 		Exercise test = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.5);

@@ -15,8 +15,10 @@ public class SingleAnswerTest {
 	@Before
 	public void setUp() throws Exception {
 		List<String> answ = new ArrayList<String>();
+		List<String> options = new ArrayList<String>();
 		
-		sa = new SingleAnswer("SingleAnswer", 1, 0.5, "Answer");
+		options.add("Answer"); options.add("Answer1"); options.add("Answer2");
+		sa = new SingleAnswer("SingleAnswer", 1, 0.5, "Answer", options);
 		answ.add("Answer");
 		aTrue = new Answer(answ, sa);
 		answ = new ArrayList<String>();
@@ -32,7 +34,9 @@ public class SingleAnswerTest {
 
 	@Test
 	public final void testSingleAnswer() {
-		assertTrue(sa.equals(new SingleAnswer("SingleAnswer", 1, 0.5, "Answer")));
+		List<String> options = new ArrayList<String>();
+		options.add("Answer"); options.add("Answer1"); options.add("Answer2");
+		assertTrue(sa.equals(new SingleAnswer("SingleAnswer", 1, 0.5, "Answer", options)));
 	}
 	
 	@Test

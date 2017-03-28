@@ -9,11 +9,14 @@ import java.util.List;
 public class MultipleAnswer extends Question{
 
 	private List<String> answers;
+	private List<String> options;
 	
-	public MultipleAnswer(String question, double weight, double penalty, List<String> answers) {
+	public MultipleAnswer(String question, double weight, double penalty, List<String> answers, List<String> options) {
 		super(question, weight, penalty);
 		this.answers = new ArrayList<String>();
+		this.options = new ArrayList<String>();
 		this.answers = answers;
+		this.options = options;
 	}
 
 	public boolean checkIfCorrect(Answer answer){

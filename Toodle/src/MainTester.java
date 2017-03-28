@@ -25,7 +25,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("Toodle/src/data.txt");
+		toodle = new Application("src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MultipleAnswerTest" project="Toodle" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="MultipleAnswerTest" time="0.0">
+    <testcase name="testMultipleAnswer" classname="MultipleAnswerTest" time="0.0"/>
+    <testcase name="testGetPenalty" classname="MultipleAnswerTest" time="0.0"/>
+    <testcase name="testCheckIfCorrect" classname="MultipleAnswerTest" time="0.0"/>
+    <testcase name="testGetQuestion" classname="MultipleAnswerTest" time="0.0"/>
+    <testcase name="testGetWeight" classname="MultipleAnswerTest" time="0.0"/>
+  </testsuite>
+</testrun>
