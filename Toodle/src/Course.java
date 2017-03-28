@@ -45,22 +45,6 @@ public class Course {
 		return expelledStudents;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	public void setObjects(List<Unit> objects){
-		this.units = objects;
-	}
-	
-	public void setExpelledStudents(List<Student> expelledStudents){
-		this.expelledStudents = expelledStudents;
-	}
-
 	public List<Unit> getUnits(){
 		return units;
 	}
@@ -74,6 +58,7 @@ public class Course {
 		units = new ArrayList<Unit>();
 		tests = new ArrayList<Exercise>();
 		students = new ArrayList<Student>();
+		expelledStudents = new ArrayList<Student>();
 		total = 0;
 	}
 
@@ -110,4 +95,9 @@ public class Course {
 	public void addStudents(Student students) {
 		this.students.add(students);
 	}
+	
+	public void expellStudents(Student students) {
+		expelledStudents.add(students);
+	}
+
 }

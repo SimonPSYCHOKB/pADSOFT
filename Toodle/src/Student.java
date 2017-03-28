@@ -42,6 +42,10 @@ public class Student extends User{
 	
 	//Getters y setters
 	
+	public List<AnsweredTest> getAnsweredTests(){
+		return answeredTests;
+	}
+	
 	private List<AnsweredTest> getTestsFromCourse(Course c){
 		List<AnsweredTest> ats = new ArrayList<AnsweredTest>();
 		List<Exercise> ts = c.getTests();
@@ -112,6 +116,7 @@ public class Student extends User{
 		getPendingCourses().remove(c);
 		expelledCourses.remove(c);
 		registeredCourses.add(c);
+		c.addStudents(this);
 	}
 	
 	public void rejectStudent(Course c){
@@ -199,10 +204,6 @@ public class Student extends User{
 
 	public List<Course> getPendingCourses() {
 		return pendingCourses;
-	}
-
-	private void setPendingCourses(List<Course> pendingCourses) {
-		this.pendingCourses = pendingCourses;
 	}
 
 	public List<Course> getRejectedCourses() {
