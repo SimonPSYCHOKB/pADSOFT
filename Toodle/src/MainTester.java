@@ -222,6 +222,18 @@ public class MainTester {
 	Exercise ex = c1.getTests().get(0);
 	ex.beginExercise(stud);
 	
+	List<String> answ = new ArrayList<String>();
+	List<Answer> a = new ArrayList<Answer>();
+	
+	System.out.println(ex.showQuestionTest());
+	answ.add("Someone");
+	a.add(ex.answerQuestionTest(answ));
+	System.out.println(ex.showQuestionTest());
+	answ.add("true");
+	a.add(ex.answerQuestionTest(answ));
+	
+	stud.answerTest(ex, a);
+	
 	
 	
 	//Student end test
