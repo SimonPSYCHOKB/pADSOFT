@@ -22,7 +22,7 @@ public class Test1 {
 		student.applyForCourse(course);
 		student.acceptStudent(course);
 		
-		Test test = new Test(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.5);
+		Exercise test = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.5);
 		
 		Question q = new SingleAnswer("SA", 1, 0.5, "1");
 		test.addQuestion(q);
@@ -64,7 +64,7 @@ public class Test1 {
 			System.out.println(student.correctTest(test));
 		}
 		
-		Test test1 = new Test(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.5);
+		Exercise test1 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.5);
 		for(i = 0; i < 5; i++){
 			q = new SingleAnswer("Hey", 1, 0.5, "1");
 			test1.addQuestion(q);
@@ -90,7 +90,7 @@ public class Test1 {
 		System.out.println(student.getGradeCourse(course));
 		
 		// Para ver que un alumno no pueda hacer un test fuera de fecha
-		test1 = new Test(true, LocalDate.now().minusDays(10), LocalDate.now().minusDays(5), 0.5);
+		test1 = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().minusDays(5), 0.5);
 		for(i = 0; i < 5; i++){
 			q = new SingleAnswer("Hey", 1, 0.5, "1");
 			test1.addQuestion(q);

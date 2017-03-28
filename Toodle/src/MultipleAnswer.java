@@ -19,12 +19,21 @@ public class MultipleAnswer extends Question{
 	public boolean checkIfCorrect(Answer answer){
 		int n = answer.getAnswer().size();
 		int m = this.answers.size();
-		int i = 0;
+		List<String> a = new ArrayList<String>();
+		a = answer.getAnswer();
 		if (n != m)
 			return false;
-		for( ; i < n; i++)
-			if(this.answers.contains(answers.get(i)) == false)
+		for(int i = 0, flag = 0; i < n; i++){
+			for(int j = 0; j < m; j++){
+				if(a.get(i).equals(this.answers.get(j)) == true){
+					flag = 1;
+				}
+			}
+			if(flag == 0)
 				return false;
+			else
+				flag = 0;
+		}
 		return true;
 	}
 

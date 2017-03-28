@@ -19,7 +19,7 @@ public class MultipleAnswerTest {
 		answ.add("Answer1"); answ.add("Answer2");
 		ma = new MultipleAnswer("MultipleAnswer", 1, 0.5, answ);
 		answ = new ArrayList<String>();
-		answ.add("Answer1"); answ.add("Answer2");
+		answ.add("Answer2"); answ.add("Answer1");
 		aTrue = new Answer(answ, ma);
 		answ = new ArrayList<String>();
 		answ.add("Answer3"); answ.add("Answer2");
