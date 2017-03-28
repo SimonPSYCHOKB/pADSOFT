@@ -82,12 +82,5 @@ public class AnswerTest {
 		assertEquals(aft.getGrade(), 1.0, 0.0);
 		assertEquals(atf.getGrade(), -0.5, 0.0);
 	}
-	
-	@Test
-	public final void testIsBlank(){
-		List<String> str = new ArrayList<String>();
-		assertTrue(new Answer(str, sa).isBlank());
-		
-	}
 
 }

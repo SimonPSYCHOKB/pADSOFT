@@ -86,6 +86,7 @@ public class AnswerTest {
 	@Test
 	public final void testIsBlank(){
 		List<String> str = new ArrayList<String>();
+		//Answer a = new Answer(str, sa);
 		assertTrue(new Answer(str, sa).isBlank());
 		
 	}
