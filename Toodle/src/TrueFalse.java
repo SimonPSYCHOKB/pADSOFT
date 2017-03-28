@@ -1,11 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class TrueFalse extends Question{
 	
 	private String answer;
+	private List<String> options;
 
 	public TrueFalse(String question, double weight, double penalty, String answer) {
 		super(question, weight, penalty);
 		this.answer = answer;
+		this.options = new ArrayList<String>();
+		this.options.add("true"); this.options.add("false");
 	}
 
 	public String getAnswer() {
@@ -20,5 +26,9 @@ public class TrueFalse extends Question{
 
 	public boolean checkIfCorrect(Answer answer){
 		return this.answer.equals(answer.getAnswer().get(0));
+	}
+	
+	public String showQuestion(){
+		return this.getQuestion() + "\n\ttrue\n\tfalse";
 	}
 }

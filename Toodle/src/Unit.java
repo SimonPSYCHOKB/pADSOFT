@@ -16,7 +16,7 @@ public class Unit extends LearningObj{
 	 */
 	private List<Unit> units;
 	private List<Note> notes;
-	private List<Test> tests;
+	private List<Exercise> tests;
 	private String name;
 	
 	public Unit(boolean visibility, String name) {
@@ -24,14 +24,14 @@ public class Unit extends LearningObj{
 		units = new ArrayList<Unit>();
 		this.name = name;
 		notes = new ArrayList<Note>();
-		tests = new ArrayList<Test>();
+		tests = new ArrayList<Exercise>();
 	}
 	
 	public void createSubSection(Unit u){
 		units.add(u);
 	}
 	
-	public void addTest(Test t){
+	public void addTest(Exercise t){
 		tests.add(t);
 	}
 	

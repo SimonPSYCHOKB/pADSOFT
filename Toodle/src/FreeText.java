@@ -20,5 +20,9 @@ public class FreeText extends Question{
 	public boolean checkIfCorrect(Answer answer){
 		return this.answer.equals(answer.getAnswer().get(0));
 	}
+	
+	public String showQuestion(){
+		return this.getQuestion();
+	}
 
 }

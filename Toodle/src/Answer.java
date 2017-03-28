@@ -42,6 +42,7 @@ public class Answer {
 			grade = weight;
 		else if(question.getPenalty() != 0)
 			grade = -question.getPenalty();
+		graded = true;
 	}
 	
 	public boolean isGraded(){
@@ -61,6 +62,35 @@ public class Answer {
 			s = s + " " + answer.get(i);
 		return s;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Answer other = (Answer) obj;
+		if (answer == null) {
+			if (other.answer != null)
+				return false;
+		} else if (!answer.equals(other.answer))
+			return false;
+		if (Double.doubleToLongBits(grade) != Double
+				.doubleToLongBits(other.grade))
+			return false;
+		if (graded != other.graded)
+			return false;
+		if (question == null) {
+			if (other.question != null)
+				return false;
+		} else if (!question.equals(other.question))
+			return false;
+		return true;
+	}
+	
+	
 	
 	
 

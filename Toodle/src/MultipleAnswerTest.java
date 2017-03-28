@@ -15,11 +15,13 @@ public class MultipleAnswerTest {
 	@Before
 	public void setUp() throws Exception {
 		List<String> answ = new ArrayList<String>();
+		List<String> options = new ArrayList<String>(); 
 		
 		answ.add("Answer1"); answ.add("Answer2");
-		ma = new MultipleAnswer("MultipleAnswer", 1, 0.5, answ);
+		options.add("Answer1"); options.add("Answer3"); options.add("Answer2");
+		ma = new MultipleAnswer("MultipleAnswer", 1, 0.5, answ, options);
 		answ = new ArrayList<String>();
-		answ.add("Answer1"); answ.add("Answer2");
+		answ.add("Answer2"); answ.add("Answer1");
 		aTrue = new Answer(answ, ma);
 		answ = new ArrayList<String>();
 		answ.add("Answer3"); answ.add("Answer2");
@@ -35,8 +37,11 @@ public class MultipleAnswerTest {
 	@Test
 	public final void testMultipleAnswer() {
 		List<String> answ = new ArrayList<String>();
+		List<String> options = new ArrayList<String>();
+		
 		answ.add("Answer2"); answ.add("Answer1");
-		assertTrue(ma.equals(new MultipleAnswer("MultipleAnswer", 1, 0.5, answ)));
+		options.add("Answer1"); options.add("Answer3"); options.add("Answer2");
+		assertTrue(ma.equals(new MultipleAnswer("MultipleAnswer", 1, 0.5, answ, options)));
 	}
 	
 	@Test

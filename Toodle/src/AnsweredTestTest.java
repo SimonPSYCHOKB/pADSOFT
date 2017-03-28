@@ -16,14 +16,18 @@ public class AnsweredTestTest {
 
 	@Before
 	public void setUp() throws Exception {
+		List<String> options = new ArrayList<String>();
 		test = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.5);
 		answers = new ArrayList<Answer>();
 		
-		Question q = new SingleAnswer("SA", 1, 0.5, "1");
+		options.add("1"); options.add("2"); options.add("3"); options.add("4");
+		Question q = new SingleAnswer("SA", 1, 0.5, "1", options);
 		test.addQuestion(q);
 		List<String> ma = new ArrayList<String>();
+		options = new ArrayList<String>();
+		options.add("1"); options.add("2"); options.add("3"); options.add("4");
 		ma.add("1"); ma.add("2");
-		q = new MultipleAnswer("MA", 1, 0.5, ma);
+		q = new MultipleAnswer("MA", 1, 0.5, ma, options);
 		test.addQuestion(q);
 		q = new TrueFalse("TF", 1, 0.5, "true");
 		test.addQuestion(q);

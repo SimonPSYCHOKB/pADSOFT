@@ -24,7 +24,7 @@ public class Student extends User{
 	private List<Course> registeredCourses;
 	private List<Course> pendingCourses;
 	private List<Course> expelledCourses;
-	private List<Test> currentExercises;
+	private List<Exercise> currentExercises;
 	private List<AnsweredTest> answeredTests;
 	private String manu;
 
@@ -35,7 +35,7 @@ public class Student extends User{
 		registeredCourses = new ArrayList<Course>();
 		pendingCourses = new ArrayList<Course>();
 		expelledCourses = new ArrayList<Course>();
-		currentExercises = new ArrayList<Test>();
+		currentExercises = new ArrayList<Exercise>();
 		answeredTests = new ArrayList<AnsweredTest>();
 	}
 	
@@ -43,7 +43,7 @@ public class Student extends User{
 	
 	private List<AnsweredTest> getTestsFromCourse(Course c){
 		List<AnsweredTest> ats = new ArrayList<AnsweredTest>();
-		List<Test> ts = c.getTests();
+		List<Exercise> ts = c.getTests();
 		int i = 0;
 		for( ; i < ts.size(); i++)
 			ats.add(getAnsweredTest(ts.get(i)));
@@ -65,7 +65,7 @@ public class Student extends User{
 		return registeredCourses;
 	}
 	
-	public List<Test> getCurrentExercises(){
+	public List<Exercise> getCurrentExercises(){
 		return currentExercises;
 	}
 	
@@ -73,20 +73,20 @@ public class Student extends User{
 		this.registeredCourses = registeredCourses;
 	}
 	
-	public void setCurrentExercises(List<Test> currentExercises){
+	public void setCurrentExercises(List<Exercise> currentExercises){
 		this.currentExercises = currentExercises;
 	}
 	
-	public void addTestStudent(Test t){
+	public void addTestStudent(Exercise t){
 		//Habria que comprobar que puede empezarlo
 		currentExercises.add(t);
 	}
 	
-	public void removeTestStudent(Test t){
+	public void removeTestStudent(Exercise t){
 		currentExercises.remove(t);
 	}
 	
-	public void answerTest(Test test, List<Answer> answers){
+	public void answerTest(Exercise test, List<Answer> answers){
 		//Habria que comprobar que puede empezarlo
 		AnsweredTest at = new AnsweredTest(test, answers);
 		answeredTests.add(at);
@@ -118,7 +118,7 @@ public class Student extends User{
 		expelledCourses.add(c);
 	}
 	
-	private AnsweredTest getAnsweredTest(Test t){
+	private AnsweredTest getAnsweredTest(Exercise t){
 		int i = 0;
 		for( ; i < answeredTests.size(); i++)
 			if(answeredTests.get(i).getTest().equals(t))
@@ -127,11 +127,11 @@ public class Student extends User{
 		return null;
 	}
 	
-	public String viewPastTest(Test t){
+	public String viewPastTest(Exercise t){
 		return getAnsweredTest(t).toString();
 	}
 	
-	public double correctTest(Test t){
+	public double correctTest(Exercise t){
 		AnsweredTest at = getAnsweredTest(t);
 		if(at == null)
 			return 0;

@@ -36,5 +36,31 @@ public abstract class Question {
 	}
 	
 	public abstract boolean checkIfCorrect(Answer answer);
+	public abstract String showQuestion();
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Question other = (Question) obj;
+		if (Double.doubleToLongBits(penalty) != Double
+				.doubleToLongBits(other.penalty))
+			return false;
+		if (question == null) {
+			if (other.question != null)
+				return false;
+		} else if (!question.equals(other.question))
+			return false;
+		if (Double.doubleToLongBits(weight) != Double
+				.doubleToLongBits(other.weight))
+			return false;
+		return true;
+	}
+	
+	
 
 }

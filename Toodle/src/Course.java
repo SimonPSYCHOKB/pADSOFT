@@ -16,7 +16,7 @@ public class Course {
 	private String title;
 	private String description;
 	private List<Unit> units; 
-	private List<Test> tests;
+	private List<Exercise> tests;
 	private List<Student> expelledStudents;
 	private double total;
 
@@ -32,7 +32,7 @@ public class Course {
 		return title;
 	}
 	
-	public List<Test> getTests(){
+	public List<Exercise> getTests(){
 		return tests;
 	}
 
@@ -71,7 +71,7 @@ public class Course {
 		this.title = title;
 		this.description = description;
 		units = new ArrayList<Unit>();
-		tests = new ArrayList<Test>();
+		tests = new ArrayList<Exercise>();
 		total = 0;
 	}
 
@@ -83,7 +83,7 @@ public class Course {
 		units.add(lo);
 	}
 	
-	public void addTest(Test t){
+	public void addTest(Exercise t){
 		tests.add(t);
 		total = total + t.getWeight();
 	}

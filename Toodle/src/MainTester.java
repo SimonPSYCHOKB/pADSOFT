@@ -25,7 +25,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("Toodle/src/data.txt");
+		toodle = new Application("src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -100,14 +100,20 @@ public class MainTester {
 	//Create tests of three types
 	LocalDate d1 = LocalDate.now().minus(30, ChronoUnit.DAYS);
 	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
-	Test t1 = new Test(true, d1, d2, 0.5);
+	Exercise t1 = new Exercise(true, d1, d2, 0.5);
 	//Create Questions for tests
+	List<String> options = new ArrayList<String>();
+	options.add("No one"); options.add("Someone");
 	SingleAnswer sq1= new SingleAnswer(
-			"Who are you", 0.5, 0.3, "No one");
+			"Who are you", 0.5, 0.3, "No one", options);
+	options = new ArrayList<String>();
+	options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
+	List<String> s = new ArrayList<String>();
+	s.add("Me"); s.add("You"); s.add("Him");
 	MultipleAnswer mq2= new MultipleAnswer(
-			"Do you exist", 0.5, 0.2,  new String[] {"Me", "You", "Him"} );
-	Test t2 = new Test(true, d1, d2, 0.5);
-	Test t3 = new Test(true, d1, d2, 0.5);
+			"Do you exist", 0.5, 0.2,  s, options);
+	Exercise t2 = new Exercise(true, d1, d2, 0.5);
+	Exercise t3 = new Exercise(true, d1, d2, 0.5);
 	
 	//Teacher Logout
 	toodle.logOut();

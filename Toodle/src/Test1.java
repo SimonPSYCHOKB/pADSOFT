@@ -19,16 +19,17 @@ public class Test1 {
 		Student student = new Student("Paco", "Peres", "1234", "hola@gmail.com", "123");
 		
 		Course course = new Course(true, "Maths", "Smth");
-		student.applyForCourse(course);
 		student.acceptStudent(course);
 		
-		Test test = new Test(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.5);
+		Exercise test = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.5);
 		
-		Question q = new SingleAnswer("SA", 1, 0.5, "1");
+		List<String> options = new ArrayList<String>();
+		options.add("1"); options.add("2"); options.add("3"); options.add("4");
+		Question q = new SingleAnswer("SA", 1, 0.5, "1", options);
 		test.addQuestion(q);
 		List<String> ma = new ArrayList<String>();
 		ma.add("1"); ma.add("2");
-		q = new MultipleAnswer("MA", 1, 0.5, ma);
+		q = new MultipleAnswer("MA", 1, 0.5, ma, options);
 		test.addQuestion(q);
 		q = new TrueFalse("TF", 1, 0.5, "true");
 		test.addQuestion(q);
@@ -64,9 +65,9 @@ public class Test1 {
 			System.out.println(student.correctTest(test));
 		}
 		
-		Test test1 = new Test(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.5);
+		Exercise test1 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.5);
 		for(i = 0; i < 5; i++){
-			q = new SingleAnswer("Hey", 1, 0.5, "1");
+			q = new SingleAnswer("Hey", 1, 0.5, "1", options);
 			test1.addQuestion(q);
 		}
 		course.addTest(test1);
@@ -90,9 +91,9 @@ public class Test1 {
 		System.out.println(student.getGradeCourse(course));
 		
 		// Para ver que un alumno no pueda hacer un test fuera de fecha
-		test1 = new Test(true, LocalDate.now().minusDays(10), LocalDate.now().minusDays(5), 0.5);
+		test1 = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().minusDays(5), 0.5);
 		for(i = 0; i < 5; i++){
-			q = new SingleAnswer("Hey", 1, 0.5, "1");
+			q = new SingleAnswer("Hey", 1, 0.5, "1", options);
 			test1.addQuestion(q);
 		}
 		
