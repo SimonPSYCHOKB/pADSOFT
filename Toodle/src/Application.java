@@ -1,7 +1,9 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,15 +37,6 @@ public class Application {
 
 	public void setCourses(List<Course> courses) {
 		this.courses = courses;
-	}
-	
-	public boolean addCourse(Course c){
-		if(currentUser.equals(teacher)){
-			courses.add(c);
-			return true;
-		}else{
-			return false;
-		}
 	}
 
 	/**
@@ -90,7 +83,8 @@ public class Application {
 		    e.printStackTrace();
 		    
 		  }
-		}
+		  //this.setTeacher(new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
+	}
 	
 	
 	public void addStudent(Student s){
@@ -118,6 +112,48 @@ public class Application {
 			Course c = new Course(visibility, title, description);
 			courses.add(c);
 			return c;
+		}
+		return null;
+	}
+	
+	public Unit createUnit(boolean visibility, String title){
+		if(currentUser.equals(getTeacher())){
+			Unit u = new Unit(visibility, title);
+			return u;
+		}
+		return null;
+	}
+	
+	public void addUnitToCourse(Unit u, Course c){
+		if(currentUser.equals(getTeacher())){
+			c.addLearningObj(u);
+		}
+	}
+	
+	public void addSubSectionToUnit(Unit u, Unit su){
+		if(currentUser.equals(getTeacher())){
+			u.createSubSection(su);
+		}
+	}
+	
+	public Note createNote(String text, LocalDate date){
+		if(currentUser.equals(getTeacher())){
+			Note n = new Note(text, date);
+			return n;
+		}
+		return null;
+	}
+	
+	public void addNoteToUnit(Unit u, Note n){
+		if(currentUser.equals(getTeacher())){
+			u.addNotes(n);
+		}
+	}
+	
+	public Exercise createExercise(boolean visibility, LocalDate dateOfBegining, LocalDate dateOfEnd, double weight){
+		if(currentUser.equals(getTeacher())){
+			Exercise e = new Exercise(visibility, dateOfBegining, dateOfEnd, weight);
+			return e;
 		}
 		return null;
 	}

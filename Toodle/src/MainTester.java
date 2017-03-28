@@ -25,7 +25,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("Toodle/src/data.txt");
+		toodle = new Application("src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -46,8 +46,7 @@ public class MainTester {
 	out.println("We proceed by creating all the courses\n");
 	//Create new courses
 	for (int i=1; i<4; i++){
-		Course c = new Course(true, "Course " + i, "This is course; "+i );
-		toodle.addCourse(c);
+		toodle.createCourse(true, "Course " + i, "This is course; "+i );
 	}
 	
 	out.println("Lets display the courses");
@@ -57,13 +56,17 @@ public class MainTester {
 	//Create new units
 		//For each course, we create three subunits
 	for(Course c: toodle.getCourses()){
-		Unit u1 = new Unit(true, c.toString()+ " Unit 1");
-		Unit u2 = new Unit (false, c.toString()+ " Unit 2");
-		Unit u3 = new Unit (true, c.toString()+ " Unit 3");
+		Unit u1 = toodle.createUnit(true, c.toString()+ " Unit 1");
+		Unit u2 = toodle.createUnit(true, c.toString()+ " Unit 2");
+		Unit u3 = toodle.createUnit(true, c.toString()+ " Unit 3");
+		//Unit u1 = new Unit(true, c.toString()+ " Unit 1");
+		//Unit u2 = new Unit (false, c.toString()+ " Unit 2");
+		//Unit u3 = new Unit (true, c.toString()+ " Unit 3");
 		
-		c.addLearningObj(u1);
-		c.addLearningObj(u2);
-		c.addLearningObj(u3);
+		
+		toodle.addUnitToCourse(u1, c);
+		toodle.addUnitToCourse(u2, c);
+		toodle.addUnitToCourse(u3, c);
 	}
 	out.println("\nWe can see how the courses look now: ");
 	out.println(toodle.getCourses());
@@ -74,12 +77,17 @@ public class MainTester {
 	for (Course c: toodle.getCourses()){
 		List<Unit> units=  c.getUnits();
 		for(Unit unit: units){
-			Unit us1= new Unit(true, unit.toString()+ " Subunit 1");
-			Unit us2= new Unit(true, unit.toString()+ " Subunit 2");
-			Unit us3= new Unit(true, unit.toString()+ " Subunit 3");
-			unit.createSubSection(us1);
-			unit.createSubSection(us2);
-			unit.createSubSection(us3);
+			Unit us1= toodle.createUnit(true, unit.toString()+ " Subunit 1");
+			Unit us2= toodle.createUnit(true, unit.toString()+ " Subunit 2");
+			Unit us3= toodle.createUnit(true, unit.toString()+ " Subunit 3");
+			
+			toodle.addSubSectionToUnit(unit, us1);
+			toodle.addSubSectionToUnit(unit, us2);
+			toodle.addSubSectionToUnit(unit, us3);
+			
+			//unit.createSubSection(us1);
+			//unit.createSubSection(us2);
+			//unit.createSubSection(us3);
 		}	
 	}
 	
@@ -89,10 +97,10 @@ public class MainTester {
 	out.println("\nNext we will add Notes to some Units");
 	int i =0;
 	for (Course c: toodle.getCourses()){
-		Note n = new Note("This is note number "+ i, null);
+		Note n = toodle.createNote("This is note number "+ i, null);
 		List<Unit> units =c.getUnits();
 		Unit unit= units.get(i);
-		unit.addNotes(n);
+		toodle.addNoteToUnit(unit, n);
 		i++;
 	}
 	
@@ -101,10 +109,11 @@ public class MainTester {
 	LocalDate d1 = LocalDate.now().minus(30, ChronoUnit.DAYS);
 	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
 	
-	Exercise t1 = new Exercise(true, d1, d2, 0.5);
-<<<<<<< HEAD
-	Exercise t2 = new Exercise(true, d1, d2, 0.5);
-	Exercise t3 = new Exercise(true, d1, d2, 0.5);
+	
+	Exercise t1 = toodle.createExercise(true, d1, d2, 0.5);
+	Exercise t2 = toodle.createExercise(true, d1, d2, 0.5);
+	Exercise t3 = toodle.createExercise(true, d1, d2, 0.5);
+	
 	//Create Questions for tests
 	List<String> options = new ArrayList<String>();
 	options.add("No one"); options.add("Someone");
@@ -125,29 +134,6 @@ public class MainTester {
 	t2.addQuestion(mq2);
 	t3.addQuestion(ftq3);
 	t1.addQuestion(tfq4);
-	
-=======
-	
-	//Create Questions for tests
-	//Question 1
-		List<String> options = new ArrayList<String>();
-		options.add("No one"); options.add("Someone");
-		SingleAnswer sq1= new SingleAnswer(
-				"Who are you", 0.5, 0.3, "No one", options);
-	
-	//Question 2
-		options = new ArrayList<String>();
-		options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
-		List<String> s = new ArrayList<String>();
-		s.add("Me"); s.add("You"); s.add("Him");
-		MultipleAnswer mq2= new MultipleAnswer(
-				"Do you exist", 0.5, 0.2,  s, options);
-	t1.addQuestion(sq1);
-	t1.addQuestion(mq2);
-	
-	Exercise t2 = new Exercise(true, d1, d2, 0.5);
-	Exercise t3 = new Exercise(true, d1, d2, 0.5);
->>>>>>> c5880a760f5d408c580d3a53cc0b84e66770338b
 	
 	//Teacher Logout
 	toodle.logOut();
@@ -212,7 +198,7 @@ public class MainTester {
 	tch.expellStudent(stud, c3);
 
 	out.println("\nAfter the teacher has exercised its authority, he logs out");
-	out.println("Lets see the courses for wich the student has been accepted");
+	out.println("Lets see the courses for which the student has been accepted");
 	out.println(stud.getRegisteredCourses());
 	out.println("\nAs well as the expelled ones...");
 	out.println(stud.getRejectedCourses());

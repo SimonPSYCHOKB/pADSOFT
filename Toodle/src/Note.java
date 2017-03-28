@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * 
@@ -11,12 +11,12 @@ import java.util.Date;
 public class Note {
 	
 	String text;
-	Date visibDate;
+	LocalDate visibDate;
 
 	/**
 	 * 
 	 */
-	public Note(String text, Date date) {
+	public Note(String text, LocalDate date) {
 		this.text= text;
 		this.visibDate= date;
 	}
