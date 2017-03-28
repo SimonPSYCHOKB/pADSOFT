@@ -25,7 +25,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("Toodle/src/data.txt");
+		toodle = new Application("src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -34,8 +34,7 @@ public class MainTester {
 	out.println("-->Students read successfully\n");
 	out.println(toodle.getStudents());
 	//Import teacher
-	Teacher teacher = new Teacher("Teacher", "Peres", "123", "teacher@esdu.es");
-	toodle.setTeacher(teacher);
+	Teacher teacher = toodle.getTeacher();
 	
 	out.println("Now lets log in the teacher\n");
 	//Log in Teacher

@@ -101,4 +101,53 @@ public class Course {
 		expelledStudents.add(students);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Course other = (Course) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (expelledStudents == null) {
+			if (other.expelledStudents != null)
+				return false;
+		} else if (!expelledStudents.equals(other.expelledStudents))
+			return false;
+		if (students == null) {
+			if (other.students != null)
+				return false;
+		} else if (!students.equals(other.students))
+			return false;
+		if (tests == null) {
+			if (other.tests != null)
+				return false;
+		} else if (!tests.equals(other.tests))
+			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
+		if (Double.doubleToLongBits(total) != Double
+				.doubleToLongBits(other.total))
+			return false;
+		if (units == null) {
+			if (other.units != null)
+				return false;
+		} else if (!units.equals(other.units))
+			return false;
+		if (visibility != other.visibility)
+			return false;
+		return true;
+	}
+	
+	
+
 }
