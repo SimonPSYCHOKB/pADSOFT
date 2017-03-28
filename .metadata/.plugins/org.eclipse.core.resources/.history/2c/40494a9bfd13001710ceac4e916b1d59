@@ -181,7 +181,6 @@ public class ApplicationTest {
 		app.logIn(teacher, "123");
 		app.acceptStudent(s, c);
 		assertEquals(c, s.getRegisteredCourses().get(0));
-		assertEquals(0.0, s.getPendingCourses().size(), 0.0);
 	}
 	
 	@Test
@@ -193,8 +192,6 @@ public class ApplicationTest {
 		app.logIn(teacher, "123");
 		app.rejectStudent(s, c);
 		assertEquals(c, s.getRejectedCourses().get(0));
-		assertEquals(0.0, s.getRegisteredCourses().size(), 0.0);
-		assertEquals(0.0, s.getPendingCourses().size(), 0.0);
 	}
 	
 	@Test
@@ -207,8 +204,6 @@ public class ApplicationTest {
 		app.acceptStudent(s, c);
 		app.expellStudent(s, c);
 		assertEquals(c, s.getExpelledCourses().get(0));
-		assertEquals(0.0, s.getRegisteredCourses().size(), 0.0);
-		assertEquals(0.0, s.getPendingCourses().size(), 0.0);
 	}
 
 	@Test

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ApplicationTest" project="Toodle" tests="17" started="17" failures="0" errors="0" ignored="0">
+  <testsuite name="ApplicationTest" time="0.072">
+    <testcase name="testGetCurrentUser" classname="ApplicationTest" time="0.063"/>
+    <testcase name="testLogIn" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testGetTeacher" classname="ApplicationTest" time="0.0"/>
+    <testcase name="testGetStudents" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testAddUnitToCourse" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testCreateTrueFalse" classname="ApplicationTest" time="0.0"/>
+    <testcase name="testCreateNote" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testCreateUnit" classname="ApplicationTest" time="0.0"/>
+    <testcase name="testSetTeacher" classname="ApplicationTest" time="0.0"/>
+    <testcase name="testAddNoteToUnit" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testAddSubSectionToUnit" classname="ApplicationTest" time="0.0"/>
+    <testcase name="testGetCourses" classname="ApplicationTest" time="0.0"/>
+    <testcase name="testLogOut" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testCreateSingleAnswer" classname="ApplicationTest" time="0.0"/>
+    <testcase name="testCreateExercise" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testCreateMultipleAnswer" classname="ApplicationTest" time="0.001"/>
+    <testcase name="testCreateCourse" classname="ApplicationTest" time="0.001"/>
+  </testsuite>
+</testrun>

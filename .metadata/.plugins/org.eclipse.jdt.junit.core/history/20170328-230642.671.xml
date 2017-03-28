@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AnswerTest" project="Toodle" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="AnswerTest" time="0.0">
+    <testcase name="testGetGrade" classname="AnswerTest" time="0.0"/>
+    <testcase name="testIsGraded" classname="AnswerTest" time="0.0"/>
+    <testcase name="testGetQuestion" classname="AnswerTest" time="0.0"/>
+    <testcase name="testGetAnswer" classname="AnswerTest" time="0.0"/>
+    <testcase name="testAnswer" classname="AnswerTest" time="0.0"/>
+    <testcase name="testIsBlank" classname="AnswerTest" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -18,7 +18,6 @@ public class ApplicationTest {
 	Note n;
 	Exercise e;
 	Student s;
-	Teacher teacher;
 
 	@Before
 	public void setUp() throws Exception {
@@ -28,9 +27,9 @@ public class ApplicationTest {
 		su = new Unit(true, "SubUnit");
 		n = new Note("Note", LocalDate.now());
 		e = new Exercise(true, LocalDate.now(), LocalDate.now(), 1);
-		s = new Student("Jorge", "Alcazar", "JoA", "Jorge.Alcazar@esdu.es", "1289");
+		s = new Student("Paco", "Perez", "123", "pperez@esdu.es", "12");
 		
-		teacher = app.getTeacher();
+		Teacher teacher = app.getTeacher();
 		app.logIn(teacher, "123");
 	}
 
@@ -167,48 +166,9 @@ public class ApplicationTest {
 	@Test
 	public void testApplyStudent(){
 		app.logOut();
-		app.logIn(s, "JoA");
+		app.logIn(s, "123");
 		app.applyStudent(s, c);
 		assertEquals(c, s.getPendingCourses().get(0));
-	}
-	
-	@Test
-	public void testAcceptStudent(){
-		app.logOut();
-		app.logIn(s, "JoA");
-		app.applyStudent(s, c);
-		app.logOut();
-		app.logIn(teacher, "123");
-		app.acceptStudent(s, c);
-		assertEquals(c, s.getRegisteredCourses().get(0));
-		assertEquals(0.0, s.getPendingCourses().size(), 0.0);
-	}
-	
-	@Test
-	public void testRejectStudent(){
-		app.logOut();
-		app.logIn(s, "JoA");
-		app.applyStudent(s, c);
-		app.logOut();
-		app.logIn(teacher, "123");
-		app.rejectStudent(s, c);
-		assertEquals(c, s.getRejectedCourses().get(0));
-		assertEquals(0.0, s.getRegisteredCourses().size(), 0.0);
-		assertEquals(0.0, s.getPendingCourses().size(), 0.0);
-	}
-	
-	@Test
-	public void testExpellStudent(){
-		app.logOut();
-		app.logIn(s, "JoA");
-		app.applyStudent(s, c);
-		app.logOut();
-		app.logIn(teacher, "123");
-		app.acceptStudent(s, c);
-		app.expellStudent(s, c);
-		assertEquals(c, s.getExpelledCourses().get(0));
-		assertEquals(0.0, s.getRegisteredCourses().size(), 0.0);
-		assertEquals(0.0, s.getPendingCourses().size(), 0.0);
 	}
 
 	@Test

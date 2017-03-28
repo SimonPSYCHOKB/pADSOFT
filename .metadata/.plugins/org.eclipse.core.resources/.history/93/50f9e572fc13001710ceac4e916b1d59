@@ -190,7 +190,7 @@ public class Student extends User{
 	}
 	
 	public void apply(Course c){
-		pendingCourses.add(c);
+		getPendingCourses().add(c);
 	}
 
 	public List<Course> getPendingCourses() {
