@@ -17,6 +17,7 @@ public class Course {
 	private String description;
 	private List<Unit> units; 
 	private List<Exercise> tests;
+	private List<Student> students;
 	private List<Student> expelledStudents;
 	private double total;
 
@@ -72,6 +73,7 @@ public class Course {
 		this.description = description;
 		units = new ArrayList<Unit>();
 		tests = new ArrayList<Exercise>();
+		students = new ArrayList<Student>();
 		total = 0;
 	}
 
@@ -94,5 +96,18 @@ public class Course {
 			str += "\n" + "\t"+ u.toString();
 		}
 		return str;
+	}
+	
+	public String toStringShort(){
+		String str = title;
+		return str;
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void addStudents(Student students) {
+		this.students.add(students);
 	}
 }

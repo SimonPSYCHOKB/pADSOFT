@@ -23,11 +23,33 @@ public class Teacher extends User{
 	 * @param args
 	 */
 	public void acceptStudent(Student s, Course c) {
-		(s.getRegisteredCourses()).add(c);
+		Course cRem= null;
+		for (Course ct: s.getPendingCourses()){
+			if(ct.equals(c)){
+				cRem = c;
+				break;
+				
+			}
+		}
+		if(cRem != null){
+			s.acceptStudent(c);
+			c.addStudents(s);
+		}
 	}
 	
-	public void rejectStudent(Student s, Course c){
-		
+	public void rejectStudent(Student s, Course c) {
+		Course cRem= null;
+		for (Course ct: s.getPendingCourses()){
+			if(ct.equals(c)){
+				cRem = c;
+				break;
+				
+			}
+		}
+		if(cRem != null){
+			s.rejectStudent(c);
+			
+		}
 	}
 	
 	public void readmitStudent(Student s, Course c){
