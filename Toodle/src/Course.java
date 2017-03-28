@@ -61,6 +61,8 @@ public class Course {
 		expelledStudents = new ArrayList<Student>();
 		total = 0;
 	}
+	
+	
 
 	/**
 	 * @param args
@@ -100,5 +102,7 @@ public class Course {
 	public void expellStudents(Student students) {
 		expelledStudents.add(students);
 	}
+	
+	
 
 }
