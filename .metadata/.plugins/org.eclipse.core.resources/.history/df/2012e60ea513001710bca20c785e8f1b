@@ -23,13 +23,11 @@ public class Test1 {
 		
 		Exercise test = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.5);
 		
-		List<String> options = new ArrayList<String>();
-		options.add("1"); options.add("2"); options.add("3"); options.add("4");
-		Question q = new SingleAnswer("SA", 1, 0.5, "1", options);
+		Question q = new SingleAnswer("SA", 1, 0.5, "1");
 		test.addQuestion(q);
 		List<String> ma = new ArrayList<String>();
 		ma.add("1"); ma.add("2");
-		q = new MultipleAnswer("MA", 1, 0.5, ma, options);
+		q = new MultipleAnswer("MA", 1, 0.5, ma);
 		test.addQuestion(q);
 		q = new TrueFalse("TF", 1, 0.5, "true");
 		test.addQuestion(q);
@@ -67,7 +65,7 @@ public class Test1 {
 		
 		Exercise test1 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.5);
 		for(i = 0; i < 5; i++){
-			q = new SingleAnswer("Hey", 1, 0.5, "1", options);
+			q = new SingleAnswer("Hey", 1, 0.5, "1");
 			test1.addQuestion(q);
 		}
 		course.addTest(test1);
@@ -93,7 +91,7 @@ public class Test1 {
 		// Para ver que un alumno no pueda hacer un test fuera de fecha
 		test1 = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().minusDays(5), 0.5);
 		for(i = 0; i < 5; i++){
-			q = new SingleAnswer("Hey", 1, 0.5, "1", options);
+			q = new SingleAnswer("Hey", 1, 0.5, "1");
 			test1.addQuestion(q);
 		}
 		

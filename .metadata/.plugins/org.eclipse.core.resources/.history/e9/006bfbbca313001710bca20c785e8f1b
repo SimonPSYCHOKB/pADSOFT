@@ -102,16 +102,12 @@ public class MainTester {
 	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
 	Exercise t1 = new Exercise(true, d1, d2, 0.5);
 	//Create Questions for tests
-	List<String> options = new ArrayList<String>();
-	options.add("No one"); options.add("Someone");
 	SingleAnswer sq1= new SingleAnswer(
-			"Who are you", 0.5, 0.3, "No one", options);
-	options = new ArrayList<String>();
-	options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
+			"Who are you", 0.5, 0.3, "No one");
 	List<String> s = new ArrayList<String>();
 	s.add("Me"); s.add("You"); s.add("Him");
 	MultipleAnswer mq2= new MultipleAnswer(
-			"Do you exist", 0.5, 0.2,  s, options);
+			"Do you exist", 0.5, 0.2,  s);
 	Exercise t2 = new Exercise(true, d1, d2, 0.5);
 	Exercise t3 = new Exercise(true, d1, d2, 0.5);
 	

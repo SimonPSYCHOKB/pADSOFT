@@ -17,12 +17,5 @@ public class SingleAnswer extends Question{
 	public boolean checkIfCorrect(Answer answer){
 		return this.answer.equals(answer.getAnswer().get(0));
 	}
-	
-	public String showQuestion(){
-		String s = this.getQuestion();
-		for(int i = 0; i < options.size(); i++)
-			s = s + "\n\t" + options.get(i);
-		return s;
-	}
 
 }

@@ -18,14 +18,9 @@ public class AnswerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		List<String> options = new ArrayList<String>();
-		
-		options.add("1"); options.add("2"); options.add("3"); options.add("4");
-		sa = new SingleAnswer("Question1", 1, 0.5, "1", options);
+		sa = new SingleAnswer("Question1", 1, 0.5, "1");
 		answs.add("2"); answs.add("3");
-		options = new ArrayList<String>();
-		options.add("1"); options.add("2"); options.add("3"); options.add("4");
-		ma = new MultipleAnswer("Question2", 1, 0.5, answs, options);
+		ma = new MultipleAnswer("Question2", 1, 0.5, answs);
 		ft = new FreeText("Question3", 1, 0.5, "4");
 		tf = new TrueFalse("Question4", 1, 0.5, "false");		
 		

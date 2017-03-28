@@ -87,7 +87,7 @@ public class Exercise extends LearningObj{
 	}
 	
 	public String showQuestionTest(){
-		return questions.get(count).showQuestion();
+		return questions.get(count).getQuestion();
 	}
 	
 	public Answer answerQuestionTest(List<String> answer){

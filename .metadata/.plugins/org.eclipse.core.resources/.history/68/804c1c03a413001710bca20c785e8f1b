@@ -36,7 +36,6 @@ public abstract class Question {
 	}
 	
 	public abstract boolean checkIfCorrect(Answer answer);
-	public abstract String showQuestion();
 
 	@Override
 	public boolean equals(Object obj) {
