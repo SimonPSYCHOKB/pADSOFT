@@ -1,0 +1,128 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class TeacherTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testTeacher() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAcceptStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRejectStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReadmitStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testExpellStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testViewStatistics() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSendNotification() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testUser() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetEmail() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetPassword() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetSentNotifications() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetRecievedNotifications() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetPassword() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetEmail() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetSentNotifications() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetRecievedNotifications() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testValidatePassword() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCheckForNotifications() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetlName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetlName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testEqualsObject() {
+		fail("Not yet implemented");
+	}
+
+}

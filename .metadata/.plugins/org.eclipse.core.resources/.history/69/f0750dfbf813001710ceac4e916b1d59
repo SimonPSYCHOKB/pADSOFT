@@ -137,10 +137,5 @@ public class StudentTest {
 		s.rejectStudent(c);
 		assertEquals(c, s.getRejectedCourses().get(0));
 	}
-	
-	@Test
-	public void testGetName(){
-		assertEquals("Paco Perez", s.getName());
-	}
 
 }
