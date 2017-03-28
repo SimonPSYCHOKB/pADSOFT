@@ -29,15 +29,6 @@ public class Application {
 		return courses;
 	}
 
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
-
-
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
-	}
-
 	/**
 	 * 
 	 */
@@ -82,12 +73,7 @@ public class Application {
 		    e.printStackTrace();
 		    
 		  }
-		  //this.setTeacher(new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
-	}
-	
-	
-	public void addStudent(Student s){
-		students.add(s);
+		  this.setTeacher(new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
 	}
 	
 	//Modified, now requires correct password

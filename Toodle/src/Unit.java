@@ -27,6 +27,10 @@ public class Unit extends LearningObj{
 		tests = new ArrayList<Exercise>();
 	}
 	
+	public List<Unit> getSubUnits(){
+		return units;
+	}
+	
 	public void createSubSection(Unit u){
 		units.add(u);
 	}

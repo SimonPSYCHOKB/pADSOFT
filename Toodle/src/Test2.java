@@ -32,7 +32,7 @@ public class Test2 {
 	                    String password = words.get(4);
 	                    String email = words.get(2);
 	                    String manu = words.get(3);
-	                    app.addStudent(new Student(fname, lname, password, email, manu));
+	                    //app.addStudent(new Student(fname, lname, password, email, manu));
 	                    //System.out.println(students.size());
                     }
                 }
