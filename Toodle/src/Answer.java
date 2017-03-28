@@ -91,9 +91,8 @@ public class Answer {
 	}
 	
 	public boolean isBlank(){
-		ArrayList<String> res = new ArrayList<String>();
-		res.add("");
-		if(answer.equals(res){
+		
+		if(answer.isEmpty()){
 			return true;
 		}else{
 			return false;
