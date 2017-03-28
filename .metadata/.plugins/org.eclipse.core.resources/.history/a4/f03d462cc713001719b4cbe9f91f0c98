@@ -1,0 +1,118 @@
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class CourseTest {
+	
+	Course c;
+	Exercise e1;
+	Exercise e2;
+	
+	@Before
+	public void setUp() throws Exception {
+		e1 = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.5);
+		e2 = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.4);
+		
+		c = new Course(true, "Course 1", "This is Course 1");
+		c.addTest(e1); c.addTest(e2);
+	}
+
+	@Test
+	public void testIsVisibility() {
+		assertTrue(c.isVisibility());
+	}
+
+	@Test
+	public void testGetTotal() {
+		assertEquals(c.getTotal(), 0.0, 0.0);
+	}
+
+	@Test
+	public void testGetTitle() {
+		assertEquals(c.getTitle(), "Course 1");
+	}
+
+	@Test
+	public void testGetTests() {
+		List<Exercise> exe = new ArrayList<Exercise>();
+		exe.add(e1); exe.add(e2);
+		assertEquals(exe, c.getTests());
+	}
+
+	@Test
+	public void testGetDescription() {
+		asssertEquals(c.getDescription(), "This is Course 1");
+	}
+
+	@Test
+	public void testGetExpelledStudents() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetTitle() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetDescription() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetObjects() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetExpelledStudents() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetUnits() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCourse() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddLearningObj() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddTest() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToStringShort() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetStudents() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddStudents() {
+		fail("Not yet implemented");
+	}
+
+}

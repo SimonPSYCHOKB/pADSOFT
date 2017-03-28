@@ -48,16 +48,15 @@ public class Teacher extends User{
 		}
 		if(cRem != null){
 			s.rejectStudent(c);
-			
 		}
 	}
 	
 	public void readmitStudent(Student s, Course c){
-		(s.getRegisteredCourses()).add(c);
+		s.acceptStudent(c);
 	}
 	
 	public void expellStudent(Student s, Course c){
-		(s.getRegisteredCourses()).remove(c);
+		s.expellStudent(c);
 	}
 	
 	public void viewStatistics(){

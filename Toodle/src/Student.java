@@ -121,8 +121,8 @@ public class Student extends User{
 	
 	public void rejectStudent(Course c){
 		getPendingCourses().remove(c);
-		expelledCourses.remove(c);
-		getRejectedCourses().add(c);
+		//expelledCourses.remove(c);
+		rejectedCourses.add(c);
 	}
 	
 	public void expellStudent(Course c){
