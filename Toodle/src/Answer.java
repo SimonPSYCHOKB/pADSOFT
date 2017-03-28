@@ -88,20 +88,7 @@ public class Answer {
 		} else if (!question.equals(other.question))
 			return false;
 		return true;
-	}
-	
-	public boolean isBlank(){
-		ArrayList<String> res = new ArrayList<String>();
-		res.add("");
-		if(answer.equals(res){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	
-	
-	
+	}	
 	
 
 }
