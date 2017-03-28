@@ -31,6 +31,10 @@ public class Unit extends LearningObj{
 		return units;
 	}
 	
+	public List<Note> getNotes(){
+		return notes;
+	}
+	
 	public void createSubSection(Unit u){
 		units.add(u);
 	}
@@ -54,7 +58,41 @@ public class Unit extends LearningObj{
 		return str;
 	}
 	//public Statistic getStatistics();
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Unit other = (Unit) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (notes == null) {
+			if (other.notes != null)
+				return false;
+		} else if (!notes.equals(other.notes))
+			return false;
+		if (tests == null) {
+			if (other.tests != null)
+				return false;
+		} else if (!tests.equals(other.tests))
+			return false;
+		if (units == null) {
+			if (other.units != null)
+				return false;
+		} else if (!units.equals(other.units))
+			return false;
+		return true;
+	}
 	
 	//public void editUnit();
+	
+	
 
 }

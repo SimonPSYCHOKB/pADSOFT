@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class ApplicationTest {
 	Application app;
 	Course c;
 	Unit u, su;
+	Note n;
+	Exercise e;
 
 	@Before
 	public void setUp() throws Exception {
@@ -21,6 +24,11 @@ public class ApplicationTest {
 		c = new Course(true, "Course 1", "This is Course 1");
 		u = new Unit(true, "Unit");
 		su = new Unit(true, "SubUnit");
+		n = new Note("Note", LocalDate.now());
+		e = new Exercise(true, LocalDate.now(), LocalDate.now(), 1);
+		
+		Teacher teacher = app.getTeacher();
+		app.logIn(teacher, "123");
 	}
 
 	@Test
@@ -66,14 +74,13 @@ public class ApplicationTest {
 	@Test
 	public void testLogIn() {
 		Teacher teacher = app.getTeacher();
+		app.logOut();
 		assertTrue(!app.logIn(teacher, "12"));
 		assertTrue(app.logIn(teacher, "123"));
 	}
 
 	@Test
 	public void testLogOut() {
-		Teacher teacher = app.getTeacher();
-		app.logIn(teacher, "123");
 		app.logOut();
 		assertEquals(app.getCurrentUser(), null);
 	}
@@ -96,42 +103,41 @@ public class ApplicationTest {
 
 	@Test
 	public void testAddSubSectionToUnit() {
-		fail("Not yet implemented");
+		app.addSubSectionToUnit(u, su);
+		assertEquals(u.getSubUnits().get(0), su);
 	}
 
 	@Test
 	public void testCreateNote() {
-		fail("Not yet implemented");
+		assertEquals(n, app.createNote("Note", LocalDate.now()));
 	}
 
 	@Test
 	public void testAddNoteToUnit() {
-		fail("Not yet implemented");
+		app.addNoteToUnit(u, n);
+		assertEquals(n, u.getNotes().get(0));
 	}
 
 	@Test
 	public void testCreateExercise() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testStudents() {
-		fail("Not yet implemented");
+		assertEquals(e, app.createExercise(true, LocalDate.now(), LocalDate.now(), 1));
 	}
 
 	@Test
 	public void testGetTeacher() {
-		fail("Not yet implemented");
+		assertEquals(app.getTeacher(), new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
 	}
 
 	@Test
 	public void testSetTeacher() {
-		fail("Not yet implemented");
+		Teacher nteacher = new Teacher("Paco", "Perez", "123", "teacher@esdu.es");
+		app.setTeacher(nteacher);
+		assertEquals(app.getTeacher(), nteacher);
 	}
 
 	@Test
 	public void testGetCurrentUser() {
-		fail("Not yet implemented");
+		assertEquals(app.getCurrentUser(), new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
 	}
 
 }

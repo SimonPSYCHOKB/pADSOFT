@@ -26,5 +26,29 @@ public class Note {
 		return str;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Note other = (Note) obj;
+		if (text == null) {
+			if (other.text != null)
+				return false;
+		} else if (!text.equals(other.text))
+			return false;
+		if (visibDate == null) {
+			if (other.visibDate != null)
+				return false;
+		} else if (!visibDate.equals(other.visibDate))
+			return false;
+		return true;
+	}
+	
+	
+
 
 }
