@@ -100,19 +100,26 @@ public class MainTester {
 	//Create tests of three types
 	LocalDate d1 = LocalDate.now().minus(30, ChronoUnit.DAYS);
 	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
-	Exercise t1 = new Exercise(true, d1, d2, 0.5);
-	//Create Questions for tests
-	List<String> options = new ArrayList<String>();
-	options.add("No one"); options.add("Someone");
-	SingleAnswer sq1= new SingleAnswer(
-			"Who are you", 0.5, 0.3, "No one", options);
-	options = new ArrayList<String>();
 	
-	options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
-	List<String> s = new ArrayList<String>();
-	s.add("Me"); s.add("You"); s.add("Him");
-	MultipleAnswer mq2= new MultipleAnswer(
-			"Do you exist", 0.5, 0.2,  s, options);
+	Exercise t1 = new Exercise(true, d1, d2, 0.5);
+	
+	//Create Questions for tests
+	//Question 1
+		List<String> options = new ArrayList<String>();
+		options.add("No one"); options.add("Someone");
+		SingleAnswer sq1= new SingleAnswer(
+				"Who are you", 0.5, 0.3, "No one", options);
+	
+	//Question 2
+		options = new ArrayList<String>();
+		options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
+		List<String> s = new ArrayList<String>();
+		s.add("Me"); s.add("You"); s.add("Him");
+		MultipleAnswer mq2= new MultipleAnswer(
+				"Do you exist", 0.5, 0.2,  s, options);
+	t1.addQuestion(sq1);
+	t1.addQuestion(mq2);
+	
 	Exercise t2 = new Exercise(true, d1, d2, 0.5);
 	Exercise t3 = new Exercise(true, d1, d2, 0.5);
 	
@@ -142,6 +149,11 @@ public class MainTester {
 	Course c1= toodle.getCourses().get(0);
 	Course c2= toodle.getCourses().get(1);
 	Course c3= toodle.getCourses().get(2);
+	
+	//Add the exercises to the course
+	c1.addTest(t1);
+	
+	
 	
 	stud.apply(c1);
 	stud.apply(c2);
@@ -183,9 +195,23 @@ public class MainTester {
 	toodle.logOut();
 	
 	//..Pause..
+	out.println("\n----------------------------------------------------");
+	
+	out.println("Now the student will answer some tests");
 	
 	//Student Login
+	if(!toodle.logIn(stud, "Coero")){
+		out.println("\nProblem when logging in");
+	}else{
+		out.println("\nStudent logged in successfully");
+	}
+	
 	//Student answer test
+	Exercise ex = c1.getTests().get(0);
+	ex.beginExercise(stud);
+	
+	
+	
 	//Student end test
 	//Student read notes
 	//Student see own statistics
