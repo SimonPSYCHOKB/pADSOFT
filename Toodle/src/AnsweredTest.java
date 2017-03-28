@@ -14,6 +14,7 @@ public class AnsweredTest {
 	private Exercise test;
 	private List<Answer> answers;
 	private double grade;
+	private boolean graded;
 
 	/**
 	 * 
@@ -22,6 +23,7 @@ public class AnsweredTest {
 		this.test = test;
 		this.answers = new ArrayList<Answer>();
 		this.answers = answers;
+		graded = false;
 	}
 
 	public Exercise getTest(){
@@ -43,13 +45,18 @@ public class AnsweredTest {
 			grade = 0;
 		else 
 			grade = cnt;
+		graded = true;
 	}
 	
 	public double getGradeTest(){
+		if(graded == false)
+			correctAnsweredTest();
 		return grade*10/test.getTotal();
 	}
 	
 	public double getRelativeGradeTest(){
+		if(graded == false)
+			correctAnsweredTest();
 		return getGradeTest()*test.getWeight();
 	}
 	
@@ -64,14 +71,13 @@ public class AnsweredTest {
 		return s;
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof AnsweredTest))
 			return false;
 		AnsweredTest other = (AnsweredTest) obj;
 		if (answers == null) {
@@ -89,5 +95,8 @@ public class AnsweredTest {
 			return false;
 		return true;
 	}
+
+
+	
 	
 }

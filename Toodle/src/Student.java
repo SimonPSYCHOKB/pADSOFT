@@ -37,7 +37,7 @@ public class Student extends User{
 		expelledCourses = new ArrayList<Course>();
 		currentExercises = new ArrayList<Exercise>();
 		answeredTests = new ArrayList<AnsweredTest>();
-		setRejectedCourses(new ArrayList<Course> ());
+		rejectedCourses = new ArrayList<Course>();
 	}
 	
 	//Getters y setters
@@ -74,14 +74,6 @@ public class Student extends User{
 		return currentExercises;
 	}
 	
-	public void setRegisteredCourses(List<Course> registeredCourses) {
-		this.registeredCourses = registeredCourses;
-	}
-	
-	public void setCurrentExercises(List<Exercise> currentExercises){
-		this.currentExercises = currentExercises;
-	}
-	
 	public void addTestStudent(Exercise t){
 		//Habria que comprobar que puede empezarlo
 		currentExercises.add(t);
@@ -92,9 +84,8 @@ public class Student extends User{
 	}
 	
 	public void answerTest(Exercise test, List<Answer> answers){
-		//Habria que comprobar que puede empezarlo
-		AnsweredTest at = new AnsweredTest(test, answers);
-		answeredTests.add(at);
+		//Habria que comprobar que puede empezarlo 
+		answeredTests.add(new AnsweredTest(test, answers));
 		//System.out.println(answeredTests.size());
 	}
 	
@@ -209,10 +200,12 @@ public class Student extends User{
 	public List<Course> getRejectedCourses() {
 		return rejectedCourses;
 	}
-
-	private void setRejectedCourses(List<Course> rejectedCourses) {
-		this.rejectedCourses = rejectedCourses;
+	
+	public List<Course> getExpelledCourses() {
+		return expelledCourses;
 	}
+
+
 	
 	
 	//public void getStatistics()
