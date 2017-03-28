@@ -116,7 +116,7 @@ public class MainTester {
 	MultipleAnswer mq2= new MultipleAnswer(
 			"Do you exist", 0.5, 0.2,  s, options);
 	
-	FreeText ftq3 = new FreeText("Tell me who", 0.5, 0, "You");
+	FreeText ftq3 = new FreeText("Tell me who", 0.5, 0, "Me");
 	TrueFalse tfq4 = new TrueFalse("You know you love me", 1, 1, "true");
 	
 	t1.addQuestion(sq1);

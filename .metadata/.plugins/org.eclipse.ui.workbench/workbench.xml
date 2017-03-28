@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="13" version="2.0">
+<workbench progressCount="21" version="2.0">
 <workbenchAdvisor/>
 <window height="795" maximized="true" width="1018" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -32,27 +32,17 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
-<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" partName="MainTester.java" path="/home/blanca/pADSOFT/Toodle/src/MainTester.java" title="MainTester.java" tooltip="Toodle/src/MainTester.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/MainTester.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="3434" selectionTopPixel="1420"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3730" selectionTopPixel="1471"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" partName="Application.java" path="/home/blanca/pADSOFT/Toodle/src/Application.java" title="Application.java" tooltip="Toodle/src/Application.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Application.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="114" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Teacher.java" partName="Teacher.java" path="/home/blanca/pADSOFT/Toodle/src/Teacher.java" title="Teacher.java" tooltip="Toodle/src/Teacher.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Teacher.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="174" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Student.java" partName="Student.java" path="/home/blanca/pADSOFT/Toodle/src/Student.java" title="Student.java" tooltip="Toodle/src/Student.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Student.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exercise.java" partName="Exercise.java" path="/home/blanca/pADSOFT/Toodle/src/Exercise.java" title="Exercise.java" tooltip="Toodle/src/Exercise.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Exercise.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="700"/>
 </editor>
 </editors>
 <views>
@@ -88,11 +78,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Errors (100 of 314 items)"/>
-<category IMemento.internal.id="Warnings"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="725" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -162,43 +147,30 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="topLeft">
-<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@5bb3d42d" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@5bb3d42d" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.6596386" ratioLeft="438" ratioRight="226" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<info folder="true" part="bottomRight" ratio="0.6596386" ratioLeft="438" ratioRight="226" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomLeft" ratio="0.5" ratioLeft="332" ratioRight="332" relationship="4" relative="topLeft">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="bottomLeft" ratio="0.5" ratioLeft="332" ratioRight="332" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
@@ -252,9 +224,9 @@
 <new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
 <perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
 <perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.jdt.junit.ResultView"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
@@ -320,169 +292,170 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/FreeTextTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Question.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/MultipleAnswerTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/MultipleAnswer.java"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" uri="file:/home/blanca/workspace/p3_v2/src/MultipleAnswer.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/SingleAnswerTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/TrueFalseTest.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/MainTester.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Application.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Toodle/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.io(FileReader.class"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" uri="file:/home/blanca/workspace/p3_v2/src/Application.java"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" uri="file:/home/blanca/workspace/p3_v2/src/MainTester.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Teacher.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Test2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/FreeText.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/SingleAnswer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/TrueFalseTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/TrueFalse.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Question.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Student.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Exercise.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/AnsweredTestTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/MultipleAnswer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/AnswerTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Test1.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/MainTester.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Exercise.java"/>
 </editors>
-<item historyLabel="FreeTextTest.java" index="0">
-<position info="not_deleted" x="682" y="69"/>
+<item historyLabel="TrueFalseTest.java" index="4">
+<position info="not_deleted" x="307" y="0"/>
 </item>
-<item historyLabel="Question.java" index="1">
-<position info="not_deleted" x="569" y="0"/>
+<item historyLabel="TrueFalseTest.java" index="4">
+<position info="not_deleted" x="307" y="0"/>
 </item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="733" y="42"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
+<item historyLabel="Test2.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="MultipleAnswer.java" index="3">
+<item historyLabel="TrueFalseTest.java" index="4">
+<position info="not_deleted" x="307" y="0"/>
+</item>
+<item historyLabel="TrueFalse.java" index="5">
 <position/>
 </item>
-<item historyLabel="MultipleAnswer.java" index="3">
+<item historyLabel="TrueFalse.java" index="5">
 <position/>
 </item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
+<item historyLabel="TrueFalseTest.java" index="4">
+<position info="not_deleted" x="307" y="0"/>
 </item>
-<item historyLabel="MultipleAnswer.java" index="3">
+<item historyLabel="TrueFalse.java" index="5">
 <position/>
 </item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position/>
+<item historyLabel="Test2.java" index="1">
+<position info="not_deleted" x="888" y="0"/>
 </item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
+<item historyLabel="MainTester.java" index="0">
+<position info="not_deleted" x="892" y="0"/>
 </item>
-<item historyLabel="MultipleAnswer.java" index="4">
-<position info="not_deleted" x="390" y="362"/>
+<item historyLabel="MainTester.java" index="0">
+<position info="not_deleted" x="2909" y="0"/>
 </item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="755" y="0"/>
+<item historyLabel="MainTester.java" index="0">
+<position info="not_deleted" x="2959" y="0"/>
 </item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
+<item historyLabel="MainTester.java" index="0">
+<position info="not_deleted" x="3078" y="0"/>
 </item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="614" y="0"/>
+<item historyLabel="MainTester.java" index="0">
+<position info="not_deleted" x="2858" y="0"/>
 </item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
+<item historyLabel="Question.java" index="6">
+<position info="not_deleted" x="356" y="0"/>
 </item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="773" y="0"/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="695" y="0"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="614" y="0"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="622" y="0"/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="693" y="40"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="622" y="0"/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="493" y="0"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="622" y="0"/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="493" y="0"/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="764" y="0"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="816" y="0"/>
-</item>
-<item historyLabel="MultipleAnswerTest.java" index="2">
-<position info="not_deleted" x="764" y="0"/>
-</item>
-<item historyLabel="MultipleAnswer.java" index="3">
-<position info="not_deleted" x="816" y="0"/>
-</item>
-<item historyLabel="SingleAnswerTest.java" index="5">
+<item historyLabel="Student.java" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="TrueFalseTest.java" index="6">
-<position info="not_deleted" x="951" y="0"/>
+<item historyLabel="Exercise.java" index="8">
+<position info="not_deleted" x="1663" y="0"/>
 </item>
-<item historyLabel="MainTester.java" index="7">
+<item historyLabel="Question.java" index="6">
+<position info="not_deleted" x="608" y="0"/>
+</item>
+<item historyLabel="Exercise.java" index="8">
+<position info="not_deleted" x="1663" y="0"/>
+</item>
+<item historyLabel="Question.java" index="6">
+<position info="not_deleted" x="608" y="0"/>
+</item>
+<item historyLabel="Question.java" index="6">
+<position info="not_deleted" x="608" y="0"/>
+</item>
+<item historyLabel="AnsweredTestTest.java" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="MainTester.java" index="7">
-<position info="not_deleted" x="573" y="0"/>
+<item historyLabel="AnsweredTestTest.java" index="9">
+<position info="not_deleted" x="353" y="0"/>
 </item>
-<item historyLabel="MainTester.java" index="7">
-<position info="not_deleted" x="501" y="20"/>
+<item historyLabel="AnsweredTestTest.java" index="9">
+<position info="not_deleted" x="564" y="0"/>
 </item>
-<item historyLabel="Application.java" index="8">
-<position info="not_deleted" x="1219" y="71"/>
+<item historyLabel="AnsweredTestTest.java" index="9">
+<position info="not_deleted" x="908" y="0"/>
 </item>
-<item historyLabel="FileReader.class" index="9">
+<item historyLabel="AnsweredTestTest.java" index="9">
+<position info="not_deleted" x="2086" y="24"/>
+</item>
+<item historyLabel="FreeText.java" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Application.java" index="8">
-<position info="not_deleted" x="251" y="0"/>
+<item historyLabel="FreeText.java" index="2">
+<position info="not_deleted" x="512" y="0"/>
 </item>
-<item historyLabel="Application.java" index="10">
-<position info="not_deleted" x="382" y="0"/>
+<item historyLabel="MultipleAnswer.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="MainTester.java" index="11">
-<position info="not_deleted" x="535" y="0"/>
+<item historyLabel="MultipleAnswer.java" index="10">
+<position info="not_deleted" x="986" y="0"/>
 </item>
-<item historyLabel="Application.java" index="8">
-<position info="not_deleted" x="114" y="0"/>
+<item historyLabel="MultipleAnswer.java" index="10">
+<position info="not_deleted" x="958" y="156"/>
 </item>
-<item historyLabel="MainTester.java" index="7">
-<position info="not_deleted" x="3434" y="17"/>
+<item historyLabel="SingleAnswer.java" index="3">
+<position info="not_deleted" x="660" y="0"/>
 </item>
-<item historyLabel="Teacher.java" index="12">
-<position info="not_deleted" x="174" y="0"/>
+<item historyLabel="TrueFalse.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="Student.java" index="13">
+<item historyLabel="TrueFalse.java" index="5">
+<position info="not_deleted" x="705" y="0"/>
+</item>
+<item historyLabel="AnswerTest.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AnswerTest.java" index="11">
+<position/>
+</item>
+<item historyLabel="AnsweredTestTest.java" index="9">
+<position info="not_deleted" x="493" y="71"/>
+</item>
+<item historyLabel="AnswerTest.java" index="11">
+<position info="not_deleted" x="708" y="0"/>
+</item>
+<item historyLabel="AnswerTest.java" index="11">
+<position info="not_deleted" x="1085" y="0"/>
+</item>
+<item historyLabel="AnsweredTestTest.java" index="9">
+<position info="not_deleted" x="493" y="71"/>
+</item>
+<item historyLabel="Test1.java" index="12">
+<position info="not_deleted" x="350" y="0"/>
+</item>
+<item historyLabel="Test1.java" index="12">
+<position info="not_deleted" x="547" y="0"/>
+</item>
+<item historyLabel="Test1.java" index="12">
+<position info="not_deleted" x="2960" y="0"/>
+</item>
+<item historyLabel="AnsweredTestTest.java" index="9">
+<position info="not_deleted" x="1934" y="0"/>
+</item>
+<item historyLabel="TrueFalse.java" index="5">
+<position info="not_deleted" x="705" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="13">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="13">
+<position info="not_deleted" x="3488" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="13">
+<position info="not_deleted" x="3653" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="13">
+<position info="not_deleted" x="3581" y="0"/>
+</item>
+<item active="true" historyLabel="Exercise.java" index="14">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
@@ -498,31 +471,36 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.intro.impl.presentations.IntroLaunchBar"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Student.java" tooltip="Toodle/src/Student.java">
-<persistable path="/Toodle/src/Student.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Teacher.java" tooltip="Toodle/src/Teacher.java">
-<persistable path="/Toodle/src/Teacher.java"/>
-</file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" tooltip="/home/blanca/workspace/p3_v2/src/MainTester.java">
-<persistable uri="file:/home/blanca/workspace/p3_v2/src/MainTester.java"/>
-</file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" tooltip="/home/blanca/workspace/p3_v2/src/Application.java">
-<persistable uri="file:/home/blanca/workspace/p3_v2/src/Application.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="FileReader.class" tooltip="java.io.FileReader">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Toodle/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.io(FileReader.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" tooltip="Toodle/src/Application.java">
-<persistable path="/Toodle/src/Application.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exercise.java" tooltip="Toodle/src/Exercise.java">
+<persistable path="/Toodle/src/Exercise.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" tooltip="Toodle/src/MainTester.java">
 <persistable path="/Toodle/src/MainTester.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AnswerTest.java" tooltip="Toodle/src/AnswerTest.java">
+<persistable path="/Toodle/src/AnswerTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TrueFalse.java" tooltip="Toodle/src/TrueFalse.java">
+<persistable path="/Toodle/src/TrueFalse.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleAnswer.java" tooltip="Toodle/src/SingleAnswer.java">
+<persistable path="/Toodle/src/SingleAnswer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultipleAnswer.java" tooltip="Toodle/src/MultipleAnswer.java">
+<persistable path="/Toodle/src/MultipleAnswer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FreeText.java" tooltip="Toodle/src/FreeText.java">
+<persistable path="/Toodle/src/FreeText.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AnsweredTestTest.java" tooltip="Toodle/src/AnsweredTestTest.java">
+<persistable path="/Toodle/src/AnsweredTestTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Question.java" tooltip="Toodle/src/Question.java">
+<persistable path="/Toodle/src/Question.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TrueFalseTest.java" tooltip="Toodle/src/TrueFalseTest.java">
 <persistable path="/Toodle/src/TrueFalseTest.java"/>
@@ -530,23 +508,17 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleAnswerTest.java" tooltip="Toodle/src/SingleAnswerTest.java">
 <persistable path="/Toodle/src/SingleAnswerTest.java"/>
 </file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultipleAnswer.java" tooltip="/home/blanca/workspace/p3_v2/src/MultipleAnswer.java">
-<persistable uri="file:/home/blanca/workspace/p3_v2/src/MultipleAnswer.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultipleAnswer.java" tooltip="Toodle/src/MultipleAnswer.java">
-<persistable path="/Toodle/src/MultipleAnswer.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultipleAnswerTest.java" tooltip="Toodle/src/MultipleAnswerTest.java">
 <persistable path="/Toodle/src/MultipleAnswerTest.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Question.java" tooltip="Toodle/src/Question.java">
-<persistable path="/Toodle/src/Question.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test2.java" tooltip="Toodle/src/Test2.java">
+<persistable path="/Toodle/src/Test2.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FreeTextTest.java" tooltip="Toodle/src/FreeTextTest.java">
-<persistable path="/Toodle/src/FreeTextTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test1.java" tooltip="Toodle/src/Test1.java">
+<persistable path="/Toodle/src/Test1.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AnswerTest.java" tooltip="Toodle/src/AnswerTest.java">
-<persistable path="/Toodle/src/AnswerTest.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Student.java" tooltip="Toodle/src/Student.java">
+<persistable path="/Toodle/src/Student.java"/>
 </file>
 </mruList>
 </workbench>

@@ -101,29 +101,19 @@ public class MainTester {
 	LocalDate d1 = LocalDate.now().minus(30, ChronoUnit.DAYS);
 	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
 	Exercise t1 = new Exercise(true, d1, d2, 0.5);
-	Exercise t2 = new Exercise(true, d1, d2, 0.5);
-	Exercise t3 = new Exercise(true, d1, d2, 0.5);
 	//Create Questions for tests
 	List<String> options = new ArrayList<String>();
 	options.add("No one"); options.add("Someone");
 	SingleAnswer sq1= new SingleAnswer(
 			"Who are you", 0.5, 0.3, "No one", options);
-	
 	options = new ArrayList<String>();
 	options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
 	List<String> s = new ArrayList<String>();
 	s.add("Me"); s.add("You"); s.add("Him");
 	MultipleAnswer mq2= new MultipleAnswer(
 			"Do you exist", 0.5, 0.2,  s, options);
-	
-	FreeText ftq3 = new FreeText("Tell me who", 0.5, 0, "You");
-	TrueFalse tfq4 = new TrueFalse("You know you love me", 1, 1, "true");
-	
-	t1.addQuestion(sq1);
-	t2.addQuestion(mq2);
-	t3.addQuestion(ftq3);
-	t1.addQuestion(tfq4);
-	
+	Exercise t2 = new Exercise(true, d1, d2, 0.5);
+	Exercise t3 = new Exercise(true, d1, d2, 0.5);
 	
 	//Teacher Logout
 	toodle.logOut();
