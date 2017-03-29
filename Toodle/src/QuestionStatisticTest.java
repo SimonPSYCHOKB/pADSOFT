@@ -1,109 +1,16 @@
-import static java.lang.System.*;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-
 import java.util.List;
 
+import org.junit.Before;
+import org.junit.Test;
 
-public class MainTester {
+public class QuestionStatisticTest {
 
+	Application testToodle;
 	
-	
-	public static void main(String[] args){
-	
-	out.println("--Welcome to Toodle main tester!--\n");
-	
-	out.println("We will start by loading all the students\n");
-	//Create Toodle application
-	//Import Students
-	Application toodle;
-	try{
-		toodle = new Application("src/data.txt");
-	}catch(Exception e ){
-		out.println("Failure when reading students\n");
-		return;
-	}
-	
-	out.println("-->Students read successfully\n");
-	out.println(toodle.getStudents());
-	//Import teacher
-	Teacher teacher = toodle.getTeacher();
-	
-	out.println("Now lets log in the teacher\n");
-	//Log in Teacher
-	if(toodle.logIn(teacher, "123")){
-		out.println("-->Teacher logged in successfully\n");
-	}
-	
-	out.println("We proceed by creating all the courses\n");
-	//Create new courses
-	for (int i=1; i<4; i++){
-		toodle.createCourse(true, "Course " + i, "This is course; "+i );
-	}
-	
-	out.println("Lets display the courses");
-	out.println(toodle.getCourses());
-	
-	out.println("\nNext, we will add three units to each course");
-	//Create new units
-		//For each course, we create three subunits
-	for(Course c: toodle.getCourses()){
-		Unit u1 = toodle.createUnit(true, c.toString()+ " Unit 1");
-		Unit u2 = toodle.createUnit(true, c.toString()+ " Unit 2");
-		Unit u3 = toodle.createUnit(true, c.toString()+ " Unit 3");
-		//Unit u1 = new Unit(true, c.toString()+ " Unit 1");
-		//Unit u2 = new Unit (false, c.toString()+ " Unit 2");
-		//Unit u3 = new Unit (true, c.toString()+ " Unit 3");
-		
-		
-		toodle.addUnitToCourse(u1, c);
-		toodle.addUnitToCourse(u2, c);
-		toodle.addUnitToCourse(u3, c);
-	}
-	out.println("\nWe can see how the courses look now: ");
-	out.println(toodle.getCourses());
-	//Create new sub-units
-	
-	out.println("\nEach Unit of each course will now have three subunits "
-			+ "appended: ");
-	for (Course c: toodle.getCourses()){
-		List<Unit> units=  c.getUnits();
-		for(Unit unit: units){
-			Unit us1= toodle.createUnit(true, unit.toString()+ " Subunit 1");
-			Unit us2= toodle.createUnit(true, unit.toString()+ " Subunit 2");
-			Unit us3= toodle.createUnit(true, unit.toString()+ " Subunit 3");
-			
-			toodle.addSubSectionToUnit(unit, us1);
-			toodle.addSubSectionToUnit(unit, us2);
-			toodle.addSubSectionToUnit(unit, us3);
-			
-			//unit.createSubSection(us1);
-			//unit.createSubSection(us2);
-			//unit.createSubSection(us3);
-		}	
-	}
-	
-	out.println(toodle.getCourses());
-	
-	//Add notes
-	out.println("\nNext we will add Notes to some Units");
-	int i =0;
-	for (Course c: toodle.getCourses()){
-		Note n = toodle.createNote("This is note number "+ i, null);
-		List<Unit> units =c.getUnits();
-		Unit unit= units.get(i);
-		toodle.addNoteToUnit(unit, n);
-		i++;
-	}
-	
-	out.println(toodle.getCourses());
-	//Create tests of three types
-	out.println("\n----------------------------------------------------");
-	out.println("\nHere, we will create three tests with three "
-			+ "questions each"+ "\n Then, the students will answer.");
 	Course c1;
 	
 	Student s1;
@@ -118,13 +25,20 @@ public class MainTester {
 	Exercise t2;
 	Exercise t3;
 	
-	//Create Questions for tests
-	s1 = toodle.getStudents().get(0);
-	s2 = toodle.getStudents().get(1);
-	s3 = toodle.getStudents().get(2);
+	@Before
+	public void setUp()  {
+		
+	//Create toodle	
+	testToodle = new  Application ("Toodle/src/data.txt");
+	
+	testToodle.logIn(testToodle.getTeacher(), "123");
+	//Get Students
+	s1 = testToodle.getStudents().get(0);
+	s2 = testToodle.getStudents().get(1);
+	s3 = testToodle.getStudents().get(2);
 	
 	//Create Course
-	c1= toodle.createCourse(true, "TestCourse", "A test course (please dont fail us)");
+	c1= testToodle.createCourse(true, "TestCourse", "A test course (please dont fail us)");
 
 	//Create exercises
 	t1 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.3);
@@ -167,7 +81,7 @@ public class MainTester {
 	s2.acceptStudent(c1);
 	s3.acceptStudent(c1);
 	
-	toodle.logOut();
+	testToodle.logOut();
 	
 	
 	
@@ -402,85 +316,50 @@ public class MainTester {
 						
 			s3.answerTest(t3, a);
 			t3.finishExercise(s3);
+	}	
+		
+		
 	}
 	
-	//Teacher Logout
-	toodle.logOut();
 	
-	if(toodle.getCurrentUser()==null){
-		out.println("\nTeacher logged out successfully!");
-	}
 	
-	//...Pause...
-	out.println("\n----------------------------------------------------");
 	
-	//Students Login
-	Student stud = toodle.getStudents().get(3);
-	out.println("\nNow Lets log in with a Student");
-	if(!toodle.logIn(stud, "Coero")){
-		out.println("\nThere was a problem logging in");
-	}
 	
-	if(toodle.getCurrentUser().equals(stud)){
-		out.println("\nStudent logged in successfully!");
-	}
-	//Students Apply for courses
-	out.println("\nWe start by appliying for three courses");
 	
-	Course c2 = toodle.getCourses().get(1);
-	Course c3 = toodle.getCourses().get(2);
 	
-	//Add the exercises to the course
 	
-	toodle.applyStudent(stud, c1);
-	toodle.applyStudent(stud, c2);
-	toodle.applyStudent(stud, c3);
-	
-	out.println("\n Lets see the applied courses for our student:");
-	
-	out.println("\n"+stud.getPendingCourses().toString());
-	
-	out.println("\nOnce applied, we log out, and let the teacher "
-			+ "decide our fate!");
-	
-	//Students Logout
-	toodle.logOut();
-	
-	//...Pause...
-	out.println("\n----------------------------------------------------");
-	
-	//Teacher Login
-	toodle.logIn(toodle.getTeacher(), "123");
-	
-	//Teacher accept
-	toodle.acceptStudent(stud, c1);
-	//Teacher reject
-	toodle.rejectStudent(stud, c2);
-	toodle.acceptStudent(stud, c3);
-	
-	//Teacher expel
-	toodle.expellStudent(stud, c3);
 
-	out.println("\nAfter the teacher has exercised its authority, he logs out");
-	out.println("Lets see the courses for which the student has been accepted");
-	out.println(stud.getRegisteredCourses());
-	out.println("\nAs well as the rejected ones...");
-	out.println(stud.getRejectedCourses());
-	//Teacher logout
-	
-	toodle.logOut();
-	
-	out.println("\n----------------------------------------------------");
-	out.println("\nWe interrupt the usual flow to show you data persistance.");
-	out.println("Proceeding to serialize and save... ");
-	toodle.saveApplication("toodle.ser");
-	toodle = Application.getApplication();
-	
-	
-	
-	CourseStatistic cs = new CourseStatistic(c1);
-	out.println(cs.toString());
-	
+	@Test
+	public void testStatistic() {
+		Statistic st1 = new Statistic(t1);
+		
+		List<QuestionStatistic> qs = st1.getQuestionStatistics();
+		QuestionStatistic qs1 = qs.get(0);
+		QuestionStatistic qs2 = qs.get(1);
+		QuestionStatistic qs3 = qs.get(2);
+		QuestionStatistic qs4 = qs.get(3);
+		
+		assertEquals(qs1.getCorrectNumber(), 3.00, 0.0 );
+		assertEquals(qs1.getWrongNumber(), 0.00, 0.0 );
+		assertEquals(qs1.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs1.getMean(), 10.00, 0.0 );
+		
+		assertEquals(qs2.getCorrectNumber(), 3.00, 0.0 );
+		assertEquals(qs2.getWrongNumber(), 0.00, 0.0 );
+		assertEquals(qs2.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs2.getMean(), 10.00, 0.0 );
+		
+		assertEquals(qs3.getCorrectNumber(), 2.00, 0.0 );
+		assertEquals(qs3.getWrongNumber(), 1.00, 0.0 );
+		assertEquals(qs3.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs3.getMean(), 6.666, 0.001 );
+		
+		assertEquals(qs4.getCorrectNumber(), 2.00, 0.0 );
+		assertEquals(qs4.getWrongNumber(), 1.00, 0.0 );
+		assertEquals(qs4.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs4.getMean(), 6.666, 0.001 );
+		
+		
 	}
-	
+
 }

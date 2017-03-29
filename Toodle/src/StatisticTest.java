@@ -217,7 +217,7 @@ public class StatisticTest {
 		
 		//TEST 3 STUDENT 2
 		a = new ArrayList<Answer>();
-		if(t3.beginExercise(s3) == false)
+		if(t3.beginExercise(s2) == false)
 			fail("Fecha limite rebasada.\n");
 		else{
 			List<String>answ = new ArrayList<String>();
@@ -236,8 +236,8 @@ public class StatisticTest {
 			answ.add("Hey");
 			a.add(t3.answerQuestionTest(answ));
 						
-			s3.answerTest(t3, a);
-			t3.finishExercise(s3);
+			s2.answerTest(t3, a);
+			t3.finishExercise(s2);
 	}
 	
 		//TEST 1 STUDENT 3
@@ -330,25 +330,10 @@ public class StatisticTest {
 
 	@Test
 	public void testStatistic() {
-	Statistic s1 = new Statistic(t1);
-	Statistic s2 = new Statistic(t2);
-	Statistic s3 = new Statistic(t3);
+	Statistic st1 = new Statistic(t1);
+	assertEquals(st1.getMean(), 7.5, 0.001);
 	
-	
-		
-		fail(s1.toString());
-		fail(s2.toString());
-		fail(s3.toString());
 	}
 
-	@Test
-	public void testGetTest() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetTest() {
-		fail("Not yet implemented");
-	}
 
 }
