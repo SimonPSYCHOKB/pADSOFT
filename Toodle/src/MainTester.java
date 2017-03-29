@@ -26,7 +26,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("src/data.txt");
+		toodle = new Application("Toodle/src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -167,8 +167,8 @@ public class MainTester {
 	//Add the exercises to the course
 	
 	toodle.applyStudent(stud, c1);
-	toodle.applyStudent(stud, c1);
-	toodle.applyStudent(stud, c1);
+	toodle.applyStudent(stud, c2);
+	toodle.applyStudent(stud, c3);
 	
 	out.println("\n Lets see the applied courses for our student:");
 	
