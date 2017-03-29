@@ -2,7 +2,6 @@ import static java.lang.System.*;
 import static org.junit.Assert.fail;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -109,10 +108,6 @@ public class MainTester {
 	Student s1;
 	Student s2;
 	Student s3;
-	
-	Question q1;
-	Question q2;
-	Question q3;
 	
 	Exercise t1; 
 	Exercise t2;

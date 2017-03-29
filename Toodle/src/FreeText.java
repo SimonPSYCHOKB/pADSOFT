@@ -1,10 +1,6 @@
 import java.io.Serializable;
 
 /**
- * 
- */
-
-/**
  * @author Simon Valcarcel
  * @author Blanca Martin
  * 
@@ -13,9 +9,6 @@ import java.io.Serializable;
  */
 public class FreeText extends Question implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private String answer;

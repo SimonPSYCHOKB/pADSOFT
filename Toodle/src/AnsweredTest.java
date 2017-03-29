@@ -4,19 +4,12 @@ import java.util.List;
 
 /**
  * 
- */
-
-/**
- * 
  * This class contains the information of a test answered by a student
  * @author Simon Valcarcel
  * @author Blanca Martin
  */
 public class AnsweredTest implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	private Exercise test;

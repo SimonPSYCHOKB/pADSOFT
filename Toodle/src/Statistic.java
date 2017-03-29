@@ -1,15 +1,16 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @author Simon,  blanca
+ * @author Simon valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the information of a statistic of a test
  *
  */
 public class Statistic implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private double mean =0;
@@ -18,6 +19,10 @@ public class Statistic implements Serializable{
 	private ArrayList <AnsweredTest> ansTests= new ArrayList<AnsweredTest>();
 	  
 	 
+	/**
+	 * Constructor
+	 * @param t - Exercise of which the statistic is going to be calculated
+	 */
 	public Statistic(Exercise t) {
 		test= t;
 		
@@ -62,10 +67,7 @@ public class Statistic implements Serializable{
 		mean = total/count;
 	}
 
-	
-
-
-
+	@Override
 	public String toString(){
 		String  str = "\nA statistic for test: " +"\nMean for the test: "+mean ;
 		for (QuestionStatistic qs: qestStat){
@@ -75,21 +77,20 @@ public class Statistic implements Serializable{
 		return str;
 	}
 
-	public Exercise getTest() {
-		return test;
-	}
-
-
-
-	public void setTest(Exercise test) {
-		this.test = test;
-	}
-	
+	/**
+	 * This method returns the mean of the stadistic
+	 * @return mean - double
+	 */
 	public double getMean(){
 		return mean;
 	}
 	
-	public ArrayList<QuestionStatistic> getQuestionStatistics(){
+	/**
+	 * This method returns the statistic for each one of the questions of the
+	 * statistic (of an exercise)
+	 * @return questStat - List of QuestionStatistic
+	 */
+	public List<QuestionStatistic> getQuestionStatistics(){
 		return qestStat;
 	}
 

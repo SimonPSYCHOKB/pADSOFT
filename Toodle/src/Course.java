@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
- */
-
-/**
  * @author Simon Valcarcel
  * @author Blanca Martin
  * 
@@ -16,9 +12,6 @@ import java.util.List;
  */
 public class Course implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private boolean visibility;
@@ -114,6 +107,7 @@ public class Course implements Serializable{
 		total = total + t.getWeight();
 	}
 
+	@Override
 	public String toString(){
 		String str = title;
 		for (Unit u: units){
@@ -121,36 +115,7 @@ public class Course implements Serializable{
 		}
 		return str;
 	}
-	
-	public String toStringShort(){
-		String str = title;
-		return str;
-	}
 
-	/**
-	 * This method returns the Students registered in the Course
-	 * @return students - List of Student
-	 */
-	/*public List<Student> getStudents() {
-		return students;
-	}*/
-
-	/**
-	 * This method adds a Student to the Course
-	 * @param students - Student to be added
-	 */
-	/*public void addStudents(Student students) {
-		this.students.add(students);
-	}*/
-	
-	/**
-	 * This method expels a Student from the Course
-	 * @param students - The Student to be expelled
-	 */
-	/*public void expellStudents(Student students) {
-		expelledStudents.add(students);
-	}*/
-	
 	/**
 	 * This method removes the unit from the course
 	 * @param u - The Unit we want to remove

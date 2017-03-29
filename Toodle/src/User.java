@@ -1,8 +1,4 @@
 import java.io.Serializable;
-import java.util.List;
-/**
- * 
- */
 
 /**
  * @author Simon Valcarcel
@@ -12,18 +8,12 @@ import java.util.List;
  */
 public abstract class User implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	protected String fName;
 	protected String lName;
 	protected String password;
-	protected String email;
-	protected List<Notification> sentNotifications;
-	protected List<Notification> recievedNotifications;
-	
+	protected String email;	
 	
 	/**
 	 * Constructor
@@ -97,16 +87,6 @@ public abstract class User implements Serializable{
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
-			return false;
-		if (recievedNotifications == null) {
-			if (other.recievedNotifications != null)
-				return false;
-		} else if (!recievedNotifications.equals(other.recievedNotifications))
-			return false;
-		if (sentNotifications == null) {
-			if (other.sentNotifications != null)
-				return false;
-		} else if (!sentNotifications.equals(other.sentNotifications))
 			return false;
 		return true;
 	}

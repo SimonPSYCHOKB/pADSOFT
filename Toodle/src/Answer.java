@@ -2,11 +2,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * 
- */
-
 /**
  * @author Simon Valcarcel
  * @author Blanca Martin
@@ -16,9 +11,6 @@ import java.util.List;
  */
 public class Answer implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private List<String> answer;
 	private Question question;

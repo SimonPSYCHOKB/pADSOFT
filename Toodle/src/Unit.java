@@ -3,10 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
- */
-
-/**
  * @author Simon Valcarcel
  * @author Blanca Martin
  * 
@@ -14,10 +10,7 @@ import java.util.List;
  *
  */
 public class Unit extends LearningObj implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	private List<Unit> units;
@@ -99,6 +92,7 @@ public class Unit extends LearningObj implements Serializable{
 		return course;
 	}
 	
+	@Override
 	public String toString(){
 		String str =name;
 		for(Note n : notes){

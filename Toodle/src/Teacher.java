@@ -1,10 +1,6 @@
 import java.io.Serializable;
 
 /**
- * 
- */
-
-/**
  * @author Simon Valcarcel
  * @author Blanca Martin
  * 
@@ -12,10 +8,7 @@ import java.io.Serializable;
  *
  */
 public class Teacher extends User implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	/**
@@ -38,17 +31,14 @@ public class Teacher extends User implements Serializable{
 	 */
 	public void acceptStudent(Student s, Course c) {
 		Course cRem= null;
-		for (Course ct: s.getPendingCourses()){
+		for (Course ct: s.getPendingCourses())
 			if(ct.equals(c)){
 				cRem = c;
 				break;
 				
 			}
-		}
-		if(cRem != null){
+		if(cRem != null)
 			s.acceptStudent(c);
-			//c.addStudents(s);
-		}
 	}
 	
 	/**
@@ -58,16 +48,14 @@ public class Teacher extends User implements Serializable{
 	 */
 	public void rejectStudent(Student s, Course c) {
 		Course cRem= null;
-		for (Course ct: s.getPendingCourses()){
+		for (Course ct: s.getPendingCourses())
 			if(ct.equals(c)){
 				cRem = c;
 				break;
 				
 			}
-		}
-		if(cRem != null){
+		if(cRem != null)
 			s.rejectStudent(c);
-		}
 	}
 	
 	/**

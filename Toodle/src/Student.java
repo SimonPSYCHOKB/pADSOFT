@@ -3,7 +3,6 @@ import java.util.List;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
 /**
  * @author Simon Valcarcel
  * @author Blanca Martin
@@ -12,10 +11,7 @@ import java.util.ArrayList;
  *
  */
 public class Student extends User implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	private List<Course> rejectedCourses;
@@ -133,7 +129,6 @@ public class Student extends User implements Serializable{
 	public void acceptStudent(Course c){
 		getPendingCourses().remove(c);
 		registeredCourses.add(c);
-		//c.addStudents(this);
 	}
 	
 	/**
@@ -152,7 +147,6 @@ public class Student extends User implements Serializable{
 	public void expellStudent(Course c){
 		registeredCourses.remove(c);
 		expelledCourses.add(c);
-		//c.expellStudents(this);
 	}
 	
 	/**
@@ -164,7 +158,6 @@ public class Student extends User implements Serializable{
 		int i = 0;
 		for( ; i < answeredTests.size(); i++)
 			if(answeredTests.get(i).getTest().equals(t))
-			//Habria que comprobar que puede verlo
 					return answeredTests.get(i);
 		return null;
 	}
@@ -234,6 +227,7 @@ public class Student extends User implements Serializable{
 		return true;
 	}
 	
+	@Override
 	public String toString(){
 		return fName + " " + lName + " "+ email +" "+
 	manu + " "+ " "+ password + "\n";

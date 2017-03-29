@@ -1,7 +1,5 @@
 import java.io.Serializable;
 
-
-
 /**
  * @author Simon Valcarcel
  * @author Blanca Martin

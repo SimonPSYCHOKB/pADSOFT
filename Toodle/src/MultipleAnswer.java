@@ -10,10 +10,7 @@ import java.util.List;
  */
 
 public class MultipleAnswer extends Question implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	private List<String> answers;

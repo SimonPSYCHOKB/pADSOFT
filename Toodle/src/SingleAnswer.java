@@ -2,7 +2,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * @author Simon Valcarcel
  * @author Blanca Martin
@@ -11,10 +10,7 @@ import java.util.List;
  *
  */
 public class SingleAnswer extends Question implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	private String answer;

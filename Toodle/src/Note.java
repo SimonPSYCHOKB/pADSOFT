@@ -2,10 +2,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * 
- */
-
-/**
  * @author Simon Valcarcel
  * @author Blanca Martin
  * 
@@ -14,13 +10,10 @@ import java.time.LocalDate;
  */
 public class Note implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
-	String text;
-	LocalDate visibDate;
+	private String text;
+	private LocalDate visibDate;
 
 	/**
 	 * Constructor
@@ -33,6 +26,7 @@ public class Note implements Serializable{
 		this.visibDate= date;
 	}
 	
+	@Override
 	public String toString(){
 		String str= "-->Note: "+ text;
 		return str;

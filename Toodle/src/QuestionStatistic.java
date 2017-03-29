@@ -1,13 +1,17 @@
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the information of the statistic of a question
+ *
+ */
 public class QuestionStatistic implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	private double correctNumber=0;
@@ -15,13 +19,16 @@ public class QuestionStatistic implements Serializable{
 	private double blankNumber=0;
 	
 	private Question question;
-	private ArrayList<Answer> answers = new ArrayList<Answer>();
 	
 	private double mean=0;
 	
-	public QuestionStatistic (Question q, ArrayList<Answer> aGiven ){
+	/**
+	 * Constructor
+	 * @param q - The Question for the statistic
+	 * @param aGiven - List of Answers to the question 
+	 */
+	public QuestionStatistic (Question q, List<Answer> aGiven ){
 		question = q;
-		answers = aGiven;
 		double people=0;
 		
 		for(Answer a : aGiven){
@@ -44,35 +51,39 @@ public class QuestionStatistic implements Serializable{
 		
 	}
 	
+	/**
+	 * This method returns the correct number of answers to the question
+	 * @return correctNumber - double
+	 */
 	public double getCorrectNumber() {
 		return correctNumber;
 	}
-	public void setCorrectNumber(int correctNumber) {
-		this.correctNumber = correctNumber;
-	}
+	
+	/**
+	 * This method returns the wrong number of answers to the question
+	 * @return wrongNumber - double
+	 */
 	public double getWrongNumber() {
 		return wrongNumber;
 	}
-	public void setWrongNumber(int wrongNumber) {
-		this.wrongNumber = wrongNumber;
-	}
+	
+	/**
+	 * This method returns the blank number of answers to the question
+	 * @return blankNumber - double
+	 */
 	public double getBlankNumber() {
 		return blankNumber;
 	}
-	public void setBlankNumber(int blankNumber) {
-		this.blankNumber = blankNumber;
-	}
-	public ArrayList<Answer> getAnswers() {
-		return answers;
-	}
-	public void setAnswers(ArrayList<Answer> answers) {
-		this.answers = answers;
-	}
 
+	/**
+	 * This method returns the mean of the statistic of the question
+	 * @return mean - double
+	 */
 	public double getMean() {
 		return mean;
 	}
 	
+	@Override
 	public String toString(){
 		NumberFormat formatter = new DecimalFormat("#0.00"); 
 		return "mean: "+mean+ " correct: " +formatter.format(correctNumber)+

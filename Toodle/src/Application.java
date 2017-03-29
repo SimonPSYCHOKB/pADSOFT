@@ -28,9 +28,6 @@ import es.uam.eps.padsof.emailconnection.InvalidEmailAddressException;
  */
 public class Application implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private static List<Student> students;
@@ -57,14 +54,14 @@ public class Application implements Serializable{
 
 	/**
 	 * Constructor that sets the teacher, the students and the courses
-	 * @param students - List of Student
+	 * @param studets - List of Student
 	 * @param courses - List of Course
 	 */
-	public Application(List<Student> students, List<Course> courses) {
+	public Application(List<Student> studets, List<Course> courses) {
 		students = new ArrayList<Student>();
 		courses = new ArrayList<Course>();
 		teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");
-		this.students = students;
+		students = studets;
 		this.courses = courses;
 	}
 	
@@ -500,6 +497,11 @@ public class Application implements Serializable{
 		return s.viewPastTest(e);
 	}
 	
+	/**
+	 * This method returns the students who belong to a course
+	 * @param course - The Course we are referring to
+	 * @return studenetsRet - List of Student
+	 */
 	public static List<Student> getStudents(Course course){
 		List<Student> studentsRet = new ArrayList<Student>();
 		for(Student stud : students)
@@ -511,8 +513,3 @@ public class Application implements Serializable{
 	}
 
 }
-<<<<<<< HEAD
-=======
-	
-
->>>>>>> 9f5f59e295e4f4f8fa955c7adb6ac62c89bee3fe
