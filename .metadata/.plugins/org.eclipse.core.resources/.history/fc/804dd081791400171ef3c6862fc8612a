@@ -448,16 +448,5 @@ public class Application implements Serializable{
 	public User getCurrentUser(){
 		return currentUser;
 	}
-	
-	/**
-	 * This method returns a past exercise answered by a student
-	 * @param s - Student who answered the exercise
-	 * @param e - Exercise answered
-	 * @return String containing the information of the Exercise and the Student's answers, null
-	 *  if the Student hasn't answered the Exercise
-	 */
-	public String showStudentPastTest(Student s, Exercise e){
-		return s.viewPastTest(e);
-	}
 
 }

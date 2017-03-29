@@ -36,6 +36,7 @@ public class StudentTest {
 		u = new Unit(true, "Unit");
 		c.addUnit(u);
 		u.addTest(e);
+		c.addTest(e);
 		
 		s.acceptStudent(c);
 		e.beginExercise(s);

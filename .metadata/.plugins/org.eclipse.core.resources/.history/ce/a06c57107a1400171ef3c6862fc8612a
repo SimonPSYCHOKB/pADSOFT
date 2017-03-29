@@ -106,6 +106,7 @@ public class Student extends User implements Serializable{
 	 * @param t - Exercise to be added
 	 */
 	public void addTestStudent(Exercise t){
+		//Habria que comprobar que puede empezarlo
 		currentExercises.add(t);
 	}
 	
@@ -123,7 +124,9 @@ public class Student extends User implements Serializable{
 	 * @param answers - List of Answer containing the answers to the test
 	 */
 	public void answerTest(Exercise test, List<Answer> answers){
+		//Habria que comprobar que puede empezarlo 
 		answeredTests.add(new AnsweredTest(test, answers));
+		//System.out.println(answeredTests.size());
 	}
 	
 	/**
@@ -132,6 +135,7 @@ public class Student extends User implements Serializable{
 	 */
 	public void acceptStudent(Course c){
 		getPendingCourses().remove(c);
+		expelledCourses.remove(c);
 		registeredCourses.add(c);
 		c.addStudents(this);
 	}
@@ -142,6 +146,7 @@ public class Student extends User implements Serializable{
 	 */
 	public void rejectStudent(Course c){
 		getPendingCourses().remove(c);
+		//expelledCourses.remove(c);
 		rejectedCourses.add(c);
 	}
 	
@@ -152,7 +157,6 @@ public class Student extends User implements Serializable{
 	public void expellStudent(Course c){
 		registeredCourses.remove(c);
 		expelledCourses.add(c);
-		c.expellStudents(this);
 	}
 	
 	/**

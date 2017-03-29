@@ -35,6 +35,7 @@ public class StudentTest {
 		c = new Course(true, "Course", "This is a Course");
 		u = new Unit(true, "Unit");
 		c.addUnit(u);
+		//c.addTest(e);
 		u.addTest(e);
 		
 		s.acceptStudent(c);

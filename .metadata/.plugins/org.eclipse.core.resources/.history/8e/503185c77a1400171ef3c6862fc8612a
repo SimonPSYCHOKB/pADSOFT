@@ -14,7 +14,6 @@ public class StudentTest {
 	AnsweredTest at;
 	Exercise e;
 	Course c;
-	Unit u;
 	
 	List<Answer> answs;
 	List<String> str;
@@ -33,9 +32,7 @@ public class StudentTest {
 		e.addQuestion(q);
 		at = new AnsweredTest(e, answs);
 		c = new Course(true, "Course", "This is a Course");
-		u = new Unit(true, "Unit");
-		c.addUnit(u);
-		u.addTest(e);
+		c.addTest(e);
 		
 		s.acceptStudent(c);
 		e.beginExercise(s);
@@ -149,12 +146,6 @@ public class StudentTest {
 	@Test
 	public void testGetEmail(){
 		assertEquals("pperez@esdu.es", s.getEmail());
-	}
-	
-	@Test
-	public void testDeleteAnsweredTests(){
-		s.deleteAnsweredTests(u);
-		assertTrue(s.getAnsweredTests().isEmpty());
 	}
 
 }
