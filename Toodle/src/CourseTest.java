@@ -54,11 +54,6 @@ public class CourseTest {
 	public void testGetDescription() {
 		assertEquals(c.getDescription(), "This is Course 1");
 	}
-	
-	@Test
-	public void testGetExpelledStudents(){
-		assertTrue(c.getExpelledStudents().isEmpty());
-	}
 
 	@Test
 	public void testGetUnits() {
@@ -72,27 +67,6 @@ public class CourseTest {
 		assertEquals(c.getTests().size(), 1.0, 0.0);
 		c.addTest(e2);
 		assertEquals(c.getTests().size(), 2.0, 0.0);
-	}
-
-	@Test
-	public void testGetStudents() {
-		s.acceptStudent(c);
-		assertEquals(c.getStudents().get(0), s);
-	}
-
-	@Test
-	public void testAddStudents() {
-		Student st = new Student("Pedro", "Ramo", "23", "pramo@esdu.es", "123");
-		c.addStudents(st);
-		assertEquals(c.getStudents().get(0), st);
-	}
-	
-	@Test
-	public void testExpelledStudents() {
-		Student st = new Student("Pedro", "Ramo", "23", "pramo@esdu.es", "123");
-		st.acceptStudent(c);
-		c.expellStudents(st);
-		assertEquals(c.getExpelledStudents().get(0), st);
 	}
 	
 	@Test

@@ -133,7 +133,7 @@ public class Student extends User implements Serializable{
 	public void acceptStudent(Course c){
 		getPendingCourses().remove(c);
 		registeredCourses.add(c);
-		c.addStudents(this);
+		//c.addStudents(this);
 	}
 	
 	/**
@@ -152,7 +152,7 @@ public class Student extends User implements Serializable{
 	public void expellStudent(Course c){
 		registeredCourses.remove(c);
 		expelledCourses.add(c);
-		c.expellStudents(this);
+		//c.expellStudents(this);
 	}
 	
 	/**

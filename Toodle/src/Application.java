@@ -54,23 +54,16 @@ public class Application implements Serializable{
 	public List<Course> getCourses() {
 		return courses;
 	}
-	
-	/**
-	 * Constructor that only sets the teacher
-	 */
-	public Application(){
-		students = new ArrayList<Student>();
-		courses = new ArrayList<Course>();
-		teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");		
-	}
-	
+
 	/**
 	 * Constructor that sets the teacher, the students and the courses
 	 * @param students - List of Student
 	 * @param courses - List of Course
 	 */
 	public Application(List<Student> students, List<Course> courses) {
-		this();
+		students = new ArrayList<Student>();
+		courses = new ArrayList<Course>();
+		teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");
 		this.students = students;
 		this.courses = courses;
 	}
@@ -108,6 +101,31 @@ public class Application implements Serializable{
 		    
 		  }
 		  teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public static Application getApplication(){
+		Application e = null;
+	      try {
+	         FileInputStream fileIn = new FileInputStream("toodle.ser");
+	         ObjectInputStream in = new ObjectInputStream(fileIn);
+	         e = (Application) in.readObject();
+	         in.close();
+	         fileIn.close();
+	         return e;
+	      }catch(IOException i) {
+	         i.printStackTrace();
+	         return null;
+	      }catch(ClassNotFoundException c) {
+	         System.out.println("Application class not found");
+	         c.printStackTrace();
+	         return null;
+	      }
+	      
+	      
 	}
 	
 	/**
@@ -482,6 +500,7 @@ public class Application implements Serializable{
 		return s.viewPastTest(e);
 	}
 	
+<<<<<<< HEAD
 	public static Application getToodle(){
 		Application e = null;
 	      try {
@@ -499,6 +518,15 @@ public class Application implements Serializable{
 	         c.printStackTrace();
 	         return null;
 	      
+=======
+	public static List<Student> getStudents(Course course){
+		List<Student> students = new ArrayList<Student>();
+		for(Student stud : students)
+			for(Course c : stud.getRegisteredCourses())
+				if(c.equals(course))
+					students.add(stud);
+		return students;
+>>>>>>> 94ecd7faab4449f8149c6cca4e5876cb43b23b74
 	}
 
 }

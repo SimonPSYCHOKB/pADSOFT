@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="StudentTest" project="Toodle" tests="19" started="19" failures="0" errors="0" ignored="0">
+  <testsuite name="StudentTest" time="0.068">
+    <testcase name="testGetRegisteredCourses" classname="StudentTest" time="0.063"/>
+    <testcase name="testGetEmail" classname="StudentTest" time="0.001"/>
+    <testcase name="testAcceptStudent" classname="StudentTest" time="0.0"/>
+    <testcase name="testApply" classname="StudentTest" time="0.0"/>
+    <testcase name="testGetName" classname="StudentTest" time="0.0"/>
+    <testcase name="testGetAnsweredTests" classname="StudentTest" time="0.0"/>
+    <testcase name="testDeleteAnsweredTests" classname="StudentTest" time="0.001"/>
+    <testcase name="testExpellStudent" classname="StudentTest" time="0.0"/>
+    <testcase name="testAnswerTest" classname="StudentTest" time="0.0"/>
+    <testcase name="testRejectStudent" classname="StudentTest" time="0.0"/>
+    <testcase name="testGetPendingCourses" classname="StudentTest" time="0.0"/>
+    <testcase name="testGetAnsweredTest" classname="StudentTest" time="0.0"/>
+    <testcase name="testCorrectTest" classname="StudentTest" time="0.001"/>
+    <testcase name="testAddTestStudent" classname="StudentTest" time="0.0"/>
+    <testcase name="testGetGradeCourse" classname="StudentTest" time="0.0"/>
+    <testcase name="testGetCurrentExercises" classname="StudentTest" time="0.001"/>
+    <testcase name="testGetRejectedCourses" classname="StudentTest" time="0.0"/>
+    <testcase name="testRemoveTestStudent" classname="StudentTest" time="0.0"/>
+    <testcase name="testViewPastTest" classname="StudentTest" time="0.001"/>
+  </testsuite>
+</testrun>

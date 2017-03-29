@@ -1,6 +1,5 @@
-/**
- * 
- */
+import java.io.Serializable;
+
 
 /**
  * @author Simon Valcarcel
@@ -9,8 +8,9 @@
  * This abstract class makes reference to all the learning objects that are in a course
  *
  */
-public abstract class LearningObj {
+public abstract class LearningObj implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private boolean visibility;
 	
 	

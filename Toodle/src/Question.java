@@ -1,6 +1,6 @@
-/**
- * 
- */
+import java.io.Serializable;
+
+
 
 /**
  * @author Simon Valcarcel
@@ -9,8 +9,9 @@
  * This abstract class makes reference to the Questions in an Exercise
  *
  */
-public abstract class Question {
+public abstract class Question implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private String question;
 	private double weight;
 	private double penalty;

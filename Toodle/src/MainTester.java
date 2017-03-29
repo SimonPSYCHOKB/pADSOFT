@@ -208,6 +208,7 @@ public class MainTester {
 	out.println("\nWe interrupt the usual flow to show you data persistance.");
 	out.println("Proceeding to serialize and save... ");
 	toodle.saveApplication("toodle.ser");
+	toodle = Application.getApplication();
 	
 	//..Pause..
 	out.println("\n----------------------------------------------------");
@@ -236,7 +237,6 @@ public class MainTester {
 	a.add(ex.answerQuestionTest(answ));
 	
 	stud.answerTest(ex, a);
-	
 	
 	
 	
