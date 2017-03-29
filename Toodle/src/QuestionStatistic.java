@@ -1,6 +1,12 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class QuestionStatistic {
+public class QuestionStatistic implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private int correctNumber=0;
 	private int wrongNumber=0;
@@ -33,11 +39,9 @@ public class QuestionStatistic {
 		}//For answer
 		
 		//Compute average
-		if(people ==0){
-			mean =(0);
-		}else{
-			mean = (total/people);
-		}
+		
+		mean = (total/people);
+		
 	}
 	
 	public int getCorrectNumber() {
@@ -67,6 +71,12 @@ public class QuestionStatistic {
 
 	public double getMean() {
 		return mean;
+	}
+	
+	public String toString(){
+		return "mean: "+mean+ " correct: " +correctNumber+
+	" wrong: " + wrongNumber +
+	" blank: " + blankNumber;
 	}
 
 	

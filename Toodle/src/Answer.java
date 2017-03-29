@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,12 @@ import java.util.List;
  * This class contains the information of a question's answer given by a student
  *
  */
-public class Answer {
+public class Answer implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<String> answer;
 	private Question question;
 	private double grade;

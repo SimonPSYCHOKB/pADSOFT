@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,12 @@ import java.util.List;
  * This class contains information of an Exercise
  *
  */
-public class Exercise extends LearningObj{
+public class Exercise extends LearningObj implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Course course;
 	private LocalDate dateOfBegining;

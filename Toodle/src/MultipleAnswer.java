@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,12 @@ import java.util.List;
  * This class contains the information of the type of question multiple answer
  */
 
-public class MultipleAnswer extends Question{
+public class MultipleAnswer extends Question implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private List<String> answers;
 	private List<String> options;

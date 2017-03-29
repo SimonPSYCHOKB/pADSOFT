@@ -1,4 +1,6 @@
-																																																				/**
+import java.io.Serializable;
+
+/**
  * 
  */
 
@@ -9,7 +11,12 @@
  * This class contains the information of the type of question free text
  *
  */
-public class FreeText extends Question{
+public class FreeText extends Question implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private String answer;
 	

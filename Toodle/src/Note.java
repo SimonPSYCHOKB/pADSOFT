@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -8,10 +9,15 @@ import java.time.LocalDate;
  * @author Simon Valcarcel
  * @author Blanca Martin
  * 
- * This class contains the iformation of the notes
+ * This class contains the information of the notes
  *
  */
-public class Note {
+public class Note implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	String text;
 	LocalDate visibDate;

@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,12 @@ import java.util.List;
  * This class contains the information of the units
  *
  */
-public class Unit extends LearningObj{
+public class Unit extends LearningObj implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private List<Unit> units;
 	private List<Note> notes;

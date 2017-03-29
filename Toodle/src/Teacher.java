@@ -1,3 +1,4 @@
+import java.io.Serializable;
 
 /**
  * 
@@ -10,7 +11,12 @@
  * This class contains the information of the teacher
  *
  */
-public class Teacher extends User{
+public class Teacher extends User implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Constructor

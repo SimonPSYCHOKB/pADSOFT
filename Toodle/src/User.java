@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.List;
 /**
  * 
@@ -9,7 +10,12 @@ import java.util.List;
  * 
  * This class makes reference to the users of the application
  */
-public abstract class User {
+public abstract class User implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	protected String fName;
 	protected String lName;

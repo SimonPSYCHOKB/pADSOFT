@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,12 @@ import java.util.List;
  * @author Simon Valcarcel
  * @author Blanca Martin
  */
-public class AnsweredTest {
+public class AnsweredTest implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Exercise test;
 	private List<Answer> answers;

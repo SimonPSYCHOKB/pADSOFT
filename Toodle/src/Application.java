@@ -1,6 +1,7 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,12 @@ import es.uam.eps.padsof.emailconnection.InvalidEmailAddressException;
  * This class is the main class, which makes reference to the application
  *
  */
-public class Application {
+public class Application implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private List<Student> students;
 	private Teacher teacher;

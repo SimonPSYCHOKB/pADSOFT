@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -8,7 +9,12 @@ import java.util.ArrayList;
  * @author Simon,  blanca
  *
  */
-public class Statistic {
+public class Statistic implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private double mean =0;
 	private Exercise test;
@@ -64,7 +70,14 @@ public class Statistic {
 
 
 
-
+	public String toString(){
+		String  str = "A statistic:" +"\n"+mean ;
+		for (QuestionStatistic qs: qestStat){
+			str += "\n" + qs.toString();
+		}
+		
+		return str;
+	}
 
 	public Exercise getTest() {
 		return test;

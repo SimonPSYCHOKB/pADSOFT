@@ -1,5 +1,6 @@
 
 import java.util.List;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -10,7 +11,12 @@ import java.util.ArrayList;
  * This class contains the information of the users who are students
  *
  */
-public class Student extends User{
+public class Student extends User implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private List<Course> rejectedCourses;
 	private List<Course> registeredCourses;

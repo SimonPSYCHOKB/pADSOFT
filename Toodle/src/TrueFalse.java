@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,12 @@ import java.util.List;
  * This class contains the information of the type of question true or false
  *
  */
-public class TrueFalse extends Question{
+public class TrueFalse extends Question implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private String answer;
 	private List<String> options;
