@@ -64,7 +64,14 @@ public class Statistic {
 
 
 
-
+	public String toString(){
+		String  str = "A statistic:" +"\n"+mean ;
+		for (QuestionStatistic qs: qestStat){
+			str += "\n" + qs.toString();
+		}
+		
+		return str;
+	}
 
 	public Exercise getTest() {
 		return test;

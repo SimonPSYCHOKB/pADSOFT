@@ -30,6 +30,7 @@ public class StatisticTest {
 	//Create toodle	
 	testToodle = new  Application ("Toodle/src/data.txt");
 	
+	testToodle.logIn(testToodle.getTeacher(), "123");
 	//Get Students
 	s1 = testToodle.getStudents().get(0);
 	s2 = testToodle.getStudents().get(1);
@@ -79,6 +80,9 @@ public class StatisticTest {
 	s2.acceptStudent(c1);
 	s3.acceptStudent(c1);
 	
+	testToodle.logOut();
+	
+	
 	
 	//TEST 1 STUDENT 1 
 	List<Answer> a = new ArrayList<Answer>();
@@ -127,34 +131,34 @@ public class StatisticTest {
 		answ.add("1");
 		a.add(t2.answerQuestionTest(answ));
 					
-		s1.answerTest(t1, a);
-		t1.finishExercise(s1);
+		s1.answerTest(t2, a);
+		t2.finishExercise(s1);
 
 	}
 	
 	//TEST 3 STUDENT 1
 	a = new ArrayList<Answer>();
-	if(t1.beginExercise(s1) == false)
+	if(t3.beginExercise(s1) == false)
 		fail("Fecha limite rebasada.\n");
 	else{
 		List<String> answ = new ArrayList<String>();
 		answ.add("2");
-		a.add(t1.answerQuestionTest(answ));
+		a.add(t3.answerQuestionTest(answ));
 
 		answ = new ArrayList<String>();
 		answ.add("3"); answ.add("2");
-		a.add(t1.answerQuestionTest(answ));
+		a.add(t3.answerQuestionTest(answ));
 
 		answ = new ArrayList<String>();
 		answ.add("true");
-		a.add(t2.answerQuestionTest(answ));
+		a.add(t3.answerQuestionTest(answ));
 
 		answ = new ArrayList<String>();
 		answ.add("Hey");
 		a.add(t3.answerQuestionTest(answ));
 					
-		s1.answerTest(t1, a);
-		t1.finishExercise(s1);
+		s1.answerTest(t3, a);
+		t3.finishExercise(s1);
 
 	}
 	
@@ -165,8 +169,10 @@ public class StatisticTest {
 
 	@Test
 	public void testStatistic() {
+	Statistic s = new Statistic(t1);
+	
 		
-		fail("Not yet implemented");
+		fail(s.toString());
 	}
 
 	@Test

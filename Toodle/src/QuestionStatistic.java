@@ -33,11 +33,9 @@ public class QuestionStatistic {
 		}//For answer
 		
 		//Compute average
-		if(people ==0){
-			mean =(0);
-		}else{
-			mean = (total/people);
-		}
+		
+		mean = (total/people);
+		
 	}
 	
 	public int getCorrectNumber() {
@@ -67,6 +65,12 @@ public class QuestionStatistic {
 
 	public double getMean() {
 		return mean;
+	}
+	
+	public String toString(){
+		return "mean: "+mean+ " correct: " +correctNumber+
+	" wrong: " + wrongNumber +
+	" blank: " + blankNumber;
 	}
 
 	
