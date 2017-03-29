@@ -197,9 +197,9 @@ public class MainTester {
 
 	out.println("\nAfter the teacher has exercised its authority, he logs out");
 	out.println("Lets see the courses for which the student has been accepted");
-	out.println(stud.getRegisteredCourses());
+	//out.println(stud.getRegisteredCourses());
 	out.println("\nAs well as the rejected ones...");
-	out.println(stud.getRejectedCourses());
+	//out.println(stud.getRejectedCourses());
 	//Teacher logout
 	
 	toodle.logOut();
@@ -209,6 +209,7 @@ public class MainTester {
 	out.println("Proceeding to serialize and save... ");
 	toodle.saveApplication("toodle.ser");
 	toodle = Application.getApplication();
+	out.println(toodle);
 	
 	//..Pause..
 	out.println("\n----------------------------------------------------");

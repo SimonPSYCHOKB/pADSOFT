@@ -208,7 +208,8 @@ public class MainTester {
 	out.println("\nWe interrupt the usual flow to show you data persistance.");
 	out.println("Proceeding to serialize and save... ");
 	toodle.saveApplication("toodle.ser");
-	toodle = Application.getApplication();
+	toodle = Application.getToodle();
+	out.println(toodle);
 	
 	//..Pause..
 	out.println("\n----------------------------------------------------");

@@ -209,6 +209,7 @@ public class MainTester {
 	out.println("Proceeding to serialize and save... ");
 	toodle.saveApplication("toodle.ser");
 	toodle = Application.getApplication();
+	out.println(toodle);
 	
 	//..Pause..
 	out.println("\n----------------------------------------------------");

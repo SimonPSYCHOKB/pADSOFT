@@ -47,7 +47,7 @@ public class Teacher extends User implements Serializable{
 		}
 		if(cRem != null){
 			s.acceptStudent(c);
-			//c.addStudents(s);
+			c.addStudents(s);
 		}
 	}
 	

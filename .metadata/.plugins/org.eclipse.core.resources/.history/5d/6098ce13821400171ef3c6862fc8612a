@@ -107,7 +107,7 @@ public class Application implements Serializable{
 	 * 
 	 * @return
 	 */
-	public static Application getApplication(){
+	public static Application getToodle(){
 		Application e = null;
 	      try {
 	         FileInputStream fileIn = new FileInputStream("toodle.ser");
@@ -115,7 +115,6 @@ public class Application implements Serializable{
 	         e = (Application) in.readObject();
 	         in.close();
 	         fileIn.close();
-	         return e;
 	      }catch(IOException i) {
 	         i.printStackTrace();
 	         return null;
@@ -124,7 +123,6 @@ public class Application implements Serializable{
 	         c.printStackTrace();
 	         return null;
 	      }
-	      
 	      
 	}
 	
@@ -498,15 +496,6 @@ public class Application implements Serializable{
 	 */
 	public String showStudentPastTest(Student s, Exercise e){
 		return s.viewPastTest(e);
-	}
-	
-	public static List<Student> getStudents(Course course){
-		List<Student> students = new ArrayList<Student>();
-		for(Student stud : students)
-			for(Course c : stud.getRegisteredCourses())
-				if(c.equals(course))
-					students.add(stud);
-		return students;
 	}
 
 }

@@ -26,8 +26,8 @@ public class Course implements Serializable{
 	private String description;
 	private List<Unit> units; 
 	private List<Exercise> tests;
-	//private List<Student> students;
-	//private List<Student> expelledStudents;
+	private List<Student> students;
+	private List<Student> expelledStudents;
 	private double total;
 
 	/**
@@ -74,9 +74,9 @@ public class Course implements Serializable{
 	 * This method returns the expelled Students of a Course
 	 * @return expelledStudents - List of Student 
 	 */
-	/*public List<Student> getExpelledStudents(){
+	public List<Student> getExpelledStudents(){
 		return expelledStudents;
-	}*/
+	}
 
 	/**
 	 * This method returns the Units of a Course
@@ -98,8 +98,8 @@ public class Course implements Serializable{
 		this.description = description;
 		units = new ArrayList<Unit>();
 		tests = new ArrayList<Exercise>();
-		//students = new ArrayList<Student>();
-		//expelledStudents = new ArrayList<Student>();
+		students = new ArrayList<Student>();
+		expelledStudents = new ArrayList<Student>();
 		total = 0;
 	}
 	
@@ -131,25 +131,25 @@ public class Course implements Serializable{
 	 * This method returns the Students registered in the Course
 	 * @return students - List of Student
 	 */
-	/*public List<Student> getStudents() {
+	public List<Student> getStudents() {
 		return students;
-	}*/
+	}
 
 	/**
 	 * This method adds a Student to the Course
 	 * @param students - Student to be added
 	 */
-	/*public void addStudents(Student students) {
+	public void addStudents(Student students) {
 		this.students.add(students);
-	}*/
+	}
 	
 	/**
 	 * This method expels a Student from the Course
 	 * @param students - The Student to be expelled
 	 */
-	/*public void expellStudents(Student students) {
+	public void expellStudents(Student students) {
 		expelledStudents.add(students);
-	}*/
+	}
 	
 	/**
 	 * This method removes the unit from the course
@@ -181,6 +181,16 @@ public class Course implements Serializable{
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
+			return false;
+		if (expelledStudents == null) {
+			if (other.expelledStudents != null)
+				return false;
+		} else if (!expelledStudents.equals(other.expelledStudents))
+			return false;
+		if (students == null) {
+			if (other.students != null)
+				return false;
+		} else if (!students.equals(other.students))
 			return false;
 		if (tests == null) {
 			if (other.tests != null)

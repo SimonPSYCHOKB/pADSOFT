@@ -27,7 +27,7 @@ public class Statistic implements Serializable{
 		
 		//Get Answered Tests for all Students in the course
 		Course c = t.getCourse();
-		for (Student s : Application.getStudents(c)){
+		for (Student s : c.getStudents()){
 			AnsweredTest at = s.getAnsweredTest(test);
 			if(at !=null){
 				ansTests.add(at);

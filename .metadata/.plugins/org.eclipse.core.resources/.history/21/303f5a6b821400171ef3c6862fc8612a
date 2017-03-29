@@ -1,5 +1,8 @@
 import java.io.Serializable;
 
+/**
+ * 
+ */
 
 /**
  * @author Simon Valcarcel
@@ -10,7 +13,6 @@ import java.io.Serializable;
  */
 public abstract class LearningObj implements Serializable{
 
-	private static final long serialVersionUID = 1L;
 	private boolean visibility;
 	
 	
