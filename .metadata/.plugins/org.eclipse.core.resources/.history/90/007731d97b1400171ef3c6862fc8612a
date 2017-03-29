@@ -165,7 +165,7 @@ public class Course implements Serializable{
 	 */
 	public void addUnit(Unit u){
 		units.add(u);
-		u.setCourse(this);
+		u.setCourse(c);
 	}
 
 	@Override

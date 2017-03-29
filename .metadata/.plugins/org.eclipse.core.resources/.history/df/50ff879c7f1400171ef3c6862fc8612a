@@ -1,5 +1,9 @@
 import static java.lang.System.*;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -207,7 +211,17 @@ public class MainTester {
 	out.println("\n----------------------------------------------------");
 	out.println("\nWe interrupt the usual flow to show you data persistance.");
 	out.println("Proceeding to serialize and save... ");
-	toodle.saveApplication("toodle.ser");
+	try {
+        FileOutputStream fileOut =
+        new FileOutputStream("toodle.ser");
+        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        out.writeObject(toodle);
+        out.close();
+        fileOut.close();
+        System.out.printf("Serialized data is saved in toodle.ser");
+     }catch(IOException exc) {
+        exc.printStackTrace();
+     }
 	
 	//..Pause..
 	out.println("\n----------------------------------------------------");

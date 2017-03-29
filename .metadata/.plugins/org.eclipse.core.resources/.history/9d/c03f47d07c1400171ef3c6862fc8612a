@@ -72,7 +72,6 @@ public class Unit extends LearningObj implements Serializable{
 		tests.add(t);
 		t.setCourse(course);
 		t.setUnit(this);
-		course.addTest(t);
 	}
 	
 	/**
