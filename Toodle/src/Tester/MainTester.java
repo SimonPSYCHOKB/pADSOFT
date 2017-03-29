@@ -476,7 +476,7 @@ public class MainTester {
 	out.println("\n----------------------------------------------------");
 	out.println("\nWe interrupt the usual flow to show you data persistance.");
 	out.println("\nProceeding to serialize and save... ");
-	toodle.saveApplication("toodle.ser");
+	toodle.saveApplication();
 	toodle = Application.getApplication();
 	out.println("\nLoading application from file...");
 	out.println("\nDisplay of all existing couses to verify correct reloading: \n ");

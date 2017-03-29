@@ -111,8 +111,8 @@ public class Application implements Serializable{
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * This method loads the saved application
+	 * @return the Application loaded, null if an error ocurred
 	 */
 	public static Application getApplication(){
 		Application e = null;
@@ -138,15 +138,15 @@ public class Application implements Serializable{
 	/**
 	 * This method saves the information of the application in a file
 	 */
-	public void saveApplication(String path){
+	public void saveApplication(){
 		try {
 	        FileOutputStream fileOut =
-	        new FileOutputStream(path);
+	        new FileOutputStream("toodle.ser");
 	        ObjectOutputStream out = new ObjectOutputStream(fileOut);
 	        out.writeObject(this);
 	        out.close();
 	        fileOut.close();
-	        System.out.printf("Serialized data is saved in " + path);
+	        System.out.printf("Serialized data is saved in toodle.ser");
 	     }catch(IOException exc) {
 	        exc.printStackTrace();
 	     }
