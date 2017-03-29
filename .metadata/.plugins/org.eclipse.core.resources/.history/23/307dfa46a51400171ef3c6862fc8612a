@@ -250,12 +250,12 @@ public class Application implements Serializable{
 	/**
 	 * This method created a note if the current user is the teacher
 	 * @param text - String with the text of the note
-	 * @param visibility - boolean that sets whether the notes are visible
+	 * @param date - LocalDate that sets the date of visibility
 	 * @return the Note created, null if the current user is not the teacher
 	 */
-	public Note createNote(String text, boolean visibility){
+	public Note createNote(String text, LocalDate date){
 		if(currentUser.equals(teacher)){
-			Note n = new Note(text, visibility);
+			Note n = new Note(text, date);
 			return n;
 		}
 		return null;

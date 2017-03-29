@@ -19,6 +19,8 @@ public class Course implements Serializable{
 	private String description;
 	private List<Unit> units; 
 	private List<Exercise> tests;
+	//private List<Student> students;
+	//private List<Student> expelledStudents;
 	private double total;
 
 	/**
@@ -60,6 +62,14 @@ public class Course implements Serializable{
 	public String getDescription() {
 		return description;
 	}
+	
+	/**
+	 * This method returns the expelled Students of a Course
+	 * @return expelledStudents - List of Student 
+	 */
+	/*public List<Student> getExpelledStudents(){
+		return expelledStudents;
+	}*/
 
 	/**
 	 * This method returns the Units of a Course
@@ -81,6 +91,8 @@ public class Course implements Serializable{
 		this.description = description;
 		units = new ArrayList<Unit>();
 		tests = new ArrayList<Exercise>();
+		//students = new ArrayList<Student>();
+		//expelledStudents = new ArrayList<Student>();
 		total = 0;
 	}
 	

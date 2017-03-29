@@ -119,7 +119,7 @@ public class ApplicationTest {
 
 	@Test
 	public void testCreateNote() {
-		assertEquals(n, app.createNote("Note", true));
+		assertEquals(n, app.createNote("Note", LocalDate.now()));
 	}
 
 	@Test

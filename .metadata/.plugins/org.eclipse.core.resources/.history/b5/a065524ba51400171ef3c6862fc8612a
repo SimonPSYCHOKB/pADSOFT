@@ -26,7 +26,7 @@ public class ApplicationTest {
 		c = new Course(true, "Course 1", "This is Course 1");
 		u = new Unit(true, "Unit");
 		su = new Unit(true, "SubUnit");
-		n = new Note("Note", true);
+		n = new Note("Note", LocalDate.now());
 		e = new Exercise(true, LocalDate.now(), LocalDate.now(), 1);
 		s = new Student("Jorge", "Alcazar", "JoA", "Jorge.Alcazar@esdu.es", "1289");
 		
@@ -119,7 +119,7 @@ public class ApplicationTest {
 
 	@Test
 	public void testCreateNote() {
-		assertEquals(n, app.createNote("Note", true));
+		assertEquals(n, app.createNote("Note", LocalDate.now()));
 	}
 
 	@Test

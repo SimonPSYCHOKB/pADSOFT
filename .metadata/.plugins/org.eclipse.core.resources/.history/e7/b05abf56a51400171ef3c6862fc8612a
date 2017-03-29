@@ -91,7 +91,7 @@ public class MainTester {
 	out.println("\nNext we will add Notes to some Units");
 	int i =0;
 	for (Course c: toodle.getCourses()){
-		Note n = toodle.createNote("This is note number "+ i, true);
+		Note n = toodle.createNote("This is note number "+ i, null);
 		List<Unit> units =c.getUnits();
 		Unit unit= units.get(i);
 		toodle.addNoteToUnit(unit, n);
