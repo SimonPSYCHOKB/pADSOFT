@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TeacherTest" project="Toodle" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="TeacherTest" time="0.0">
+    <testcase name="testAcceptStudent" classname="TeacherTest" time="0.0"/>
+    <testcase name="testGetName" classname="TeacherTest" time="0.0"/>
+    <testcase name="testExpellStudent" classname="TeacherTest" time="0.0"/>
+    <testcase name="testRejectStudent" classname="TeacherTest" time="0.0"/>
+    <testcase name="testReadmitStudent" classname="TeacherTest" time="0.0"/>
+  </testsuite>
+</testrun>

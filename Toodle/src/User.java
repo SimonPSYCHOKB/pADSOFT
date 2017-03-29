@@ -51,7 +51,7 @@ public abstract class User implements Serializable{
 	 * @param attempt - String with the password
 	 * @return true if the password is correct, false if it is not
 	 */
-	public boolean ValidatePassword(String attempt){
+	public boolean validatePassword(String attempt){
 		if (this.password.equals(attempt)) {
 			return true;
 		}

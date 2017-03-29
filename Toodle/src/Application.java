@@ -149,10 +149,10 @@ public class Application implements Serializable{
 	 * @return true if the User belongs to the application and the password is correct, false if not
 	 */
 	public boolean logIn(User u, String attempt){
-		if(students.contains(u) == true  && u.ValidatePassword(attempt)){
+		if(students.contains(u) == true  && u.validatePassword(attempt)){
 			currentUser = u;
 			return true;
-		}else if ( getTeacher().equals(u) == true && u.ValidatePassword(attempt)){
+		}else if ( getTeacher().equals(u) == true && u.validatePassword(attempt)){
 			currentUser= u;
 			return true;
 		}

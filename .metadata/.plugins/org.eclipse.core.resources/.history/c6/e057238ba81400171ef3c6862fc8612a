@@ -1,0 +1,71 @@
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class UnitTest {
+	
+	Unit u;
+	Unit su;
+	Exercise e;
+
+	@Before
+	public void setUp() throws Exception {
+		u = new Unit(true, "Unit 1");
+		
+		su = new Unit(true, "SubUnit 1");
+		u.createSubSection(su);
+		
+		e = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1);
+		u.addTest(e);
+	}
+
+	@Test
+	public void testGetSubUnits() {
+		assertEquals(su, u.getSubUnits().get(0));
+	}
+
+	@Test
+	public void testGetNotes() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCreateSubSection() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddTest() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddNotes() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetCourse() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetCourse() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIsVisibility() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetVisibility() {
+		fail("Not yet implemented");
+	}
+
+}

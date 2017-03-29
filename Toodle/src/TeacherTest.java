@@ -46,16 +46,6 @@ public class TeacherTest {
 	}
 
 	@Test
-	public void testViewStatistics() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSendNotification() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
 	public void testGetName(){
 		assertEquals("Paco Perez", t.getName());
 	}

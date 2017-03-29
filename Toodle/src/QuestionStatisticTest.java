@@ -29,7 +29,7 @@ public class QuestionStatisticTest {
 	public void setUp()  {
 		
 	//Create toodle	
-	testToodle = new  Application ("Toodle/src/data.txt");
+	testToodle = new  Application ("src/data.txt");
 	
 	testToodle.logIn(testToodle.getTeacher(), "123");
 	//Get Students
