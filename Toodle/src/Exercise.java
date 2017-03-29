@@ -8,7 +8,10 @@ import java.util.List;
  */
 
 /**
- * @author blanca
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains information of an Exercise
  *
  */
 public class Exercise extends LearningObj{
@@ -22,8 +25,13 @@ public class Exercise extends LearningObj{
 	private boolean started;
 	private int count;
 	
+	
 	/**
-	 * 
+	 * Constructor
+	 * @param visibility - boolean that sets if the Exercise is visible or not
+	 * @param dateOfBegining - LocalDate referring to the beginning of the Exercise
+	 * @param dateOfEnd - LocalDate referring to the end of the Exercise
+	 * @param weight - double which marks the weight of the Exercise in a Course
 	 */
 	public Exercise(boolean visibility, LocalDate dateOfBegining, LocalDate dateOfEnd, double weight) {
 		super(visibility);
@@ -36,26 +44,51 @@ public class Exercise extends LearningObj{
 		total = 0;
 	}
 	
+	/**
+	 * This method returns the total points of the Exercise
+	 * @return total
+	 */
 	public double getTotal(){
 		return total;
 	}
 	
+	/**
+	 * This method returns the weight of the Exercise in a Course
+	 * @return weight
+	 */
 	public double getWeight(){
 		return weight;
 	}
 	
+	/**
+	 * This method returns the Questions of an Exercise
+	 * @return questions - List of Question
+	 */
 	public List<Question> getQuestions(){
 		return questions;
 	}
 	
+	/**
+	 * This method returns the date of end of an exercise
+	 * @return dateOfEnd - LocalDate that marks the end of the Exercise
+	 */
 	public LocalDate getDateOfEnd(){
 		return dateOfEnd;
 	}
 	
+	/**
+	 * This method returns the date of beginning of an exercise
+	 * @return dateOfBegining - LocalDate that marks the beginning of the Exercise
+	 */
 	public LocalDate getDateOfBegining(){
 		return dateOfBegining;
 	}
 
+	/**
+	 * This method begins an Exercise by a Student
+	 * @param s - Student that begins the Exercise
+	 * @return true if the student has been able to begin the exercise, false if the date has passed
+	 */
 	public boolean beginExercise(Student s){
 		if(LocalDate.now().isAfter(dateOfEnd) == true)
 			return false;
@@ -64,38 +97,68 @@ public class Exercise extends LearningObj{
 		return true;
 	}
 	
+	/**
+	 * This method finishes an Exercise by a Student
+	 * @param s - The Student who finishes the Exercise
+	 */
 	public void finishExercise(Student s){
 		s.removeTestStudent(this);
 		count = 0;
 	}
 	
+	/**
+	 * This method adds a Question to an Exercise
+	 * @param q - The Question to be added.
+	 */
 	public void addQuestion(Question q){
 		questions.add(q);
 		total = total + q.getWeight();
 	}
 	
+	/**
+	 * This method changes the date of end of an Exercise to the given date
+	 * @param dateOfEnd - LocalDate which is the new date of end
+	 */
 	public void editDateOfEnd(LocalDate dateOfEnd){
 		if(started == true)
 			return;
 		this.dateOfEnd = dateOfEnd; 
 	}
 	
+	/**
+	 * This method changes the date of beginning of an Exercise to the given date
+	 * @param dateOfBegining - LocalDate which is the new date of beginning
+	 */
 	public void editDateOfBegining(LocalDate dateOfBegining){
 		if(started == true)
 			return;
 		this.dateOfBegining = dateOfBegining; 
 	}
 	
+	/**
+	 * This method returns the next question of the Exercise
+	 * @return String containing the information of the Question
+	 */
 	public String showQuestionTest(){
 		return questions.get(count).showQuestion();
 	}
 	
+	/**
+	 * This method answers a Question of an Exercise and returns its Answer
+	 * @param answer - List of String containing the answers to the Question
+	 * @return a - Answer to the current question, with the given answer
+	 */
 	public Answer answerQuestionTest(List<String> answer){
 		Answer a = new Answer(answer, questions.get(count));
 		count++;
 		return a;
 	}
 	
+	/**
+	 * This method answers an Exercise by a Student
+	 * @param student - Student who is answering the Exercise
+	 * @param answers - List of Answers containing the answers of the Student
+	 */
 	public void answerTest(Student student, List<Answer> answers){
 		student.answerTest(this, answers);	
 	}
@@ -134,10 +197,18 @@ public class Exercise extends LearningObj{
 		return true;
 	}
 
+	/**
+	 * This method returns the Course of the Exercise
+	 * @return course - Course
+	 */
 	public Course getCourse() {
 		return course;
 	}
 
+	/**
+	 * This method sets the Course of the Exercise
+	 * @param course - The Course
+	 */
 	public void setCourse(Course course) {
 		this.course = course;
 	}	

@@ -5,7 +5,10 @@ import java.time.LocalDate;
  */
 
 /**
- * @author Simon Valcarcel, Blanca Martin
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the iformation of the notes
  *
  */
 public class Note {
@@ -14,7 +17,10 @@ public class Note {
 	LocalDate visibDate;
 
 	/**
+	 * Constructor
 	 * 
+	 * @param text - String with the notes
+	 * @param date - LocalDate that sets when the notes will be visible
 	 */
 	public Note(String text, LocalDate date) {
 		this.text= text;

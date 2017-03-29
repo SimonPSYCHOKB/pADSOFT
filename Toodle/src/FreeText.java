@@ -3,14 +3,23 @@
  */
 
 /**
- * @author Simon Valcarcel, Blanca Martin
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the information of the type of question free text
  *
  */
 public class FreeText extends Question{
 	
 	private String answer;
+	
 	/**
+	 * Constructor
 	 * 
+	 * @param question - String with the wording
+	 * @param weight - double with the weight of the Question in an Exercise
+	 * @param penalty - double with the points to be subtracted if the question isn't answered correctly 
+	 * @param answer - String containing the correct answer
 	 */
 	public FreeText(String question, double weight, double penalty, String answer) {
 		super(question, weight, penalty);

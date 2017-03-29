@@ -7,7 +7,10 @@ import java.util.List;
  */
 
 /**
- * @author Simon Valcarcel, Blanca Martin
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the information of a question's answer given by a student
  *
  */
 public class Answer {
@@ -17,8 +20,11 @@ public class Answer {
 	private double grade;
 	private boolean graded;
 
+	
 	/**
-	 * 
+	 * Constructor 
+	 * @param answer -The List of String containing the answers
+	 * @param question - The Question answered
 	 */
 	public Answer(List<String> answer, Question question) {
 		this.answer = new ArrayList<String>();
@@ -27,14 +33,25 @@ public class Answer {
 		grade = 0;
 	}
 	
+	/**
+	 * This method returns the answers of the student
+	 * @return answer - The List of String containing the answers
+	 */
 	public List<String> getAnswer(){
 		return answer;
 	}
 	
+	/**
+	 * This method returns the Question answered
+	 * @return question - The Question answered
+	 */
 	public Question getQuestion(){
 		return question;
 	}
 	
+	/**
+	 * This method corrects an Answer and saves the grade in the information of the Answer
+	 */
 	public void correctAnswer(){
 		double weight = question.getWeight();
 		boolean is = question.checkIfCorrect(this);		
@@ -45,10 +62,18 @@ public class Answer {
 		graded = true;
 	}
 	
+	/**
+	 * This method returns if an Answer has been graded or not
+	 * @return graded -true if the Answer has been corrected, false if not
+	 */
 	public boolean isGraded(){
 		return graded;
 	}
 	
+	/**
+	 * This method returns the grade of an Answer
+	 * @return grade
+	 */
 	public double getGrade(){
 		return grade;
 	}
@@ -90,6 +115,10 @@ public class Answer {
 		return true;
 	}
 	
+	/**
+	 * This method returns whether an answer has been left blank
+	 * @return true if is blank, false if not
+	 */
 	public boolean isBlank(){
 		
 		if(answer.isEmpty()){

@@ -6,8 +6,10 @@ import java.util.List;
  */
 
 /**
- * @author blanca
- *
+ * 
+ * This class contains the information of a test answered by a student
+ * @author Simon Valcarcel
+ * @author Blanca Martin
  */
 public class AnsweredTest {
 
@@ -16,8 +18,11 @@ public class AnsweredTest {
 	private double grade;
 	private boolean graded;
 
+	
 	/**
-	 * 
+	 * Constructor
+	 * @param test - Exercise answered
+	 * @param answers - List of Answers for the Exercise
 	 */
 	public AnsweredTest(Exercise test, List<Answer> answers) {
 		this.test = test;
@@ -26,14 +31,25 @@ public class AnsweredTest {
 		graded = false;
 	}
 
+	/**
+	 * This method returns the Exercise answered
+	 * @return test
+	 */
 	public Exercise getTest(){
 		return test;
 	}
 	
+	/**
+	 * This method returns the Answers of the Exercise
+	 * @return answers
+	 */
 	public List<Answer> getAnswers(){
 		return answers;
 	}
 	
+	/**
+	 * This method corrects an AnsweredTest and stores the grade in its information
+	 */
 	public void correctAnsweredTest(){
 		int i = 0;
 		double cnt = 0;
@@ -48,12 +64,20 @@ public class AnsweredTest {
 		graded = true;
 	}
 	
+	/**
+	 * This method returns the grade of an AnsweredTest
+	 * @return grade
+	 */
 	public double getGradeTest(){
 		if(graded == false)
 			correctAnsweredTest();
 		return grade*10/test.getTotal();
 	}
 	
+	/**This method returns the grade of an AnsweredTest having in mind the weight of the Exercise 
+	 * in the course it belongs to
+	 * @return the relative grade
+	 */
 	public double getRelativeGradeTest(){
 		if(graded == false)
 			correctAnsweredTest();
