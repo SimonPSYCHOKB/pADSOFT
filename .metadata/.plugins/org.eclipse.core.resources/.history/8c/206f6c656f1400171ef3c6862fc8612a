@@ -5,10 +5,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.uam.eps.padsof.emailconnection.EmailSystem;
-import es.uam.eps.padsof.emailconnection.FailedInternetConnectionException;
-import es.uam.eps.padsof.emailconnection.InvalidEmailAddressException;
-
 /**
  * 
  */
@@ -123,11 +119,6 @@ public class Application {
 		currentUser= null;
 	}
 	
-	private void sendGroupEmail(String subject, String body) throws InvalidEmailAddressException, FailedInternetConnectionException{
-		for(User std : students)
-			EmailSystem.send(std.getEmail(), subject, body, true);
-	}
-	
 	/**
 	 * This method creates a course in the application is the current user is the teacher
 	 * @param visibility - boolean that sets whether the course is visible
@@ -139,23 +130,9 @@ public class Application {
 		if(currentUser.equals(getTeacher())){
 			Course c = new Course(visibility, title, description);
 			courses.add(c);
-			try {
-				sendGroupEmail("New Course", "There is a new Course");
-			} catch (InvalidEmailAddressException e) {
-			} catch (FailedInternetConnectionException e) {
-			}
 			return c;
 		}
 		return null;
-	}
-	
-	/**
-	 * This method deletes a unit from the application if the current user is the teacher
-	 * @param u - The Unit to be deleted
-	 */
-	public void deleteUnit(Unit u){
-		if(currentUser.equals(teacher))
-			u.getCourse().deleteUnit(u);
 	}
 	
 	/**
@@ -178,10 +155,8 @@ public class Application {
 	 * @param c - The Course we are referring to
 	 */
 	public void addUnitToCourse(Unit u, Course c){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(getTeacher()))
 			c.addLearningObj(u);
-			u.setCourse(c);
-		}
 	}
 	
 	/**

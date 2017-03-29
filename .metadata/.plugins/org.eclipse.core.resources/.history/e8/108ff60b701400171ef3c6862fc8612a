@@ -153,9 +153,7 @@ public class Course {
 		expelledStudents.add(students);
 	}
 	
-	public void deleteUnit(Unit u){
-		units.remove(u);
-	}
+	
 
 	@Override
 	public boolean equals(Object obj) {

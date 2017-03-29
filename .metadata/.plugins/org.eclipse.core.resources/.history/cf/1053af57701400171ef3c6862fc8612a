@@ -1,7 +1,11 @@
 
 import java.util.List;
 import java.util.ArrayList;
-
+/*
+import es.uam.eps.padsof.emailconnection.EmailSystem;
+import es.uam.eps.padsof.emailconnection.FailedInternetConnectionException;
+import es.uam.eps.padsof.emailconnection.InvalidEmailAddressException;
+*/
 
 /**
  * @author Simon Valcarcel

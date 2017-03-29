@@ -142,7 +142,9 @@ public class Application {
 			try {
 				sendGroupEmail("New Course", "There is a new Course");
 			} catch (InvalidEmailAddressException e) {
+				//e.printStackTrace();
 			} catch (FailedInternetConnectionException e) {
+				//e.printStackTrace();
 			}
 			return c;
 		}

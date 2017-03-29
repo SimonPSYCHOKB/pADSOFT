@@ -74,20 +74,8 @@ public class Unit extends LearningObj{
 		notes.add(n);
 	}
 	
-	/**
-	 * This method sets the course that the unit belongs to
-	 * @param course - Course
-	 */
 	public void setCourse(Course course){
 		this.course = course;
-	}
-	
-	/**
-	 * This method returns the course that the unit belongs to
-	 * @return course - Course
-	 */
-	public Course getCourse(){
-		return course;
 	}
 	
 	public String toString(){
