@@ -288,5 +288,15 @@ public class Student extends User implements Serializable{
 	public List<Course> getExpelledCourses() {
 		return expelledCourses;
 	}
+	
+	/**
+	 * This method deletes the answered tests of a student in a unit
+	 * @param unit - The Unit the answered tests belong to
+	 */
+	public void deleteAnsweredTests(Unit unit){
+		for(AnsweredTest at : getTestsFromCourse(unit.getCourse()))
+			if(at.getTest().getUnit().equals(unit))
+				answeredTests.remove(at);
+	}
 
 }

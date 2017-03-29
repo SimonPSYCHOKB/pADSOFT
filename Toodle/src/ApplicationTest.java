@@ -87,10 +87,17 @@ public class ApplicationTest {
 		app.logOut();
 		assertEquals(app.getCurrentUser(), null);
 	}
-
+	
 	@Test
 	public void testCreateCourse() {
 		assertEquals(c, app.createCourse(true, "Course 1", "This is Course 1"));
+	}
+	
+	@Test
+	public void testDeleteUnit(){
+		app.addUnitToCourse(u, c);
+		app.deleteUnit(u);
+		assertTrue(c.getUnits().isEmpty());
 	}
 
 	@Test
@@ -214,13 +221,6 @@ public class ApplicationTest {
 	@Test
 	public void testGetTeacher() {
 		assertEquals(app.getTeacher(), new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
-	}
-
-	@Test
-	public void testSetTeacher() {
-		Teacher nteacher = new Teacher("Paco", "Perez", "123", "teacher@esdu.es");
-		app.setTeacher(nteacher);
-		assertEquals(app.getTeacher(), nteacher);
 	}
 
 	@Test

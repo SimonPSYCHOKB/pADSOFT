@@ -56,7 +56,7 @@ public class Application implements Serializable{
 	public Application(){
 		students = new ArrayList<Student>();
 		courses = new ArrayList<Course>();
-		this.setTeacher(new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));		
+		teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");		
 	}
 	
 	/**
@@ -102,7 +102,7 @@ public class Application implements Serializable{
 		    e.printStackTrace();
 		    
 		  }
-		  this.setTeacher(new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
+		  teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");
 	}
 	
 	/**
@@ -167,8 +167,11 @@ public class Application implements Serializable{
 	 * @param u - The Unit to be deleted
 	 */
 	public void deleteUnit(Unit u){
-		if(currentUser.equals(teacher))
+		if(currentUser.equals(teacher)){
+			for(Student s : students)
+				s.deleteAnsweredTests(u);
 			u.getCourse().deleteUnit(u);
+		}
 	}
 	
 	/**
@@ -178,7 +181,7 @@ public class Application implements Serializable{
 	 * @return the Unit created, null if the current user is not the teacher
 	 */
 	public Unit createUnit(boolean visibility, String title){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Unit u = new Unit(visibility, title);
 			return u;
 		}
@@ -191,8 +194,8 @@ public class Application implements Serializable{
 	 * @param c - The Course we are referring to
 	 */
 	public void addUnitToCourse(Unit u, Course c){
-		if(currentUser.equals(getTeacher())){
-			c.addLearningObj(u);
+		if(currentUser.equals(teacher)){
+			c.addUnit(u);
 			u.setCourse(c);
 		}
 	}
@@ -203,7 +206,7 @@ public class Application implements Serializable{
 	 * @param su - Unit to be added as a subunit
 	 */
 	public void addSubSectionToUnit(Unit u, Unit su){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			u.createSubSection(su);
 	}
 	
@@ -214,7 +217,7 @@ public class Application implements Serializable{
 	 * @return the Note created, null if the current user is not the teacher
 	 */
 	public Note createNote(String text, LocalDate date){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Note n = new Note(text, date);
 			return n;
 		}
@@ -227,7 +230,7 @@ public class Application implements Serializable{
 	 * @param n - Note to be added
 	 */
 	public void addNoteToUnit(Unit u, Note n){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			u.addNotes(n);
 	}
 	
@@ -240,7 +243,7 @@ public class Application implements Serializable{
 	 * @return the Exercise created, null if the current user is not the teacher
 	 */
 	public Exercise createExercise(boolean visibility, LocalDate dateOfBegining, LocalDate dateOfEnd, double weight){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Exercise e = new Exercise(visibility, dateOfBegining, dateOfEnd, weight);
 			return e;
 		}
@@ -274,7 +277,7 @@ public class Application implements Serializable{
 	 * @return the Question created, null if the current user is not the teacher
 	 */
 	public Question createMultipleAnswer(String question, double weight, double penalty, List<String> answer, List<String> options){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Question q = new MultipleAnswer(question, weight, penalty, answer, options);
 			return q;
 		}
@@ -290,7 +293,7 @@ public class Application implements Serializable{
 	 * @return the Question created, null if the current user is not the teacher
 	 */
 	public Question createTrueFalse(String question, double weight, double penalty, String answer){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Question q = new TrueFalse(question, weight, penalty, answer);
 			return q;
 		}
@@ -306,7 +309,7 @@ public class Application implements Serializable{
 	 * @return the Question created, null if the current user is not the teacher
 	 */
 	public Question createFreeText(String question, double weight, double penalty, String answer){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Question q = new FreeText(question, weight, penalty, answer);
 			return q;
 		}
@@ -319,7 +322,7 @@ public class Application implements Serializable{
 	 * @param e - The Exercise we are referring to
 	 */
 	public void addQuestionTest(Question q, Exercise e){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			e.addQuestion(q);
 	}
 	
@@ -329,7 +332,7 @@ public class Application implements Serializable{
 	 * @param c - The Course we are referring to
 	 */
 	public void addTestToCourse(Exercise e, Course c){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			c.addTest(e);
 	}
 	
@@ -436,14 +439,6 @@ public class Application implements Serializable{
 	 */
 	public Teacher getTeacher() {
 		return teacher;
-	}
-
-	/**
-	 * This method sets the teacher in the application
-	 * @param teacher - Teacher 
-	 */
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
 	}
 	
 	/**

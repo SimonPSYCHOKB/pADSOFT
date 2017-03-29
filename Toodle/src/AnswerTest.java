@@ -68,21 +68,7 @@ public class AnswerTest implements Serializable{
 	}
 
 	@Test
-	public final void testIsGraded() {
-		ama.correctAnswer();
-		assertTrue(ama.isGraded());
-		assertTrue(!asa.isGraded());
-		asa.correctAnswer();
-		assertTrue(asa.isGraded());
-	}
-
-	@Test
-	public final void testGetGrade() {
-		aft.correctAnswer();
-		atf.correctAnswer();
-		asa.correctAnswer();
-		ama.correctAnswer();
-	
+	public final void testGetGrade() {	
 		assertEquals(asa.getGrade(), 1.0, 0.0);
 		assertEquals(ama.getGrade(), 1.0, 0.0);
 		assertEquals(aft.getGrade(), 1.0, 0.0);

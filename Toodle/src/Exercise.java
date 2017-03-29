@@ -23,6 +23,7 @@ public class Exercise extends LearningObj implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Course course;
+	private Unit unit;
 	private LocalDate dateOfBegining;
 	private LocalDate dateOfEnd;
 	private double weight;
@@ -218,6 +219,22 @@ public class Exercise extends LearningObj implements Serializable{
 	public void setCourse(Course course) {
 		this.course = course;
 	}	
+	
+	/**
+	 * This method returns the unit of the exercise
+	 * @return unit - Unit
+	 */
+	public Unit getUnit(){
+		return unit;
+	}
+	
+	/**
+	 * This method sets the unit of the exercise
+	 * @param unit - The Unit
+	 */
+	public void setUnit(Unit unit){
+		this.unit = unit;
+	}
 
 	
 }

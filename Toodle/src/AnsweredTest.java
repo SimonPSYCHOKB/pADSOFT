@@ -60,7 +60,7 @@ public class AnsweredTest implements Serializable{
 		int i = 0;
 		double cnt = 0;
 		for( ; i < answers.size(); i++){
-			answers.get(i).correctAnswer();
+			//answers.get(i).correctAnswer();
 			cnt = cnt + answers.get(i).getGrade();
 		}
 		if(cnt < 0)

@@ -62,14 +62,8 @@ public class CourseTest {
 
 	@Test
 	public void testGetUnits() {
-		c.addLearningObj(u);
+		c.addUnit(u);
 		assertEquals(c.getUnits().get(0), u);
-	}
-
-	@Test
-	public void testAddLearningObj() {
-		c.addLearningObj(u);
-		assertEquals(c.getUnits().size(), 1.0, 0.0);
 	}
 
 	@Test
@@ -100,5 +94,18 @@ public class CourseTest {
 		c.expellStudents(st);
 		assertEquals(c.getExpelledStudents().get(0), st);
 	}
-
+	
+	@Test
+	public void testDeleteUnit(){
+		c.addUnit(u);
+		c.deleteUnit(u);
+		assertTrue(c.getUnits().isEmpty());
+	}
+	
+	@Test
+	public void testAddUnit(){
+		c.addUnit(u);
+		assertEquals(c.getUnits().get(0), u);
+	}
+	
 }
