@@ -1,8 +1,10 @@
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -478,6 +480,24 @@ public class Application implements Serializable{
 	 */
 	public String showStudentPastTest(Student s, Exercise e){
 		return s.viewPastTest(e);
+	}
+	
+	public static Application getToodle(){
+		Application e = null;
+	      try {
+	         FileInputStream fileIn = new FileInputStream("toodle.ser");
+	         ObjectInputStream in = new ObjectInputStream(fileIn);
+	         e = (Application) in.readObject();
+	         in.close();
+	         fileIn.close();
+	      }catch(IOException i) {
+	         i.printStackTrace();
+	         return null;
+	      }catch(ClassNotFoundException c) {
+	         System.out.println("Application class not found");
+	         c.printStackTrace();
+	         return null;
+	      
 	}
 
 }
