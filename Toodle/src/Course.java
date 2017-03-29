@@ -104,14 +104,6 @@ public class Course implements Serializable{
 	}
 	
 	/**
-	 * This methods adds a LearningObject to the Course
-	 * @param lo - The LearningObject to be added 
-	 */
-	public void addLearningObj(Unit lo){
-		units.add(lo);
-	}
-	
-	/**
 	 * This method adds an Exercise to the Course
 	 * @param t - The Exercise to be added
 	 */
@@ -159,8 +151,20 @@ public class Course implements Serializable{
 		expelledStudents.add(students);
 	}
 	
+	/**
+	 * This method removes the unit from the course
+	 * @param u - The Unit we want to remove
+	 */
 	public void deleteUnit(Unit u){
 		units.remove(u);
+	}
+	
+	/**
+	 * This method adds a unit to a course
+	 * @param u - The Unit to be added
+	 */
+	public void addUnit(Unit u){
+		units.add(u);
 	}
 
 	@Override

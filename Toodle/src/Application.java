@@ -56,7 +56,7 @@ public class Application implements Serializable{
 	public Application(){
 		students = new ArrayList<Student>();
 		courses = new ArrayList<Course>();
-		this.setTeacher(new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));		
+		teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");		
 	}
 	
 	/**
@@ -102,7 +102,7 @@ public class Application implements Serializable{
 		    e.printStackTrace();
 		    
 		  }
-		  this.setTeacher(new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es"));
+		  teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");
 	}
 	
 	/**
@@ -129,6 +129,13 @@ public class Application implements Serializable{
 		currentUser= null;
 	}
 	
+	/**
+	 * This method sends an email to all the students in the application 
+	 * @param subject - String with the subject of the email
+	 * @param body - String with the body of the email
+	 * @throws InvalidEmailAddressException
+	 * @throws FailedInternetConnectionException
+	 */
 	private void sendGroupEmail(String subject, String body) throws InvalidEmailAddressException, FailedInternetConnectionException{
 		for(User std : students)
 			EmailSystem.send(std.getEmail(), subject, body, true);
@@ -160,8 +167,11 @@ public class Application implements Serializable{
 	 * @param u - The Unit to be deleted
 	 */
 	public void deleteUnit(Unit u){
-		if(currentUser.equals(teacher))
+		if(currentUser.equals(teacher)){
+			for(Student s : students)
+				s.deleteAnsweredTests(u);
 			u.getCourse().deleteUnit(u);
+		}
 	}
 	
 	/**
@@ -171,7 +181,7 @@ public class Application implements Serializable{
 	 * @return the Unit created, null if the current user is not the teacher
 	 */
 	public Unit createUnit(boolean visibility, String title){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Unit u = new Unit(visibility, title);
 			return u;
 		}
@@ -184,8 +194,8 @@ public class Application implements Serializable{
 	 * @param c - The Course we are referring to
 	 */
 	public void addUnitToCourse(Unit u, Course c){
-		if(currentUser.equals(getTeacher())){
-			c.addLearningObj(u);
+		if(currentUser.equals(teacher)){
+			c.addUnit(u);
 			u.setCourse(c);
 		}
 	}
@@ -196,7 +206,7 @@ public class Application implements Serializable{
 	 * @param su - Unit to be added as a subunit
 	 */
 	public void addSubSectionToUnit(Unit u, Unit su){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			u.createSubSection(su);
 	}
 	
@@ -207,7 +217,7 @@ public class Application implements Serializable{
 	 * @return the Note created, null if the current user is not the teacher
 	 */
 	public Note createNote(String text, LocalDate date){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Note n = new Note(text, date);
 			return n;
 		}
@@ -220,7 +230,7 @@ public class Application implements Serializable{
 	 * @param n - Note to be added
 	 */
 	public void addNoteToUnit(Unit u, Note n){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			u.addNotes(n);
 	}
 	
@@ -233,7 +243,7 @@ public class Application implements Serializable{
 	 * @return the Exercise created, null if the current user is not the teacher
 	 */
 	public Exercise createExercise(boolean visibility, LocalDate dateOfBegining, LocalDate dateOfEnd, double weight){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Exercise e = new Exercise(visibility, dateOfBegining, dateOfEnd, weight);
 			return e;
 		}
@@ -267,7 +277,7 @@ public class Application implements Serializable{
 	 * @return the Question created, null if the current user is not the teacher
 	 */
 	public Question createMultipleAnswer(String question, double weight, double penalty, List<String> answer, List<String> options){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Question q = new MultipleAnswer(question, weight, penalty, answer, options);
 			return q;
 		}
@@ -283,7 +293,7 @@ public class Application implements Serializable{
 	 * @return the Question created, null if the current user is not the teacher
 	 */
 	public Question createTrueFalse(String question, double weight, double penalty, String answer){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Question q = new TrueFalse(question, weight, penalty, answer);
 			return q;
 		}
@@ -299,7 +309,7 @@ public class Application implements Serializable{
 	 * @return the Question created, null if the current user is not the teacher
 	 */
 	public Question createFreeText(String question, double weight, double penalty, String answer){
-		if(currentUser.equals(getTeacher())){
+		if(currentUser.equals(teacher)){
 			Question q = new FreeText(question, weight, penalty, answer);
 			return q;
 		}
@@ -312,7 +322,7 @@ public class Application implements Serializable{
 	 * @param e - The Exercise we are referring to
 	 */
 	public void addQuestionTest(Question q, Exercise e){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			e.addQuestion(q);
 	}
 	
@@ -322,18 +332,35 @@ public class Application implements Serializable{
 	 * @param c - The Course we are referring to
 	 */
 	public void addTestToCourse(Exercise e, Course c){
-		if(currentUser.equals(getTeacher()))
+		if(currentUser.equals(teacher))
 			c.addTest(e);
 	}
 	
+	/**
+	 * This method sends an email to a user
+	 * @param u - User that recieves the email
+	 * @param subject - String with the subject of the email
+	 * @param body - String with the body of the email
+	 * @throws InvalidEmailAddressException
+	 * @throws FailedInternetConnectionException
+	 */
+	private void sendEmailTo(User u, String subject, String body) throws InvalidEmailAddressException, FailedInternetConnectionException{
+		EmailSystem.send(u.getEmail(), subject, body);
+	}
 	/**
 	 * This method is for the student to apply for a course
 	 * @param s - Student who wants to apply (has to be the current user)
 	 * @param c - Course that the Student wants to apply to.
 	 */
 	public void applyStudent(Student s, Course c){
-		if(currentUser.equals(s))
+		if(currentUser.equals(s)){
 			s.apply(c);
+			try {
+				sendEmailTo(teacher, "New application", "The student " + s.getName() + " wants to apply for the course " + c.getTitle());
+			} catch (InvalidEmailAddressException e) {
+			} catch (FailedInternetConnectionException e) {
+			}
+		}
 	}
 	
 	/**
@@ -342,8 +369,14 @@ public class Application implements Serializable{
 	 * @param c - Course in which the Student is accepted
 	 */
 	public void acceptStudent(Student s, Course c){
-		if(currentUser.equals(teacher))
+		if(currentUser.equals(teacher)){
 			teacher.acceptStudent(s, c);
+			try {
+				sendEmailTo(s, "Accepted!", "You have been accepted in the course " + c.getTitle());
+			} catch (InvalidEmailAddressException e) {
+			} catch (FailedInternetConnectionException e) {
+			}
+		}
 	}
 	
 	/**
@@ -352,8 +385,14 @@ public class Application implements Serializable{
 	 * @param c - Course from which the Student is rejected
 	 */
 	public void rejectStudent(Student s, Course c){
-		if(currentUser.equals(teacher))
+		if(currentUser.equals(teacher)){
 			teacher.rejectStudent(s, c);
+			try {
+				sendEmailTo(s, "Rejected!", "Your application for the course " + c.getTitle() + " has been rejected");
+			} catch (InvalidEmailAddressException e) {
+			} catch (FailedInternetConnectionException e) {
+			}
+		}
 	}
 	
 	/**
@@ -362,8 +401,14 @@ public class Application implements Serializable{
 	 * @param c - Course from which the Student is expelled
 	 */
 	public void expellStudent(Student s, Course c){
-		if(currentUser.equals(teacher))
+		if(currentUser.equals(teacher)){
 			teacher.expellStudent(s, c);
+			try {
+				sendEmailTo(s, "Expelled!", "You have been expelled from the course " + c.getTitle());
+			} catch (InvalidEmailAddressException e) {
+			} catch (FailedInternetConnectionException e) {
+			}
+		}
 	}
 	
 	/**
@@ -394,14 +439,6 @@ public class Application implements Serializable{
 	 */
 	public Teacher getTeacher() {
 		return teacher;
-	}
-
-	/**
-	 * This method sets the teacher in the application
-	 * @param teacher - Teacher 
-	 */
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
 	}
 	
 	/**

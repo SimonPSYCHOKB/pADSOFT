@@ -57,7 +57,7 @@ public class Answer implements Serializable{
 	/**
 	 * This method corrects an Answer and saves the grade in the information of the Answer
 	 */
-	public void correctAnswer(){
+	private void correctAnswer(){
 		double weight = question.getWeight();
 		boolean is = question.checkIfCorrect(this);		
 		if(is == true)
@@ -68,18 +68,12 @@ public class Answer implements Serializable{
 	}
 	
 	/**
-	 * This method returns if an Answer has been graded or not
-	 * @return graded -true if the Answer has been corrected, false if not
-	 */
-	public boolean isGraded(){
-		return graded;
-	}
-	
-	/**
 	 * This method returns the grade of an Answer
 	 * @return grade
 	 */
 	public double getGrade(){
+		if(graded == false)
+			correctAnswer();
 		return grade;
 	}
 

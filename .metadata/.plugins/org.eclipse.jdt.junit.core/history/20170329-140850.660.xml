@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CourseTest" project="Toodle" tests="13" started="13" failures="0" errors="0" ignored="0">
+  <testsuite name="CourseTest" time="0.083">
+    <testcase name="testExpelledStudents" classname="CourseTest" time="0.08"/>
+    <testcase name="testGetTests" classname="CourseTest" time="0.001"/>
+    <testcase name="testGetTitle" classname="CourseTest" time="0.0"/>
+    <testcase name="testGetTotal" classname="CourseTest" time="0.0"/>
+    <testcase name="testGetUnits" classname="CourseTest" time="0.0"/>
+    <testcase name="testAddTest" classname="CourseTest" time="0.0"/>
+    <testcase name="testAddUnit" classname="CourseTest" time="0.001"/>
+    <testcase name="testGetStudents" classname="CourseTest" time="0.0"/>
+    <testcase name="testAddStudents" classname="CourseTest" time="0.0"/>
+    <testcase name="testGetExpelledStudents" classname="CourseTest" time="0.0"/>
+    <testcase name="testGetDescription" classname="CourseTest" time="0.0"/>
+    <testcase name="testIsVisibility" classname="CourseTest" time="0.0"/>
+    <testcase name="testDeleteUnit" classname="CourseTest" time="0.001"/>
+  </testsuite>
+</testrun>
