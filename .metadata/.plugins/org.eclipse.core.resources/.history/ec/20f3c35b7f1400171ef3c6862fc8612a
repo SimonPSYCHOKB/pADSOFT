@@ -1,9 +1,6 @@
 
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -106,23 +103,6 @@ public class Application implements Serializable{
 		    
 		  }
 		  teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");
-	}
-	
-	/**
-	 * This method saves the information of the application in a file
-	 */
-	public void saveApplication(String path){
-		try {
-	        FileOutputStream fileOut =
-	        new FileOutputStream(path);
-	        ObjectOutputStream out = new ObjectOutputStream(fileOut);
-	        out.writeObject(this);
-	        out.close();
-	        fileOut.close();
-	        System.out.printf("Serialized data is saved in " + path);
-	     }catch(IOException exc) {
-	        exc.printStackTrace();
-	     }
 	}
 	
 	/**
