@@ -499,7 +499,11 @@ public class Application implements Serializable{
 	public String showStudentPastTest(Student s, Exercise e){
 		return s.viewPastTest(e);
 	}
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> 76bab193f1f91abd96a299f0d128613d603458c8
 	public static List<Student> getStudents(Course course){
 		List<Student> students = new ArrayList<Student>();
 		for(Student stud : students)
@@ -507,9 +511,12 @@ public class Application implements Serializable{
 				if(c.equals(course))
 					students.add(stud);
 		return students;
+<<<<<<< HEAD
 
 	}
+=======
+>>>>>>> 76bab193f1f91abd96a299f0d128613d603458c8
 
-}
+	}
 	
-}
+

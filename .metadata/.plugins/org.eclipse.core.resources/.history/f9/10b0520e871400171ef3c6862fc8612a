@@ -147,11 +147,11 @@ public class Application implements Serializable{
 	
 	/**
 	 * This method logs a user in the application
-	 * @param u - User that wants to log in
+	 * @param manu - String with the manu of the user
 	 * @param attempt - String with the password
 	 * @return true if the User belongs to the application and the password is correct, false if not
 	 */
-	public boolean logIn(User u, String attempt){
+	public boolean logIn(String manu, String attempt){
 		if(students.contains(u) == true  && u.ValidatePassword(attempt)){
 			currentUser = u;
 			return true;
@@ -507,9 +507,6 @@ public class Application implements Serializable{
 				if(c.equals(course))
 					students.add(stud);
 		return students;
-
 	}
-
-}
 	
 }
