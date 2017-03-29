@@ -37,33 +37,48 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Unit.java" partName="Unit.java" path="/home/blanca/pADSOFT/Toodle/src/Unit.java" title="Unit.java" tooltip="Toodle/src/Unit.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Unit.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="946" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CourseStatistic.java" partName="CourseStatistic.java" path="/home/blanca/pADSOFT/Toodle/src/Statistics/CourseStatistic.java" title="CourseStatistic.java" tooltip="Toodle/src/Statistics/CourseStatistic.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Statistics/CourseStatistic.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="844" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UnitTest.java" partName="UnitTest.java" path="/home/blanca/pADSOFT/Toodle/src/UnitTest.java" title="UnitTest.java" tooltip="Toodle/src/UnitTest.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/UnitTest.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="683" selectionTopPixel="206"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestionStatistic.java" partName="QuestionStatistic.java" path="/home/blanca/pADSOFT/Toodle/src/Statistics/QuestionStatistic.java" title="QuestionStatistic.java" tooltip="Toodle/src/Statistics/QuestionStatistic.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Statistics/QuestionStatistic.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="178" selectionTopPixel="480"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Course.java" partName="Course.java" path="/home/blanca/pADSOFT/Toodle/src/Course.java" title="Course.java" tooltip="Toodle/src/Course.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Course.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1308"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleUserStatistic.java" partName="SingleUserStatistic.java" path="/home/blanca/pADSOFT/Toodle/src/Statistics/SingleUserStatistic.java" title="SingleUserStatistic.java" tooltip="Toodle/src/Statistics/SingleUserStatistic.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Statistics/SingleUserStatistic.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1190" selectionTopPixel="153"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exercise.java" partName="Exercise.java" path="/home/blanca/pADSOFT/Toodle/src/Exercise.java" title="Exercise.java" tooltip="Toodle/src/Exercise.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Exercise.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Statistic.java" partName="Statistic.java" path="/home/blanca/pADSOFT/Toodle/src/Statistics/Statistic.java" title="Statistic.java" tooltip="Toodle/src/Statistics/Statistic.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Statistics/Statistic.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1749" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Student.java" partName="Student.java" path="/home/blanca/pADSOFT/Toodle/src/Users/Student.java" title="Student.java" tooltip="Toodle/src/Users/Student.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Users/Student.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="1887" selectionTopPixel="150"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CourseStatisticTest.java" partName="CourseStatisticTest.java" path="/home/blanca/pADSOFT/Toodle/src/Statistics/Test/CourseStatisticTest.java" title="CourseStatisticTest.java" tooltip="Toodle/src/Statistics/Test/CourseStatisticTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Statistics/Test/CourseStatisticTest.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Note.java" partName="Note.java" path="/home/blanca/pADSOFT/Toodle/src/Note.java" title="Note.java" tooltip="Toodle/src/Note.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Note.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestionStatisticTest.java" partName="QuestionStatisticTest.java" path="/home/blanca/pADSOFT/Toodle/src/Statistics/Test/QuestionStatisticTest.java" title="QuestionStatisticTest.java" tooltip="Toodle/src/Statistics/Test/QuestionStatisticTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Statistics/Test/QuestionStatisticTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="762" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ExerciseTest.java" partName="ExerciseTest.java" path="/home/blanca/pADSOFT/Toodle/src/ExerciseTest.java" title="ExerciseTest.java" tooltip="Toodle/src/ExerciseTest.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/ExerciseTest.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" partName="MainTester.java" path="/home/blanca/pADSOFT/Toodle/src/Tester/MainTester.java" title="MainTester.java" tooltip="Toodle/src/Tester/MainTester.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Tester/MainTester.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="26" selectionOffset="11996" selectionTopPixel="6828"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" partName="Application.java" path="/home/blanca/pADSOFT/Toodle/src/Application/Application.java" title="Application.java" tooltip="Toodle/src/Application/Application.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/Application/Application.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3455" selectionTopPixel="1441"/>
 </editor>
 </editors>
 <views>
@@ -99,12 +114,17 @@
 </customFilters>
 </viewState>
 </view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
+<viewState search_scope_type="1"/>
+</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings"/>
-<category IMemento.internal.id="Warnings (6 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="725" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -113,12 +133,6 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
-</view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
-</view>
-<view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
-<viewState search_scope_type="1"/>
 </view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
@@ -313,7 +327,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a4b15d2" ratio="0.9621677" ratioLeft="941" ratioRight="37" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1a4b15d2" ratio="0.7096115" ratioLeft="694" ratioRight="284" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy"/>
@@ -330,175 +344,166 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Application.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/ApplicationTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/CourseTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Unit.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/User.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/AnsweredTestTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/AnswerTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/ExerciseTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/FreeTextTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/SingleAnswerTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/QuestionStatisticTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/StatisticTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/StudentTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/TeacherTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/TrueFalseTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/UnitTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Course.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Exercise.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Note.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Statistics/CourseStatistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Statistics/QuestionStatistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Statistics/SingleUserStatistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Statistics/Statistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Application/MainTester.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Users/Student.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Statistics/Test/CourseStatisticTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Statistics/Test/QuestionStatisticTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Tester/MainTester.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/Application/Application.java"/>
 </editors>
-<item historyLabel="FreeTextTest.java" index="8">
+<item historyLabel="Student.java" index="5">
+<position info="not_deleted" x="1867" y="0"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="943" y="0"/>
+</item>
+<item historyLabel="Student.java" index="5">
+<position info="not_deleted" x="1887" y="1"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="943" y="0"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="1026" y="0"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="1028" y="45"/>
+</item>
+<item historyLabel="MainTester.java" index="4">
+<position info="not_deleted" x="12509" y="80"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="1028" y="45"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2065" y="37"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2064" y="0"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="1028" y="45"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2064" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="4">
+<position info="not_deleted" x="12509" y="80"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="1028" y="45"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2065" y="37"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="1028" y="45"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2065" y="37"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2064" y="0"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2013" y="0"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="2022" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="4">
+<position info="not_deleted" x="12533" y="0"/>
+</item>
+<item historyLabel="SingleUserStatistic.java" index="2">
+<position info="not_deleted" x="318" y="19"/>
+</item>
+<item historyLabel="MainTester.java" index="4">
+<position info="not_deleted" x="12533" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="4">
+<position info="not_deleted" x="11750" y="0"/>
+</item>
+<item historyLabel="SingleUserStatistic.java" index="2">
+<position info="not_deleted" x="559" y="0"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="0">
+<position info="not_deleted" x="844" y="0"/>
+</item>
+<item historyLabel="QuestionStatistic.java" index="1">
+<position info="not_deleted" x="178" y="0"/>
+</item>
+<item historyLabel="SingleUserStatistic.java" index="2">
+<position info="not_deleted" x="559" y="0"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="1749" y="0"/>
+</item>
+<item historyLabel="CourseStatisticTest.java" index="6">
+<position info="not_deleted" x="763" y="0"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="1749" y="0"/>
+</item>
+<item historyLabel="Student.java" index="5">
+<position info="not_deleted" x="1887" y="1"/>
+</item>
+<item historyLabel="Statistic.java" index="3">
+<position info="not_deleted" x="1749" y="0"/>
+</item>
+<item historyLabel="CourseStatisticTest.java" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="TrueFalseTest.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="QuestionStatisticTest.java" index="7">
+<position info="not_deleted" x="762" y="0"/>
 </item>
-<item historyLabel="User.java" index="4">
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="16" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="8">
 <position/>
 </item>
-<item historyLabel="TrueFalseTest.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="486" y="11"/>
 </item>
-<item historyLabel="User.java" index="4">
-<position/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="16" y="0"/>
 </item>
-<item historyLabel="TrueFalseTest.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="1350" y="19"/>
 </item>
-<item historyLabel="User.java" index="4">
-<position info="not_deleted" x="1274" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="1015" y="0"/>
 </item>
-<item historyLabel="TrueFalseTest.java" index="14">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="1350" y="19"/>
 </item>
-<item historyLabel="TeacherTest.java" index="13">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="1123" y="0"/>
 </item>
-<item historyLabel="TeacherTest.java" index="13">
-<position info="not_deleted" x="1011" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="728" y="0"/>
 </item>
-<item historyLabel="TeacherTest.java" index="13">
-<position info="not_deleted" x="932" y="0"/>
+<item historyLabel="Application.java" index="9">
+<position info="not_deleted" x="3681" y="0"/>
 </item>
-<item historyLabel="StudentTest.java" index="12">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="728" y="0"/>
 </item>
-<item historyLabel="StatisticTest.java" index="11">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="MainTester.java" index="8">
+<position info="not_deleted" x="12021" y="0"/>
 </item>
-<item historyLabel="QuestionStatisticTest.java" index="10">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Application.java" index="9">
+<position info="not_deleted" x="3455" y="0"/>
 </item>
-<item historyLabel="QuestionStatisticTest.java" index="10">
-<position info="not_deleted" x="7292" y="13"/>
+<item historyLabel="QuestionStatisticTest.java" index="7">
+<position info="not_deleted" x="762" y="0"/>
 </item>
-<item historyLabel="QuestionStatisticTest.java" index="10">
-<position info="not_deleted" x="460" y="0"/>
-</item>
-<item historyLabel="SingleAnswerTest.java" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ExerciseTest.java" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="CourseTest.java" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ApplicationTest.java" index="1">
-<position info="not_deleted" x="2771" y="0"/>
-</item>
-<item historyLabel="AnswerTest.java" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="AnsweredTestTest.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Application.java" index="0">
-<position info="not_deleted" x="4106" y="0"/>
-</item>
-<item historyLabel="Unit.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="508" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="508" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="593" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="592" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="552" y="0"/>
-</item>
-<item historyLabel="Unit.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="552" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="508" y="1"/>
-</item>
-<item historyLabel="Unit.java" index="3">
-<position info="not_deleted" x="1450" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="508" y="1"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="508" y="0"/>
-</item>
-<item historyLabel="Unit.java" index="3">
-<position info="not_deleted" x="1430" y="21"/>
-</item>
-<item historyLabel="Course.java" index="16">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="508" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="489" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="508" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="672" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="977" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="1407" y="0"/>
-</item>
-<item historyLabel="UnitTest.java" index="15">
-<position info="not_deleted" x="683" y="0"/>
-</item>
-<item historyLabel="Exercise.java" index="17">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Note.java" index="18">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ExerciseTest.java" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item active="true" historyLabel="Unit.java" index="3">
-<position info="not_deleted" x="1430" y="21"/>
+<item active="true" historyLabel="SingleUserStatistic.java" index="2">
+<position info="not_deleted" x="559" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -506,12 +511,8 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="bottom"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -524,6 +525,39 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" tooltip="Toodle/src/Application/Application.java">
+<persistable path="/Toodle/src/Application/Application.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" tooltip="Toodle/src/Tester/MainTester.java">
+<persistable path="/Toodle/src/Tester/MainTester.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestionStatisticTest.java" tooltip="Toodle/src/Statistics/Test/QuestionStatisticTest.java">
+<persistable path="/Toodle/src/Statistics/Test/QuestionStatisticTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CourseStatisticTest.java" tooltip="Toodle/src/Statistics/Test/CourseStatisticTest.java">
+<persistable path="/Toodle/src/Statistics/Test/CourseStatisticTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Student.java" tooltip="Toodle/src/Users/Student.java">
+<persistable path="/Toodle/src/Users/Student.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Statistic.java" tooltip="Toodle/src/Statistics/Statistic.java">
+<persistable path="/Toodle/src/Statistics/Statistic.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleUserStatistic.java" tooltip="Toodle/src/Statistics/SingleUserStatistic.java">
+<persistable path="/Toodle/src/Statistics/SingleUserStatistic.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestionStatistic.java" tooltip="Toodle/src/Statistics/QuestionStatistic.java">
+<persistable path="/Toodle/src/Statistics/QuestionStatistic.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CourseStatistic.java" tooltip="Toodle/src/Statistics/CourseStatistic.java">
+<persistable path="/Toodle/src/Statistics/CourseStatistic.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" tooltip="Toodle/src/Application/MainTester.java">
+<persistable path="/Toodle/src/Application/MainTester.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UnitTest.java" tooltip="Toodle/src/Application/Test/UnitTest.java">
+<persistable path="/Toodle/src/Application/Test/UnitTest.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ExerciseTest.java" tooltip="Toodle/src/ExerciseTest.java">
 <persistable path="/Toodle/src/ExerciseTest.java"/>
 </file>
@@ -535,39 +569,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Course.java" tooltip="Toodle/src/Course.java">
 <persistable path="/Toodle/src/Course.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UnitTest.java" tooltip="Toodle/src/UnitTest.java">
-<persistable path="/Toodle/src/UnitTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Unit.java" tooltip="Toodle/src/Unit.java">
-<persistable path="/Toodle/src/Unit.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" tooltip="Toodle/src/User.java">
-<persistable path="/Toodle/src/User.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TrueFalseTest.java" tooltip="Toodle/src/TrueFalseTest.java">
-<persistable path="/Toodle/src/TrueFalseTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TeacherTest.java" tooltip="Toodle/src/TeacherTest.java">
-<persistable path="/Toodle/src/TeacherTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StudentTest.java" tooltip="Toodle/src/StudentTest.java">
-<persistable path="/Toodle/src/StudentTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StatisticTest.java" tooltip="Toodle/src/StatisticTest.java">
-<persistable path="/Toodle/src/StatisticTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestionStatisticTest.java" tooltip="Toodle/src/QuestionStatisticTest.java">
-<persistable path="/Toodle/src/QuestionStatisticTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleAnswerTest.java" tooltip="Toodle/src/SingleAnswerTest.java">
-<persistable path="/Toodle/src/SingleAnswerTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultipleAnswerTest.java" tooltip="Toodle/src/MultipleAnswerTest.java">
-<persistable path="/Toodle/src/MultipleAnswerTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FreeTextTest.java" tooltip="Toodle/src/FreeTextTest.java">
-<persistable path="/Toodle/src/FreeTextTest.java"/>
 </file>
 </mruList>
 </workbench>

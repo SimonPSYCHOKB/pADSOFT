@@ -3,9 +3,17 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="es.uam.eps.padsof.emailconnection.EmailSystem"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Test.Exercise"/>
+<fullyQualifiedTypeName name="Test.Question"/>
+<fullyQualifiedTypeName name="Users.Student"/>
+<fullyQualifiedTypeName name="Application.Course"/>
+<fullyQualifiedTypeName name="Test.AnsweredTest"/>
+<fullyQualifiedTypeName name="Statistics.SingleUserStatistic"/>
+<fullyQualifiedTypeName name="Application.Application"/>
+<fullyQualifiedTypeName name="Application.Unit"/>
 </qualifiedTypeNameHistroy>
