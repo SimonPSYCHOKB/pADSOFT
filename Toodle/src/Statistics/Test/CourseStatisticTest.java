@@ -344,7 +344,10 @@ public class CourseStatisticTest {
 
 	@Test
 	public void testStatistic() {
-
+		
+	//Course statistics only averages out data from 
+	//QuestionStatistic. For  comprehensive testing of what would be 
+	//Considered "adequate" testing, please refer to its tester
 	CourseStatistic cs = new CourseStatistic(c1);
 		
 	assertEquals(cs.getMean(), 4.166, 0.01);
