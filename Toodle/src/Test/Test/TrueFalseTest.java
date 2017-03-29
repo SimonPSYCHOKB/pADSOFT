@@ -1,4 +1,4 @@
-package Test;
+package Test.Test;
 	import static org.junit.Assert.*;
 
 	import java.util.ArrayList;
@@ -6,6 +6,9 @@ import java.util.List;
 
 	import org.junit.Before;
 import org.junit.Test;
+
+import Test.Answer;
+import Test.TrueFalse;
 
 public class TrueFalseTest {
 	

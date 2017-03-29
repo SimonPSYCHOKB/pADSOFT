@@ -1,4 +1,4 @@
-package Test;
+package Test.Test;
 import static org.junit.Assert.*;
 
 import java.io.Serializable;
@@ -7,6 +7,13 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import Test.Answer;
+import Test.FreeText;
+import Test.MultipleAnswer;
+import Test.Question;
+import Test.SingleAnswer;
+import Test.TrueFalse;
 
 
 public class AnswerTest implements Serializable{

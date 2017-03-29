@@ -1,4 +1,4 @@
-package Test;
+package Test.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
@@ -8,6 +8,14 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import Test.Answer;
+import Test.AnsweredTest;
+import Test.Exercise;
+import Test.FreeText;
+import Test.MultipleAnswer;
+import Test.Question;
+import Test.SingleAnswer;
+import Test.TrueFalse;
 import Users.Student;
 
 

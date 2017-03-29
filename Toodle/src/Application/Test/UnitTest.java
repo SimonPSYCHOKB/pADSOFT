@@ -1,10 +1,14 @@
-package Application;
+package Application.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import Application.Course;
+import Application.Note;
+import Application.Unit;
 
 
 public class UnitTest {

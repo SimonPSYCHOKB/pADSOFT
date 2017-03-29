@@ -1,4 +1,4 @@
-package Application;
+package Application.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
@@ -8,6 +8,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import Application.Course;
+import Application.Unit;
 import Test.Exercise;
 import Users.Student;
 

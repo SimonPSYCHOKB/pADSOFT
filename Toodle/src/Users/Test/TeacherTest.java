@@ -1,10 +1,12 @@
-package Users;
+package Users.Test;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import Application.Course;
+import Users.Student;
+import Users.Teacher;
 
 
 public class TeacherTest {

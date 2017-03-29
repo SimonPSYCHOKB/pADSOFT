@@ -1,4 +1,4 @@
-package Statistics;
+package Statistics.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import Application.Application;
 import Application.Course;
+import Statistics.CourseStatistic;
 import Test.Answer;
 import Test.Exercise;
 import Test.FreeText;

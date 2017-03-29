@@ -1,4 +1,4 @@
-package Users;
+package Users.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
@@ -15,6 +15,7 @@ import Test.AnsweredTest;
 import Test.Exercise;
 import Test.FreeText;
 import Test.Question;
+import Users.Student;
 
 
 public class StudentTest {

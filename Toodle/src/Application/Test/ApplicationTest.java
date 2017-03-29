@@ -1,4 +1,4 @@
-package Application;
+package Application.Test;
 import static org.junit.Assert.*;
 
 import java.io.BufferedReader;
@@ -10,6 +10,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import Application.Application;
+import Application.Course;
+import Application.Note;
+import Application.Unit;
 import Test.Exercise;
 import Test.FreeText;
 import Test.MultipleAnswer;
