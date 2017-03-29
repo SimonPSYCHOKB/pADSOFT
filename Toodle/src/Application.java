@@ -511,5 +511,3 @@ public class Application implements Serializable{
 	}
 
 }
-	
-}
