@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TrueFalseTest" project="Toodle" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="TrueFalseTest" time="0.001">
-    <testcase name="testGetPenalty" classname="TrueFalseTest" time="0.0"/>
-    <testcase name="testCheckIfCorrect" classname="TrueFalseTest" time="0.0"/>
-    <testcase name="testGetQuestion" classname="TrueFalseTest" time="0.0"/>
-    <testcase name="testGetWeight" classname="TrueFalseTest" time="0.0"/>
-    <testcase name="testTrueFalse" classname="TrueFalseTest" time="0.001"/>
-  </testsuite>
-</testrun>

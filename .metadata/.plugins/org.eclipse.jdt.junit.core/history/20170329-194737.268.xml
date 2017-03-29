@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="FreeTextTest" project="Toodle" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="FreeTextTest" time="0.0">
-    <testcase name="testFreeText" classname="FreeTextTest" time="0.0"/>
-    <testcase name="testGetPenalty" classname="FreeTextTest" time="0.0"/>
-    <testcase name="testCheckIfCorrect" classname="FreeTextTest" time="0.0"/>
-    <testcase name="testGetQuestion" classname="FreeTextTest" time="0.0"/>
-    <testcase name="testGetWeight" classname="FreeTextTest" time="0.0"/>
-  </testsuite>
-</testrun>

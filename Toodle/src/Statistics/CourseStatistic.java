@@ -3,7 +3,9 @@ package Statistics;
 import java.util.ArrayList;
 
 import Application.Course;
+import Test.AnsweredTest;
 import Test.Exercise;
+import Users.Student;
 
 /**
  * @author Simon Valcarcel
@@ -35,6 +37,20 @@ public class CourseStatistic extends Stats{
 		
 		setMean(total/people);
 		
+	}
+	
+	/**
+	 * Constructor for the statistics of a single student
+	 * @param c - Course
+	 * @param s - Student
+	 */
+	public CourseStatistic(Course c, Student s){
+		super();
+		course = c;
+		
+		setMean(s.getGradeCourse(c));
+		for(AnsweredTest at : s.getTestsFromCourse(c))
+			tests.add(new Statistic(at.getTest(), s));
 	}
 	
 	@Override

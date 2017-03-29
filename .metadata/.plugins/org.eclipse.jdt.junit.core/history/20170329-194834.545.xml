@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="StatisticTest" project="Toodle" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="StatisticTest" time="0.071">
-    <testcase name="testStatistic" classname="StatisticTest" time="0.071"/>
-  </testsuite>
-</testrun>

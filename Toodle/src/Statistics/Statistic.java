@@ -24,8 +24,8 @@ public class Statistic extends Stats implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Exercise test;
-	private ArrayList<QuestionStatistic> qestStat = new ArrayList<QuestionStatistic>();
-	private ArrayList <AnsweredTest> ansTests= new ArrayList<AnsweredTest>();
+	private ArrayList<QuestionStatistic> qestStat;
+	private ArrayList <AnsweredTest> ansTests;
 	  
 	 
 	/**
@@ -34,6 +34,8 @@ public class Statistic extends Stats implements Serializable{
 	 */
 	public Statistic(Exercise t) {
 		super();
+		qestStat = new ArrayList<QuestionStatistic>();
+		ansTests= new ArrayList<AnsweredTest>();
 		test= t;
 		
 		//Get Answered Tests for all Students in the course
@@ -75,6 +77,27 @@ public class Statistic extends Stats implements Serializable{
 		}
 		
 		this.setMean(total/count);
+	}
+	
+	/**
+	 * Constructor for a single student
+	 * @param e - Exercise
+	 * @param s - Student
+	 */
+	public Statistic(Exercise e, Student s){
+		ansTests = new ArrayList<AnsweredTest>();
+		qestStat = new ArrayList<QuestionStatistic>();
+		ansTests.add(s.getAnsweredTest(e));
+		setMean(ansTests.get(0).getGradeTest());
+		
+		for(Question q : e.getQuestions()){
+			List<Answer> answ = new ArrayList<Answer>();
+			for(Answer a : ansTests.get(0).getAnswers())
+				if(a.getQuestion().equals(q)){
+					answ.add(a);
+					qestStat.add(new QuestionStatistic(q, answ));
+				}
+		}
 	}
 
 	@Override

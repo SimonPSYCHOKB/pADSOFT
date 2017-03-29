@@ -64,7 +64,7 @@ public class Student extends User implements Serializable{
 	 * @param c - The Course we are referring to
 	 * @return ats - List of AnsweredTests
 	 */
-	private List<AnsweredTest> getTestsFromCourse(Course c){
+	public List<AnsweredTest> getTestsFromCourse(Course c){
 		List<AnsweredTest> ats = new ArrayList<AnsweredTest>();
 		List<Exercise> ts = c.getTests();
 		int i = 0;

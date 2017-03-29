@@ -7,16 +7,9 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-import Statistics.CourseStatistic;
-import Test.Answer;
-import Test.Exercise;
-import Test.FreeText;
-import Test.MultipleAnswer;
-import Test.Question;
-import Test.SingleAnswer;
-import Test.TrueFalse;
-import Users.Student;
-import Users.Teacher;
+import Statistics.*;
+import Test.*;
+import Users.*;
 
 
 public class MainTester {
@@ -32,7 +25,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("Toodle/src/data.txt");
+		toodle = new Application("src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -492,6 +485,11 @@ public class MainTester {
 	
 	CourseStatistic cs = new CourseStatistic(c1);
 	out.println(cs.toString());
+	
+	out.println("\n----------------------------------------------------");
+	out.println("The statistics of one of the students");
+	SingleUserStatistic cs2 = new SingleUserStatistic(toodle.getStudents().get(0));
+	out.println(cs2.toString());
 	
 	}
 	
