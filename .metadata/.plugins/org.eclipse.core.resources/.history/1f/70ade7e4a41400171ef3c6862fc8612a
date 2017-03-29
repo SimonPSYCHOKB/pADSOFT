@@ -1,0 +1,16 @@
+
+public abstract class Stats {
+	private double mean;
+	
+	public Stats(){
+		mean = 0;
+	}
+	
+	public double getMean(){
+		return mean;
+	}
+	
+	public void setMean(double mean){
+		this.mean = mean;
+	}
+}

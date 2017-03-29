@@ -23,7 +23,6 @@ public class Statistic extends Stats implements Serializable{
 	 * @param t - Exercise of which the statistic is going to be calculated
 	 */
 	public Statistic(Exercise t) {
-		super();
 		test= t;
 		
 		//Get Answered Tests for all Students in the course
@@ -64,17 +63,25 @@ public class Statistic extends Stats implements Serializable{
 			count++;
 		}
 		
-		this.setMean(total/count);
+		mean = total/count;
 	}
 
 	@Override
 	public String toString(){
-		String  str = "\nA statistic for test: " +"\nMean for the test: "+ getMean() ;
+		String  str = "\nA statistic for test: " +"\nMean for the test: "+mean ;
 		for (QuestionStatistic qs: qestStat){
 			str += "\n" + qs.toString();
 		}
 		
 		return str;
+	}
+
+	/**
+	 * This method returns the mean of the stadistic
+	 * @return mean - double
+	 */
+	public double getMean(){
+		return mean;
 	}
 	
 	/**

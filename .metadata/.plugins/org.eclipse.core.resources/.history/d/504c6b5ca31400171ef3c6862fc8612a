@@ -10,7 +10,7 @@ import java.util.List;
  * This class contains the information of the statistic of a question
  *
  */
-public class QuestionStatistic extends Stats implements Serializable{
+public class QuestionStatistic implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -20,13 +20,14 @@ public class QuestionStatistic extends Stats implements Serializable{
 	
 	private Question question;
 	
+	private double mean=0;
+	
 	/**
 	 * Constructor
 	 * @param q - The Question for the statistic
 	 * @param aGiven - List of Answers to the question 
 	 */
 	public QuestionStatistic (Question q, List<Answer> aGiven ){
-		super();
 		question = q;
 		double people=0;
 		
@@ -46,13 +47,13 @@ public class QuestionStatistic extends Stats implements Serializable{
 		
 		//Compute average
 		
-		setMean(((double)(correctNumber/people))*10);
+		mean = ((double)(correctNumber/people))*10;
 		
 	}
 	
 	/**
 	 * This method returns the correct number of answers to the question
-	 * @return correctNumber - int
+	 * @return correctNumber - double
 	 */
 	public int getCorrectNumber() {
 		return correctNumber;
@@ -60,7 +61,7 @@ public class QuestionStatistic extends Stats implements Serializable{
 	
 	/**
 	 * This method returns the wrong number of answers to the question
-	 * @return wrongNumber - int
+	 * @return wrongNumber - double
 	 */
 	public int getWrongNumber() {
 		return wrongNumber;
@@ -68,16 +69,24 @@ public class QuestionStatistic extends Stats implements Serializable{
 	
 	/**
 	 * This method returns the blank number of answers to the question
-	 * @return blankNumber - int
+	 * @return blankNumber - double
 	 */
 	public int getBlankNumber() {
 		return blankNumber;
+	}
+
+	/**
+	 * This method returns the mean of the statistic of the question
+	 * @return mean - double
+	 */
+	public double getMean() {
+		return mean;
 	}
 	
 	@Override
 	public String toString(){
 		NumberFormat formatter = new DecimalFormat("#0.00"); 
-		return "mean: "+getMean()+ " correct: " +formatter.format(correctNumber)+
+		return "mean: "+mean+ " correct: " +formatter.format(correctNumber)+
 	" wrong: " + formatter.format(wrongNumber) +
 	" blank: " + formatter.format(blankNumber);
 	}

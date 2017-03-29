@@ -77,7 +77,7 @@ public class QuestionStatistic extends Stats implements Serializable{
 	@Override
 	public String toString(){
 		NumberFormat formatter = new DecimalFormat("#0.00"); 
-		return "mean: "+getMean()+ " correct: " +formatter.format(correctNumber)+
+		return "mean: "+mean+ " correct: " +formatter.format(correctNumber)+
 	" wrong: " + formatter.format(wrongNumber) +
 	" blank: " + formatter.format(blankNumber);
 	}

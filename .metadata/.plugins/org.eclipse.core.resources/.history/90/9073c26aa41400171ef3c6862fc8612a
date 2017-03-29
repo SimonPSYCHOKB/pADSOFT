@@ -23,7 +23,6 @@ public class Statistic extends Stats implements Serializable{
 	 * @param t - Exercise of which the statistic is going to be calculated
 	 */
 	public Statistic(Exercise t) {
-		super();
 		test= t;
 		
 		//Get Answered Tests for all Students in the course

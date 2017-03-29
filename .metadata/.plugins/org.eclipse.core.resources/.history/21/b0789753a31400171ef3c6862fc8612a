@@ -10,15 +10,17 @@ import java.util.List;
  * This class contains the information of the statistic of a question
  *
  */
-public class QuestionStatistic extends Stats implements Serializable{
+public class QuestionStatistic implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int correctNumber=0;
-	private int wrongNumber=0;
-	private int blankNumber=0;
+	private double correctNumber=0;
+	private double wrongNumber=0;
+	private double blankNumber=0;
 	
 	private Question question;
+	
+	private double mean=0;
 	
 	/**
 	 * Constructor
@@ -26,7 +28,6 @@ public class QuestionStatistic extends Stats implements Serializable{
 	 * @param aGiven - List of Answers to the question 
 	 */
 	public QuestionStatistic (Question q, List<Answer> aGiven ){
-		super();
 		question = q;
 		double people=0;
 		
@@ -46,38 +47,46 @@ public class QuestionStatistic extends Stats implements Serializable{
 		
 		//Compute average
 		
-		setMean(((double)(correctNumber/people))*10);
+		mean = ((double)(correctNumber/people))*10;
 		
 	}
 	
 	/**
 	 * This method returns the correct number of answers to the question
-	 * @return correctNumber - int
+	 * @return correctNumber - double
 	 */
-	public int getCorrectNumber() {
+	public double getCorrectNumber() {
 		return correctNumber;
 	}
 	
 	/**
 	 * This method returns the wrong number of answers to the question
-	 * @return wrongNumber - int
+	 * @return wrongNumber - double
 	 */
-	public int getWrongNumber() {
+	public double getWrongNumber() {
 		return wrongNumber;
 	}
 	
 	/**
 	 * This method returns the blank number of answers to the question
-	 * @return blankNumber - int
+	 * @return blankNumber - double
 	 */
-	public int getBlankNumber() {
+	public double getBlankNumber() {
 		return blankNumber;
+	}
+
+	/**
+	 * This method returns the mean of the statistic of the question
+	 * @return mean - double
+	 */
+	public double getMean() {
+		return mean;
 	}
 	
 	@Override
 	public String toString(){
 		NumberFormat formatter = new DecimalFormat("#0.00"); 
-		return "mean: "+getMean()+ " correct: " +formatter.format(correctNumber)+
+		return "mean: "+mean+ " correct: " +formatter.format(correctNumber)+
 	" wrong: " + formatter.format(wrongNumber) +
 	" blank: " + formatter.format(blankNumber);
 	}

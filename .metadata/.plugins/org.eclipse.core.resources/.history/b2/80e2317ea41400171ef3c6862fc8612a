@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * 
  * This class contains the information for the statistic of a course
  */
-public class CourseStatistic extends Stats{
+public class CourseStatistic {
 	private Course course;
 	private ArrayList<Statistic> tests = new ArrayList<Statistic>(); 
 
@@ -16,7 +16,6 @@ public class CourseStatistic extends Stats{
 	 * @param c - The Course for the statistic
 	 */
 	public CourseStatistic(Course c){
-		super();
 		course=c;
 		for (Exercise t : c.getTests()){
 			tests.add(new Statistic(t));
@@ -28,7 +27,7 @@ public class CourseStatistic extends Stats{
 			people++;
 		}
 		
-		setMean(total/people);
+		mean= (total/people);
 		
 	}
 	
@@ -36,13 +35,22 @@ public class CourseStatistic extends Stats{
 	public String toString(){
 		String str= "\nThe statistics for the course "+
 				 course.getTitle()+ 
-				"\nThe mean for the whole course is: "+ getMean();
+				"\nThe mean for the whole course is: "+ mean;
 		for(Statistic s : tests){
 			str+= s.toString();
 		}
 		
 		return str;
 	}
+
+	/**
+	 * This method returns the mean of a statistic
+	 * @return mean - double
+	 */
+	public double getMean() {
+		return mean;
+	}
+
 
 }
 
