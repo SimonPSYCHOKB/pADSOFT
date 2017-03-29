@@ -7,7 +7,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-public class StatisticTest {
+public class CourseStatisticTest {
+
 	Application testToodle;
 	
 	Course c1;
@@ -330,10 +331,9 @@ public class StatisticTest {
 
 	@Test
 	public void testStatistic() {
-	Statistic st1 = new Statistic(t1);
-	assertEquals(st1.getMean(), 7.5, 0.001);
-	
+
+	CourseStatistic cs = new CourseStatistic(c1);
+		
+	assertEquals(cs.getMean(), 4.166, 0.01);
 	}
-
-
 }

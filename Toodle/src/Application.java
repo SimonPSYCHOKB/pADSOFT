@@ -33,7 +33,7 @@ public class Application implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private List<Student> students;
+	private static List<Student> students;
 	private Teacher teacher;
 	private List<Course> courses;
 	private User currentUser;
@@ -501,15 +501,15 @@ public class Application implements Serializable{
 	}
 	
 	public static List<Student> getStudents(Course course){
-		List<Student> students = new ArrayList<Student>();
+		List<Student> studentsRet = new ArrayList<Student>();
 		for(Student stud : students)
 			for(Course c : stud.getRegisteredCourses())
 				if(c.equals(course))
-					students.add(stud);
-		return students;
+					studentsRet.add(stud);
+		return studentsRet;
 
 	}
 
 }
 	
-}
+

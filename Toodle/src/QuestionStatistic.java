@@ -1,4 +1,6 @@
 import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class QuestionStatistic implements Serializable{
@@ -8,9 +10,9 @@ public class QuestionStatistic implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int correctNumber=0;
-	private int wrongNumber=0;
-	private int blankNumber=0;
+	private double correctNumber=0;
+	private double wrongNumber=0;
+	private double blankNumber=0;
 	
 	private Question question;
 	private ArrayList<Answer> answers = new ArrayList<Answer>();
@@ -20,8 +22,7 @@ public class QuestionStatistic implements Serializable{
 	public QuestionStatistic (Question q, ArrayList<Answer> aGiven ){
 		question = q;
 		answers = aGiven;
-		int total=0;
-		int people=0;
+		double people=0;
 		
 		for(Answer a : aGiven){
 			if(a.isBlank()){
@@ -33,30 +34,29 @@ public class QuestionStatistic implements Serializable{
 				wrongNumber++;
 			}
 			
-			total+=a.getGrade();
 			people++;
 			
 		}//For answer
 		
 		//Compute average
 		
-		mean = (total/people);
+		mean = ((double)(correctNumber/people))*10;
 		
 	}
 	
-	public int getCorrectNumber() {
+	public double getCorrectNumber() {
 		return correctNumber;
 	}
 	public void setCorrectNumber(int correctNumber) {
 		this.correctNumber = correctNumber;
 	}
-	public int getWrongNumber() {
+	public double getWrongNumber() {
 		return wrongNumber;
 	}
 	public void setWrongNumber(int wrongNumber) {
 		this.wrongNumber = wrongNumber;
 	}
-	public int getBlankNumber() {
+	public double getBlankNumber() {
 		return blankNumber;
 	}
 	public void setBlankNumber(int blankNumber) {
@@ -74,9 +74,10 @@ public class QuestionStatistic implements Serializable{
 	}
 	
 	public String toString(){
-		return "mean: "+mean+ " correct: " +correctNumber+
-	" wrong: " + wrongNumber +
-	" blank: " + blankNumber;
+		NumberFormat formatter = new DecimalFormat("#0.00"); 
+		return "mean: "+mean+ " correct: " +formatter.format(correctNumber)+
+	" wrong: " + formatter.format(wrongNumber) +
+	" blank: " + formatter.format(blankNumber);
 	}
 
 	

@@ -1,4 +1,5 @@
 import static java.lang.System.*;
+import static org.junit.Assert.fail;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -6,13 +7,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-/*
- * git add .
- * git commit -m "comentario"
- * (git pull si ha habido cambios previos)
- * git push
- * 
- */
+
 public class MainTester {
 
 	
@@ -106,37 +101,308 @@ public class MainTester {
 	
 	out.println(toodle.getCourses());
 	//Create tests of three types
-	LocalDate d1 = LocalDate.now().minus(30, ChronoUnit.DAYS);
-	LocalDate d2 = d1.plus(29, ChronoUnit.DAYS);
+	out.println("\n----------------------------------------------------");
+	out.println("\nHere, we will create three tests with three "
+			+ "questions each"+ "\n Then, the students will answer.");
+	Course c1;
 	
+	Student s1;
+	Student s2;
+	Student s3;
 	
-	Exercise t1 = toodle.createExercise(true, d1, d2, 0.5);
-	Exercise t2 = toodle.createExercise(true, d1, d2, 0.5);
-	Exercise t3 = toodle.createExercise(true, d1, d2, 0.5);
+	Question q1;
+	Question q2;
+	Question q3;
+	
+	Exercise t1; 
+	Exercise t2;
+	Exercise t3;
 	
 	//Create Questions for tests
+	s1 = toodle.getStudents().get(0);
+	s2 = toodle.getStudents().get(1);
+	s3 = toodle.getStudents().get(2);
+	
+	//Create Course
+	c1= toodle.createCourse(true, "TestCourse", "A test course (please dont fail us)");
+
+	//Create exercises
+	t1 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.3);
+	t2 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
+	t3 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
+	
+	//Create Questions
 	List<String> options = new ArrayList<String>();
-	options.add("No one"); options.add("Someone");
-	Question sq1= toodle.createSingleAnswer(
-			"Who are you", 0.5, 0.3, "No one", options);
+	options.add("1"); options.add("2"); options.add("3"); options.add("4");
+	Question q = new SingleAnswer("SA", 1, 0.5, "1", options);
+	t1.addQuestion(q);
+	t2.addQuestion(q);
+	t3.addQuestion(q);
 	
-	options = new ArrayList<String>();
-	options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
-	List<String> s = new ArrayList<String>();
-	s.add("Me"); s.add("You"); s.add("Him");
-	Question mq2 = toodle.createMultipleAnswer(
-			"Do you exist", 0.5, 0.2,  s, options);
+	List<String> ma = new ArrayList<String>();
+	ma.add("1"); ma.add("2");
+	q = new MultipleAnswer("MA", 1, 0.5, ma, options);
+	t1.addQuestion(q);
+	t2.addQuestion(q);
+	t3.addQuestion(q);
 	
-	Question ftq3 = toodle.createFreeText("Tell me who", 0.5, 0, "You");
-	Question tfq4 = toodle.createTrueFalse("You know you love me", 1, 1, "true");
+	q = new TrueFalse("TF", 1, 0.5, "true");
+	t1.addQuestion(q);
+	t2.addQuestion(q);
+	t3.addQuestion(q);
 	
-	toodle.addQuestionTest(sq1, t1);
-	toodle.addQuestionTest(mq2, t2);
-	toodle.addQuestionTest(ftq3, t3);
-	toodle.addQuestionTest(tfq4, t1);
 	
-	Course c1 = toodle.getCourses().get(0);
-	toodle.addTestToCourse(t1, c1);
+	q = new FreeText("FT", 1, 0.5, "Hey");
+	t1.addQuestion(q);
+	t2.addQuestion(q);
+	t3.addQuestion(q);
+	
+	//Add exercises
+	c1.addTest(t1);
+	c1.addTest(t2);
+	c1.addTest(t3);
+	
+	//Accept students
+	s1.acceptStudent(c1);
+	s2.acceptStudent(c1);
+	s3.acceptStudent(c1);
+	
+	toodle.logOut();
+	
+	
+	
+	//TEST 1 STUDENT 1 
+	List<Answer> a = new ArrayList<Answer>();
+	if(t1.beginExercise(s1) == false)
+		fail("Fecha limite rebasada.\n");
+	else{
+		List<String> answ = new ArrayList<String>();
+		answ.add("1");
+		a.add(t1.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("1"); answ.add("2");
+		a.add(t1.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("false");
+		a.add(t1.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("1");
+		a.add(t1.answerQuestionTest(answ));
+					
+		s1.answerTest(t1, a);
+		t1.finishExercise(s1);
+
+	}
+	
+	//TEST 2 STUDENT 1 
+    a = new ArrayList<Answer>();
+	if(t2.beginExercise(s1) == false)
+		fail("Fecha limite rebasada.\n");
+	else{
+		List<String> answ = new ArrayList<String>();
+		answ.add("1");
+		a.add(t2.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("1"); answ.add("2");
+		a.add(t2.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("false");
+		a.add(t2.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("1");
+		a.add(t2.answerQuestionTest(answ));
+					
+		s1.answerTest(t2, a);
+		t2.finishExercise(s1);
+
+	}
+	
+	//TEST 3 STUDENT 1
+	a = new ArrayList<Answer>();
+	if(t3.beginExercise(s1) == false)
+		fail("Fecha limite rebasada.\n");
+	else{
+		List<String> answ = new ArrayList<String>();
+		answ.add("2");
+		a.add(t3.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("3"); answ.add("2");
+		a.add(t3.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("true");
+		a.add(t3.answerQuestionTest(answ));
+
+		answ = new ArrayList<String>();
+		answ.add("Hey");
+		a.add(t3.answerQuestionTest(answ));
+					
+		s1.answerTest(t3, a);
+		t3.finishExercise(s1);
+		
+	}
+
+		
+		//TEST 1 STUDENT 2
+		 a = new ArrayList<Answer>();
+		if(t1.beginExercise(s2) == false)
+			fail("Fecha limite rebasada.\n");
+		else{
+			List<String>answ = new ArrayList<String>();
+			answ.add("1");
+			a.add(t1.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("1"); answ.add("2");
+			a.add(t1.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("true");
+			a.add(t1.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("Hey");
+			a.add(t1.answerQuestionTest(answ));
+						
+			s2.answerTest(t1, a);
+			t1.finishExercise(s2);
+
+		}
+		
+		//TEST 2 STUDENT 2 
+	    a = new ArrayList<Answer>();
+		if(t2.beginExercise(s2) == false)
+			fail("Fecha limite rebasada.\n");
+		else{
+			List<String>answ = new ArrayList<String>();
+			answ.add("1");
+			a.add(t2.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("1"); answ.add("2");
+			a.add(t2.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("false");
+			a.add(t2.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("1");
+			a.add(t2.answerQuestionTest(answ));
+						
+			s2.answerTest(t2, a);
+			t2.finishExercise(s2);
+
+		}
+		
+		//TEST 3 STUDENT 2
+		a = new ArrayList<Answer>();
+		if(t3.beginExercise(s2) == false)
+			fail("Fecha limite rebasada.\n");
+		else{
+			List<String>answ = new ArrayList<String>();
+			answ.add("2");
+			a.add(t3.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("3"); answ.add("2");
+			a.add(t3.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("true");
+			a.add(t3.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("Hey");
+			a.add(t3.answerQuestionTest(answ));
+						
+			s2.answerTest(t3, a);
+			t3.finishExercise(s2);
+	}
+	
+		//TEST 1 STUDENT 3
+		 a = new ArrayList<Answer>();
+		if(t1.beginExercise(s3) == false)
+			fail("Fecha limite rebasada.\n");
+		else{
+			List<String>answ = new ArrayList<String>();
+			answ.add("1");
+			a.add(t1.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("1"); answ.add("2");
+			a.add(t1.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("true");
+			a.add(t1.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("Hey");
+			a.add(t1.answerQuestionTest(answ));
+						
+			s3.answerTest(t1, a);
+			t1.finishExercise(s3);
+
+		}
+		
+		//TEST 2 STUDENT 3 
+	    a = new ArrayList<Answer>();
+		if(t2.beginExercise(s3) == false)
+			fail("Fecha limite rebasada.\n");
+		else{
+			List<String>answ = new ArrayList<String>();
+			answ.add("1");
+			a.add(t2.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("1"); answ.add("2");
+			a.add(t2.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("false");
+			a.add(t2.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("1");
+			a.add(t2.answerQuestionTest(answ));
+						
+			s3.answerTest(t2, a);
+			t2.finishExercise(s3);
+
+		}
+		
+		//TEST 3 STUDENT 3
+		a = new ArrayList<Answer>();
+		if(t3.beginExercise(s3) == false)
+			fail("Fecha limite rebasada.\n");
+		else{
+			List<String>answ = new ArrayList<String>();
+			answ.add("2");
+			a.add(t3.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("3"); answ.add("2");
+			a.add(t3.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("true");
+			a.add(t3.answerQuestionTest(answ));
+
+			answ = new ArrayList<String>();
+			answ.add("Hey");
+			a.add(t3.answerQuestionTest(answ));
+						
+			s3.answerTest(t3, a);
+			t3.finishExercise(s3);
+	}
 	
 	//Teacher Logout
 	toodle.logOut();
@@ -210,45 +476,11 @@ public class MainTester {
 	toodle.saveApplication("toodle.ser");
 	toodle = Application.getApplication();
 	
-	//..Pause..
-	out.println("\n----------------------------------------------------");
-	
-	out.println("Now the student will answer some tests");
-	
-	//Student Login
-	if(!toodle.logIn(stud, "Coero")){
-		out.println("\nProblem when logging in");
-	}else{
-		out.println("\nStudent logged in successfully\n");
-	}
-	
-	//Student answer test
-	Exercise ex = c1.getTests().get(0);
-	toodle.begingExercise(stud, ex);
-	
-	List<String> answ = new ArrayList<String>();
-	List<Answer> a = new ArrayList<Answer>();
-	
-	System.out.println(ex.showQuestionTest());
-	answ.add("Someone");
-	a.add(ex.answerQuestionTest(answ));
-	System.out.println(ex.showQuestionTest());
-	answ.add("true");
-	a.add(ex.answerQuestionTest(answ));
-	
-	stud.answerTest(ex, a);
 	
 	
+	CourseStatistic cs = new CourseStatistic(c1);
+	out.println(cs.toString());
 	
-	
-	//Student end test
-	//Student read notes
-	//Student see own statistics
-	
-	//...Pause...
-	
-	//Teacher Login
-	//Teacher consult staticstics
 	}
 	
 }

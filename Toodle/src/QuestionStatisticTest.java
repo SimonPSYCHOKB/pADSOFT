@@ -7,7 +7,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-public class StatisticTest {
+public class QuestionStatisticTest {
+
 	Application testToodle;
 	
 	Course c1;
@@ -330,10 +331,35 @@ public class StatisticTest {
 
 	@Test
 	public void testStatistic() {
-	Statistic st1 = new Statistic(t1);
-	assertEquals(st1.getMean(), 7.5, 0.001);
-	
+		Statistic st1 = new Statistic(t1);
+		
+		List<QuestionStatistic> qs = st1.getQuestionStatistics();
+		QuestionStatistic qs1 = qs.get(0);
+		QuestionStatistic qs2 = qs.get(1);
+		QuestionStatistic qs3 = qs.get(2);
+		QuestionStatistic qs4 = qs.get(3);
+		
+		assertEquals(qs1.getCorrectNumber(), 3.00, 0.0 );
+		assertEquals(qs1.getWrongNumber(), 0.00, 0.0 );
+		assertEquals(qs1.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs1.getMean(), 10.00, 0.0 );
+		
+		assertEquals(qs2.getCorrectNumber(), 3.00, 0.0 );
+		assertEquals(qs2.getWrongNumber(), 0.00, 0.0 );
+		assertEquals(qs2.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs2.getMean(), 10.00, 0.0 );
+		
+		assertEquals(qs3.getCorrectNumber(), 2.00, 0.0 );
+		assertEquals(qs3.getWrongNumber(), 1.00, 0.0 );
+		assertEquals(qs3.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs3.getMean(), 6.666, 0.001 );
+		
+		assertEquals(qs4.getCorrectNumber(), 2.00, 0.0 );
+		assertEquals(qs4.getWrongNumber(), 1.00, 0.0 );
+		assertEquals(qs4.getBlankNumber(), 0.00, 0.0 );
+		assertEquals(qs4.getMean(), 6.666, 0.001 );
+		
+		
 	}
-
 
 }

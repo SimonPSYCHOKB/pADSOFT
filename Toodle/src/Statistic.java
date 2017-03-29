@@ -58,8 +58,8 @@ public class Statistic implements Serializable{
 		
 		int count=0;
 		double total=0;
-		for (QuestionStatistic qs: qestStat){
-			total+=qs.getMean();
+		for (AnsweredTest qs: ansTests){
+			total+=qs.getGradeTest();
 			count++;
 		}
 		
@@ -71,7 +71,7 @@ public class Statistic implements Serializable{
 
 
 	public String toString(){
-		String  str = "A statistic:" +"\n"+mean ;
+		String  str = "\nA statistic for test: " +"\nMean for the test: "+mean ;
 		for (QuestionStatistic qs: qestStat){
 			str += "\n" + qs.toString();
 		}
@@ -87,6 +87,14 @@ public class Statistic implements Serializable{
 
 	public void setTest(Exercise test) {
 		this.test = test;
+	}
+	
+	public double getMean(){
+		return mean;
+	}
+	
+	public ArrayList<QuestionStatistic> getQuestionStatistics(){
+		return qestStat;
 	}
 
 }
