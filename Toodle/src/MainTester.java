@@ -1,5 +1,8 @@
 import static java.lang.System.*;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -16,6 +19,8 @@ import java.util.List;
  */
 public class MainTester {
 
+	
+	
 	public static void main(String[] args){
 	
 	out.println("--Welcome to Toodle main tester!--\n");
@@ -25,7 +30,7 @@ public class MainTester {
 	//Import Students
 	Application toodle;
 	try{
-		toodle = new Application("src/data.txt");
+		toodle = new Application("Toodle/src/data.txt");
 	}catch(Exception e ){
 		out.println("Failure when reading students\n");
 		return;
@@ -202,6 +207,21 @@ public class MainTester {
 	//Teacher logout
 	
 	toodle.logOut();
+	
+	out.println("\n----------------------------------------------------");
+	out.println("\nWe interrupt the usual flow ro show you data persistance.");
+	out.println("Proceeding to serialize and save... ");
+	try {
+        FileOutputStream fileOut =
+        new FileOutputStream("toodle.ser");
+        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        out.writeObject(toodle);
+        out.close();
+        fileOut.close();
+        System.out.printf("Serialized data is saved in toodle.ser");
+     }catch(IOException exc) {
+        exc.printStackTrace();
+     }
 	
 	//..Pause..
 	out.println("\n----------------------------------------------------");
