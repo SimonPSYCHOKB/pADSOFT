@@ -57,7 +57,7 @@ public class Statistic implements Serializable{
 		}//Questions
 		
 		int count=0;
-		int total=0;
+		double total=0;
 		for (QuestionStatistic qs: qestStat){
 			total+=qs.getMean();
 			count++;

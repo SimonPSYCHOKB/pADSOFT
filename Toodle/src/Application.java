@@ -500,6 +500,25 @@ public class Application implements Serializable{
 		return s.viewPastTest(e);
 	}
 	
+<<<<<<< HEAD
+	public static Application getToodle(){
+		Application e = null;
+	      try {
+	         FileInputStream fileIn = new FileInputStream("toodle.ser");
+	         ObjectInputStream in = new ObjectInputStream(fileIn);
+	         e = (Application) in.readObject();
+	         in.close();
+	         fileIn.close();
+	         return e;
+	      }catch(IOException i) {
+	         i.printStackTrace();
+	         return null;
+	      }catch(ClassNotFoundException c) {
+	         System.out.println("Application class not found");
+	         c.printStackTrace();
+	         return null;
+	      
+=======
 	public static List<Student> getStudents(Course course){
 		List<Student> students = new ArrayList<Student>();
 		for(Student stud : students)
@@ -507,6 +526,9 @@ public class Application implements Serializable{
 				if(c.equals(course))
 					students.add(stud);
 		return students;
+>>>>>>> 94ecd7faab4449f8149c6cca4e5876cb43b23b74
 	}
 
+}
+	
 }
