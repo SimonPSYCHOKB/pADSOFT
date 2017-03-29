@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 /**
  * 
  */
@@ -6,7 +8,12 @@
  * @author blanca
  *
  */
-public class SingleUserStatistic {
+public class SingleUserStatistic implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 

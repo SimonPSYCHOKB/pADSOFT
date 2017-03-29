@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,10 +8,18 @@ import java.util.List;
  */
 
 /**
- * @author Simon Valcarcel, Blanca Martin
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the information of a Course
  *
  */
-public class Course {
+public class Course implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private boolean visibility;
 	private String title;
@@ -21,35 +30,67 @@ public class Course {
 	private List<Student> expelledStudents;
 	private double total;
 
+	/**
+	 * This method returns whether a Course if visible
+	 * @return true if it is visible, false if not
+	 */
 	public boolean isVisibility() {
 		return visibility;
 	}
 	
+	/**
+	 * This method returns the total points of the Exercises in the Course
+	 * @return total
+	 */
 	public double getTotal(){
 		return total;
 	}
 	
+	/**
+	 * This method returns the title of a Course
+	 * @return title
+	 */
 	public String getTitle() {
 		return title;
 	}
 	
+	/**
+	 * This method returns the Exercises in a Course 
+	 * @return tests - List of Exercise
+	 */
 	public List<Exercise> getTests(){
 		return tests;
 	}
 
+	/**
+	 * This method returns the description of a Course
+	 * @return description
+	 */
 	public String getDescription() {
 		return description;
 	}
 	
+	/**
+	 * This method returns the expelled Students of a Course
+	 * @return expelledStudents - List of Student 
+	 */
 	public List<Student> getExpelledStudents(){
 		return expelledStudents;
 	}
 
+	/**
+	 * This method returns the Units of a Course
+	 * @return units - List of Unit
+	 */
 	public List<Unit> getUnits(){
 		return units;
 	}
+	
 	/**
-	 * 
+	 * Constructor
+	 * @param visibility - boolean that sets whether the Course is visible
+	 * @param title - String with the title
+	 * @param description - String with the description
 	 */
 	public Course(boolean visibility, String title, String description) {
 		this.visibility = visibility;
@@ -62,19 +103,22 @@ public class Course {
 		total = 0;
 	}
 	
-	
-
 	/**
-	 * @param args
+	 * This methods adds a LearningObject to the Course
+	 * @param lo - The LearningObject to be added 
 	 */
-	
 	public void addLearningObj(Unit lo){
 		units.add(lo);
 	}
 	
+	/**
+	 * This method adds an Exercise to the Course
+	 * @param t - The Exercise to be added
+	 */
 	public void addTest(Exercise t){
 		tests.add(t);
 		t.setCourse(this);
+		//We actualize the value of the total in the Course
 		total = total + t.getWeight();
 	}
 
@@ -91,14 +135,26 @@ public class Course {
 		return str;
 	}
 
+	/**
+	 * This method returns the Students registered in the Course
+	 * @return students - List of Student
+	 */
 	public List<Student> getStudents() {
 		return students;
 	}
 
+	/**
+	 * This method adds a Student to the Course
+	 * @param students - Student to be added
+	 */
 	public void addStudents(Student students) {
 		this.students.add(students);
 	}
 	
+	/**
+	 * This method expels a Student from the Course
+	 * @param students - The Student to be expelled
+	 */
 	public void expellStudents(Student students) {
 		expelledStudents.add(students);
 	}

@@ -1,0 +1,106 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class CourseTest {
+	
+	Course c;
+
+	@Before
+	public void setUp() throws Exception {
+		c = new Course(true, "Course 1", "This is Course 1");
+	}
+
+	@Test
+	public void testIsVisibility() {
+		assertTrue(c.isVisibility());
+	}
+
+	@Test
+	public void testGetTotal() {
+		assertEquals(c.getTotal(), 0.0, 0.0);
+	}
+
+	@Test
+	public void testGetTitle() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetTests() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetDescription() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetExpelledStudents() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetTitle() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetDescription() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetObjects() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetExpelledStudents() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetUnits() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCourse() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddLearningObj() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddTest() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToStringShort() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetStudents() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddStudents() {
+		fail("Not yet implemented");
+	}
+
+}

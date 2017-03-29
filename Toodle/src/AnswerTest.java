@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class AnswerTest {
+public class AnswerTest implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	Answer asa, ama, aft, atf;
 	Question sa, ma, ft, tf;
@@ -81,6 +87,13 @@ public class AnswerTest {
 		assertEquals(ama.getGrade(), 1.0, 0.0);
 		assertEquals(aft.getGrade(), 1.0, 0.0);
 		assertEquals(atf.getGrade(), -0.5, 0.0);
+	}
+	
+	@Test
+	public final void testIsBlank(){
+		List<String> str = new ArrayList<String>();
+		assertTrue(new Answer(str, sa).isBlank());
+		
 	}
 
 }

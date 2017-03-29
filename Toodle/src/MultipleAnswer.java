@@ -1,16 +1,33 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Simon Valcarcel, Blanca Martin
- *
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the information of the type of question multiple answer
  */
 
-public class MultipleAnswer extends Question{
+public class MultipleAnswer extends Question implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private List<String> answers;
 	private List<String> options;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param question - String with the wording
+	 * @param weight - double with the weight of the Question in an Exercise
+	 * @param penalty - double with the points to be subtracted if the question isn't answered correctly 
+	 * @param answers - List of String containing the correct answers
+	 * @param options - List of String containing the different options of the answer
+	 */
 	public MultipleAnswer(String question, double weight, double penalty, List<String> answers, List<String> options) {
 		super(question, weight, penalty);
 		this.answers = new ArrayList<String>();

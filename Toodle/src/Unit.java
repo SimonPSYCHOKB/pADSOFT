@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,19 +7,30 @@ import java.util.List;
  */
 
 /**
- * @author Simon Valcarcel, Blanca Martin
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class contains the information of the units
  *
  */
-public class Unit extends LearningObj{
+public class Unit extends LearningObj implements Serializable{
 	
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+	
 	private List<Unit> units;
 	private List<Note> notes;
 	private List<Exercise> tests;
 	private String name;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param visibility - boolean that sets whether the unit is visible
+	 * @param name - String with the name of the unit
+	 */
 	public Unit(boolean visibility, String name) {
 		super(visibility);
 		units = new ArrayList<Unit>();
@@ -27,18 +39,42 @@ public class Unit extends LearningObj{
 		tests = new ArrayList<Exercise>();
 	}
 	
+	/**
+	 * This method returns the subunits inside the unit
+	 * @return units - List of Unit
+	 */
 	public List<Unit> getSubUnits(){
 		return units;
 	}
 	
+	/**
+	 * This method returns the notes inside the unit
+	 * @return notes - List of Note
+	 */
+	public List<Note> getNotes(){
+		return notes;
+	}
+	
+	/**
+	 * This method adds a subunit to the unit
+	 * @param u - The Unit to be added
+	 */
 	public void createSubSection(Unit u){
 		units.add(u);
 	}
 	
+	/**
+	 * This method adds an exercise to the unit
+	 * @param t - The Exercise to be added
+	 */
 	public void addTest(Exercise t){
 		tests.add(t);
 	}
 	
+	/**
+	 * This method adds notes to the unit
+	 * @param n - The Note to be added
+	 */
 	public void addNotes(Note n){
 		notes.add(n);
 	}
@@ -53,8 +89,38 @@ public class Unit extends LearningObj{
 		}
 		return str;
 	}
-	//public Statistic getStatistics();
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Unit other = (Unit) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (notes == null) {
+			if (other.notes != null)
+				return false;
+		} else if (!notes.equals(other.notes))
+			return false;
+		if (tests == null) {
+			if (other.tests != null)
+				return false;
+		} else if (!tests.equals(other.tests))
+			return false;
+		if (units == null) {
+			if (other.units != null)
+				return false;
+		} else if (!units.equals(other.units))
+			return false;
+		return true;
+	}	
 	
-	//public void editUnit();
 
 }

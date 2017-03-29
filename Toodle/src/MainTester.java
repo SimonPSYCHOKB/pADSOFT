@@ -1,5 +1,6 @@
 import static java.lang.System.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -14,8 +15,7 @@ import java.util.List;
  * 
  */
 public class MainTester {
-	
-	
+
 	public static void main(String[] args){
 	
 	out.println("--Welcome to Toodle main tester!--\n");
@@ -116,23 +116,26 @@ public class MainTester {
 	//Create Questions for tests
 	List<String> options = new ArrayList<String>();
 	options.add("No one"); options.add("Someone");
-	SingleAnswer sq1= new SingleAnswer(
+	Question sq1= toodle.createSingleAnswer(
 			"Who are you", 0.5, 0.3, "No one", options);
 	
 	options = new ArrayList<String>();
 	options.add("Me"); options.add("You"); options.add("Him"); options.add("Her");
 	List<String> s = new ArrayList<String>();
 	s.add("Me"); s.add("You"); s.add("Him");
-	MultipleAnswer mq2= new MultipleAnswer(
+	Question mq2 = toodle.createMultipleAnswer(
 			"Do you exist", 0.5, 0.2,  s, options);
 	
-	FreeText ftq3 = new FreeText("Tell me who", 0.5, 0, "You");
-	TrueFalse tfq4 = new TrueFalse("You know you love me", 1, 1, "true");
+	Question ftq3 = toodle.createFreeText("Tell me who", 0.5, 0, "You");
+	Question tfq4 = toodle.createTrueFalse("You know you love me", 1, 1, "true");
 	
-	t1.addQuestion(sq1);
-	t2.addQuestion(mq2);
-	t3.addQuestion(ftq3);
-	t1.addQuestion(tfq4);
+	toodle.addQuestionTest(sq1, t1);
+	toodle.addQuestionTest(mq2, t2);
+	toodle.addQuestionTest(ftq3, t3);
+	toodle.addQuestionTest(tfq4, t1);
+	
+	Course c1 = toodle.getCourses().get(0);
+	toodle.addTestToCourse(t1, c1);
 	
 	//Teacher Logout
 	toodle.logOut();
@@ -147,7 +150,7 @@ public class MainTester {
 	//Students Login
 	Student stud = toodle.getStudents().get(3);
 	out.println("\nNow Lets log in with a Student");
-	if(!toodle.logIn(stud,"Coero" )){
+	if(!toodle.logIn(stud, "Coero")){
 		out.println("\nThere was a problem logging in");
 	}
 	
@@ -157,18 +160,14 @@ public class MainTester {
 	//Students Apply for courses
 	out.println("\nWe start by appliying for three courses");
 	
-	Course c1= toodle.getCourses().get(0);
-	Course c2= toodle.getCourses().get(1);
-	Course c3= toodle.getCourses().get(2);
+	Course c2 = toodle.getCourses().get(1);
+	Course c3 = toodle.getCourses().get(2);
 	
 	//Add the exercises to the course
-	c1.addTest(t1);
 	
-	
-	
-	stud.apply(c1);
-	stud.apply(c2);
-	stud.apply(c3);
+	toodle.applyStudent(stud, c1);
+	toodle.applyStudent(stud, c1);
+	toodle.applyStudent(stud, c1);
 	
 	out.println("\n Lets see the applied courses for our student:");
 	
@@ -187,19 +186,18 @@ public class MainTester {
 	toodle.logIn(toodle.getTeacher(), "123");
 	
 	//Teacher accept
-	Teacher tch = (Teacher)toodle.getCurrentUser();
-	tch.acceptStudent(stud, c1);
+	toodle.acceptStudent(stud, c1);
 	//Teacher reject
-	tch.rejectStudent(stud, c2);
-	tch.acceptStudent(stud, c3);
+	toodle.rejectStudent(stud, c2);
+	toodle.acceptStudent(stud, c3);
 	
 	//Teacher expel
-	tch.expellStudent(stud, c3);
+	toodle.expellStudent(stud, c3);
 
 	out.println("\nAfter the teacher has exercised its authority, he logs out");
 	out.println("Lets see the courses for which the student has been accepted");
 	out.println(stud.getRegisteredCourses());
-	out.println("\nAs well as the expelled ones...");
+	out.println("\nAs well as the rejected ones...");
 	out.println(stud.getRejectedCourses());
 	//Teacher logout
 	
@@ -219,7 +217,7 @@ public class MainTester {
 	
 	//Student answer test
 	Exercise ex = c1.getTests().get(0);
-	ex.beginExercise(stud);
+	toodle.begingExercise(stud, ex);
 	
 	List<String> answ = new ArrayList<String>();
 	List<Answer> a = new ArrayList<Answer>();

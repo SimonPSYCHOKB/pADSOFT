@@ -1,17 +1,22 @@
+import java.io.Serializable;
 import java.util.List;
 /**
  * 
  */
 
 /**
- * @author Simon Valcarcel, Blanca Martin
- *
+ * @author Simon Valcarcel
+ * @author Blanca Martin
+ * 
+ * This class makes reference to the users of the application
  */
-public abstract class User {
-
+public abstract class User implements Serializable{
+	
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+
 	protected String fName;
 	protected String lName;
 	protected String password;
@@ -20,6 +25,14 @@ public abstract class User {
 	protected List<Notification> recievedNotifications;
 	
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param fname - String with the first name
+	 * @param lname - String with the last name
+	 * @param password - String with the password
+	 * @param email - String with the email
+	 */
 	public User(String fname,String lname,  String password, String email){
 		this.fName = fname;
 		this.lName = lname;
@@ -27,48 +40,18 @@ public abstract class User {
 		this.password = password;
 	}
 	
-	public String getName() {
-		return fName;
-	}
-
-	public String getEmail() {
-		return email;
+	/**
+	 * This method returns the full name of the user
+	 * @return String with the first and last name of the user
+	 */
+	public String getName(){
+		return fName + " " + lName;
 	}
 	
-	public String getPassword(){
-		return password;
-	}
-
-	public List<Notification> getSentNotifications() {
-		return sentNotifications;
-	}
-
-	public List<Notification> getRecievedNotifications() {
-		return recievedNotifications;
-	}
-
-	public void setName(String name) {
-		this.fName = name;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void setSentNotifications(List<Notification> sentNotifications) {
-		this.sentNotifications = sentNotifications;
-	}
-
-	public void setRecievedNotifications(List<Notification> recievedNotifications) {
-		this.recievedNotifications = recievedNotifications;
-	}
-
 	/**
-	 * @param args
+	 * This method checks whether the password is correct
+	 * @param attempt - String with the password
+	 * @return true if the password is correct, false if it is not
 	 */
 	public boolean ValidatePassword(String attempt){
 		if (this.password.equals(attempt)) {
@@ -77,17 +60,6 @@ public abstract class User {
 		else return false;
 	}
 	
-	public void checkForNotifications(){
-		
-	}
-
-	public String getlName() {
-		return lName;
-	}
-
-	public void setlName(String lName) {
-		this.lName = lName;
-	}
 
 	@Override
 	public boolean equals(Object obj) {

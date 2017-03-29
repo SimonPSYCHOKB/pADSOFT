@@ -1,0 +1,136 @@
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class StudentTest {
+	
+	Student s;
+	AnsweredTest at;
+	Exercise e;
+	Course c;
+	
+	List<Answer> answs;
+	List<String> str;
+
+	@Before
+	public void setUp() throws Exception {
+		Question q = new FreeText("Question", 1, 0.5, "Answer");
+		answs = new ArrayList<Answer>();
+		
+		str = new ArrayList<String>();
+		str.add("Answer");
+		answs.add(new Answer(str, q));
+		
+		s = new Student("Paco", "Perez", "123", "pperez@esdu.es", "12");
+		e = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.5);
+		e.addQuestion(q);
+		at = new AnsweredTest(e, answs);
+		c = new Course(true, "Course", "This is a Course");
+		c.addTest(e);
+		
+		s.acceptStudent(c);
+		s.answerTest(e, answs);	
+	}
+
+	@Test
+	public void testGetAnsweredTests() {			
+		assertEquals(s.getAnsweredTests().get(0), at);
+	}
+
+	@Test
+	public void testGetGradeCourse() {
+		assertEquals(10.0, s.getGradeCourse(c), 0.0);
+	}
+
+	@Test
+	public void testGetRegisteredCourses() {
+		assertEquals(c, s.getRegisteredCourses().get(0));
+	}
+
+	@Test
+	public void testGetCurrentExercises() {
+		assertEquals(e, s.getCurrentExercises().get(0));
+	}
+
+	@Test
+	public void testSetRegisteredCourses() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetCurrentExercises() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddTestStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveTestStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAnswerTest() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAcceptStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRejectStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testExpellStudent() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAnsweredTest() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testViewPastTest() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCorrectTest() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testApply() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetPendingCourses() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetRejectedCourses() {
+		fail("Not yet implemented");
+	}
+
+}
