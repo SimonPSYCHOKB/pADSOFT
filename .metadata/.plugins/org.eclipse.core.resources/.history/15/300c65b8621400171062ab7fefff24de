@@ -4,13 +4,14 @@ import java.util.List;
  */
 
 /**
- * @author Simon Valcarcel
- * @author Blanca Martin
- * 
- * This class makes reference to the users of the application
+ * @author Simon Valcarcel, Blanca Martin
+ *
  */
 public abstract class User {
 
+	/**
+	 * 
+	 */
 	protected String fName;
 	protected String lName;
 	protected String password;
@@ -19,14 +20,6 @@ public abstract class User {
 	protected List<Notification> recievedNotifications;
 	
 	
-	/**
-	 * Constructor
-	 * 
-	 * @param fname - String with the first name
-	 * @param lname - String with the last name
-	 * @param password - String with the password
-	 * @param email - String with the email
-	 */
 	public User(String fname,String lname,  String password, String email){
 		this.fName = fname;
 		this.lName = lname;
@@ -34,18 +27,13 @@ public abstract class User {
 		this.password = password;
 	}
 	
-	/**
-	 * This method returns the full name of the user
-	 * @return String with the first and last name of the user
-	 */
 	public String getName(){
 		return fName + " " + lName;
 	}
 	
+	
 	/**
-	 * This method checks whether the password is correct
-	 * @param attempt - String with the password
-	 * @return true if the password is correct, false if it is not
+	 * @param args
 	 */
 	public boolean ValidatePassword(String attempt){
 		if (this.password.equals(attempt)) {

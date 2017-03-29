@@ -34,18 +34,13 @@ public abstract class User {
 		this.password = password;
 	}
 	
-	/**
-	 * This method returns the full name of the user
-	 * @return String with the first and last name of the user
-	 */
 	public String getName(){
 		return fName + " " + lName;
 	}
 	
+	
 	/**
-	 * This method checks whether the password is correct
-	 * @param attempt - String with the password
-	 * @return true if the password is correct, false if it is not
+	 * @param args
 	 */
 	public boolean ValidatePassword(String attempt){
 		if (this.password.equals(attempt)) {
