@@ -1,7 +1,6 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +20,7 @@ import es.uam.eps.padsof.emailconnection.InvalidEmailAddressException;
  * This class is the main class, which makes reference to the application
  *
  */
-public class Application implements Serializable{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Application {
 	
 	private List<Student> students;
 	private Teacher teacher;
@@ -129,11 +123,6 @@ public class Application implements Serializable{
 		currentUser= null;
 	}
 	
-	private void sendGroupEmail(String subject, String body) throws InvalidEmailAddressException, FailedInternetConnectionException{
-		for(User std : students)
-			EmailSystem.send(std.getEmail(), subject, body, true);
-	}
-	
 	/**
 	 * This method creates a course in the application is the current user is the teacher
 	 * @param visibility - boolean that sets whether the course is visible
@@ -145,11 +134,6 @@ public class Application implements Serializable{
 		if(currentUser.equals(getTeacher())){
 			Course c = new Course(visibility, title, description);
 			courses.add(c);
-			try {
-				sendGroupEmail("New Course", "There is a new Course");
-			} catch (InvalidEmailAddressException e) {
-			} catch (FailedInternetConnectionException e) {
-			}
 			return c;
 		}
 		return null;
