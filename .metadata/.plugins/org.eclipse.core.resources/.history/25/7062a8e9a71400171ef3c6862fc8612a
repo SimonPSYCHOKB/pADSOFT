@@ -1,10 +1,7 @@
-package Users;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import Application.Course;
 
 
 public class TeacherTest {
@@ -46,6 +43,11 @@ public class TeacherTest {
 		s.apply(c);
 		t.expellStudent(s, c);
 		assertEquals(c, s.getExpelledCourses().get(0));
+	}
+
+	@Test
+	public void testViewStatistics() {
+		fail("Not yet implemented");
 	}
 
 	@Test

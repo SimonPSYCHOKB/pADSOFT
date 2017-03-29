@@ -28,12 +28,9 @@ import es.uam.eps.padsof.emailconnection.InvalidEmailAddressException;
  */
 public class Application implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
-	private List<Student> students;
+	private static List<Student> students;
 	private Teacher teacher;
 	private List<Course> courses;
 	private User currentUser;
@@ -57,14 +54,14 @@ public class Application implements Serializable{
 
 	/**
 	 * Constructor that sets the teacher, the students and the courses
-	 * @param students - List of Student
+	 * @param studets - List of Student
 	 * @param courses - List of Course
 	 */
-	public Application(List<Student> students, List<Course> courses) {
+	public Application(List<Student> studets, List<Course> courses) {
 		students = new ArrayList<Student>();
 		courses = new ArrayList<Course>();
 		teacher = new Teacher("Teacher", "Peres",  "123", "teacher@esdu.es");
-		this.students = students;
+		students = studets;
 		this.courses = courses;
 	}
 	
@@ -253,12 +250,12 @@ public class Application implements Serializable{
 	/**
 	 * This method created a note if the current user is the teacher
 	 * @param text - String with the text of the note
-	 * @param date - LocalDate that sets the date of visibility
+	 * @param visibility - boolean that sets whether the notes are visible
 	 * @return the Note created, null if the current user is not the teacher
 	 */
-	public Note createNote(String text, LocalDate date){
+	public Note createNote(String text, boolean visibility){
 		if(currentUser.equals(teacher)){
-			Note n = new Note(text, date);
+			Note n = new Note(text, visibility);
 			return n;
 		}
 		return null;
@@ -499,24 +496,20 @@ public class Application implements Serializable{
 	public String showStudentPastTest(Student s, Exercise e){
 		return s.viewPastTest(e);
 	}
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 76bab193f1f91abd96a299f0d128613d603458c8
+	/**
+	 * This method returns the students who belong to a course
+	 * @param course - The Course we are referring to
+	 * @return studenetsRet - List of Student
+	 */
 	public static List<Student> getStudents(Course course){
-		List<Student> students = new ArrayList<Student>();
+		List<Student> studentsRet = new ArrayList<Student>();
 		for(Student stud : students)
 			for(Course c : stud.getRegisteredCourses())
 				if(c.equals(course))
-					students.add(stud);
-		return students;
-<<<<<<< HEAD
+					studentsRet.add(stud);
+		return studentsRet;
 
 	}
-=======
->>>>>>> 76bab193f1f91abd96a299f0d128613d603458c8
 
-	}
-	
-
+}
