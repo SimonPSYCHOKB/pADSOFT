@@ -272,14 +272,6 @@ public class Student extends User implements Serializable{
 	}
 	
 	/**
-	 * This method returns the manu of the student
-	 * @return manu - String with the manu
-	 */
-	public String getManu(){
-		return manu;
-	}
-	
-	/**
 	 * This method deletes the answered tests of a student in a unit
 	 * @param unit - The Unit the answered tests belong to
 	 */
