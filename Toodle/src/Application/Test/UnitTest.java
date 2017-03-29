@@ -11,6 +11,7 @@ import Test.Exercise;
 import Application.Course;
 import Application.Note;
 import Application.Unit;
+import Test.Exercise;
 
 
 public class UnitTest {
