@@ -327,14 +327,6 @@ public class Application {
 			c.addTest(e);
 	}
 	
-	/**
-	 * This method sends an email to a user
-	 * @param u - User that recieves the email
-	 * @param subject - String with the subject of the email
-	 * @param body - String with the body of the email
-	 * @throws InvalidEmailAddressException
-	 * @throws FailedInternetConnectionException
-	 */
 	private void sendEmailTo(User u, String subject, String body) throws InvalidEmailAddressException, FailedInternetConnectionException{
 		EmailSystem.send(u.getEmail(), subject, body);
 	}
@@ -347,7 +339,7 @@ public class Application {
 		if(currentUser.equals(s)){
 			s.apply(c);
 			try {
-				sendEmailTo(teacher, "New application", "The student " + s.getName() + " wants to apply for the course " + c.getTitle());
+				sendEmailTo(teacher, "New application", "The student" + s.getName() + "wants to apply for the course" + c.getTitle());
 			} catch (InvalidEmailAddressException e) {
 			} catch (FailedInternetConnectionException e) {
 			}
@@ -360,14 +352,8 @@ public class Application {
 	 * @param c - Course in which the Student is accepted
 	 */
 	public void acceptStudent(Student s, Course c){
-		if(currentUser.equals(teacher)){
+		if(currentUser.equals(teacher))
 			teacher.acceptStudent(s, c);
-			try {
-				sendEmailTo(s, "Accepted!", "You have been accepted in the course " + c.getTitle());
-			} catch (InvalidEmailAddressException e) {
-			} catch (FailedInternetConnectionException e) {
-			}
-		}
 	}
 	
 	/**
@@ -376,14 +362,8 @@ public class Application {
 	 * @param c - Course from which the Student is rejected
 	 */
 	public void rejectStudent(Student s, Course c){
-		if(currentUser.equals(teacher)){
+		if(currentUser.equals(teacher))
 			teacher.rejectStudent(s, c);
-			try {
-				sendEmailTo(s, "Rejected!", "Your application for the course " + c.getTitle() + " has been rejected");
-			} catch (InvalidEmailAddressException e) {
-			} catch (FailedInternetConnectionException e) {
-			}
-		}
 	}
 	
 	/**
@@ -392,14 +372,8 @@ public class Application {
 	 * @param c - Course from which the Student is expelled
 	 */
 	public void expellStudent(Student s, Course c){
-		if(currentUser.equals(teacher)){
+		if(currentUser.equals(teacher))
 			teacher.expellStudent(s, c);
-			try {
-				sendEmailTo(s, "Expelled!", "You have been expelled from the course " + c.getTitle());
-			} catch (InvalidEmailAddressException e) {
-			} catch (FailedInternetConnectionException e) {
-			}
-		}
 	}
 	
 	/**
