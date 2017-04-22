@@ -29,7 +29,7 @@ public class GradesController implements ActionListener{
 		List<CourseStatistic> cs = stats.getCourseStatistics();
 		
 		String titles[] = {"Course", "Mean"};
-		final Object[][] objs = new Object[cs.size()][2];
+		Object[][] objs = new Object[cs.size()][2];
 		
 		int i = 0;
 		for(CourseStatistic c : cs){
@@ -38,7 +38,7 @@ public class GradesController implements ActionListener{
 			i += 1;
 		}
 		
-		final JTable courses = new JTable(objs, titles);
+		JTable courses = new JTable(objs, titles);
 		courses.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		courses.setVisible(true);
 		
@@ -52,15 +52,6 @@ public class GradesController implements ActionListener{
 		view.addPanel(panel);
 		
 		SwingUtilities.updateComponentTreeUI(view);
-		
-		courses.addMouseListener(new MouseAdapter()	{
-			public void mouseClicked(MouseEvent e) {
-				
-				int row = courses.getSelectedRow();
-				int col = courses.getSelectedColumn();
-				
-				JOptionPane.showMessageDialog(view, objs[row][col], "Error", JOptionPane.ERROR_MESSAGE);
-			}
-		});
 	}
+
 }
