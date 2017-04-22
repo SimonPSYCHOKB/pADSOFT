@@ -1,10 +1,6 @@
 package GUI;
 
-
-
-import java.awt.Dimension;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -18,10 +14,9 @@ public class UICourse extends JPanel{
 
 	public UICourse(Course c) {
 		JTabbedPane root = new JTabbedPane();
-		root.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		for(Unit u : c.getUnits()){
 			JPanel unit = new JPanel();
-			unit.setLayout(new BoxLayout(unit, BoxLayout.PAGE_AXIS));
+			unit.setLayout(new BoxLayout());
 			
 			for(Note n : u.getNotes()){
 				JLabel note = new JLabel(n.toString());
@@ -39,16 +34,9 @@ public class UICourse extends JPanel{
 					JLabel note = new JLabel(n.toString());
 					unit.add(note);
 				}
-				int i = 0;
-				for(final Exercise e : u.getTests()){
-					JLabel test = new JLabel("Exercise " + i);
-					test.addMouseListener(new MouseAdapter()	{
-						public void mouseClicked(MouseEvent me) {
-							new Test(e);
-						}
-					});
+				for(Exercise e : u.getTests()){
+					JLabel test = new JLabel(e.toString());
 					unit.add(test);
-					i += 1;
 				}
 			}
 			
@@ -60,7 +48,6 @@ public class UICourse extends JPanel{
 			root.addTab(u.getName(), unit);
 		}
 		root.setVisible(true);
-		root.setPreferredSize(new Dimension(1000, 800));
 		add(root);
 		setVisible(true);
 	}

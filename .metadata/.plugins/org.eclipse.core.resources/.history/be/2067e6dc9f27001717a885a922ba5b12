@@ -160,17 +160,9 @@ public class MainTester {
 	t3.addQuestion(q);
 	
 	//Add exercises
-	Unit u1 = toodle.createUnit(true, "Unit 1");
-	Unit u2 = toodle.createUnit(true, "Unit 2");
-	Unit u3 = toodle.createUnit(true, "Unit 3");
-	
-	toodle.addUnitToCourse(u1, c1);
-	toodle.addUnitToCourse(u2, c1);
-	toodle.addUnitToCourse(u3, c1);
-	
-	u1.addTest(t1);
-	u2.addTest(t2);
-	u3.addTest(t3);
+	c1.addTest(t1);
+	c1.addTest(t2);
+	c1.addTest(t3);
 	
 	//Accept students
 	s1.acceptStudent(c1);
