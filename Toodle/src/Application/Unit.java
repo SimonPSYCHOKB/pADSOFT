@@ -95,6 +95,14 @@ public class Unit extends LearningObj implements Serializable{
 		return course;
 	}
 	
+	/**
+	 * This method returns the name of the unit
+	 * @return name - String 
+	 */
+	public String getName(){
+		return name;
+	}
+	
 	@Override
 	public String toString(){
 		String str =name;

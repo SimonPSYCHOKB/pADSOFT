@@ -1,14 +1,18 @@
 package GUI;
 
 import java.awt.*;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
 public class Courses extends JPanel{
 
 	private static final long serialVersionUID = 1L;
+	JTable cs;
+	General gn;
 
-	public Courses() {
+	public Courses(General gn, Object[][] courses) {
+		this.gn = gn;
 		this.setLayout(new BorderLayout());
 		
 		JPanel top = new JPanel();
@@ -25,7 +29,25 @@ public class Courses extends JPanel{
 		
 		this.add(BorderLayout.NORTH, top);
 		
+		String[] title = {"Title"};
+		cs = new JTable(courses, title);
+		cs.setTableHeader(null);
+		JScrollPane scrollBar =	new	JScrollPane(cs);
+		
+		this.add(BorderLayout.CENTER, scrollBar);		
+		
 		this.setVisible(true);
 	}
-
+	
+	public void setController(MouseListener al){
+		cs.addMouseListener(al);
+	}
+	
+	public JTable getTable(){
+		return cs;
+	}
+	
+	public General getGeneral(){
+		return gn;
+	}
 }

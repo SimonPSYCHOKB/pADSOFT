@@ -1,0 +1,11 @@
+package GUI;
+
+import javax.swing.*;
+
+public class Course extends JPanel{
+
+	public Course(Course c) {
+		setLayout(new FlowLayout());
+	}
+
+}

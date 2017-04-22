@@ -55,10 +55,14 @@ public class CourseStatistic extends Stats{
 	
 	/**
 	 * This method returns the course of the statistic
-	 * @return Course of the statistic
+	 * @return Course - course of the statistic
 	 */
 	public Course getCourse(){
 		return course;
+	}
+	
+	public ArrayList<Statistic> getStatistics(){
+		return tests;
 	}
 	
 	@Override

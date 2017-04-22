@@ -1,0 +1,9 @@
+package GUI;
+
+public class UIUnit {
+
+	public UIUnit() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

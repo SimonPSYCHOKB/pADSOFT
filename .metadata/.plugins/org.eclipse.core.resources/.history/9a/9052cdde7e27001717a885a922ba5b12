@@ -1,0 +1,13 @@
+package GUI;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+public class Course extends JTabbedPanel{
+
+	public Course(Course c) {
+		Jpane
+	}
+
+}

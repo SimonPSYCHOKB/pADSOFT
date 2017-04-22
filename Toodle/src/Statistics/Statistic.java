@@ -118,5 +118,9 @@ public class Statistic extends Stats implements Serializable{
 	public List<QuestionStatistic> getQuestionStatistics(){
 		return qestStat;
 	}
+	
+	public Exercise getExercise(){
+		return test;
+	}
 
 }

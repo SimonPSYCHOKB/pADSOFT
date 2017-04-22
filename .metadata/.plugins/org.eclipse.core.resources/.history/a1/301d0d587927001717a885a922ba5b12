@@ -1,0 +1,9 @@
+package GUI;
+
+public class CoursesController implements MouseListener{
+
+	public CoursesController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

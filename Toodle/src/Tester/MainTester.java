@@ -129,9 +129,9 @@ public class MainTester {
 	c1= toodle.createCourse(true, "TestCourse", "A test course (please dont fail us)");
 
 	//Create exercises
-	t1 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.3);
-	t2 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
-	t3 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
+	t1 = toodle.createExercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.3);
+	t2 = toodle.createExercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
+	t3 = toodle.createExercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
 	
 	//Create Questions
 	List<String> options = new ArrayList<String>();
@@ -432,8 +432,6 @@ public class MainTester {
 	Course c0 = toodle.getCourses().get(0);
 	Course c2 = toodle.getCourses().get(1);
 	Course c3 = toodle.getCourses().get(2);
-	
-	//Add the exercises to the course
 	
 	toodle.applyStudent(stud, c0);
 	toodle.applyStudent(stud, c2);

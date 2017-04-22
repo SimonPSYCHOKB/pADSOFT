@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.*;
 
 import Statistics.*;
+import Test.Question;
 import Users.*;
 
 import Application.*;
@@ -26,7 +27,7 @@ public class GradesController implements ActionListener{
 		
 		Student student = model.searchStudentByName(model.getCurrentUser().getName());
 		SingleUserStatistic stats = new SingleUserStatistic(student);
-		List<CourseStatistic> cs = stats.getCourseStatistics();
+		final List<CourseStatistic> cs = stats.getCourseStatistics();
 		
 		String titles[] = {"Course", "Mean"};
 		final Object[][] objs = new Object[cs.size()][2];
@@ -43,7 +44,7 @@ public class GradesController implements ActionListener{
 		courses.setVisible(true);
 		
 		JScrollPane scrollBar =	new	JScrollPane(courses);
-		
+	
 		JPanel panel = new JPanel();
 		panel.setLayout(new FlowLayout());
 		panel.add(scrollBar);
@@ -57,9 +58,66 @@ public class GradesController implements ActionListener{
 			public void mouseClicked(MouseEvent e) {
 				
 				int row = courses.getSelectedRow();
-				int col = courses.getSelectedColumn();
+				final Course course = cs.get(row).getCourse();
 				
-				JOptionPane.showMessageDialog(view, objs[row][col], "Error", JOptionPane.ERROR_MESSAGE);
+				Object[][] objs = new Object[course.getTests().size()][2];
+				String[] titles = {"Exercise", "Mark"};
+				
+				int i = 0;
+				final List<Statistic> stats = cs.get(row).getStatistics();
+				for(Statistic s : stats){
+					objs[i][0] = "Exercise " + i;
+					objs[i][1] = s.getMean();
+					i += 1;
+				}
+
+				final JTable exercises = new JTable(objs, titles);
+				exercises.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+				exercises.setVisible(true);
+				
+				JScrollPane scrollBar =	new	JScrollPane(exercises);
+				
+				JPanel panel2 = new JPanel();
+				panel2.setLayout(new FlowLayout());
+				panel2.add(scrollBar);
+				panel2.setVisible(true);
+				
+				view.addPanel(panel2);
+				
+				SwingUtilities.updateComponentTreeUI(view);
+				
+				exercises.addMouseListener(new MouseAdapter(){
+					public void mouseClicked(MouseEvent e){
+						
+						int row = exercises.getSelectedRow();
+						List<Question> questions = course.getTests().get(row).getQuestions();
+						
+						Object[][] objs = new Object[questions.size()][2];
+						String[] titles = {"Question", "Mark"};
+						
+						int i = 0;
+						for(QuestionStatistic qs : stats.get(row).getQuestionStatistics()){
+							objs[i][0] = "Question " + i;
+							objs[i][1] = qs.getMean();
+							i += 1;
+						}
+
+						JTable question = new JTable(objs, titles);
+						question.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+						question.setVisible(true);
+						
+						JScrollPane scrollBar =	new	JScrollPane(question);
+						
+						JPanel panel2 = new JPanel();
+						panel2.setLayout(new FlowLayout());
+						panel2.add(scrollBar);
+						panel2.setVisible(true);
+						
+						view.addPanel(panel2);
+						
+						SwingUtilities.updateComponentTreeUI(view);
+					}
+				});
 			}
 		});
 	}
