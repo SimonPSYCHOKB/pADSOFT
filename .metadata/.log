@@ -1030,3 +1030,12 @@ java.io.FileNotFoundException: /home/blanca/pADSOFT/Toodle/bin/ApplicationTest.c
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2017-04-10 18:00:26.805 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-04-10 18:00:33.191
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

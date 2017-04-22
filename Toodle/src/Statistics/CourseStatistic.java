@@ -53,6 +53,14 @@ public class CourseStatistic extends Stats{
 			tests.add(new Statistic(at.getTest(), s));
 	}
 	
+	/**
+	 * This method returns the course of the statistic
+	 * @return Course of the statistic
+	 */
+	public Course getCourse(){
+		return course;
+	}
+	
 	@Override
 	public String toString(){
 		String str= "\nThe statistics for the course "+

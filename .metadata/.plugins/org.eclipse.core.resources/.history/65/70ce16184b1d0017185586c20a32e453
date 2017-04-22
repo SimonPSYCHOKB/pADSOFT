@@ -1,0 +1,19 @@
+package GUI;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class Courses extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+
+	public Courses() {
+		this.setLayout(new BorderLayout());
+		
+		JLabel label = new JLabel("COURSES");
+		label.setMaximumSize(new Dimension(10,50));
+		
+		this.add(BorderLayout.NORTH, label);
+	}
+
+}

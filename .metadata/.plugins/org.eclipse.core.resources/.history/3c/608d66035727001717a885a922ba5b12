@@ -1,0 +1,71 @@
+package GUI;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class General extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
+//	public General() {
+//		super("Toodle");
+//		
+//		this.getContentPane().setLayout(new BorderLayout());
+//		
+//		SpringLayout layout = new SpringLayout();
+//		JPanel top = new JPanel();
+//		top.setLayout(layout);
+//		
+//		JButton options = new JButton("User");
+//		
+//		layout.putConstraint(SpringLayout.EAST, options, 1500, SpringLayout.EAST, this);
+//		layout.putConstraint(SpringLayout.NORTH, options, 10, SpringLayout.NORTH, this);
+//		
+//		top.add(options);
+//		
+//		top.setBorder(BorderFactory.createLineBorder(getForeground(), 1));
+//		top.setPreferredSize(new Dimension(250, 50));
+//		top.setVisible(true);
+//		
+//		this.getContentPane().add(BorderLayout.NORTH, top);
+//		this.getContentPane().add(BorderLayout.WEST, new JPanel());
+//		
+//		this.setVisible(true);
+//		this.setSize(1800, 1000);
+//		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+//		
+//	}
+	
+	public General() {
+		super("Toodle");
+		
+		this.getContentPane().setLayout(new BorderLayout());
+		
+		SpringLayout layout = new SpringLayout();
+		JPanel top = new JPanel();
+		top.setLayout(layout);
+		
+		JMenu options = new JMenu("User");
+		
+		layout.putConstraint(SpringLayout.EAST, options, 1500, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.NORTH, options, 10, SpringLayout.NORTH, this);
+		
+		top.add(options);
+		
+		top.setBorder(BorderFactory.createLineBorder(getForeground(), 1));
+		top.setPreferredSize(new Dimension(250, 50));
+		top.setVisible(true);
+		
+		this.getContentPane().add(BorderLayout.NORTH, top);
+		this.getContentPane().add(BorderLayout.WEST, new JPanel());
+		
+		this.setVisible(true);
+		this.setSize(1800, 1000);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+	
+	public void addPanel(JPanel p){
+		this.getContentPane().add(BorderLayout.CENTER, p);
+	}
+}

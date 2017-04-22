@@ -1,0 +1,9 @@
+package GUI;
+
+public class LogOutController {
+
+	public LogOutController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

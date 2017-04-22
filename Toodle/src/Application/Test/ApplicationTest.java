@@ -45,7 +45,7 @@ public class ApplicationTest {
 		s = new Student("Jorge", "Alcazar", "JoA", "Jorge.Alcazar@esdu.es", "1289");
 		
 		teacher = app.getTeacher();
-		app.logIn(teacher, "123");
+		app.logIn("Teacher Peres", "123");
 	}
 
 	@Test
@@ -82,18 +82,16 @@ public class ApplicationTest {
 
 	@Test
 	public void testGetCourses() {
-		Teacher teacher = app.getTeacher();
-		app.logIn(teacher, "123");
+		app.logIn("Teacher Peres", "123");
 		app.createCourse(true, "Course 1", "This is Course 1");
 		assertEquals(c, app.getCourses().get(0));
 	}
 
 	@Test
 	public void testLogIn() {
-		Teacher teacher = app.getTeacher();
 		app.logOut();
-		assertTrue(!app.logIn(teacher, "12"));
-		assertTrue(app.logIn(teacher, "123"));
+		assertTrue(!app.logIn("Teacher Peres", "12"));
+		assertTrue(app.logIn("Teacher Peres", "123"));
 	}
 
 	@Test
@@ -188,7 +186,7 @@ public class ApplicationTest {
 	@Test
 	public void testApplyStudent(){
 		app.logOut();
-		app.logIn(s, "JoA");
+		app.logIn(s.getName(), "JoA");
 		app.applyStudent(s, c);
 		assertEquals(c, s.getPendingCourses().get(0));
 	}
@@ -196,10 +194,10 @@ public class ApplicationTest {
 	@Test
 	public void testAcceptStudent(){
 		app.logOut();
-		app.logIn(s, "JoA");
+		app.logIn(s.getName(), "JoA");
 		app.applyStudent(s, c);
 		app.logOut();
-		app.logIn(teacher, "123");
+		app.logIn("Teacher Peres", "123");
 		app.acceptStudent(s, c);
 		assertEquals(c, s.getRegisteredCourses().get(0));
 		assertEquals(0.0, s.getPendingCourses().size(), 0.0);
@@ -208,10 +206,10 @@ public class ApplicationTest {
 	@Test
 	public void testRejectStudent(){
 		app.logOut();
-		app.logIn(s, "JoA");
+		app.logIn(s.getName(), "JoA");
 		app.applyStudent(s, c);
 		app.logOut();
-		app.logIn(teacher, "123");
+		app.logIn("Teacher Peres", "123");
 		app.rejectStudent(s, c);
 		assertEquals(c, s.getRejectedCourses().get(0));
 		assertEquals(0.0, s.getRegisteredCourses().size(), 0.0);
@@ -221,10 +219,10 @@ public class ApplicationTest {
 	@Test
 	public void testExpellStudent(){
 		app.logOut();
-		app.logIn(s, "JoA");
+		app.logIn(s.getName(), "JoA");
 		app.applyStudent(s, c);
 		app.logOut();
-		app.logIn(teacher, "123");
+		app.logIn("Teacher Peres", "123");
 		app.acceptStudent(s, c);
 		app.expellStudent(s, c);
 		assertEquals(c, s.getExpelledCourses().get(0));

@@ -42,6 +42,14 @@ public class SingleUserStatistic implements Serializable{
 			questions.addAll(stat.getQuestionStatistics());
 		
 	}
+	
+	/**
+	 * This method returns the course statistics of a student
+	 * @return a List of CourseStatistic
+	 */
+	public List<CourseStatistic> getCourseStatistics(){
+		return courses;
+	}
 
 	@Override
 	public String toString(){

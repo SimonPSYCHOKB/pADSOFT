@@ -1,0 +1,9 @@
+package GUI;
+
+public class GeneralStudent {
+
+	public GeneralStudent() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

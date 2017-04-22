@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import GUI.LogIn;
 import Test.Exercise;
 import Test.FreeText;
 import Test.MultipleAnswer;
@@ -158,6 +159,7 @@ public class Application implements Serializable{
 	 * @param attempt - String with the password
 	 * @return true if the User belongs to the application and the password is correct, false if not
 	 */
+	/*
 	public boolean logIn(User u, String attempt){
 		if(students.contains(u) == true  && u.validatePassword(attempt)){
 			currentUser = u;
@@ -167,6 +169,30 @@ public class Application implements Serializable{
 			return true;
 		}
 		return false;
+	}
+	*/
+	
+	public Student searchStudentByName(String name){
+		for(Student u : students)
+			if(u.getName().equals(name))
+				return u;
+		return null;
+	}
+	
+	public boolean logIn(String name, String attempt){
+		if(teacher.getName().equals(name) && teacher.validatePassword(attempt)){
+			currentUser = teacher;
+			return true;
+		}
+		User user = searchStudentByName(name);
+		if(user == null)
+			return false;
+		else if(user.validatePassword(attempt)){
+			currentUser = user;
+			return true;
+		}
+		return false;
+			
 	}
 	
 	/**
@@ -520,6 +546,10 @@ public class Application implements Serializable{
 					studentsRet.add(stud);
 		return studentsRet;
 
+	}
+	
+	public void startApplication(){
+		new LogIn();
 	}
 
 }

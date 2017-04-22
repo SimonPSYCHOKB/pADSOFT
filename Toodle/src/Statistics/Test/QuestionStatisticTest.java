@@ -45,7 +45,7 @@ public class QuestionStatisticTest {
 	//Create toodle	
 	testToodle = new  Application ("src/data.txt");
 	
-	testToodle.logIn(testToodle.getTeacher(), "123");
+	testToodle.logIn("Teacher Peres", "123");
 	//Get Students
 	s1 = testToodle.getStudents().get(0);
 	s2 = testToodle.getStudents().get(1);

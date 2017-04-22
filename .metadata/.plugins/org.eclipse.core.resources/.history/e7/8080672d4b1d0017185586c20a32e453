@@ -1,0 +1,11 @@
+package GUI;
+
+
+public class tst {
+
+
+	public static void main(String[] args) {
+		new General();
+	}
+
+}

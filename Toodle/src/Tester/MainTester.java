@@ -3,12 +3,14 @@ package Tester;
 import static java.lang.System.*;
 import static org.junit.Assert.fail;
 
+import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.List;
 
 import Application.*;
+import GUI.*;
 import Statistics.*;
 import Test.*;
 import Users.*;
@@ -35,12 +37,10 @@ public class MainTester {
 	
 	out.println("-->Students read successfully\n");
 	out.println(toodle.getStudents());
-	//Import teacher
-	Teacher teacher = toodle.getTeacher();
 	
 	out.println("Now lets log in the teacher\n");
 	//Log in Teacher
-	if(toodle.logIn(teacher, "123")){
+	if(toodle.logIn("Teacher Peres", "123")){
 		out.println("-->Teacher logged in successfully\n");
 	}
 	
@@ -419,7 +419,7 @@ public class MainTester {
 	//Students Login
 	Student stud = toodle.getStudents().get(3);
 	out.println("\nNow Lets log in with a Student");
-	if(!toodle.logIn(stud, "Coero")){
+	if(!toodle.logIn(stud.getName(), "Coero")){
 		out.println("\nThere was a problem logging in");
 	}
 	
@@ -453,7 +453,7 @@ public class MainTester {
 	out.println("\n----------------------------------------------------");
 	
 	//Teacher Login
-	toodle.logIn(toodle.getTeacher(), "123");
+	toodle.logIn("Teacher Peres", "123");
 	
 	//Teacher accept
 	toodle.acceptStudent(stud, c0);
@@ -492,6 +492,13 @@ public class MainTester {
 	out.println("The statistics of one of the students");
 	SingleUserStatistic cs2 = new SingleUserStatistic(toodle.getStudents().get(0));
 	out.println(cs2.toString());
+	
+	toodle.logOut();
+	
+	LogIn lg = new LogIn();
+	ActionListener lic = new LogInController(toodle, lg);
+	lg.setController(lic);
+	
 	
 	}
 	

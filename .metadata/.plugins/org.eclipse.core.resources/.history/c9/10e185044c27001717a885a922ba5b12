@@ -1,0 +1,9 @@
+package GUI;
+
+public class LogInController {
+
+	public LogInController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

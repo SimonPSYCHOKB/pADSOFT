@@ -1,0 +1,14 @@
+package GUI;
+
+import javax.swing.JFrame;
+
+
+public class tst {
+
+
+	public static void main(String[] args) {
+		General g = new General();
+		g.addPanel(new Courses());
+	}
+
+}

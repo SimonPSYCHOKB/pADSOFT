@@ -16,4 +16,8 @@
 <fullyQualifiedTypeName name="Statistics.SingleUserStatistic"/>
 <fullyQualifiedTypeName name="Application.Application"/>
 <fullyQualifiedTypeName name="Application.Unit"/>
+<fullyQualifiedTypeName name="java.awt.Container"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,17 @@
+package GUI;
+
+import java.awt.event.ActionEvent;
+
+public class GradesController extends Controller{
+
+	public GradesController(Application model, General view) {
+		super(model, view);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		
+	}
+
+}

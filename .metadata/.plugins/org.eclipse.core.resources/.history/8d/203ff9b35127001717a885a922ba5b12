@@ -1,0 +1,14 @@
+package GUI;
+
+import Application.*;
+
+public class tst {
+
+
+	public static void main(String[] args) {
+		LogIn lg = new LogIn();
+		Application app = new Application("src/data.txt");
+		LogInController lic = new LogInController(lg, app);
+	}
+
+}

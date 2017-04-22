@@ -1,0 +1,9 @@
+package GUI;
+
+public class GradesController {
+
+	public GradesController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
