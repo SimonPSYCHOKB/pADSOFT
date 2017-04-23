@@ -30,11 +30,11 @@ public class Register extends JFrame{
 		add(message, BorderLayout.CENTER);
 		add(buttons, BorderLayout.SOUTH);
 		
+		setSize(600, 110);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 		
 		setVisible(true);
-		setSize(300, 110);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	

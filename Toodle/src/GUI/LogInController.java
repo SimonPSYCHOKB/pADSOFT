@@ -57,12 +57,18 @@ public class LogInController implements ActionListener{
 				frame.addControllerLogOut(new LogOutController(model, frame));
 				final Courses course = new Courses(frame, objs);
 				frame.addPanel(course);
+				frame.addControllerCourses(new ActionListener(){
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						frame.addPanel(course);
+					}
+				});
 				course.setController(new MouseAdapter()	{
 					public void mouseClicked(MouseEvent e) {
 						
 						int row = course.getTable().getSelectedRow();
 						final Course selected = model.getCourses().get(row);
-						if(((Student) model.getCurrentUser()).getRegisteredCourses().contains(selected)){
+						if(((Student) model.getCurrentUser()).getRegisteredCourses().contains(selected)){				
 							UICourse c = new UICourse(selected, model);
 							frame.addPanel(c);
 						}

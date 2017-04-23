@@ -11,7 +11,9 @@ public abstract class General extends JFrame {
 	
 	JMenu options;
 	JMenuItem logOut;
+	JMenuItem courses;
 	JPanel central;
+	JPanel top;
 	
 	public General() {
 		super("Toodle");
@@ -19,7 +21,7 @@ public abstract class General extends JFrame {
 		this.getContentPane().setLayout(new BorderLayout());
 		
 		SpringLayout layout = new SpringLayout();
-		JPanel top = new JPanel();
+		top = new JPanel();
 		top.setLayout(layout);
 		
 		JMenuBar bar = new JMenuBar();
@@ -30,9 +32,11 @@ public abstract class General extends JFrame {
 		
 		bar.add(options);
 		
-		layout.putConstraint(SpringLayout.EAST, options, 1500, SpringLayout.EAST, this);
-		layout.putConstraint(SpringLayout.NORTH, options, 10, SpringLayout.NORTH, this);
+//		layout.putConstraint(SpringLayout.EAST, options, 1500, SpringLayout.EAST, this);
+//		layout.putConstraint(SpringLayout.NORTH, options, 10, SpringLayout.NORTH, this);
 		
+		courses = new JMenuItem("Courses");
+		options.add(courses);
 		logOut = new JMenuItem("Log out");
 		options.add(logOut);
 		
@@ -47,12 +51,12 @@ public abstract class General extends JFrame {
 		this.getContentPane().add(BorderLayout.NORTH, top);
 		this.getContentPane().add(BorderLayout.WEST, new JPanel());
 		
-		this.setVisible(true);
 		this.setSize(1800, 1000);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);		
+		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+		
+		this.setVisible(true);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
 	public void addPanel(JPanel p){
@@ -60,10 +64,15 @@ public abstract class General extends JFrame {
 		p.setVisible(true);
 		central = p;
 		this.getContentPane().add(BorderLayout.CENTER, p);
+		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
 	public void addControllerLogOut(ActionListener al){
 		logOut.addActionListener(al);
+	}
+	
+	public void addControllerCourses(ActionListener al){
+		courses.addActionListener(al);
 	}
 	
 	public void addOption(JMenuItem mi){

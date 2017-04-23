@@ -5,6 +5,7 @@ import java.awt.event.*;
 import java.util.List;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 import Statistics.*;
 import Test.Question;
@@ -40,6 +41,17 @@ public class GradesController implements ActionListener{
 		}
 		
 		final JTable courses = new JTable(objs, titles);
+		DefaultTableModel tableModel = new DefaultTableModel(objs, titles) {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+		    public boolean isCellEditable(int row, int column) {
+		       //all cells false
+		       return false;
+		    }
+		};
+		courses.setModel(tableModel);
 		courses.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		courses.setVisible(true);
 		
@@ -72,6 +84,17 @@ public class GradesController implements ActionListener{
 				}
 
 				final JTable exercises = new JTable(objs, titles);
+				DefaultTableModel tableModel = new DefaultTableModel(objs, titles) {
+
+					private static final long serialVersionUID = 1L;
+
+					@Override
+				    public boolean isCellEditable(int row, int column) {
+				       //all cells false
+				       return false;
+				    }
+				};
+				exercises.setModel(tableModel);
 				exercises.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 				exercises.setVisible(true);
 				
@@ -103,6 +126,17 @@ public class GradesController implements ActionListener{
 						}
 
 						JTable question = new JTable(objs, titles);
+						DefaultTableModel tableModel = new DefaultTableModel(objs, titles) {
+
+							private static final long serialVersionUID = 1L;
+
+							@Override
+						    public boolean isCellEditable(int row, int column) {
+						       //all cells false
+						       return false;
+						    }
+						};
+						question.setModel(tableModel);
 						question.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 						question.setVisible(true);
 						

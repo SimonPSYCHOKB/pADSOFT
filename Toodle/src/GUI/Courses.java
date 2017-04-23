@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.MouseListener;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class Courses extends JPanel{
 
@@ -31,6 +32,17 @@ public class Courses extends JPanel{
 		
 		String[] title = {"Title"};
 		cs = new JTable(courses, title);
+		DefaultTableModel tableModel = new DefaultTableModel(courses, title) {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+		    public boolean isCellEditable(int row, int column) {
+		       //all cells false
+		       return false;
+		    }
+		};
+		cs.setModel(tableModel);
 		cs.setTableHeader(null);
 		JScrollPane scrollBar =	new	JScrollPane(cs);
 		
