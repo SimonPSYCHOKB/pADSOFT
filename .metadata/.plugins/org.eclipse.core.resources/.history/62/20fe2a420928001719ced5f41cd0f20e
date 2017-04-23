@@ -1,0 +1,25 @@
+package GUI;
+
+import javax.swing.*;
+
+import Test.*;
+
+public abstract class UIQuestion extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	private JPanel root;
+	
+	private UIQuestion(Question question) {
+		root = new JPanel();
+		root.setLayout(new BoxLayout(root, BoxLayout.PAGE_AXIS));
+		
+		JLabel wording = new JLabel(question.getQuestion());
+		root.add(wording);
+		root.setVisible(true);
+	}
+	
+	public UIQuestion(SingleAnswer question){
+		UIQuestion q = new UIQuestion(question);
+	}
+
+}

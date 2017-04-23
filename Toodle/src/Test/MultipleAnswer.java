@@ -55,6 +55,10 @@ public class MultipleAnswer extends Question implements Serializable{
 		return true;
 	}
 	
+	public List<String> getOptions(){
+		return options;
+	}
+	
 	public String showQuestion(){
 		String s = this.getQuestion();
 		for(int i = 0; i < options.size(); i++)

@@ -27,7 +27,7 @@ public class LogIn extends JFrame{
 		
 		uField = new JTextField(10);
 		pField = new JPasswordField(10);
-		
+			
 		layout.putConstraint(SpringLayout.WEST, user, 5, SpringLayout.WEST, this);
 		layout.putConstraint(SpringLayout.NORTH, user, 5, SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.WEST, uField, 5, SpringLayout.EAST, user);
@@ -57,10 +57,17 @@ public class LogIn extends JFrame{
 		this.setVisible(true);
 		this.setSize(300, 110);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 	}
 	
 	public void setController(ActionListener al){
 		enter.addActionListener(al);
+	}
+	
+	public void setControllerEnter(ActionListener al){
+		pField.addActionListener(al);
 	}
 	
 	public String getUserName(){

@@ -20,16 +20,23 @@ public class UICourse extends JPanel{
 		JTabbedPane root = new JTabbedPane();
 		root.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		for(Unit u : c.getUnits()){
-			JPanel unit = new JPanel();
+			final JPanel unit = new JPanel();
 			unit.setLayout(new BoxLayout(unit, BoxLayout.PAGE_AXIS));
 			
 			for(Note n : u.getNotes()){
 				JLabel note = new JLabel(n.toString());
 				unit.add(note);
 			}
-			for(Exercise e : u.getTests()){
-				JLabel test = new JLabel(e.toString());
+			int i = 0;
+			for(final Exercise e : u.getTests()){
+				JLabel test = new JLabel("Exercise " + i);
+				test.addMouseListener(new MouseAdapter()	{
+					public void mouseClicked(MouseEvent me) {
+						new Test(e);
+					}
+				});
 				unit.add(test);
+				i += 1;
 			}
 			for(Unit ss : u.getSubUnits()){
 				JLabel subUnit = new JLabel(ss.getName());
@@ -39,7 +46,7 @@ public class UICourse extends JPanel{
 					JLabel note = new JLabel(n.toString());
 					unit.add(note);
 				}
-				int i = 0;
+				i = 0;
 				for(final Exercise e : u.getTests()){
 					JLabel test = new JLabel("Exercise " + i);
 					test.addMouseListener(new MouseAdapter()	{

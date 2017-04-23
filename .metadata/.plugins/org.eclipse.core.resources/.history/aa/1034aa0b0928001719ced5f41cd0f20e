@@ -1,0 +1,18 @@
+package GUI;
+
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+
+import Test.*;
+
+public abstract class UIQuestion extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	private JPanel root;
+	
+	public UIQuestion(Question question) {
+		root = new JPanel();
+		root.setLayout(new BoxLayout(root, BoxLayout.PAGE_AXIS));
+	}
+
+}

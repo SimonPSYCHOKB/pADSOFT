@@ -1,9 +1,0 @@
-package GUI;
-
-public class GradesController extends Controller{
-
-	public GradesController(Application model, General view) {
-		super(model, view);
-	}
-
-}

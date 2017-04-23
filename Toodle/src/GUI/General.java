@@ -51,6 +51,8 @@ public abstract class General extends JFrame {
 		this.setSize(1800, 1000);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);		
 	}
 	
 	public void addPanel(JPanel p){

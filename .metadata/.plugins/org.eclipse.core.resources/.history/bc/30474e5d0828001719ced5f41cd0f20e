@@ -1,0 +1,11 @@
+package GUI;
+
+import javax.swing.JPanel;
+
+public abstract class UIQuestion extends JPanel{
+
+	public UIQuestion(Question question) {
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package GUI;
+
+public abstract class UIQuestion extends JPanel{
+
+	public UIQuestion() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

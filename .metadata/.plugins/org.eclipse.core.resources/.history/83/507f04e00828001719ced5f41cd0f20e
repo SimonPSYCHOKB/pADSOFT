@@ -1,0 +1,13 @@
+package GUI;
+
+import Test.*;
+
+public class UISingleAnswer extends UIQuestion{
+
+	private static final long serialVersionUID = 1L;
+
+	public UISingleAnswer(SingleAnswer question) {
+		super(question);
+	}
+
+}

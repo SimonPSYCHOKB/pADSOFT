@@ -1,7 +1,0 @@
-package GUI;
-
-public class LogInController implements ActionListener{
-	
-	
-
-}

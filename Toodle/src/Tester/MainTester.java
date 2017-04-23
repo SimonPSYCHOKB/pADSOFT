@@ -504,6 +504,7 @@ public class MainTester {
 	LogIn lg = new LogIn();
 	ActionListener lic = new LogInController(toodle, lg);
 	lg.setController(lic);
+	lg.setControllerEnter(lic);
 	
 	
 	}

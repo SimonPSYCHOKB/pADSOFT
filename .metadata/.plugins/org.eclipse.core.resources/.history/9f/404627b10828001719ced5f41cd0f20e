@@ -1,0 +1,9 @@
+package GUI;
+
+public class UISingleAnswer {
+
+	public UISingleAnswer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

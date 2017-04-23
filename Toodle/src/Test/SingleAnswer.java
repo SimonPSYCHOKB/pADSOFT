@@ -37,6 +37,10 @@ public class SingleAnswer extends Question implements Serializable{
 		return this.answer.equals(answer.getAnswer().get(0));
 	}
 	
+	public List<String> getOptions(){
+		return options;
+	}
+	
 	public String showQuestion(){
 		String s = this.getQuestion();
 		for(int i = 0; i < options.size(); i++)

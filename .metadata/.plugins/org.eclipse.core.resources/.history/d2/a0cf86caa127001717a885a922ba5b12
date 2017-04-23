@@ -1,0 +1,25 @@
+package GUI;
+
+import javax.swing.*;
+
+import Test.*;
+
+public class Test extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+
+	private Exercise model;
+	private JPanel view;
+	
+	public Test(Exercise e, JPanel panel) {
+		model = e;
+		view = panel;
+		
+		JLabel text = new JLabel(e.showQuestionTest());
+		add(text);
+		setVisible(true);
+		
+		view.setVisible(false)
+	}
+
+}
