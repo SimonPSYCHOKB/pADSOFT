@@ -1,11 +1,12 @@
 package GUI;
 
 import java.awt.event.*;
-import java.util.*;
+import java.util.List;
 
 import javax.swing.*;
 
 import Application.*;
+import Users.*;
 
 public class LogInController implements ActionListener{
 	
@@ -60,8 +61,35 @@ public class LogInController implements ActionListener{
 					public void mouseClicked(MouseEvent e) {
 						
 						int row = course.getTable().getSelectedRow();
-						UICourse c = new UICourse(model.getCourses().get(row));
-						frame.addPanel(c);
+						final Course selected = model.getCourses().get(row);
+						if(((Student) model.getCurrentUser()).getRegisteredCourses().contains(selected)){
+							UICourse c = new UICourse(selected, model);
+							frame.addPanel(c);
+						}
+						else if(((Student) model.getCurrentUser()).getPendingCourses().contains(selected))
+							JOptionPane.showMessageDialog(view,"Your application for " + selected.getTitle() + " is still pending.", "Registration", JOptionPane.INFORMATION_MESSAGE);
+						else{
+							final Register register = new Register("You are not registered in " + selected.getTitle() + ". What would you like to do?");
+							register.setControllerOK(new ActionListener(){
+
+								@Override
+								public void actionPerformed(ActionEvent arg0) {
+									model.applyStudent((Student) model.getCurrentUser(), selected);	
+									JOptionPane.showMessageDialog(view,"You have applied for " + selected.getTitle(), "Registration", JOptionPane.INFORMATION_MESSAGE);
+									register.dispose();
+								}
+								
+							});
+							register.setControllerCancel(new ActionListener(){
+
+								@Override
+								public void actionPerformed(ActionEvent arg0) {
+									register.dispose();
+									
+								}
+								
+							});
+						}
 					}
 				});
 			}

@@ -234,6 +234,14 @@ public class Exercise extends LearningObj implements Serializable{
 	public void setUnit(Unit unit){
 		this.unit = unit;
 	}
+	
+//	public int getCount(){
+//		return count;
+//	}
+//	
+	public void setCount(int count){
+		this.count = count;
+	}
 
 	
 }

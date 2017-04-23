@@ -1,0 +1,28 @@
+package GUI;
+
+import java.awt.event.*;
+
+import javax.swing.*;
+
+import Test.*;
+
+import Application.*;
+
+public class OptionsController implements ActionListener {
+
+	private Exercise model;
+	private UIQuestion view;
+	
+	public OptionsController(Exercise model, UIQuestion view) {
+		this.model = model;
+		this.view = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		for(AbstractButton button : view.getOptions()){
+			
+		}
+	}
+
+}

@@ -16,7 +16,7 @@ public class UICourse extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 
-	public UICourse(Course c) {
+	public UICourse(Course c, final Application app) {
 		JTabbedPane root = new JTabbedPane();
 		root.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		for(Unit u : c.getUnits()){
@@ -32,7 +32,7 @@ public class UICourse extends JPanel{
 				JLabel test = new JLabel("Exercise " + i);
 				test.addMouseListener(new MouseAdapter()	{
 					public void mouseClicked(MouseEvent me) {
-						new Test(e);
+						new Test(e, app);
 					}
 				});
 				unit.add(test);
@@ -51,7 +51,7 @@ public class UICourse extends JPanel{
 					JLabel test = new JLabel("Exercise " + i);
 					test.addMouseListener(new MouseAdapter()	{
 						public void mouseClicked(MouseEvent me) {
-							new Test(e);
+							new Test(e, app);
 						}
 					});
 					unit.add(test);

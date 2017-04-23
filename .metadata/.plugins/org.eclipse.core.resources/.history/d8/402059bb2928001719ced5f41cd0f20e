@@ -1,0 +1,9 @@
+package GUI;
+
+public class Register extends JFrame{
+
+	public Register() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

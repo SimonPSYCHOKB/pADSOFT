@@ -1,0 +1,30 @@
+package GUI;
+
+import java.awt.event.*;
+import java.util.*;
+
+import javax.swing.*;
+
+import Test.*;
+
+public class OptionsController implements ActionListener {
+
+	private Exercise model;
+	private Test view;
+	private static List<Answer> answer = new ArrayList<Answer>();
+	
+	public OptionsController(Exercise model, UIQuestion view) {
+		this.model = model;
+		this.view = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		List<String> answers = new ArrayList<String>();
+		for(AbstractButton button : view.getOptions())
+			if(button.isSelected())
+				answers.add(button.getText());
+		answer.add(model.answerQuestionTest(answers));
+	}
+
+}
