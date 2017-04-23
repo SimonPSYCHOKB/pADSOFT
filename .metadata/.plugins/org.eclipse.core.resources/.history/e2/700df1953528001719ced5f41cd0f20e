@@ -1,0 +1,9 @@
+package GUI;
+
+public class UICouseStatistic {
+
+	public UICouseStatistic() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

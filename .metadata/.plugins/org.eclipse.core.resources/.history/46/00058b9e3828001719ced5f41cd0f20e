@@ -1,0 +1,9 @@
+package GUI;
+
+import javax.swing.*;
+
+public class CreationCourse extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+
+}

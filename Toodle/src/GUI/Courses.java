@@ -11,18 +11,21 @@ public class Courses extends JPanel{
 	private static final long serialVersionUID = 1L;
 	JTable cs;
 	General gn;
+	SpringLayout layout;
+	JPanel top;
+	JLabel label;
 
 	public Courses(General gn, Object[][] courses) {
 		this.gn = gn;
 		this.setLayout(new BorderLayout());
 		
-		JPanel top = new JPanel();
-		SpringLayout layout = new SpringLayout();
+		top = new JPanel();
+		layout = new SpringLayout();
 		top.setLayout(layout);
-		JLabel label = new JLabel("COURSES");
+		label = new JLabel("COURSES");
 		label.setMaximumSize(new Dimension(10,50));
 		layout.putConstraint(SpringLayout.WEST, label, 50, SpringLayout.WEST, top);
-		layout.putConstraint(SpringLayout.NORTH, label, 35, SpringLayout.NORTH, top);
+		layout.putConstraint(SpringLayout.NORTH, label, 15, SpringLayout.NORTH, top);
 		
 		top.add(label);
 		top.setPreferredSize(new Dimension(250,50));
@@ -61,5 +64,12 @@ public class Courses extends JPanel{
 	
 	public General getGeneral(){
 		return gn;
+	}
+	
+	public void addButtonTop(JButton button){
+		layout.putConstraint(SpringLayout.WEST, button, 150, SpringLayout.EAST, label);
+		layout.putConstraint(SpringLayout.NORTH, button, 10, SpringLayout.NORTH, top);
+		top.add(button);
+		SwingUtilities.updateComponentTreeUI(this);
 	}
 }

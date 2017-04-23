@@ -29,7 +29,7 @@ public class LogInController implements ActionListener{
 		else {
 			view.setVisible(false);
 			List<Course> courses = model.getCourses();
-			Object[][] objs = new Object[courses.size()][1];
+			final Object[][] objs = new Object[courses.size()][1];
 			
 			int i = 0;
 			for(Course c: courses){
@@ -37,19 +37,39 @@ public class LogInController implements ActionListener{
 				i += 1;
 			}
 			if(model.getTeacher().getName().equals(name)){
-				General frame = new GeneralTeacher();
+				//Principal window
+				final General frame = new GeneralTeacher();
 				frame.addControllerLogOut(new LogOutController(model, frame));
+				frame.addControllerCourses(new ActionListener(){
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						final Courses newC = new Courses(frame, objs);
+						newC.setController(new MouseAdapter()	{
+							public void mouseClicked(MouseEvent e) {
+								int row = newC.getTable().getSelectedRow();
+								final Course selected = model.getCourses().get(row);
+								UICourse c = new UICourse(selected, model);
+								frame.addPanel(c);
+							}
+						});
+						frame.addPanel(newC);
+					}
+				});
+				//Panel with the list of courses
 				final Courses course = new Courses(frame, objs);
 				frame.addPanel(course);
 				course.setController(new MouseAdapter()	{
 					public void mouseClicked(MouseEvent e) {
-						
 						int row = course.getTable().getSelectedRow();
-						
-						// Solo para ver si funcionaba
-						JOptionPane.showMessageDialog(view,row, "Error", JOptionPane.ERROR_MESSAGE);
+						final Course selected = model.getCourses().get(row);
+						UICourse c = new UICourse(selected, model);
+						frame.addPanel(c);
 					}
 				});
+				//Button for creating a new course
+				JButton create = new JButton("Create new Course");
+				create.addActionListener(new CreateCourse(model, frame));
+				course.addButtonTop(create);
 			}
 			else{
 				final GeneralStudent frame = new GeneralStudent();
@@ -100,7 +120,6 @@ public class LogInController implements ActionListener{
 				});
 			}
 		}
-		//System.out.println("HEY");
 	}
 	
 	

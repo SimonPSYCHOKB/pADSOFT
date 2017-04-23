@@ -28,22 +28,24 @@ public class LogIn extends JFrame{
 		uField = new JTextField(10);
 		pField = new JPasswordField(10);
 			
-		layout.putConstraint(SpringLayout.WEST, user, 5, SpringLayout.WEST, this);
-		layout.putConstraint(SpringLayout.NORTH, user, 5, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.WEST, uField, 5, SpringLayout.EAST, user);
-		layout.putConstraint(SpringLayout.NORTH, uField, 5, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.WEST, user, 20, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, user, 10, SpringLayout.NORTH, this);
 		
-		layout.putConstraint(SpringLayout.WEST, password, 0, SpringLayout.WEST, user);
-		layout.putConstraint(SpringLayout.NORTH, password, 8, SpringLayout.SOUTH, user);
-		layout.putConstraint(SpringLayout.WEST, pField, 5, SpringLayout.EAST, password);
-		layout.putConstraint(SpringLayout.NORTH, pField, 5, SpringLayout.SOUTH, uField);	
+		layout.putConstraint(SpringLayout.WEST, uField, 76, SpringLayout.EAST, user);
+		layout.putConstraint(SpringLayout.NORTH, uField, 10, SpringLayout.NORTH, this);
+		
+		layout.putConstraint(SpringLayout.WEST, password, 20, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, password, 30, SpringLayout.NORTH, user);
+		
+		layout.putConstraint(SpringLayout.WEST, pField, 40, SpringLayout.EAST, password);
+		layout.putConstraint(SpringLayout.NORTH, pField, 10, SpringLayout.SOUTH, uField);	
 		
 		msg.add(user);
 		msg.add(uField);
 		msg.add(password);
 		msg.add(pField);
 		
-		msg.setPreferredSize(new Dimension(250,50));
+		msg.setPreferredSize(new Dimension(150,70));
 		msg.setVisible(true);
 				
 		JPanel button = new JPanel();
