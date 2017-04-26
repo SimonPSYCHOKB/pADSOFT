@@ -1,0 +1,12 @@
+package GUI;
+
+import javax.swing.*;
+
+public class QuestionCreation extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+
+	public QuestionCreation(Exercise e){
+		
+	}
+}

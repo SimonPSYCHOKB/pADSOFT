@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -24,8 +25,8 @@ public class CourseTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		e1 = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.5);
-		e2 = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.4);
+		e1 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.5);
+		e2 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.4);
 		u = new Unit(true, "Unit 1");
 		
 		c = new Course(true, "Course 1", "This is Course 1");

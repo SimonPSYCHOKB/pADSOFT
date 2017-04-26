@@ -1,0 +1,80 @@
+package GUI;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+import Test.*;
+
+public class EditTest extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+	
+//	myField.addFocusListener(new FocusListener() {
+//	    public void focusGained(FocusEvent e) {
+//	        myField.setText("");
+//	    }
+//
+//	    public void focusLost(FocusEvent e) {
+//	        // nothing
+//	    }
+//	});
+
+	public EditTest(Exercise e){
+		// Setting layout
+		SpringLayout layout = new SpringLayout();
+		setLayout(layout);
+		
+		// Date of Beginning
+		JLabel start = new JLabel("Date of beginning");
+		SpinnerModel sm1 = new SpinnerDateModel();
+		JSpinner spinner1 = new JSpinner(sm1);
+		layout.putConstraint(SpringLayout.NORTH, start, 50, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.WEST, start, 60, SpringLayout.WEST, this);
+		add(start);
+		layout.putConstraint(SpringLayout.NORTH, spinner1, 50, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.WEST, spinner1, 30, SpringLayout.EAST, start);
+		add(spinner1);
+		
+		// Date of End
+		JLabel end = new JLabel("Date of end");
+		SpinnerModel sm2 = new SpinnerDateModel();
+		JSpinner spinner2 = new JSpinner(sm2);
+		layout.putConstraint(SpringLayout.NORTH, end, 20, SpringLayout.SOUTH, start);
+		layout.putConstraint(SpringLayout.WEST, end, 60, SpringLayout.WEST, this);
+		add(end);
+		layout.putConstraint(SpringLayout.NORTH, spinner2, 15, SpringLayout.SOUTH, spinner1);
+		layout.putConstraint(SpringLayout.WEST, spinner2, 75, SpringLayout.EAST, end);
+		add(spinner2);
+		
+		//Weigth
+		JLabel weight = new JLabel("Weight");
+		SpinnerModel sm3 = new SpinnerNumberModel(e.getWeight(), 0, 100, 0.1);
+		JSpinner spinner3 = new JSpinner(sm3);
+		layout.putConstraint(SpringLayout.NORTH, weight, 20, SpringLayout.SOUTH, end);
+		layout.putConstraint(SpringLayout.WEST, weight, 60, SpringLayout.WEST, this);
+		add(weight);
+		layout.putConstraint(SpringLayout.NORTH, spinner3, 15, SpringLayout.SOUTH, spinner2);
+		layout.putConstraint(SpringLayout.WEST, spinner3, 106, SpringLayout.EAST, weight);
+		add(spinner3);
+		
+		//Weigth
+		JLabel visibility = new JLabel("Visible");
+		JCheckBox ok = new JCheckBox();
+		layout.putConstraint(SpringLayout.NORTH, visibility, 20, SpringLayout.SOUTH, weight);
+		layout.putConstraint(SpringLayout.WEST, visibility, 60, SpringLayout.WEST, this);
+		add(weight);
+		layout.putConstraint(SpringLayout.NORTH, ok, 15, SpringLayout.SOUTH, spinner3);
+		layout.putConstraint(SpringLayout.WEST, ok, 106, SpringLayout.EAST, visibility);
+		add(spinner3);
+		
+		
+		setSize(800, 200);
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+		
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+	
+}

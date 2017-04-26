@@ -1039,3 +1039,329 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.core.resources 2 10035 2017-04-10 18:00:33.191
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2017-04-26 15:53:36.122 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.jdt.core 4 4 2017-04-26 18:52:47.653
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package GUI;
+
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import Test.*;
+
+public class EditQuestion extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+
+	public EditQuestion(final Question q){
+		//BorderLayout
+		setLayout(new BorderLayout());
+		
+		//Questions view
+		JPanel quest = new JPanel();
+		quest.setLayout(new GridLayout(0,1,5,5));
+		
+		//Wording
+		final JTextField wording = new JTextField(q.getQuestion());
+		wording.addFocusListener(new FocusListener(){
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				wording.setText("");
+			}
+			@Override
+			public void focusLost(FocusEvent arg0){
+				wording.setText(q.getQuestion());
+			}
+		});
+		wording.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				q.setQuestion(wording.getText());
+			}
+		});
+		quest.add(wording);
+		
+		//Options and answers
+		// MultipleAnswer
+		if(q instanceof MultipleAnswer){
+			
+			JLabel a = new JLabel("Options :");
+			quest.add(a);
+			
+			for(final String option : ((MultipleAnswer) q).getOptions()){
+				final JTextField op = new JTextField(option);
+				op.addFocusListener(new FocusListener(){
+					@Override
+					public void focusGained(FocusEvent arg0) {
+						op.setText("");
+					}
+					@Override
+					public void focusLost(FocusEvent arg0){
+						op.setText(option);
+					}
+				});
+				op.addActionListener(new ActionListener(){
+					private static String previous = !;
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						System.out.println(option + " " + op.getText());
+						((MultipleAnswer) q).removeOption(option);
+						((MultipleAnswer) q).addOption(op.getText());
+					}
+				});
+				quest.add(op);
+			}
+			
+			a = new JLabel("Answers :");
+			quest.add(a);
+			for(final String answer : ((MultipleAnswer) q).getAnswer()){
+				final JTextField answ = new JTextField(answer);
+				answ.addFocusListener(new FocusListener(){
+					@Override
+					public void focusGained(FocusEvent arg0) {
+						answ.setText("");
+					}
+					@Override
+					public void focusLost(FocusEvent arg0){
+						answ.setText(answer);
+					}
+				});
+				answ.addActionListener(new ActionListener(){
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						((MultipleAnswer) q).removeAnswer(answer);
+						((MultipleAnswer) q).addAnswer(answ.getText());
+					}
+				});
+				quest.add(answ);
+			}
+		} 
+		// Single Answer
+		else if(q instanceof SingleAnswer){
+			
+			JLabel a = new JLabel("Options :");
+			quest.add(a);
+			
+			for(final String option : ((SingleAnswer) q).getOptions()){
+				final JTextField op = new JTextField(option);
+				op.addFocusListener(new FocusListener(){
+					@Override
+					public void focusGained(FocusEvent arg0) {
+						op.setText("");
+					}
+					@Override
+					public void focusLost(FocusEvent arg0){
+						op.setText(option);
+					}
+				});
+				op.addActionListener(new ActionListener(){
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						((SingleAnswer) q).removeOption(option);
+						((SingleAnswer) q).addOption(op.getText());
+					}
+				});
+				quest.add(op);
+			}
+						
+			a = new JLabel("Answer :");
+			quest.add(a);
+			final JTextField answ = new JTextField(((SingleAnswer) q).getAnswer());
+			answ.addFocusListener(new FocusListener(){
+				@Override
+				public void focusGained(FocusEvent arg0) {
+					answ.setText("");
+				}
+				@Override
+				public void focusLost(FocusEvent arg0){
+					answ.setText(((SingleAnswer) q).getAnswer());
+				}
+			});
+			answ.addActionListener(new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					((SingleAnswer) q).setAnswer(answ.getText());
+				}
+			});
+			quest.add(answ);
+		} 
+		//FreeText and TrueFalse
+		else{			
+			JLabel a = new JLabel("Answer :");
+			quest.add(a);
+			final JTextField answ = new JTextField();
+			final String text;
+			if(q instanceof FreeText)
+				text = ((FreeText) q).getAnswer();
+			else
+				text = ((TrueFalse) q).getAnswer();
+			answ.setText(text);
+			answ.addFocusListener(new FocusListener(){
+				@Override
+				public void focusGained(FocusEvent arg0) {
+					answ.setText("");
+				}
+				@Override
+				public void focusLost(FocusEvent arg0){
+					answ.setText(text);
+				}
+			});
+			answ.addActionListener(new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					if(q instanceof FreeText)
+						((FreeText) q).setAnswer(answ.getText());
+					else
+						((TrueFalse) q).setAnswer(answ.getText());
+				}
+			});
+			quest.add(answ);
+		}
+		
+		quest.setVisible(true);
+		quest.setSize(400,150);
+		
+		
+		//Question Data
+		JPanel data = new JPanel();
+		SpringLayout layout = new SpringLayout();
+		data.setLayout(layout);
+		
+		//Weight
+		JLabel weight = new JLabel("Weight :");
+		layout.putConstraint(SpringLayout.NORTH, weight, 40, SpringLayout.NORTH, data);
+		layout.putConstraint(SpringLayout.WEST, weight, 50, SpringLayout.WEST, data);
+		data.add(weight);
+		SpinnerModel sm1 = new SpinnerNumberModel(q.getWeight(), 0, 100, 0.1);
+		final JSpinner spinner1 = new JSpinner(sm1);
+		layout.putConstraint(SpringLayout.NORTH, spinner1, 40, SpringLayout.NORTH, data);
+		layout.putConstraint(SpringLayout.WEST, spinner1, 100, SpringLayout.WEST, weight);
+		data.add(spinner1);
+		spinner1.addChangeListener(new ChangeListener(){
+			@Override
+			public void stateChanged(ChangeEvent arg0) {
+				q.setWeight((double) spinner1.getValue());
+			}
+		});
+		
+		//Penalty
+		JLabel penalty = new JLabel("Penalty :");
+		layout.putConstraint(SpringLayout.NORTH, penalty, 20, SpringLayout.NORTH, weight);
+		layout.putConstraint(SpringLayout.WEST, penalty, 50, SpringLayout.WEST, data);
+		data.add(penalty);
+		SpinnerModel sm2 = new SpinnerNumberModel(q.getWeight(), 0, 100, 0.1);
+		final JSpinner spinner2 = new JSpinner(sm2);
+		layout.putConstraint(SpringLayout.NORTH, spinner2, 20, SpringLayout.NORTH, spinner1);
+		layout.putConstraint(SpringLayout.WEST, spinner2, 100, SpringLayout.WEST, penalty);
+		data.add(spinner2);
+		spinner1.addChangeListener(new ChangeListener(){
+			@Override
+			public void stateChanged(ChangeEvent arg0) {
+				q.setPenalty((double) spinner2.getValue());
+			}
+		});
+		
+		data.setVisible(true);
+		data.setPreferredSize(new Dimension(300, 150));
+		
+		add(quest, BorderLayout.CENTER);
+		add(data, BorderLayout.EAST);
+		
+		setVisible(true);
+		
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2648)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToFieldDeclaration(ASTConverter.java:2877)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleFieldDeclaration(ASTConverter.java:380)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:315)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2284)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1521)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2451)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:534)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:183)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2656)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1219)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:291)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1207)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:807)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:470)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2017-04-26 18:52:47.670
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2648)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToFieldDeclaration(ASTConverter.java:2877)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleFieldDeclaration(ASTConverter.java:380)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:315)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2284)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1521)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2451)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:534)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:183)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2656)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1219)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:291)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1207)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:807)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:470)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2017-04-26 18:52:47.670
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2648)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToFieldDeclaration(ASTConverter.java:2877)
+	at org.eclipse.jdt.core.dom.ASTConverter.checkAndAddMultipleFieldDeclaration(ASTConverter.java:380)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:315)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2284)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1521)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2451)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:534)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:183)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2656)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1219)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:291)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1207)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:807)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:470)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

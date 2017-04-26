@@ -1,9 +1,0 @@
-package GUI;
-
-public class UIQuestion {
-
-	public UIQuestion() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

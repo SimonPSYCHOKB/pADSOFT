@@ -30,7 +30,7 @@ public class GradesController implements ActionListener{
 		SingleUserStatistic stats = new SingleUserStatistic(student);
 		final List<CourseStatistic> cs = stats.getCourseStatistics();
 		
-		String titles[] = {"Course", "Mean"};
+		String titles[] = {"Course", "Mark"};
 		final Object[][] objs = new Object[cs.size()][2];
 		
 		int i = 0;

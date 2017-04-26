@@ -1,0 +1,59 @@
+package GUI;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+import Test.*;
+
+public class QuestionCreation extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+
+	public QuestionCreation(Exercise e){
+		super("Add question");
+		
+		//BorderLayout
+		setLayout(new BorderLayout());
+		
+		//Info
+		JPanel info = new JPanel();
+		SpringLayout layout = new SpringLayout();
+		info.setLayout(layout);
+		//Wording
+		JLabel wording = new JLabel("Wording :");
+		JTextField w = new JTextField(20);
+		
+		layout.putConstraint(SpringLayout.NORTH, wording, 30, SpringLayout.NORTH, info);
+		layout.putConstraint(SpringLayout.WEST, wording, 30, SpringLayout.WEST, info);
+		layout.putConstraint(SpringLayout.NORTH, w, 30, SpringLayout.NORTH, info);
+		layout.putConstraint(SpringLayout.WEST, w, 30, SpringLayout.EAST, wording);
+		info.add(wording);
+		info.add(w);
+		
+		//Question type
+		String[] t = {"Single Answer", "Multiple Choice", "Free Text", "True-False"};
+		JLabel type = new JLabel("Type of question :");
+		JComboBox<String> types = new JComboBox<String>(t);
+		types.setSelectedIndex(0);
+		
+		layout.putConstraint(SpringLayout.NORTH, type, 30, SpringLayout.NORTH, wording);
+		layout.putConstraint(SpringLayout.WEST, type, 30, SpringLayout.WEST, info);
+		layout.putConstraint(SpringLayout.NORTH, types, 30, SpringLayout.NORTH, w);
+		layout.putConstraint(SpringLayout.WEST, types, 30, SpringLayout.EAST, type);
+		info.add(type);
+		info.add(types);
+		
+		//Weight
+		JLabel weight = new JLabel("Weight :");
+		SpinnerModel sm = new SpinnerNumberModel(0,0,100,0.1);
+		JSpinner spinner = new JSpinner(sm);
+		
+		layout.putConstraint(SpringLayout.NORTH, weight, 30, SpringLayout.NORTH, type);
+		layout.putConstraint(SpringLayout.WEST, weight, 30, SpringLayout.WEST, info);
+		layout.putConstraint(SpringLayout.NORTH, spinner, 30, SpringLayout.NORTH, types);
+		layout.putConstraint(SpringLayout.WEST, spinner, 30, SpringLayout.EAST, weight);
+		info.add(weight);
+		info.add(spinner);
+	}
+}

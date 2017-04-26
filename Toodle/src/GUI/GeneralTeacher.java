@@ -1,5 +1,7 @@
 package GUI;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class GeneralTeacher extends General{
@@ -10,6 +12,10 @@ public class GeneralTeacher extends General{
 	public GeneralTeacher() {
 		stats = new JMenuItem("Statistics");
 		addOption(stats);
+	}
+	
+	public void addControllerStats(ActionListener al){
+		stats.addActionListener(al);
 	}
 
 }

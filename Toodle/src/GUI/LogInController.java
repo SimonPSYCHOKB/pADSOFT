@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
@@ -28,17 +29,19 @@ public class LogInController implements ActionListener{
 		}
 		else {
 			view.setVisible(false);
-			List<Course> courses = model.getCourses();
-			final Object[][] objs = new Object[courses.size()][1];
+			final List<Course> courses = model.getCourses();
 			
-			int i = 0;
-			for(Course c: courses){
-				objs[i][0] = c.getTitle();
-				i += 1;
-			}
 			if(model.getTeacher().getName().equals(name)){
+				final Object[][] objs = new Object[courses.size()][1];
+				
+				int i = 0;
+				for(Course c: courses){
+					objs[i][0] = c.getTitle();
+					i += 1;
+				}
+				
 				//Principal window
-				final General frame = new GeneralTeacher();
+				final GeneralTeacher frame = new GeneralTeacher();
 				frame.addControllerLogOut(new LogOutController(model, frame));
 				frame.addControllerCourses(new ActionListener(){
 					@Override
@@ -48,13 +51,14 @@ public class LogInController implements ActionListener{
 							public void mouseClicked(MouseEvent e) {
 								int row = newC.getTable().getSelectedRow();
 								final Course selected = model.getCourses().get(row);
-								UICourse c = new UICourse(selected, model);
+								UICourseEditable c = new UICourseEditable(selected, model);
 								frame.addPanel(c);
 							}
 						});
 						frame.addPanel(newC);
 					}
 				});
+				frame.addControllerStats(new StatsController(frame, model));
 				//Panel with the list of courses
 				final Courses course = new Courses(frame, objs);
 				frame.addPanel(course);
@@ -62,7 +66,7 @@ public class LogInController implements ActionListener{
 					public void mouseClicked(MouseEvent e) {
 						int row = course.getTable().getSelectedRow();
 						final Course selected = model.getCourses().get(row);
-						UICourse c = new UICourse(selected, model);
+						UICourseEditable c = new UICourseEditable(selected, model);
 						frame.addPanel(c);
 					}
 				});
@@ -75,7 +79,22 @@ public class LogInController implements ActionListener{
 				final GeneralStudent frame = new GeneralStudent();
 				frame.addControllerGrades(new GradesController(model, frame));
 				frame.addControllerLogOut(new LogOutController(model, frame));
-				final Courses course = new Courses(frame, objs);
+				
+				List<Course> visible = new ArrayList<Course>();
+				for(Course c: courses){
+					if(c.isVisibility()){
+						visible.add(c);
+					}
+				}
+				
+				final Object[][] objs = new Object[visible.size()][1];
+				int i = 0;
+				for(Course c : visible){
+					objs[i][0] = c.getTitle();
+					i = i + 1;
+				}
+				
+				final Courses course = new Courses(frame, objs); 
 				frame.addPanel(course);
 				frame.addControllerCourses(new ActionListener(){
 					@Override

@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -39,7 +40,7 @@ public class StudentTest {
 		answs.add(new Answer(str, q));
 		
 		s = new Student("Paco", "Perez", "123", "pperez@esdu.es", "12");
-		e = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.5);
+		e = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.5);
 		e.addQuestion(q);
 		at = new AnsweredTest(e, answs);
 		c = new Course(true, "Course", "This is a Course");
@@ -74,7 +75,7 @@ public class StudentTest {
 
 	@Test
 	public void testAddTestStudent() {
-		Exercise e1 = new Exercise(true, LocalDate.now().minusDays(5), LocalDate.now().plusDays(6), 1.5);
+		Exercise e1 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.5);
 		s.addTestStudent(e1);
 		assertEquals(e1, s.getCurrentExercises().get(1));
 	}
@@ -87,7 +88,7 @@ public class StudentTest {
 
 	@Test
 	public void testAnswerTest() {
-		Exercise e1 = new Exercise(true, LocalDate.now().minusDays(5), LocalDate.now().plusDays(6), 1.5);
+		Exercise e1 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.5);
 		s.answerTest(e1, answs);
 		assertEquals(new AnsweredTest(e1, answs), s.getAnsweredTests().get(1));
 	}

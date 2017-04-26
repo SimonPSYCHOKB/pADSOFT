@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -41,7 +42,7 @@ public class ApplicationTest {
 		u = new Unit(true, "Unit");
 		su = new Unit(true, "SubUnit");
 		n = new Note("Note", true);
-		e = new Exercise(true, LocalDate.now(), LocalDate.now(), 1);
+		e = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1);
 		s = new Student("Jorge", "Alcazar", "JoA", "Jorge.Alcazar@esdu.es", "1289");
 		
 		teacher = app.getTeacher();
@@ -142,7 +143,7 @@ public class ApplicationTest {
 
 	@Test
 	public void testCreateExercise() {
-		assertEquals(e, app.createExercise(true, LocalDate.now(), LocalDate.now(), 1));
+		assertEquals(e, app.createExercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1));
 	}
 	
 	@Test

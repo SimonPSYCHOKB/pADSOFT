@@ -34,5 +34,13 @@ public class FreeText extends Question implements Serializable{
 	public String showQuestion(){
 		return this.getQuestion();
 	}
+	
+	public String getAnswer(){
+		return answer;
+	}
+	
+	public void setAnswer(String answ){
+		answer = answ;
+	}
 
 }

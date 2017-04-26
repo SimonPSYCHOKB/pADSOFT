@@ -1,0 +1,285 @@
+//package GUI;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//import javax.swing.*;
+//
+//import Test.*;
+//
+//public class EditQuestion extends JPanel{
+//
+//	private static final long serialVersionUID = 1L;
+//
+//	public EditQuestion(final Question q){
+//		
+//		//Wording
+//		final JTextField wording = new JTextField(q.getQuestion());
+//		wording.addFocusListener(new FocusListener(){
+//			@Override
+//			public void focusGained(FocusEvent arg0) {
+//				wording.setText("");
+//			}
+//			@Override
+//			public void focusLost(FocusEvent arg0){
+//				wording.setText(q.getQuestion());
+//			}
+//		});
+////		add(wording);
+//		
+//		//Options and answers
+//		// MultipleAnswer
+//		if(q instanceof MultipleAnswer){
+//			
+//			//GridLayout
+//			setLayout(new GridLayout(((MultipleAnswer) q).getOptions().size()+3+((MultipleAnswer) q).getAnswer().size(),0,5,5));
+//			add(wording);
+//			
+//			JLabel a = new JLabel("Options :");
+//			add(a);
+//			
+//			for(final String option : ((MultipleAnswer) q).getOptions()){
+//				final JTextField op = new JTextField(option);
+//				op.addFocusListener(new FocusListener(){
+//					@Override
+//					public void focusGained(FocusEvent arg0) {
+//						op.setText("");
+//					}
+//					@Override
+//					public void focusLost(FocusEvent arg0){
+//						op.setText(option);
+//					}
+//				});
+//				add(op);
+//			}
+//			
+//			a = new JLabel("Answers :");
+//			add(a);
+//			for(final String answer : ((MultipleAnswer) q).getAnswer()){
+//				final JTextField answ = new JTextField(answer);
+//				answ.addFocusListener(new FocusListener(){
+//					@Override
+//					public void focusGained(FocusEvent arg0) {
+//						answ.setText("");
+//					}
+//					@Override
+//					public void focusLost(FocusEvent arg0){
+//						answ.setText(answer);
+//					}
+//				});
+//				add(answ);
+//			}
+//		} 
+//		// Single Answer
+//		else if(q instanceof SingleAnswer){
+//			
+//			//GridLayout
+//			setLayout(new GridLayout(((SingleAnswer) q).getOptions().size()+4,0,5,5));
+//			add(wording);
+//			
+//			JLabel a = new JLabel("Options :");
+//			add(a);
+//			
+//			for(final String option : ((SingleAnswer) q).getOptions()){
+//				final JTextField op = new JTextField(option);
+//				op.addFocusListener(new FocusListener(){
+//					@Override
+//					public void focusGained(FocusEvent arg0) {
+//						op.setText("");
+//					}
+//					@Override
+//					public void focusLost(FocusEvent arg0){
+//						op.setText(option);
+//					}
+//				});
+//				add(op);
+//			}
+//						
+//			a = new JLabel("Answer :");
+//			add(a);
+//			final JTextField answ = new JTextField(((SingleAnswer) q).getAnswer());
+//			answ.addFocusListener(new FocusListener(){
+//				@Override
+//				public void focusGained(FocusEvent arg0) {
+//					answ.setText("");
+//				}
+//				@Override
+//				public void focusLost(FocusEvent arg0){
+//					answ.setText(((SingleAnswer) q).getAnswer());
+//				}
+//			});
+//			add(answ);
+//		} 
+//		//FreeText and TrueFalse
+//		else{
+//			//GridLayout
+//			setLayout(new GridLayout(3,0,5,5));
+//			add(wording);
+//			
+//			JLabel a = new JLabel("Answer :");
+//			add(a);
+//			final JTextField answ = new JTextField();
+//			final String text;
+//			if(q instanceof FreeText)
+//				text = ((FreeText) q).getAnswer();
+//			else
+//				text = ((TrueFalse) q).getAnswer();
+//			answ.setText(text);
+//			answ.addFocusListener(new FocusListener(){
+//				@Override
+//				public void focusGained(FocusEvent arg0) {
+//					answ.setText("");
+//				}
+//				@Override
+//				public void focusLost(FocusEvent arg0){
+//					answ.setText(text);
+//				}
+//			});
+//			add(answ);
+//		}
+//		
+//		setVisible(true);
+//	}
+//}
+
+package GUI;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+
+import javax.swing.*;
+
+import Test.*;
+
+public class EditQuestion extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+
+	public EditQuestion(final Question q){
+		
+		//Wording
+		final JTextField wording = new JTextField(q.getQuestion());
+		wording.addFocusListener(new FocusListener(){
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				wording.setText("");
+			}
+			@Override
+			public void focusLost(FocusEvent arg0){
+				wording.setText(q.getQuestion());
+			}
+		});
+//		add(wording);
+		
+		//Options and answers
+		// MultipleAnswer
+		if(q instanceof MultipleAnswer){
+			
+			JLabel a = new JLabel("Options :");
+			
+			ArrayList<JTextField> options = new ArrayList<JTextField>();
+			for(final String option : ((MultipleAnswer) q).getOptions()){
+				final JTextField op = new JTextField(option);
+				op.addFocusListener(new FocusListener(){
+					@Override
+					public void focusGained(FocusEvent arg0) {
+						op.setText("");
+					}
+					@Override
+					public void focusLost(FocusEvent arg0){
+						op.setText(option);
+					}
+				});
+				options.add(op);
+			}
+			
+			JLabel b = new JLabel("Answers :");
+			ArrayList<JTextField> answers = new ArrayList<JTextField>();
+			for(final String answer : ((MultipleAnswer) q).getAnswer()){
+				final JTextField answ = new JTextField(answer);
+				answ.addFocusListener(new FocusListener(){
+					@Override
+					public void focusGained(FocusEvent arg0) {
+						answ.setText("");
+					}
+					@Override
+					public void focusLost(FocusEvent arg0){
+						answ.setText(answer);
+					}
+				});
+				answers.add(answ);
+			}
+		} 
+		// Single Answer
+		else if(q instanceof SingleAnswer){
+			
+			//GridLayout
+			setLayout(new GridLayout(((SingleAnswer) q).getOptions().size()+4,0,5,5));
+			add(wording);
+			
+			JLabel a = new JLabel("Options :");
+			add(a);
+			
+			for(final String option : ((SingleAnswer) q).getOptions()){
+				final JTextField op = new JTextField(option);
+				op.addFocusListener(new FocusListener(){
+					@Override
+					public void focusGained(FocusEvent arg0) {
+						op.setText("");
+					}
+					@Override
+					public void focusLost(FocusEvent arg0){
+						op.setText(option);
+					}
+				});
+				add(op);
+			}
+						
+			a = new JLabel("Answer :");
+			add(a);
+			final JTextField answ = new JTextField(((SingleAnswer) q).getAnswer());
+			answ.addFocusListener(new FocusListener(){
+				@Override
+				public void focusGained(FocusEvent arg0) {
+					answ.setText("");
+				}
+				@Override
+				public void focusLost(FocusEvent arg0){
+					answ.setText(((SingleAnswer) q).getAnswer());
+				}
+			});
+			add(answ);
+		} 
+		//FreeText and TrueFalse
+		else{
+			//GridLayout
+			setLayout(new GridLayout(3,0,5,5));
+			add(wording);
+			
+			JLabel a = new JLabel("Answer :");
+			add(a);
+			final JTextField answ = new JTextField();
+			final String text;
+			if(q instanceof FreeText)
+				text = ((FreeText) q).getAnswer();
+			else
+				text = ((TrueFalse) q).getAnswer();
+			answ.setText(text);
+			answ.addFocusListener(new FocusListener(){
+				@Override
+				public void focusGained(FocusEvent arg0) {
+					answ.setText("");
+				}
+				@Override
+				public void focusLost(FocusEvent arg0){
+					answ.setText(text);
+				}
+			});
+			add(answ);
+		}
+		
+		setVisible(true);
+	}
+}
+

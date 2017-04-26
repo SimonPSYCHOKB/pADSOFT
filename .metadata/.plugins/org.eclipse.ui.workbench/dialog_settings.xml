@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="57" key="DIALOG_X_ORIGIN"/>
-		<item value="-46" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jdt.ui.wizards.NewClassCreationWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
@@ -15,5 +15,19 @@
 		<item value="828" key="DIALOG_HEIGHT"/>
 		<item value="-77" key="DIALOG_X_ORIGIN"/>
 		<item value="-312" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
+		<item value="0" key="sort"/>
+		<item value="false" key="allPersp"/>
+		<list key="columns">
+			<item value="306"/>
+			<item value="612"/>
+		</list>
+		<list key="bounds">
+			<item value="488"/>
+			<item value="140"/>
+			<item value="944"/>
+			<item value="640"/>
+		</list>
 	</section>
 </section>

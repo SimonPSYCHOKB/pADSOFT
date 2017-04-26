@@ -39,4 +39,12 @@ public class TrueFalse extends Question implements Serializable{
 	public String showQuestion(){
 		return this.getQuestion() + "\n\ttrue\n\tfalse";
 	}
+	
+	public String getAnswer(){
+		return answer;
+	}
+	
+	public void setAnswer(String answ){
+		answer = answ;
+	}
 }

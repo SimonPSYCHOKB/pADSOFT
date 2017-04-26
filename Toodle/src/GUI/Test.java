@@ -24,6 +24,10 @@ public class Test extends JFrame{
 	private static List<Answer> answer = new ArrayList<Answer>();
 	
 	public Test(final Exercise e, final Application app) {
+		if(e.beginExercise((Student) app.getCurrentUser()) == false){
+			JOptionPane.showMessageDialog(view,"Fecha limite rebasada", "Error", JOptionPane.INFORMATION_MESSAGE);
+			return;
+		}
 		view = this;
 		i = 1;
 		
@@ -136,7 +140,8 @@ public class Test extends JFrame{
 			
 		});
 		
-		setSize(1000, 800);
+		setSize(800, 600);
+		setResizable(false);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 		

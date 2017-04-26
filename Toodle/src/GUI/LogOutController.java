@@ -16,7 +16,8 @@ public class LogOutController implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.logOut();	
+		model.logOut();
+		model.saveApplication();
 		view.dispose();
 		LogIn lg = new LogIn();
 		ActionListener lic = new LogInController(Application.getApplication(), lg);

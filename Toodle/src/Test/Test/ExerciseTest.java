@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -39,7 +40,7 @@ public class ExerciseTest {
 		ft = new FreeText("Question3", 1, 0.5, "4");
 		tf = new TrueFalse("Question4", 1, 0.5, "false");
 		
-		e = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1.5);
+		e = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.5);
 		e.addQuestion(sa); e.addQuestion(ma); e.addQuestion(ft); e.addQuestion(tf);
 		
 		s = new Student("Paco", "Perez", "123", "pperez@esdu.es", "12");
@@ -66,12 +67,14 @@ public class ExerciseTest {
 
 	@Test
 	public void testGetDateOfEnd() {
-		assertTrue(LocalDate.now().plusDays(10).isEqual(e.getDateOfEnd()));
+		assertTrue(! (new Date(LocalDate.now().plusDays(10).toEpochDay())).after(e.getDateOfEnd()));
+		assertTrue(! (new Date(LocalDate.now().plusDays(10).toEpochDay())).before(e.getDateOfEnd()));
 	}
 
 	@Test
 	public void testGetDateOfBegining() {
-		assertTrue(LocalDate.now().minusDays(10).isEqual(e.getDateOfBegining()));
+		assertTrue(! (new Date(LocalDate.now().toEpochDay())).after(e.getDateOfBegining()));
+		assertTrue(! (new Date()).before(e.getDateOfBegining()));
 	}
 
 	@Test
@@ -95,14 +98,18 @@ public class ExerciseTest {
 
 	@Test
 	public void testEditDateOfEnd() {
-		e.editDateOfEnd(LocalDate.now().plusDays(5));
-		assertTrue(LocalDate.now().plusDays(5).isEqual(e.getDateOfEnd()));
+		Date d = new Date(LocalDate.now().plusDays(5).toEpochDay());
+		e.editDateOfEnd(d);
+		assertTrue(! d.after(e.getDateOfEnd()));
+		assertTrue(! d.before(e.getDateOfEnd()));
 	}
 
 	@Test
 	public void testEditDateOfBegining() {
-		e.editDateOfBegining(LocalDate.now().plusDays(5));
-		assertTrue(LocalDate.now().plusDays(5).isEqual(e.getDateOfBegining()));
+		Date d = new Date(LocalDate.now().plusDays(5).toEpochDay());
+		e.editDateOfBegining(d);
+		assertTrue(! d.after(e.getDateOfBegining()));
+		assertTrue(! d.before(e.getDateOfBegining()));
 	}
 
 	@Test

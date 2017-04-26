@@ -2,6 +2,7 @@ package Application.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,7 +29,7 @@ public class UnitTest {
 		u = new Unit(true, "Unit 1");
 		su = new Unit(true, "SubUnit 1");
 		
-		e = new Exercise(true, LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), 1);
+		e = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1);
 		n = new Note("Note", true);
 		
 		c.addUnit(u);

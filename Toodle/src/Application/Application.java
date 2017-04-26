@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import GUI.LogIn;
@@ -310,12 +310,12 @@ public class Application implements Serializable{
 	/**
 	 * This method creates an exercise if the current user is the teacher
 	 * @param visibility - boolean that sets if the exercise is visible or not
-	 * @param dateOfBegining - LocalDate referring to the beginning of the exercise
-	 * @param dateOfEnd - LocalDate referring to the end of the exercise
+	 * @param dateOfBegining - Date referring to the beginning of the exercise
+	 * @param dateOfEnd - Date referring to the end of the exercise
 	 * @param weight - double which marks the weight of the exercise in a course
 	 * @return the Exercise created, null if the current user is not the teacher
 	 */
-	public Exercise createExercise(boolean visibility, LocalDate dateOfBegining, LocalDate dateOfEnd, double weight){
+	public Exercise createExercise(boolean visibility, Date dateOfBegining, Date dateOfEnd, double weight){
 		if(currentUser.equals(teacher)){
 			Exercise e = new Exercise(visibility, dateOfBegining, dateOfEnd, weight);
 			return e;

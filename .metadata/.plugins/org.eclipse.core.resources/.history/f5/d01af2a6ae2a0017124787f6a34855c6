@@ -1,0 +1,32 @@
+package GUI;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+import Test.*;
+
+public class QuestionCreation extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+
+	public QuestionCreation(Exercise e){
+		super("Add question");
+		
+		//BorderLayout
+		setLayout(new BorderLayout());
+		
+		//Info
+		JPanel info = new JPanel();
+		SpringLayout layout = new SpringLayout();
+		info.setLayout(layout);
+		//Wording
+		JLabel wording = new JLabel("Wording :");
+		JTextField w = new JTextField(20);
+		
+		layout.putConstraint(SpringLayout.NORTH, wording, 30, SpringLayout.NORTH, info);
+		layout.putConstraint(SpringLayout.WEST, wording, 30, SpringLayout.WEST, info);
+		layout.putConstraint(SpringLayout.NORTH, w, 30, SpringLayout.NORTH, info);
+		layout.putConstraint(SpringLayout.WEST, w, 30, SpringLayout.NORTH, wording);
+	}
+}

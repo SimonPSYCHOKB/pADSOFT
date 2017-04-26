@@ -4,10 +4,10 @@ import static java.lang.System.*;
 import static org.junit.Assert.fail;
 
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.*;
+import java.util.*;
 
-import java.util.List;
+//import javax.swing.JFrame;
 
 import Application.*;
 import GUI.*;
@@ -129,9 +129,9 @@ public class MainTester {
 	c1= toodle.createCourse(true, "TestCourse", "A test course (please dont fail us)");
 
 	//Create exercises
-	t1 = toodle.createExercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.3);
-	t2 = toodle.createExercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
-	t3 = toodle.createExercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
+	t1 = toodle.createExercise(true, new Date(), new Date(LocalDateTime.now().plusDays(10).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()), 0.3);
+	t2 = toodle.createExercise(true, new Date(), new Date(LocalDateTime.now().plusDays(10).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()), 0.3);
+	t3 = toodle.createExercise(true, new Date(), new Date(LocalDateTime.now().plusDays(10).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()), 0.3);
 	
 	//Create Questions
 	List<String> options = new ArrayList<String>();
@@ -500,7 +500,7 @@ public class MainTester {
 	out.println(cs2.toString());
 	
 	toodle.logOut();
-	
+//	JFrame.setDefaultLookAndFeelDecorated(true);
 	LogIn lg = new LogIn();
 	ActionListener lic = new LogInController(toodle, lg);
 	lg.setController(lic);

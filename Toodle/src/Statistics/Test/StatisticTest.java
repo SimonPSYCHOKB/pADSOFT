@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -54,9 +55,9 @@ public class StatisticTest {
 	c1= testToodle.createCourse(true, "TestCourse", "A test course (please dont fail us)");
 
 	//Create exercises
-	t1 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(10), 0.3);
-	t2 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
-	t3 = new Exercise(true, LocalDate.now(), LocalDate.now().plusDays(5), 0.3);
+	t1 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 0.3);
+	t2 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 0.3);
+	t3 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 0.3);
 	
 	//Create Questions
 	List<String> options = new ArrayList<String>();

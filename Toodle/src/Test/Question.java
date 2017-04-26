@@ -37,6 +37,10 @@ public abstract class Question implements Serializable{
 		return question;
 	}
 	
+	public void setQuestion(String q){
+		question = q;
+	}
+	
 	/**
 	 * This method returns the weight of the Question in an Exercise
 	 * @return weight 
@@ -45,12 +49,20 @@ public abstract class Question implements Serializable{
 		return weight;
 	}
 	
+	public void setWeight(double w){
+		weight = w;
+	}
+	
 	/**
 	 * This method returns the penalty of the Question
 	 * @return penalty
 	 */
 	public double getPenalty(){
 		return penalty;
+	}
+	
+	public void setPenalty(double p){
+		penalty = p;
 	}
 	
 	/**
@@ -88,7 +100,5 @@ public abstract class Question implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 
 }
