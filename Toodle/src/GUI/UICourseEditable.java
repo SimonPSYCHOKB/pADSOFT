@@ -1,7 +1,6 @@
 package GUI;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.awt.font.TextAttribute;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,63 +49,56 @@ public class UICourseEditable extends JPanel{
 					attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
 					test.setFont(font.deriveFont(attributes));
 					test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-					test.addMouseListener(new MouseAdapter()	{
-						public void mouseClicked(MouseEvent me) {
-							new EditTest(e, app);
-						}
-					});
-				layout.putConstraint(SpringLayout.NORTH, test, 20, SpringLayout.NORTH, previous);
-				layout.putConstraint(SpringLayout.WEST, test, 20, SpringLayout.WEST, unit);
-				unit.add(test);
-				i += 1;
-				previous = test;
-			}
-			
-			for(Unit ss : u.getSubUnits()){
-				JPanel rootSub = new JPanel();
-				final JPanel sub = new JPanel();
-				sub.setBorder(BorderFactory.createTitledBorder(ss.getName()));
-				SpringLayout subL = new SpringLayout();
-				sub.setLayout(subL);
-				
-				JComponent before = sub;
-				for(Note n : ss.getNotes()){
-					JLabel note = new JLabel(n.toString());
-					subL.putConstraint(SpringLayout.NORTH, note, 20, SpringLayout.NORTH, before);
-					subL.putConstraint(SpringLayout.WEST, note, 20, SpringLayout.WEST, sub);
-					sub.add(note);
-					before = note;
-				}
-				i = 0;
-				for(final Exercise e : ss.getTests()){
-					JLabel test = new JLabel("Exercise " + i);
-					Font font = test.getFont();
-					Map<TextAttribute, Object> attributes = new HashMap<>(font.getAttributes());
-					attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-					test.setFont(font.deriveFont(attributes));
-					test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-					test.addMouseListener(new MouseAdapter()	{
-						public void mouseClicked(MouseEvent me) {
-							new EditTest(e, app);
-						}
-					});
-					subL.putConstraint(SpringLayout.NORTH, test, 20, SpringLayout.NORTH, before);
-					subL.putConstraint(SpringLayout.WEST, test, 20, SpringLayout.WEST, sub);
-					sub.add(test);
+					test.addMouseListener(new ExerciseController(app, e));
+	
+					layout.putConstraint(SpringLayout.NORTH, test, 20, SpringLayout.NORTH, previous);
+					layout.putConstraint(SpringLayout.WEST, test, 20, SpringLayout.WEST, unit);
+					unit.add(test);
 					i += 1;
-					before = test;
+					previous = test;
 				}
-				
-				sub.setVisible(true);
-				sub.setPreferredSize(new Dimension(700, 100));
-				rootSub.setVisible(true);
-				rootSub.setPreferredSize(new Dimension(800, 200));
-				layout.putConstraint(SpringLayout.NORTH, rootSub, 20, SpringLayout.NORTH, previous);
-				layout.putConstraint(SpringLayout.WEST, rootSub, 20, SpringLayout.WEST, unit);
-				unit.add(rootSub);
-				rootSub.add(sub, BorderLayout.CENTER);
-				units.add(rootSub);
-			}
+			
+				for(Unit ss : u.getSubUnits()){
+					JPanel rootSub = new JPanel();
+					final JPanel sub = new JPanel();
+					sub.setBorder(BorderFactory.createTitledBorder(ss.getName()));
+					SpringLayout subL = new SpringLayout();
+					sub.setLayout(subL);
+					
+					JComponent before = sub;
+					for(Note n : ss.getNotes()){
+						JLabel note = new JLabel(n.toString());
+						subL.putConstraint(SpringLayout.NORTH, note, 20, SpringLayout.NORTH, before);
+						subL.putConstraint(SpringLayout.WEST, note, 20, SpringLayout.WEST, sub);
+						sub.add(note);
+						before = note;
+					}
+					i = 0;
+					for(final Exercise e : ss.getTests()){
+						JLabel test = new JLabel("Exercise " + i);
+						Font font = test.getFont();
+						Map<TextAttribute, Object> attributes = new HashMap<>(font.getAttributes());
+						attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+						test.setFont(font.deriveFont(attributes));
+						test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+						test.addMouseListener(new ExerciseController(app, e));
+						subL.putConstraint(SpringLayout.NORTH, test, 20, SpringLayout.NORTH, before);
+						subL.putConstraint(SpringLayout.WEST, test, 20, SpringLayout.WEST, sub);
+						sub.add(test);
+						i += 1;
+						before = test;
+					}
+					
+					sub.setVisible(true);
+					sub.setPreferredSize(new Dimension(700, 100));
+					rootSub.setVisible(true);
+					rootSub.setPreferredSize(new Dimension(800, 200));
+					layout.putConstraint(SpringLayout.NORTH, rootSub, 20, SpringLayout.NORTH, previous);
+					layout.putConstraint(SpringLayout.WEST, rootSub, 20, SpringLayout.WEST, unit);
+					unit.add(rootSub);
+					rootSub.add(sub, BorderLayout.CENTER);
+					units.add(rootSub);
+				}
 			rootUnit.setVisible(true);
 			unit.setVisible(true);
 			rootUnit.add(unit, BorderLayout.CENTER);

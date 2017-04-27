@@ -195,6 +195,14 @@ public class Application implements Serializable{
 			
 	}
 	
+	public Course searchCourseByName(String name){
+		for(Course c : courses){
+			if(c.getTitle().equals(name))
+				return c;
+		}
+		return null;
+	}
+	
 	/**
 	 * This method logs out the current user from the application
 	 */

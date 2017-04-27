@@ -34,7 +34,7 @@ public class CourseStatistic extends Stats{
 			total+=t.getMean();
 			people++;
 		}
-		
+		if(people == 0) return;
 		setMean(total/people);
 		
 	}

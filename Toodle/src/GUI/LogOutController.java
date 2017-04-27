@@ -22,7 +22,6 @@ public class LogOutController implements ActionListener{
 		LogIn lg = new LogIn();
 		ActionListener lic = new LogInController(Application.getApplication(), lg);
 		lg.setController(lic);
-		lg.setControllerEnter(lic);
 	}
 
 }

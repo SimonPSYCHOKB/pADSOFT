@@ -3,8 +3,6 @@ package GUI;
 
 
 import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -14,14 +12,10 @@ import Application.*;
 
 public class UICourse extends JPanel{
 	
-	ArrayList<JPanel> units;
-
 	private static final long serialVersionUID = 1L;
 
 	public UICourse(Course c, final Application app) {
-		
-		units = new ArrayList<JPanel>();
-		
+				
 		JTabbedPane root = new JTabbedPane();
 		root.setTabLayoutPolicy(JTabbedPane.WRAP_TAB_LAYOUT);
 		
@@ -31,7 +25,7 @@ public class UICourse extends JPanel{
 			if(u.isVisibility() == false) continue;
 			JPanel rootUnit = new JPanel();
 			rootUnit.setLayout(new BorderLayout());
-			final JPanel unit = new JPanel();
+			JPanel unit = new JPanel();
 			SpringLayout layout = new SpringLayout();
 			unit.setLayout(layout);
 			
@@ -48,14 +42,10 @@ public class UICourse extends JPanel{
 			for(final Exercise e : u.getTests()){
 				if(e.isVisibility() == false) continue;
 				JLabel test = new JLabel("Exercise " + i);
-				test.addMouseListener(new MouseAdapter()	{
-					public void mouseClicked(MouseEvent me) {
-						new Test(e, app);
-					}
-				});
 				layout.putConstraint(SpringLayout.NORTH, test, 20, SpringLayout.NORTH, previous);
 				layout.putConstraint(SpringLayout.WEST, test, 20, SpringLayout.WEST, unit);
 				unit.add(test);
+				test.addMouseListener(new ExerciseController(app, e));
 				i += 1;
 				previous = test;
 			}
@@ -63,7 +53,7 @@ public class UICourse extends JPanel{
 			for(Unit ss : u.getSubUnits()){
 				if(ss.isVisibility() == false) continue;
 				JPanel rootSub = new JPanel();
-				final JPanel sub = new JPanel();
+				JPanel sub = new JPanel();
 				sub.setBorder(BorderFactory.createTitledBorder(ss.getName()));
 				SpringLayout subL = new SpringLayout();
 				sub.setLayout(subL);
@@ -81,13 +71,9 @@ public class UICourse extends JPanel{
 				for(final Exercise e : ss.getTests()){
 					if(e.isVisibility() == false) continue;
 					JLabel test = new JLabel("Exercise " + i);
-					test.addMouseListener(new MouseAdapter()	{
-						public void mouseClicked(MouseEvent me) {
-							new Test(e, app);
-						}
-					});
 					subL.putConstraint(SpringLayout.NORTH, test, 20, SpringLayout.NORTH, before);
 					subL.putConstraint(SpringLayout.WEST, test, 20, SpringLayout.WEST, sub);
+					test.addMouseListener(new ExerciseController(app, e));
 					sub.add(test);
 					i += 1;
 					before = test;
@@ -101,12 +87,10 @@ public class UICourse extends JPanel{
 				layout.putConstraint(SpringLayout.WEST, rootSub, 20, SpringLayout.WEST, unit);
 				unit.add(rootSub);
 				rootSub.add(sub, BorderLayout.CENTER);
-				units.add(rootSub);
 			}
 			rootUnit.setVisible(true);
 			unit.setVisible(true);
 			rootUnit.add(unit, BorderLayout.CENTER);
-			units.add(rootUnit);
 			root.addTab(u.getName(), rootUnit);
 		}
 		root.setVisible(true);
@@ -114,5 +98,4 @@ public class UICourse extends JPanel{
 		add(root, BorderLayout.CENTER);
 		setVisible(true);
 	}
-	
 }

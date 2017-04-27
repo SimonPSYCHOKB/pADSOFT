@@ -1,0 +1,19 @@
+package GUI;
+
+import java.awt.event.*;
+
+import Application.*;
+
+public class CoursesTableController extends MouseAdapter{
+
+	public CoursesTableController(General view, Application model){
+		
+	}
+	
+	public void mouseClicked(MouseEvent e){
+		int row = newC.getTable().getSelectedRow();
+		final Course selected = model.getCourses().get(row);
+		UICourseEditable c = new UICourseEditable(selected, model);
+		frame.addPanel(c);
+	}
+}

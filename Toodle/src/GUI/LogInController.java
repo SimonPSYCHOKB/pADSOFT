@@ -7,7 +7,6 @@ import java.util.List;
 import javax.swing.*;
 
 import Application.*;
-import Users.*;
 
 public class LogInController implements ActionListener{
 	
@@ -43,39 +42,21 @@ public class LogInController implements ActionListener{
 				//Principal window
 				final GeneralTeacher frame = new GeneralTeacher();
 				frame.addControllerLogOut(new LogOutController(model, frame));
-				frame.addControllerCourses(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						final Courses newC = new Courses(frame, objs);
-						newC.setController(new MouseAdapter()	{
-							public void mouseClicked(MouseEvent e) {
-								int row = newC.getTable().getSelectedRow();
-								final Course selected = model.getCourses().get(row);
-								UICourseEditable c = new UICourseEditable(selected, model);
-								frame.addPanel(c);
-							}
-						});
-						frame.addPanel(newC);
-					}
-				});
+				frame.addControllerCourses(new CoursesController(model, frame));
 				frame.addControllerStats(new StatsController(frame, model));
+				
 				//Panel with the list of courses
 				final Courses course = new Courses(frame, objs);
 				frame.addPanel(course);
-				course.setController(new MouseAdapter()	{
-					public void mouseClicked(MouseEvent e) {
-						int row = course.getTable().getSelectedRow();
-						final Course selected = model.getCourses().get(row);
-						UICourseEditable c = new UICourseEditable(selected, model);
-						frame.addPanel(c);
-					}
-				});
+				course.setController(new CoursesTableController(model, frame));
+				
 				//Button for creating a new course
 				JButton create = new JButton("Create new Course");
 				create.addActionListener(new CreateCourse(model, frame));
 				course.addButtonTop(create);
 			}
 			else{
+				//Principal window
 				final GeneralStudent frame = new GeneralStudent();
 				frame.addControllerGrades(new GradesController(model, frame));
 				frame.addControllerLogOut(new LogOutController(model, frame));
@@ -93,50 +74,11 @@ public class LogInController implements ActionListener{
 					objs[i][0] = c.getTitle();
 					i = i + 1;
 				}
-				
+				//Panel with the visible courses
 				final Courses course = new Courses(frame, objs); 
 				frame.addPanel(course);
-				frame.addControllerCourses(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						frame.addPanel(course);
-					}
-				});
-				course.setController(new MouseAdapter()	{
-					public void mouseClicked(MouseEvent e) {
-						
-						int row = course.getTable().getSelectedRow();
-						final Course selected = model.getCourses().get(row);
-						if(((Student) model.getCurrentUser()).getRegisteredCourses().contains(selected)){				
-							UICourse c = new UICourse(selected, model);
-							frame.addPanel(c);
-						}
-						else if(((Student) model.getCurrentUser()).getPendingCourses().contains(selected))
-							JOptionPane.showMessageDialog(view,"Your application for " + selected.getTitle() + " is still pending.", "Registration", JOptionPane.INFORMATION_MESSAGE);
-						else{
-							final Register register = new Register("You are not registered in " + selected.getTitle() + ". What would you like to do?");
-							register.setControllerOK(new ActionListener(){
-
-								@Override
-								public void actionPerformed(ActionEvent arg0) {
-									model.applyStudent((Student) model.getCurrentUser(), selected);	
-									JOptionPane.showMessageDialog(view,"You have applied for " + selected.getTitle(), "Registration", JOptionPane.INFORMATION_MESSAGE);
-									register.dispose();
-								}
-								
-							});
-							register.setControllerCancel(new ActionListener(){
-
-								@Override
-								public void actionPerformed(ActionEvent arg0) {
-									register.dispose();
-									
-								}
-								
-							});
-						}
-					}
-				});
+				frame.addControllerCourses(new CoursesController(model, frame));
+				course.setController(new CoursesTableController(model, frame));
 			}
 		}
 	}

@@ -11,8 +11,6 @@ import javax.swing.*;
 import javax.swing.table.*;
 
 import Statistics.*;
-import Test.Exercise;
-import Test.Question;
 
 import Application.*;
 
@@ -33,10 +31,13 @@ public class StatsController implements ActionListener {
 		String titles[] = {"Course", "Mean"};
 		Object[][] objs = new Object[courses.size()][2];
 		int i = 0;
+		final List<CourseStatistic> cs = new ArrayList<CourseStatistic>();
 		for(Course cr : courses){
-			CourseStatistic cs = new CourseStatistic(cr);
+			CourseStatistic aux = new CourseStatistic(cr);
+			cs.add(aux);
 			objs[i][0] = cr.getTitle();
-			objs[i][1] = cs.getMean();
+			objs[i][1] = aux.getMean();
+			i += 1;
 		}
 		
 		final JTable course = new JTable(objs, titles);
@@ -66,16 +67,18 @@ public class StatsController implements ActionListener {
 			public void mouseClicked(MouseEvent me) {
 				
 				int row = course.getSelectedRow();
-				Course current = courses.get(row);
+				CourseStatistic current = cs.get(row);
 				
-				final List<Exercise> exe = current.getTests();
+				final List<Statistic> exe = current.getStatistics();
+				System.out.println(cs.toString());
+				
 				Object[][] objs = new Object[exe.size()][2];
 				String[] titles = {"Exercise", "Mean"};
 				
 				int i = 0;
-				for(Exercise e : exe){
+				for(Statistic e : exe){
 					objs[i][0] = "Exercise " + i;
-					objs[i][1] = (new Statistic(e).getMean());
+					objs[i][1] = e.getMean();
 					i += 1;
 				}
 				
@@ -110,21 +113,20 @@ public class StatsController implements ActionListener {
 						
 						int row = exercises.getSelectedRow();
 						
-						Exercise current = exe.get(row);
-						List<Question> questions = current.getQuestions();
-						
-						Statistic es = new Statistic(current);
+						Statistic current = exe.get(row);
+						List<QuestionStatistic> questions = current.getQuestionStatistics();
 						
 						Object[][] objs = new Object[questions.size()][5];
 						String[] titles = {"Question", "Mean", "Wrong", "Right", "Blank"};
 						
 						int i = 0;
-						for(QuestionStatistic qs : es.getQuestionStatistics()){
+						for(QuestionStatistic qs : questions){
 							objs[i][0] = "Question " + i;
 							objs[i][1] = qs.getMean();
 							objs[i][2] = qs.getWrongNumber();
 							objs[i][3] = qs.getCorrectNumber();
 							objs[i][4] = qs.getBlankNumber();
+							i += 1;
 						}
 						
 						JTable question = new JTable(objs, titles);

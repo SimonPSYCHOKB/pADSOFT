@@ -3,7 +3,6 @@ package GUI;
 import java.awt.*;
 import java.awt.event.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
@@ -11,25 +10,18 @@ import javax.swing.*;
 
 import Application.*;
 import Test.*;
-import Users.*;
 
 public class Test extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private int i;
-	private JFrame view;
 	private UIQuestion center;
 	
-	private static List<Answer> answer = new ArrayList<Answer>();
+	private JButton next;
+	private JButton previous;
+	private JButton finish;
 	
 	public Test(final Exercise e, final Application app) {
-		if(e.beginExercise((Student) app.getCurrentUser()) == false){
-			JOptionPane.showMessageDialog(view,"Fecha limite rebasada", "Error", JOptionPane.INFORMATION_MESSAGE);
-			return;
-		}
-		view = this;
-		i = 1;
 		
 		getContentPane().setLayout(new BorderLayout());
 		
@@ -40,105 +32,14 @@ public class Test extends JFrame{
 		add(question, BorderLayout.CENTER);
 		
 		JPanel buttons = new JPanel(new FlowLayout());
-		JButton next = new JButton("Next");
-		JButton previous = new JButton("Previous");
-		JButton finish = new JButton("Finish");
+		next = new JButton("Next");
+		previous = new JButton("Previous");
+		finish = new JButton("Finish");
 		buttons.add(previous);
 		buttons.add(finish);
 		buttons.add(next);
 		
 		add(buttons, BorderLayout.SOUTH);
-		
-		next.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				List<String> answers = new ArrayList<String>();
-				if(center.getOptions().isEmpty() == false){
-					for(AbstractButton button : center.getOptions())
-						if(button.isSelected())
-							answers.add(button.getText());
-				}
-				else{
-					answers.add(center.getField().getText());
-				}
-				for(Answer a : answer){
-					if(a.getQuestion().equals(questions.get(i-1))){
-						answer.remove(a);
-						break;
-					}
-				}
-				e.setCount(i-1);
-				answer.add(e.answerQuestionTest(answers));
-				if(i >= questions.size()) return;
-				UIQuestion question = new UIQuestion(questions.get(i));
-				i += 1;
-				center.setVisible(false);
-				center = question;
-				view.add(question, BorderLayout.CENTER);
-			}
-			
-		});
-		
-		finish.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-//				view.dispose();	
-				List<String> answers = new ArrayList<String>();
-				if(center.getOptions().isEmpty() == false){
-					for(AbstractButton button : center.getOptions())
-						if(button.isSelected())
-							answers.add(button.getText());
-				}
-				else{
-					answers.add(center.getField().getText());
-				}
-				for(Answer a : answer){
-					if(a.getQuestion().equals(questions.get(i-1))){
-						answer.remove(a);
-						break;
-					}
-				}
-				e.setCount(i-1);
-				answer.add(e.answerQuestionTest(answers));
-				e.answerTest((Student) app.getCurrentUser(), answer);
-				// Solo para ver si funciona
-				JOptionPane.showMessageDialog(view,((Student) app.getCurrentUser()).viewPastTest(e),((Student) app.getCurrentUser()).getAnsweredTest(e).getGradeTest() + " " , JOptionPane.ERROR_MESSAGE);
-			}
-			
-		});
-		
-		previous.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				List<String> answers = new ArrayList<String>();
-				if(center.getOptions().isEmpty() == false){
-					for(AbstractButton button : center.getOptions())
-						if(button.isSelected())
-							answers.add(button.getText());
-				}
-				else{
-					answers.add(center.getField().getText());
-				}
-				for(Answer a : answer){
-					if(a.getQuestion().equals(questions.get(i-1))){
-						answer.remove(a);
-						break;
-					}
-				}
-				e.setCount(i-1);
-				answer.add(e.answerQuestionTest(answers));
-				if(i-1 == 0) return;
-				UIQuestion question = new UIQuestion(questions.get(i-2));
-				i -= 1;
-				center.setVisible(false);
-				center = question;
-				view.add(question, BorderLayout.CENTER);			
-			}
-			
-		});
 		
 		setSize(800, 600);
 		setResizable(false);
@@ -151,6 +52,22 @@ public class Test extends JFrame{
 	
 	public UIQuestion getCenter(){
 		return center;
+	}
+	
+	public void setCenter(UIQuestion center){
+		this.center = center;
+	}
+	
+	public void addControllerNext(ActionListener al){
+		next.addActionListener(al);
+	}
+	
+	public void addControllerFinish(ActionListener al){
+		finish.addActionListener(al);
+	}
+	
+	public void addControllerPrevious(ActionListener al){
+		previous.addActionListener(al);
 	}
 	
 }

@@ -66,9 +66,6 @@ public class LogIn extends JFrame{
 	
 	public void setController(ActionListener al){
 		enter.addActionListener(al);
-	}
-	
-	public void setControllerEnter(ActionListener al){
 		pField.addActionListener(al);
 	}
 	
