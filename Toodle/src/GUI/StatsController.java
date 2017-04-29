@@ -70,7 +70,7 @@ public class StatsController implements ActionListener {
 				CourseStatistic current = cs.get(row);
 				
 				final List<Statistic> exe = current.getStatistics();
-				System.out.println(cs.toString());
+//				System.out.println(cs.toString());
 				
 				Object[][] objs = new Object[exe.size()][2];
 				String[] titles = {"Exercise", "Mean"};

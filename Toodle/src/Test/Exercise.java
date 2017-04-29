@@ -96,8 +96,9 @@ public class Exercise extends LearningObj implements Serializable{
 	 * @return true if the student has been able to begin the exercise, false if the date has passed
 	 */
 	public boolean beginExercise(Student s){
-		if(dateOfEnd.before(new Date()) == true)
-			return false;
+		if(dateOfEnd.before(new Date()) == true) return false;
+		if(s.getAnsweredTest(this) != null) 
+			s.removeAnsweredTest(this);
 		s.addTestStudent(this);
 		started = true;
 		return true;
@@ -178,8 +179,6 @@ public class Exercise extends LearningObj implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Exercise other = (Exercise) obj;
-		if (count != other.count)
-			return false;
 		if (dateOfBegining == null) {
 			if (other.dateOfBegining != null)
 				return false;
@@ -194,8 +193,6 @@ public class Exercise extends LearningObj implements Serializable{
 			if (other.questions != null)
 				return false;
 		} else if (!questions.equals(other.questions))
-			return false;
-		if (started != other.started)
 			return false;
 		if (Double.doubleToLongBits(weight) != Double
 				.doubleToLongBits(other.weight))
@@ -235,10 +232,6 @@ public class Exercise extends LearningObj implements Serializable{
 		this.unit = unit;
 	}
 	
-//	public int getCount(){
-//		return count;
-//	}
-//	
 	public void setCount(int count){
 		this.count = count;
 	}

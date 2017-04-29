@@ -3,44 +3,46 @@ package GUI;
 import java.awt.*;
 import java.awt.event.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
 
-
-import Application.*;
 import Test.*;
 
 public class Test extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
-	
-	private UIQuestion center;
-	
-	private JButton next;
-	private JButton previous;
 	private JButton finish;
+	private List<UIQuestion> uiquestions;
 	
-	public Test(final Exercise e, final Application app) {
-		
+	public Test(Exercise e) {
+		uiquestions = new ArrayList<UIQuestion>();
 		getContentPane().setLayout(new BorderLayout());
 		
-		final List<Question> questions = e.getQuestions();
-		UIQuestion question = new UIQuestion(questions.get(0));
-		center = question;
+		//Tabbed pane with the questions
+		JTabbedPane questions = new JTabbedPane();
+		questions.setTabLayoutPolicy(JTabbedPane.WRAP_TAB_LAYOUT);
 		
-		add(question, BorderLayout.CENTER);
+		int i = 0;
+		for(Question q : e.getQuestions()){
+			UIQuestion quest = new UIQuestion(q);
+			uiquestions.add(quest);
+			questions.addTab("Question " + i, quest);
+			i += 1;
+		}
+		questions.setVisible(true);
+		questions.setMinimumSize(new Dimension(800, 300));
+		add(questions, BorderLayout.CENTER);
 		
-		JPanel buttons = new JPanel(new FlowLayout());
-		next = new JButton("Next");
-		previous = new JButton("Previous");
+		//Finish button
+		JPanel button = new JPanel(new FlowLayout());
 		finish = new JButton("Finish");
-		buttons.add(previous);
-		buttons.add(finish);
-		buttons.add(next);
+		button.add(finish);
+		button.setVisible(true);
+		add(button, BorderLayout.SOUTH);
 		
-		add(buttons, BorderLayout.SOUTH);
-		
+		//Window settings
 		setSize(800, 600);
 		setResizable(false);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -49,25 +51,12 @@ public class Test extends JFrame{
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
-	
-	public UIQuestion getCenter(){
-		return center;
-	}
-	
-	public void setCenter(UIQuestion center){
-		this.center = center;
-	}
-	
-	public void addControllerNext(ActionListener al){
-		next.addActionListener(al);
+
+	public List<UIQuestion> getQuestions(){
+		return uiquestions;
 	}
 	
 	public void addControllerFinish(ActionListener al){
 		finish.addActionListener(al);
 	}
-	
-	public void addControllerPrevious(ActionListener al){
-		previous.addActionListener(al);
-	}
-	
 }

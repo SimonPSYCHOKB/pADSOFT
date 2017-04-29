@@ -67,9 +67,12 @@ public class Student extends User implements Serializable{
 	public List<AnsweredTest> getTestsFromCourse(Course c){
 		List<AnsweredTest> ats = new ArrayList<AnsweredTest>();
 		List<Exercise> ts = c.getTests();
+		System.out.println(ts);
 		int i = 0;
-		for( ; i < ts.size(); i++)
+		for( ; i < ts.size(); i++){
+			if(getAnsweredTest(ts.get(i)) == null) continue;
 			ats.add(getAnsweredTest(ts.get(i)));
+		}
 		return ats;
 	}
 	
@@ -79,6 +82,7 @@ public class Student extends User implements Serializable{
 	 * @return a double with the grade of the Student in the Course c
 	 */
 	public double getGradeCourse(Course c){
+		if(c.getTotal() == 0) return 0;
 		if(registeredCourses.contains(c) == false)
 			return 0;
 		List<AnsweredTest> ats = getTestsFromCourse(c);
@@ -281,6 +285,10 @@ public class Student extends User implements Serializable{
 		for(AnsweredTest at : getTestsFromCourse(unit.getCourse()))
 			if(at.getTest().getUnit().equals(unit))
 				answeredTests.remove(at);
+	}
+	
+	public void removeAnsweredTest(Exercise e){
+		answeredTests.remove(getAnsweredTest(e));
 	}
 	
 	

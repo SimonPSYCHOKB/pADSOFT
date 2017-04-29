@@ -178,6 +178,7 @@ public class MainTester {
 	s1.acceptStudent(c1);
 	s2.acceptStudent(c1);
 	s3.acceptStudent(c1);
+	toodle.getStudents().get(3).acceptStudent(c1);
 	
 	toodle.logOut();
 	
@@ -237,8 +238,7 @@ public class MainTester {
 	
 	//TEST 3 STUDENT 1
 	a = new ArrayList<Answer>();
-	if(t3.beginExercise(s1) == false)
-		fail("Fecha limite rebasada.\n");
+	if(t3.beginExercise(s1) == false);
 	else{
 		List<String> answ = new ArrayList<String>();
 		answ.add("2");
@@ -316,8 +316,7 @@ public class MainTester {
 		
 		//TEST 3 STUDENT 2
 		a = new ArrayList<Answer>();
-		if(t3.beginExercise(s2) == false)
-			fail("Fecha limite rebasada.\n");
+		if(t3.beginExercise(s2) == false);
 		else{
 			List<String>answ = new ArrayList<String>();
 			answ.add("2");
@@ -393,8 +392,7 @@ public class MainTester {
 		
 		//TEST 3 STUDENT 3
 		a = new ArrayList<Answer>();
-		if(t3.beginExercise(s3) == false)
-			fail("Fecha limite rebasada.\n");
+		if(t3.beginExercise(s3) == false);
 		else{
 			List<String>answ = new ArrayList<String>();
 			answ.add("2");

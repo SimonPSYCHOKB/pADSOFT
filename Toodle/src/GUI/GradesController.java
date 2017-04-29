@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import Statistics.*;
-import Test.Question;
 import Users.*;
 
 import Application.*;
@@ -35,8 +34,10 @@ public class GradesController implements ActionListener{
 		
 		int i = 0;
 		for(CourseStatistic c : cs){
-			objs[i][0] = c.getCourse();
-			objs[i][1] = c.getMean();
+			objs[i][0] = c.getCourse().getTitle();
+			if(c.getCourse().getTests().isEmpty() == true)
+				objs[i][1] = "--";
+			else objs[i][1] = c.getMean();
 			i += 1;
 		}
 		
@@ -70,9 +71,9 @@ public class GradesController implements ActionListener{
 			public void mouseClicked(MouseEvent e) {
 				
 				int row = courses.getSelectedRow();
-				final Course course = cs.get(row).getCourse();
+				final CourseStatistic course = cs.get(row);
 				
-				Object[][] objs = new Object[course.getTests().size()][2];
+				Object[][] objs = new Object[course.getStatistics().size()][2];
 				String[] titles = {"Exercise", "Mark"};
 				
 				int i = 0;
@@ -113,7 +114,7 @@ public class GradesController implements ActionListener{
 					public void mouseClicked(MouseEvent e){
 						
 						int row = exercises.getSelectedRow();
-						List<Question> questions = course.getTests().get(row).getQuestions();
+						List<QuestionStatistic> questions = stats.get(row).getQuestionStatistics();
 						
 						Object[][] objs = new Object[questions.size()][2];
 						String[] titles = {"Question", "Mark"};

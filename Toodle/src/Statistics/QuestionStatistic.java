@@ -35,7 +35,7 @@ public class QuestionStatistic extends Stats implements Serializable{
 		super();
 		question = q;
 		double people=0;
-		
+		if(aGiven == null) return;
 		for(Answer a : aGiven){
 			if(a.isBlank()){
 				blankNumber++;

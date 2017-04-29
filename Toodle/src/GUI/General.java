@@ -64,6 +64,11 @@ public abstract class General extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
+//	public void addNotifications(JPanel p){
+//		this.getContentPane().add(BorderLayout.WEST, p);
+//		SwingUtilities.updateComponentTreeUI(this);
+//	}
+	
 	public void addControllerLogOut(ActionListener al){
 		logOut.addActionListener(al);
 	}

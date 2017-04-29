@@ -26,17 +26,16 @@ public class ExerciseController extends MouseAdapter{
 		//If the current user is the teacher we display an editable test
 		if(model.getCurrentUser().equals(model.getTeacher()))
 			new EditTest(e, model);
+		
 		//If the user is a student we display the test
 		else{
 			if(e.beginExercise((Student) model.getCurrentUser()) == false){
 				JOptionPane.showMessageDialog(new JFrame(),"Fecha limite rebasada", "Error", JOptionPane.INFORMATION_MESSAGE);
 				return;
 			}
-			Test test = new Test(e, model);
+			Test test = new Test(e);
 			ActionListener al = new AnswerExerciseController(model, test, e);
-			test.addControllerNext(al);
 			test.addControllerFinish(al);
-			test.addControllerPrevious(al);
 		}
 	}
 }

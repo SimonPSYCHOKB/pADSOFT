@@ -75,7 +75,7 @@ public class Statistic extends Stats implements Serializable{
 			total+=qs.getGradeTest();
 			count++;
 		}
-		
+		if(count == 0) return;
 		this.setMean(total/count);
 	}
 	
@@ -87,16 +87,21 @@ public class Statistic extends Stats implements Serializable{
 	public Statistic(Exercise e, Student s){
 		ansTests = new ArrayList<AnsweredTest>();
 		qestStat = new ArrayList<QuestionStatistic>();
-		ansTests.add(s.getAnsweredTest(e));
-		setMean(ansTests.get(0).getGradeTest());
-		
+//		if(s.getAnsweredTest(e) == null) return;
+//		ansTests.add(s.getAnsweredTest(e));
+		if(s.getAnsweredTest(e) != null)
+			setMean(s.getAnsweredTest(e).getGradeTest());
+
 		for(Question q : e.getQuestions()){
 			List<Answer> answ = new ArrayList<Answer>();
-			for(Answer a : ansTests.get(0).getAnswers())
-				if(a.getQuestion().equals(q)){
-					answ.add(a);
-					qestStat.add(new QuestionStatistic(q, answ));
-				}
+			if(s.getAnsweredTest(e) == null)
+				qestStat.add(new QuestionStatistic(q, null));
+			else
+				for(Answer a : s.getAnsweredTest(e).getAnswers())
+					if(a.getQuestion().equals(q)){
+						answ.add(a);
+						qestStat.add(new QuestionStatistic(q, answ));
+					}
 		}
 	}
 

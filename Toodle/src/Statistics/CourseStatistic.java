@@ -3,7 +3,6 @@ package Statistics;
 import java.util.ArrayList;
 
 import Application.Course;
-import Test.AnsweredTest;
 import Test.Exercise;
 import Users.Student;
 
@@ -36,7 +35,6 @@ public class CourseStatistic extends Stats{
 		}
 		if(people == 0) return;
 		setMean(total/people);
-		
 	}
 	
 	/**
@@ -49,8 +47,13 @@ public class CourseStatistic extends Stats{
 		course = c;
 		
 		setMean(s.getGradeCourse(c));
-		for(AnsweredTest at : s.getTestsFromCourse(c))
-			tests.add(new Statistic(at.getTest(), s));
+		for(Exercise e : c.getTests()){
+//			AnsweredTest at = s.getAnsweredTest(e);
+//			if(at == null) continue;
+			tests.add(new Statistic(e, s));
+		}
+//		for(AnsweredTest at : s.getTestsFromCourse(c))
+//			tests.add(new Statistic(at.getTest(), s));
 	}
 	
 	/**
