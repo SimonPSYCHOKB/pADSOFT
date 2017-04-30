@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JButton;
 
 import Application.*;
+import Users.Student;
 
 public class CoursesController implements ActionListener {
 
@@ -27,6 +28,7 @@ public class CoursesController implements ActionListener {
 		Object[][] objs = new Object[courses.size()][1];
 		//If the current user is the teacher we display all the courses
 		boolean cond = model.getCurrentUser().equals(model.getTeacher());
+		ArrayList<Integer> rows = new ArrayList<Integer>();
 		if(cond){
 			
 			int i = 0;
@@ -37,22 +39,27 @@ public class CoursesController implements ActionListener {
 		}
 		//If the user is a student we only show the visible courses
 		else{
+			List<Course> registered = ((Student) model.getCurrentUser()).getRegisteredCourses();
 			List<Course> visible = new ArrayList<Course>();
+			int i = 0;
 			for(Course c: courses){
+				if(registered.contains(c))
+					rows.add(i);
 				if(c.isVisibility()){
 					visible.add(c);
+					i += 1;
 				}
 			}
 			
 			objs = new Object[visible.size()][1];
-			int i = 0;
+			i = 0;
 			for(Course c : visible){
 				objs[i][0] = c.getTitle();
 				i = i + 1;
 			}
 		}
 		//Creation of the new view
-		panel = new Courses(view, objs);
+		panel = new Courses(view, objs, rows);
 		view.addPanel(panel);
 		if(cond){
 			System.out.println("hags");

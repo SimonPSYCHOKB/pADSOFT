@@ -117,26 +117,13 @@ public class QuestionCreation extends JFrame{
 			private void trueFalse() {
 				final JFrame tf = new JFrame("True-False");
 				tf.setLayout(new BorderLayout());
+				
+				//Answer
 				JPanel word = new JPanel(new FlowLayout());
-//				SpringLayout layout  = new SpringLayout();
-//				word.setLayout(layout);
-//				JLabel wording = new JLabel("Wording :");
-//				layout.putConstraint(SpringLayout.NORTH, wording, 30, SpringLayout.NORTH, word);
-//				layout.putConstraint(SpringLayout.WEST, wording, 80, SpringLayout.WEST, word);
-//				word.add(wording);
-//				JTextField input = new JTextField(10);
-//				layout.putConstraint(SpringLayout.NORTH, input, 30, SpringLayout.NORTH, word);
-//				layout.putConstraint(SpringLayout.WEST, input, 22, SpringLayout.EAST, wording);
-//				word.add(input);
 				JLabel answer = new JLabel("Answer :");
-//				layout.putConstraint(SpringLayout.NORTH, answer, 20, SpringLayout.NORTH, wording);
-//				layout.putConstraint(SpringLayout.WEST, answer, 80, SpringLayout.WEST, word);
 				word.add(answer);
 				final JTextField answ = new JTextField(10);
-//				layout.putConstraint(SpringLayout.NORTH, answ, 20, SpringLayout.NORTH, input);
-//				layout.putConstraint(SpringLayout.WEST, answ, 30, SpringLayout.EAST, answer);
 				word.add(answ);
-//				word.setPreferredSize(new Dimension(400, 100));
 				word.setVisible(true);
 				
 				JPanel buttons = new JPanel(new FlowLayout());

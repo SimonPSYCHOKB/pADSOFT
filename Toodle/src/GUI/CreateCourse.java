@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
@@ -40,7 +41,7 @@ public class CreateCourse implements ActionListener {
 					i += 1;
 				}
 				
-				final Courses panel = new Courses(view, objs);
+				final Courses panel = new Courses(view, objs, new ArrayList<Integer>());
 				panel.setController(new MouseAdapter()	{
 					public void mouseClicked(MouseEvent e) {
 						int row = panel.getTable().getSelectedRow();

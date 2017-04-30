@@ -2,7 +2,10 @@ package GUI;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Date;
+import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.event.*;
@@ -13,11 +16,13 @@ import Test.*;
 public class EditTest extends JFrame{
 
 	private static final long serialVersionUID = 1L;
+	private JButton close;
+	private List<EditQuestion> quest;
 
 	public EditTest(final Exercise e, final Application model){
 		final JFrame dispose = this;
 		this.setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
-		
+		quest = new ArrayList<EditQuestion>();
 		JPanel test = new JPanel();
 		// Setting layout
 		SpringLayout layout = new SpringLayout();
@@ -119,6 +124,7 @@ public class EditTest extends JFrame{
 		int i = 0;
 		for(Question q : e.getQuestions()){
 			EditQuestion eq = new EditQuestion(q);
+			quest.add(eq);
 			questions.addTab("Question "+i, eq);
 			i = i + 1;
 		}
@@ -127,9 +133,7 @@ public class EditTest extends JFrame{
 		add(questions);
 		
 		//Button
-		JButton close = new JButton("Close");	
-//		layout.putConstraint(SpringLayout.SOUTH, close, 380, SpringLayout.NORTH, test);
-//		layout.putConstraint(SpringLayout.WEST, close, 370, SpringLayout.WEST, test);
+		close = new JButton("Done");	
 		add(close);
 		
 		close.addActionListener(new ActionListener(){
@@ -147,4 +151,11 @@ public class EditTest extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	public void setController(ActionListener al){
+		close.addActionListener(al);
+	}
+	
+	public List<EditQuestion> getQuestions(){
+		return quest;
+	}
 }

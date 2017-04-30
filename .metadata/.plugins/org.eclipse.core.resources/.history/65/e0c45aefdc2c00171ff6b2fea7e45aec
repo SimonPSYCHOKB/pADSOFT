@@ -1,0 +1,14 @@
+package GUI;
+
+import Test.Question;
+
+public class EditOptionsQuestion extends EditQuestion{
+
+	private static final long serialVersionUID = 1L;
+	
+	public EditOptionsQuestion(Question q) {
+		super(q);
+		
+	}
+
+}

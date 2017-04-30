@@ -1,9 +1,0 @@
-package GUI;
-
-public class CoursesController {
-
-	public CoursesController() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -10,6 +10,10 @@ import javax.swing.event.ChangeListener;
 import Test.*;
 
 public class EditQuestion extends JPanel{
+	
+	private JPanel quest;
+	private JTextField wording;
+	private JSpinner spinner1, spinner2;
 
 	private static final long serialVersionUID = 1L;
 
@@ -19,11 +23,11 @@ public class EditQuestion extends JPanel{
 		setLayout(new BorderLayout());
 		
 		//Questions view
-		JPanel quest = new JPanel();
+		quest = new JPanel();
 		quest.setLayout(new GridLayout(0,1,5,5));
 		
 		//Wording
-		final JTextField wording = new JTextField(q.getQuestion());
+		wording = new JTextField(q.getQuestion());
 		wording.addFocusListener(new FocusListener(){
 			@Override
 			public void focusGained(FocusEvent arg0) {
@@ -195,7 +199,7 @@ public class EditQuestion extends JPanel{
 		layout.putConstraint(SpringLayout.WEST, weight, 50, SpringLayout.WEST, data);
 		data.add(weight);
 		SpinnerModel sm1 = new SpinnerNumberModel(q.getWeight(), 0, 100, 0.1);
-		final JSpinner spinner1 = new JSpinner(sm1);
+		spinner1 = new JSpinner(sm1);
 		layout.putConstraint(SpringLayout.NORTH, spinner1, 40, SpringLayout.NORTH, data);
 		layout.putConstraint(SpringLayout.WEST, spinner1, 100, SpringLayout.WEST, weight);
 		data.add(spinner1);
@@ -212,7 +216,7 @@ public class EditQuestion extends JPanel{
 		layout.putConstraint(SpringLayout.WEST, penalty, 50, SpringLayout.WEST, data);
 		data.add(penalty);
 		SpinnerModel sm2 = new SpinnerNumberModel(q.getPenalty(), 0, 100, 0.1);
-		final JSpinner spinner2 = new JSpinner(sm2);
+		spinner2 = new JSpinner(sm2);
 		layout.putConstraint(SpringLayout.NORTH, spinner2, 20, SpringLayout.NORTH, spinner1);
 		layout.putConstraint(SpringLayout.WEST, spinner2, 100, SpringLayout.WEST, penalty);
 		data.add(spinner2);
@@ -231,5 +235,21 @@ public class EditQuestion extends JPanel{
 		
 		setVisible(true);
 		
+	}
+	
+	public JPanel getPanel(){
+		return quest;
+	}
+	
+	public JTextField getWording(){
+		return wording;
+	}
+	
+	public JSpinner getWeight(){
+		return spinner1;
+	}
+	
+	public JSpinner getPenalty(){
+		return spinner2;
 	}
 }

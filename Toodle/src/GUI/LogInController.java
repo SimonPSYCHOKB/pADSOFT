@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.*;
 
 import Application.*;
+import Users.Student;
 
 public class LogInController implements ActionListener{
 	
@@ -30,6 +31,8 @@ public class LogInController implements ActionListener{
 			view.setVisible(false);
 			final List<Course> courses = model.getCourses();
 			
+			ArrayList<Integer> rows = new ArrayList<Integer>();
+			//If the current user is the teacher
 			if(model.getTeacher().getName().equals(name)){
 				final Object[][] objs = new Object[courses.size()][1];
 				
@@ -46,7 +49,7 @@ public class LogInController implements ActionListener{
 				frame.addControllerStats(new StatsController(frame, model));
 				
 				//Panel with the list of courses
-				final Courses course = new Courses(frame, objs);
+				final Courses course = new Courses(frame, objs, rows);
 				frame.addPanel(course);
 				course.setController(new CoursesTableController(model, frame));
 				
@@ -55,27 +58,33 @@ public class LogInController implements ActionListener{
 				create.addActionListener(new CreateCourse(model, frame));
 				course.addButtonTop(create);
 			}
+			// If the current user is a student
 			else{
 				//Principal window
 				final GeneralStudent frame = new GeneralStudent();
 				frame.addControllerGrades(new GradesController(model, frame));
 				frame.addControllerLogOut(new LogOutController(model, frame));
 				
+				List<Course> registered = ((Student) model.getCurrentUser()).getRegisteredCourses();
 				List<Course> visible = new ArrayList<Course>();
-				for(Course c: courses){
+				int i = 0;
+				for(Course c: courses){						
 					if(c.isVisibility()){
+						if(registered.contains(c))
+							rows.add(i);
 						visible.add(c);
+						i += 1;
 					}
 				}
 				
-				final Object[][] objs = new Object[visible.size()][1];
-				int i = 0;
+				Object[][] objs = new Object[visible.size()][1];
+				i = 0;
 				for(Course c : visible){
 					objs[i][0] = c.getTitle();
 					i = i + 1;
 				}
 				//Panel with the visible courses
-				final Courses course = new Courses(frame, objs); 
+				final Courses course = new Courses(frame, objs, rows); 
 				frame.addPanel(course);
 				frame.addControllerCourses(new CoursesController(model, frame));
 				course.setController(new CoursesTableController(model, frame));

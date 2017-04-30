@@ -1,9 +1,0 @@
-package GUI;
-
-public class Grades {
-
-	public Grades() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

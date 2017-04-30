@@ -1,6 +1,7 @@
 package Statistics;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import Application.Course;
 import Test.Exercise;
@@ -48,12 +49,10 @@ public class CourseStatistic extends Stats{
 		
 		setMean(s.getGradeCourse(c));
 		for(Exercise e : c.getTests()){
-//			AnsweredTest at = s.getAnsweredTest(e);
-//			if(at == null) continue;
-			tests.add(new Statistic(e, s));
+			//Descomentar para la entrega
+//			if(e.getDateOfEnd().before(new Date()))
+				tests.add(new Statistic(e, s));
 		}
-//		for(AnsweredTest at : s.getTestsFromCourse(c))
-//			tests.add(new Statistic(at.getTest(), s));
 	}
 	
 	/**
