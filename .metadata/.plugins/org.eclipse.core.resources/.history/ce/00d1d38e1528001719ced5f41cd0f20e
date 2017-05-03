@@ -1,9 +1,0 @@
-package GUI;
-
-public class OptionsController implements ActionListener {
-
-	public OptionsController() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

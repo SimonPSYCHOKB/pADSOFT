@@ -1,0 +1,40 @@
+package gui.panels.controllers;
+
+import gui.panels.UICourseEditable;
+import gui.windows.CreateUnit;
+import gui.windows.General;
+import gui.windows.controllers.EditCourseController;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import application.Application;
+import application.Course;
+import application.Unit;
+
+public class DoneAddSubunitController implements ActionListener{
+	
+	private Course course;
+	private CreateUnit view;
+	private Application app;
+	private General gen;
+	
+	public DoneAddSubunitController(Course course, CreateUnit view, Application app, General gen){
+		this.course = course;
+		this.view = view;
+		this.app = app;
+		this.gen = gen;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		u.createSubSection(new Unit(cu.getVisibility().isSelected(), cu.getNameField().getText()));
+		cu.dispose();
+		
+		UICourseEditable ce = new UICourseEditable(u.getCourse(), app, gen);
+		ce.addControllerEditCourse(new EditCourseController(u.getCourse(), gen, app));
+		ce.addControllerUnit(new UnitController(app, ce, gen));
+		gen.addPanel(ce);
+	}
+
+}

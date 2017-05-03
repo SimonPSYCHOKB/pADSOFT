@@ -1,0 +1,37 @@
+package gui.panels.controllers;
+
+import gui.CancelController;
+import gui.windows.EditNotes;
+import gui.windows.General;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import application.Note;
+
+public class NotesController implements ActionListener{
+	
+	private Note note;
+	private General gen;
+	
+	public NotesController(Note note, General gen){
+		this.note = note;
+		this.gen = gen;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		final EditNotes en = new EditNotes(note);
+		en.setControllerCancel(new CancelController(en));
+		en.setControllerDone(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				note.setTextNotes(en.getNotes().getText());
+				note.setVisibility(en.getVisibility().isSelected());
+				en.dispose();
+				
+			}
+		});
+	}
+
+}

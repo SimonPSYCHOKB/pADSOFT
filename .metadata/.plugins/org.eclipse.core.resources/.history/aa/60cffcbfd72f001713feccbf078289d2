@@ -1,0 +1,59 @@
+package GUI.Windows.Controllers;
+
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.*;
+
+import Application.*;
+import GUI.Panels.Courses;
+import GUI.Panels.Controllers.CoursesTableController;
+import GUI.Windows.CreateCourse;
+import GUI.Windows.General;
+
+public class CreateCourseController implements ActionListener {
+	
+	private Application model;
+	private General view;
+	
+	public CreateCourseController(Application model, General view){
+		this.model = model;
+		this.view = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		final CreateCourse creation = new CreateCourse();
+		creation.setControllerCancel(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				creation.dispose();
+			}	
+		});
+		creation.setControllerDone(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				model.createCourse(creation.getVisibCheck(), creation.getTitleField(), creation.getDescField());
+				
+				List<Course> courses = model.getCourses();
+				Object[][] objs = new Object[courses.size()][1];
+				
+				int i = 0;
+				for(Course c: courses){
+					objs[i][0] = c.getTitle();
+					i += 1;
+				}
+				
+				Courses panel = new Courses(view, objs, new ArrayList<Integer>());
+				panel.setController(new CoursesTableController(model, view));
+				JButton button = new JButton("Create new Course");
+				button.addActionListener(new CreateCourseController(model, view));
+				panel.addButtonTop(button);
+				view.addPanel(panel);
+				creation.dispose();
+			}	
+		});
+	}
+
+}

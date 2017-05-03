@@ -1,0 +1,32 @@
+package GUI.Panels.Controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import Application.Application;
+import GUI.CancelController;
+import GUI.Panels.UICourseEditable;
+import GUI.Windows.CreateUnit;
+import GUI.Windows.General;
+import GUI.Windows.Controllers.CreateUnitController;
+
+public class UnitController implements ActionListener{
+
+	private UICourseEditable view;
+	private Application model;
+	private General gen;
+	
+	public UnitController(Application model, UICourseEditable view, General gen){
+		this.view = view;
+		this.model = model;
+		this.gen = gen;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		CreateUnit cu = new CreateUnit();
+		cu.setControllerCancel(new CancelController(cu));
+		cu.setControllerDone(new CreateUnitController(model, view, cu, gen));
+	}
+
+}

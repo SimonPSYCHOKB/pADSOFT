@@ -1,0 +1,149 @@
+package gui.panels;
+
+import exercise.Exercise;
+import gui.panels.controllers.AddExerciseController;
+import gui.panels.controllers.AddNotesController;
+import gui.panels.controllers.AddSubunitController;
+import gui.panels.controllers.ExerciseController;
+import gui.panels.controllers.NotesController;
+import gui.windows.General;
+
+import java.awt.BorderLayout;
+import java.awt.ComponentOrientation;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.font.TextAttribute;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SpringLayout;
+
+
+import application.Application;
+import application.Note;
+import application.Unit;
+
+
+public class UIUnitEditable extends JScrollPane{
+
+	private static final long serialVersionUID = 1L;
+	private JButton exercise;
+	private JButton subunit;
+	private JButton notes;
+
+	public UIUnitEditable(final Unit u, final Application app, final General gen){
+				
+		//Layout for the main panel
+		JPanel root = new JPanel();
+		root.setLayout(new BoxLayout(root));
+		JPanel unit = new JPanel();
+		SpringLayout layout = new SpringLayout();
+		unit.setLayout(layout);
+		
+		JComponent previous = unit;
+		for(Note n : u.getNotes()){
+			JTextArea note = new JTextArea(n.toString());
+			note.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			note.addMouseListener(new NotesController(n, gen, app));
+			
+			layout.putConstraint(SpringLayout.NORTH, note, 20, SpringLayout.NORTH, previous);
+			layout.putConstraint(SpringLayout.WEST, note, 20, SpringLayout.WEST, unit);
+			unit.add(note);
+			previous = note;
+		}
+		int i = 0;
+		for(final Exercise e : u.getTests()){
+			JLabel test = new JLabel("Exercise " + i);
+			Font font = test.getFont();
+			Map<TextAttribute, Object> attributes = new HashMap<>(font.getAttributes());
+			attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+			test.setFont(font.deriveFont(attributes));
+			test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			test.addMouseListener(new ExerciseController(app, e, gen));
+
+			layout.putConstraint(SpringLayout.NORTH, test, 20, SpringLayout.NORTH, previous);
+			layout.putConstraint(SpringLayout.WEST, test, 20, SpringLayout.WEST, unit);
+			unit.add(test);
+			i += 1;
+			previous = test;
+		}
+	
+		for(Unit ss : u.getSubUnits()){
+			UIUnitEditable sube = new UIUnitEditable(ss, app, gen);
+			final JPanel rootSub = new JPanel(new FlowLayout());
+			rootSub.setBorder(BorderFactory.createTitledBorder(ss.getName()));
+			rootSub.add(sube);
+			if(previous.equals(unit)) layout.putConstraint(SpringLayout.NORTH, rootSub, 20, SpringLayout.NORTH, previous);
+			else layout.putConstraint(SpringLayout.NORTH, rootSub, 20, SpringLayout.SOUTH, previous);
+			layout.putConstraint(SpringLayout.WEST, rootSub, 20, SpringLayout.WEST, unit);
+			unit.add(rootSub);
+			previous = rootSub;
+		}
+
+		//Buttons for editing
+//		SpringLayout layout2 = new SpringLayout();
+		JPanel buttons = new JPanel(new FlowLayout());
+//		buttons.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		exercise = new JButton("Create new exercise");
+//		layout2.putConstraint(SpringLayout.NORTH, exercise, 5, SpringLayout.NORTH, buttons);
+//		layout2.putConstraint(SpringLayout.EAST, exercise, -20, SpringLayout.EAST, buttons);
+		subunit = new JButton("Create new subunit");
+//		layout2.putConstraint(SpringLayout.NORTH, subunit, 5, SpringLayout.NORTH, buttons);
+//		layout2.putConstraint(SpringLayout.EAST, subunit, -20, SpringLayout.WEST, exercise);
+		notes = new JButton("Create new notes");
+//		layout2.putConstraint(SpringLayout.NORTH, notes, 5, SpringLayout.NORTH, buttons);
+//		layout2.putConstraint(SpringLayout.EAST, notes, -20, SpringLayout.WEST, subunit);
+		buttons.add(exercise);
+		buttons.add(subunit);
+		buttons.add(notes);
+		buttons.setVisible(true);
+//		buttons.setPreferredSize(new Dimension(1000, 30));
+		
+		
+		exercise.addActionListener(new AddExerciseController(u, app, gen));
+		subunit.addActionListener(new AddSubunitController(u, app, gen));
+		notes.addActionListener(new AddNotesController(u, app, gen));
+
+		unit.setVisible(true);
+//		unit.setPreferredSize(new Dimension(1000, 200));   
+		
+//		JScrollPane scroll = new JScrollPane(unit, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+//		scroll.setPreferredSize(new Dimension(1000, 200));
+//		scroll.setBorder(BorderFactory.createEmptyBorder());
+		
+        root.add(unit, BorderLayout.CENTER);
+		root.add(buttons, BorderLayout.NORTH);
+
+		root.setVisible(true);
+		//Muy clave esto
+//		root.setPreferredSize(new Dimension(1500, 0));
+//		root.setSize(1500, 300);
+		
+		this.setViewportView(root);
+		setPreferredSize(new Dimension(1000, 200));
+		setBorder(BorderFactory.createEmptyBorder());
+		this.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+	}
+	
+//	public void setControllerExercise(ActionListener al){
+//		exercise.addActionListener(al);
+//	}
+//	
+//	public void setControllerSubunit(ActionListener al){
+//		subunit.addActionListener(al);
+//	}
+//	
+//	public void setControllerNotes(ActionListener al){
+//		notes.addActionListener(al);
+//	}
+}

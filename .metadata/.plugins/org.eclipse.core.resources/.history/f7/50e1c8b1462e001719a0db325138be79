@@ -1,0 +1,63 @@
+package GUI;
+
+import java.awt.FlowLayout;
+import java.awt.event.MouseAdapter;
+import java.util.List;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
+
+import Statistics.CourseStatistic;
+import Statistics.Statistic;
+
+public class ExercisesStats extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	
+	JTable exercises;
+
+	public ExercisesStats(CourseStatistic current){
+		final List<Statistic> exe = current.getStatistics();
+//		System.out.println(cs.toString());
+		
+		Object[][] objs = new Object[exe.size()][2];
+		String[] titles = {"Exercise", "Mean"};
+		
+		int i = 0;
+		for(Statistic e : exe){
+			objs[i][0] = "Exercise " + i;
+			objs[i][1] = e.getMean();
+			i += 1;
+		}
+		
+		exercises = new JTable(objs, titles);
+		DefaultTableModel tableModel = new DefaultTableModel(objs, titles) {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+		    public boolean isCellEditable(int row, int column) {
+		       //all cells false
+		       return false;
+		    }
+		};
+		exercises.setModel(tableModel);
+		exercises.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		exercises.setVisible(true);
+		
+		JScrollPane scrollBar =	new	JScrollPane(exercises);
+		
+		JPanel panel2 = new JPanel();
+		panel2.setLayout(new FlowLayout());
+		panel2.add(scrollBar);
+		panel2.setVisible(true);
+	}
+	
+	public void addController(MouseAdapter ma){
+		exercises.addMouseListener(ma);
+	}
+}

@@ -1,0 +1,56 @@
+1493632742533	Delete element
+1493632747105	Delete element
+1493638446039	Delete element
+1493675937982	Delete element
+1493714496709	Move compilation unit
+1493714505725	Move compilation unit
+1493714519037	Move compilation unit
+1493714547426	Rename type 'CreationCourse'
+1493714574522	Rename type 'CreateCourseController'
+1493714588795	Rename type 'CreateCourse'
+1493714606746	Rename type 'CreateCoursxseController'
+1493714614878	Move compilation unit
+1493714623704	Move compilation unit
+1493714653889	Rename type 'QuestionCreation'
+1493714661394	Move compilation unit
+1493714668329	Move compilation unit
+1493714674897	Move compilation unit
+1493714705699	Move compilation unit
+1493714733637	Move compilation unit
+1493714747069	Move compilation unit
+1493714752548	Move compilation unit
+1493714765973	Move compilation unit
+1493714790087	Move compilation unit
+1493714801366	Move compilation unit
+1493714805387	Move compilation unit
+1493714809150	Move compilation unit
+1493714815271	Move compilation unit
+1493714851901	Move compilation unit
+1493714856383	Move compilation unit
+1493714863030	Move compilation unit
+1493714866767	Move compilation unit
+1493714874028	Move compilation unit
+1493714887839	Move compilation unit
+1493714901417	Rename type 'CoursesStats'
+1493714927886	Rename type 'CoursesStatsController'
+1493714964500	Move compilation unit
+1493714972242	Move compilation units
+1493714979440	Move compilation unit
+1493715677019	Delete element
+1493738102154	Delete element
+1493756722015	Rename type 'CreateExerciseController'
+1493798935563	Rename package 'Application'
+1493798947564	Rename package 'Application.Test'
+1493798962249	Rename package 'GUI'
+1493798973585	Rename package 'gui.Panels'
+1493798988095	Rename package 'gui.panels.Controllers'
+1493798994674	Rename package 'gui.Windows'
+1493799001159	Rename package 'gui.windows.Controllers'
+1493799006423	Rename package 'Statistics'
+1493799013055	Rename package 'statistics.Test'
+1493799018271	Rename package 'Test'
+1493799023960	Rename package 'test.Test'
+1493799037970	Rename package 'Tester'
+1493799046241	Rename package 'test'
+1493799052512	Rename package 'Users'
+1493799058530	Rename package 'users.Test'

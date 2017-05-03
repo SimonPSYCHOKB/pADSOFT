@@ -1,0 +1,76 @@
+package GUI;
+
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+
+import Application.*;
+import GUI.Windows.General;
+import GUI.Windows.Controllers.CreateCourseController;
+import Users.Student;
+
+public class CoursesController implements ActionListener {
+
+	private General view;
+	private Application model;
+	private Courses panel;
+	
+	public CoursesController(Application model, General view){
+		this.model = model;
+		this.view = view;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		System.out.println("WHAT");
+		final List<Course> courses = model.getCourses();
+		
+		Object[][] objs = new Object[courses.size()][1];
+		//If the current user is the teacher we display all the courses
+		boolean cond = model.getCurrentUser().equals(model.getTeacher());
+		ArrayList<Integer> rows = new ArrayList<Integer>();
+		if(cond){
+			
+			int i = 0;
+			for(Course c: courses){
+				objs[i][0] = c.getTitle();
+				i += 1;
+			}
+		}
+		//If the user is a student we only show the visible courses
+		else{
+			List<Course> registered = ((Student) model.getCurrentUser()).getRegisteredCourses();
+			List<Course> visible = new ArrayList<Course>();
+			int i = 0;
+			for(Course c: courses){
+				if(registered.contains(c))
+					rows.add(i);
+				if(c.isVisibility()){
+					visible.add(c);
+					i += 1;
+				}
+			}
+			
+			objs = new Object[visible.size()][1];
+			i = 0;
+			for(Course c : visible){
+				objs[i][0] = c.getTitle();
+				i = i + 1;
+			}
+		}
+		//Creation of the new view
+		panel = new Courses(view, objs, rows);
+		view.addPanel(panel);
+		if(cond){
+			System.out.println("hags");
+			JButton create = new JButton("Create new Course");
+			create.addActionListener(new CreateCourseController(model, view));
+			panel.addButtonTop(create);
+		}
+		//Setting the controller por the Table of Courses
+		panel.setController(new CoursesTableController(model, view));		
+	}
+		
+}

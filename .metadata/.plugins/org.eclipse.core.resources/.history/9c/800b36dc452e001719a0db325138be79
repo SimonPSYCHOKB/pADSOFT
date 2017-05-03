@@ -1,0 +1,28 @@
+package GUI;
+
+import java.awt.event.*;
+import javax.swing.*;
+
+import Statistics.CourseStatistic;
+
+import Application.Application;
+
+
+public class CoursesStatsController extends MouseAdapter{
+
+	private Application model;
+	private General view;
+	
+	public CoursesStatsController(Application model, General view){
+		this.model = model;
+		this.view = view;
+	}
+	
+	public void mouseClicked(MouseEvent me){
+		int row = ((JTable) me.getSource()).getSelectedRow();
+		CourseStatistic current = new CourseStatistic(model.getCourses().get(row));
+		ExercisesStats es = new ExercisesStats(current, view);
+
+		
+	}
+}

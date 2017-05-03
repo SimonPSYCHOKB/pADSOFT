@@ -1,0 +1,61 @@
+package gui.panels;
+
+import gui.windows.General;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.*;
+
+import application.*;
+
+
+public class UICourseEditable extends JPanel{
+		
+	private ArrayList<JPanel> units;
+	private JButton editCourse;
+	private Course c;
+
+	private static final long serialVersionUID = 1L;
+
+	public UICourseEditable(final Course c, final Application app, final General gen) {
+		
+		this.c = c;
+		units = new ArrayList<JPanel>();
+		
+		JTabbedPane root = new JTabbedPane();
+		root.setTabLayoutPolicy(JTabbedPane.WRAP_TAB_LAYOUT);
+		
+		setLayout(new BorderLayout());
+		
+		for(Unit u : c.getUnits()){
+			UIUnitEditable rootUnit = new UIUnitEditable(u, app, gen);
+			units.add(rootUnit);
+			root.addTab(u.getName(), rootUnit);
+		}
+		root.setVisible(true);
+		add(root, BorderLayout.CENTER);
+		
+		//Title of the course and edit course button
+		JPanel title = new JPanel(new FlowLayout());
+		JLabel course = new JLabel(c.getTitle());
+		course.setPreferredSize(new Dimension(100, 50));
+		title.add(course);
+		editCourse = new JButton("Edit Course");
+		title.add(addUnit);
+		title.setVisible(true);
+		add(title, BorderLayout.NORTH);
+		
+		setVisible(true);
+	}
+		
+	public void addControllerUnit(ActionListener al){
+		addUnit.addActionListener(al);
+	}
+	
+	public Course getCourse(){
+		return c;
+	}
+}
+

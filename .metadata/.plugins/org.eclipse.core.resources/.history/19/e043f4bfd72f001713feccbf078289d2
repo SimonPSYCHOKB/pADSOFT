@@ -1,0 +1,40 @@
+package GUI.Panels.Controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import Application.Application;
+import Application.Unit;
+import GUI.CancelController;
+import GUI.Panels.UICourseEditable;
+import GUI.Windows.CreateUnit;
+import GUI.Windows.General;
+
+public class AddSubunitController implements ActionListener{
+
+	private Unit u;
+	private Application app;
+	private General gen;
+		
+	public AddSubunitController(Unit u, Application app, General gen){
+		this.u = u;
+		this.app = app;
+		this.gen = gen;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		final CreateUnit cu = new CreateUnit();
+		cu.setControllerCancel(new CancelController(cu));
+		cu.setControllerDone(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0){
+				u.createSubSection(new Unit(cu.getVisibility().isSelected(), cu.getNameField().getText()));
+				cu.dispose();
+				gen.addPanel(new UICourseEditable(u.getCourse(), app, gen));
+			}
+		});
+	}
+
+
+}

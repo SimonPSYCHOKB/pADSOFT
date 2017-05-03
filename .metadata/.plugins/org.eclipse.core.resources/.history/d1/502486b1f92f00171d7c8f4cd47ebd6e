@@ -1,0 +1,23 @@
+package gui.panels.controllers;
+
+import gui.windows.EditNotes;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import application.Note;
+
+public class NotesController implements ActionListener{
+	
+	private Note note;
+	
+	public NotesController(Note note){
+		this.note = note;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		EditNotes en = new EditNotes(note);
+	}
+
+}

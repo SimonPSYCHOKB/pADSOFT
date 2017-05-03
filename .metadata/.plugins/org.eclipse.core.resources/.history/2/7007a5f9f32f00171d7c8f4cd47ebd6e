@@ -1,0 +1,31 @@
+package gui.panels.controllers;
+
+import gui.windows.CreateUnit;
+import gui.windows.General;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import application.Application;
+import application.Course;
+
+public class DoneAddSubunitController implements ActionListener{
+	
+	private Course course;
+	private CreateUnit view;
+	private Application app;
+	private General gen;
+	
+	public DoneAddSubunitController(Course course, CreateUnit view, Application app, General gen){
+		this.course = course;
+		this.view = view;
+		this.app = app;
+		this.gen = gen;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}

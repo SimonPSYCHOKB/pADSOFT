@@ -1,0 +1,13 @@
+package gui.windows;
+
+import javax.swing.JFrame;
+
+public class EditNotes extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+	
+	public EditNotes(Notes notes){
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+package GUI.Panels.Controllers;
+
+import java.awt.event.ActionListener;
+
+public class CreateExerciseController implements ActionListener{
+
+}

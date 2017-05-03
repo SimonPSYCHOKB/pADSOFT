@@ -1,0 +1,26 @@
+package GUI;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import Application.Application;
+import Application.Unit;
+
+public class CreateUnitController implements ActionListener{
+
+	private Application model;
+	private UICourseEditable view;
+	
+	public CreateUnitController(Application model, UICourseEditable view){
+		this.model = model;
+		this.view = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		CreateUnit frame = (CreateUnit) arg0.getSource();
+		model.addUnitToCourse(new Unit(frame.getVisibility().isSelected(), frame.getNameField()), view.getCourse());
+		
+		
+	}
+}

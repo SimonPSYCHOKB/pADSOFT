@@ -1,9 +1,0 @@
-package GUI;
-
-public class OptionsController {
-
-	public OptionsController() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

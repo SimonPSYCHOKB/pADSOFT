@@ -1,0 +1,96 @@
+package application.test;
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import users.Student;
+
+import exercise.Exercise;
+
+
+import application.Course;
+import application.Unit;
+
+
+
+public class CourseTest {
+	
+	Course c;
+	Exercise e1;
+	Exercise e2;
+	Unit u;
+	Student s;
+	
+	@Before
+	public void setUp() throws Exception {
+		e1 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.5);
+		e2 = new Exercise(true, new Date(), new Date(LocalDate.now().plusDays(10).toEpochDay()), 1.4);
+		u = new Unit(true, "Unit 1");
+		
+		c = new Course(true, "Course 1", "This is Course 1");
+		
+		s = new Student("Paco", "Perez", "123", "pperez@esdu.es", "12");
+	}
+
+	@Test
+	public void testIsVisibility() {
+		assertTrue(c.isVisibility());
+	}
+
+	@Test
+	public void testGetTotal() {
+		assertEquals(c.getTotal(), 0.0, 0.0);
+	}
+
+	@Test
+	public void testGetTitle() {
+		assertEquals(c.getTitle(), "Course 1");
+	}
+
+	@Test
+	public void testGetTests() {
+		c.addTest(e1); c.addTest(e2);
+		List<Exercise> exe = new ArrayList<Exercise>();
+		exe.add(e1); exe.add(e2);
+		assertEquals(exe, c.getTests());
+	}
+
+	@Test
+	public void testGetDescription() {
+		assertEquals(c.getDescription(), "This is Course 1");
+	}
+
+	@Test
+	public void testGetUnits() {
+		c.addUnit(u);
+		assertEquals(c.getUnits().get(0), u);
+	}
+
+	@Test
+	public void testAddTest() {
+		c.addTest(e1); 
+		assertEquals(c.getTests().size(), 1.0, 0.0);
+		c.addTest(e2);
+		assertEquals(c.getTests().size(), 2.0, 0.0);
+	}
+	
+	@Test
+	public void testDeleteUnit(){
+		c.addUnit(u);
+		c.deleteUnit(u);
+		assertTrue(c.getUnits().isEmpty());
+	}
+	
+	@Test
+	public void testAddUnit(){
+		c.addUnit(u);
+		assertEquals(c.getUnits().get(0), u);
+	}
+	
+}

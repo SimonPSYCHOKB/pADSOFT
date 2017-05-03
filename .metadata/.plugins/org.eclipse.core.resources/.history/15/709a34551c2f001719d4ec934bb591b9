@@ -1,0 +1,27 @@
+package GUI.Windows.Controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
+
+import Application.Unit;
+import GUI.Windows.CreateTest;
+
+public class CreateTestController implements ActionListener{
+
+	private CreateTest view;
+	private Unit model;
+	
+	public CreateTestController(CreateTest view, Unit model){
+		this.view = view;
+		this.model = model;
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		double weight = view.getWeight();
+		Date end = view.getDateEnd();
+		Date start = view.getDateBegining();
+		boolean visibility = view.getVisibility();
+	}
+
+}

@@ -1,0 +1,17 @@
+package gui.panels.controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class DoneAddSubunitController implements ActionListener{
+	
+	public DoneAddSubunitController(Course course, CreateUnit view, Application app, General gen){
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}

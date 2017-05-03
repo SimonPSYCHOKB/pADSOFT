@@ -1,0 +1,103 @@
+package GUI.Windows;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Calendar;
+import java.util.Date;
+
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerDateModel;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.SpringLayout;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+public class CreateTest extends JFrame{
+	
+	private static final long serialVersionUID = 1L;
+	private JSpinner spinner1;
+
+	public CreateTest(){
+		// Setting layout
+				SpringLayout layout = new SpringLayout();
+				getContentPane().setLayout(layout);
+				
+				// Date of Beginning
+				JLabel start = new JLabel("Date of beginning");
+				SpinnerModel sm1 = new SpinnerDateModel(new Date(), null, null, Calendar.DAY_OF_MONTH);
+				spinner1 = new JSpinner(sm1);
+				layout.putConstraint(SpringLayout.NORTH, start, 50, SpringLayout.NORTH, this);
+				layout.putConstraint(SpringLayout.WEST, start, 250, SpringLayout.WEST, this);
+				add(start);
+				layout.putConstraint(SpringLayout.NORTH, spinner1, 50, SpringLayout.NORTH, this);
+				layout.putConstraint(SpringLayout.WEST, spinner1, 30, SpringLayout.EAST, start);
+				add(spinner1);
+				
+//				spinner1.addChangeListener(new ChangeListener(){
+//					@Override
+//					public void stateChanged(ChangeEvent arg0) {
+//					    e.editDateOfBegining((Date) (spinner1.getValue()));
+////					    System.out.println(e.getDateOfBegining().toString());
+//					}
+//				});
+				
+				// Date of End
+				JLabel end = new JLabel("Date of end");
+				SpinnerDateModel sm2 = new SpinnerDateModel(e.getDateOfEnd(), null, null, Calendar.DAY_OF_MONTH);
+				spinner2 = new JSpinner(sm2);
+				layout.putConstraint(SpringLayout.NORTH, end, 20, SpringLayout.SOUTH, start);
+				layout.putConstraint(SpringLayout.WEST, end, 250, SpringLayout.WEST, test);
+				test.add(end);
+				layout.putConstraint(SpringLayout.NORTH, spinner2, 15, SpringLayout.SOUTH, spinner1);
+				layout.putConstraint(SpringLayout.WEST, spinner2, 75, SpringLayout.EAST, end);
+				test.add(spinner2);
+				
+				spinner2.addChangeListener(new ChangeListener(){
+					@Override
+					public void stateChanged(ChangeEvent arg0) {
+					    e.editDateOfEnd((Date) (spinner2.getValue()));
+//					    System.out.println(e.getDateOfEnd().toString());
+					}
+				});
+				
+				//Weigth
+				JLabel weight = new JLabel("Weight");
+				SpinnerModel sm3 = new SpinnerNumberModel(e.getWeight(), 0, 100, 0.1);
+				spinner3 = new JSpinner(sm3);
+				layout.putConstraint(SpringLayout.NORTH, weight, 20, SpringLayout.SOUTH, end);
+				layout.putConstraint(SpringLayout.WEST, weight, 250, SpringLayout.WEST, test);
+				test.add(weight);
+				layout.putConstraint(SpringLayout.NORTH, spinner3, 15, SpringLayout.SOUTH, spinner2);
+				layout.putConstraint(SpringLayout.WEST, spinner3, 106, SpringLayout.EAST, weight);
+				test.add(spinner3);
+				
+				spinner3.addChangeListener(new ChangeListener(){
+					@Override
+					public void stateChanged(ChangeEvent arg0) {
+						e.setWeigth((double) spinner3.getValue());
+					}
+				});
+				
+				//Visibility
+				JLabel visibility = new JLabel("Visible");
+				ok = new JCheckBox();
+				ok.setSelected(e.isVisibility());
+				layout.putConstraint(SpringLayout.NORTH, visibility, 20, SpringLayout.SOUTH, weight);
+				layout.putConstraint(SpringLayout.WEST, visibility, 250, SpringLayout.WEST, test);
+				test.add(visibility);
+				layout.putConstraint(SpringLayout.NORTH, ok, 15, SpringLayout.SOUTH, spinner3);
+				layout.putConstraint(SpringLayout.WEST, ok, 106, SpringLayout.EAST, visibility);
+				test.add(ok);
+				
+				ok.addActionListener(new ActionListener(){
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						e.setVisibility(ok.isSelected());
+					}
+				});
+	}
+}

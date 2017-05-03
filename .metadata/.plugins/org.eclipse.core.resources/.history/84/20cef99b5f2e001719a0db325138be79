@@ -1,0 +1,74 @@
+package GUI;
+
+import java.awt.event.*;
+import java.util.List;
+
+import javax.swing.*;
+
+import Statistics.CourseStatistic;
+import Statistics.SingleUserStatistic;
+import Statistics.Statistic;
+import Users.Student;
+
+import Application.Application;
+import Application.Course;
+
+
+public class CoursesStatsController extends MouseAdapter{
+
+	private Application model;
+	private General view;
+	
+	public CoursesStatsController(Application model, General view){
+		this.model = model;
+		this.view = view;
+	}
+	
+	public void mouseClicked(MouseEvent me){
+		int row = ((JTable) me.getSource()).getSelectedRow();
+			
+		Object[][] objs;
+		String[] titles = {"Exercise", "Mean"};
+		if(model.getCurrentUser().equals(model.getTeacher())){
+			Course c = model.getCourses().get(row);
+			CourseStatistic current = new CourseStatistic(c);
+			List<Statistic> exe = current.getStatistics();
+			
+			objs = new Object[exe.size()][2];
+			
+			int i = 0;
+			for(Statistic e : exe){
+				objs[i][0] = "Exercise " + i;
+				objs[i][1] = e.getMean();
+				i += 1;
+			}
+		}
+		else{
+			Student student = model.searchStudentByName(model.getCurrentUser().getName());
+			SingleUserStatistic stats = new SingleUserStatistic(student);
+			List<CourseStatistic> cs = stats.getCourseStatistics();			
+			CourseStatistic course = cs.get(row);
+			
+			objs = new Object[course.getStatistics().size()][2];
+			
+			int i = 0;
+			final List<Statistic> stats = cs.get(row).getStatistics();
+			for(Statistic s : stats){
+				objs[i][0] = "Exercise " + i;
+				objs[i][1] = s.getMean();
+				i += 1;
+			}
+		}
+		
+		
+		CoursesStats es = new CoursesStats(objs, titles);
+		
+		JButton back = new JButton("Back");
+		back.addActionListener(new BackController(view));
+		es.addButton(back);
+		
+		view.addPanel(es);		
+		SwingUtilities.updateComponentTreeUI(view);
+		es.addController(new ExercisesStatsController(c, view));
+	}
+}

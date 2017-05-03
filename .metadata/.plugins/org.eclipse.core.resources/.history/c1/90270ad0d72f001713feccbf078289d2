@@ -1,0 +1,36 @@
+package GUI.Windows.Controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import application.Application;
+import application.Unit;
+
+import GUI.Panels.UICourseEditable;
+import GUI.Panels.Controllers.UnitController;
+import GUI.Windows.CreateUnit;
+import GUI.Windows.General;
+
+public class CreateUnitController implements ActionListener{
+
+	private Application model;
+	private UICourseEditable view;
+	private CreateUnit frame;
+	private General gen;
+	
+	public CreateUnitController(Application model, UICourseEditable view, CreateUnit frame, General gen){
+		this.model = model;
+		this.view = view;
+		this.frame = frame;
+		this.gen = gen;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		model.addUnitToCourse(new Unit(frame.getVisibility().isSelected(), frame.getNameField().getText()), view.getCourse());
+		UICourseEditable ce = new UICourseEditable(view.getCourse(), model, gen); 
+		ce.addControllerUnit(new UnitController(model, ce, gen));
+		gen.addPanel(ce);
+		frame.dispose();
+	}
+}

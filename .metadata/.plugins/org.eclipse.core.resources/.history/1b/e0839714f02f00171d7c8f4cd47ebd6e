@@ -1,0 +1,21 @@
+package gui.windows.controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class EditCourseController implements ActionListener{
+	
+	private Course model;
+	private General view;
+	
+	public EditCourseController(Course model, General view){
+		this.model = model;
+		this.view = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}

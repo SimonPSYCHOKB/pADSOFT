@@ -1,9 +1,0 @@
-package GUI;
-
-public class UISingleAnswer extends UIQuestion{
-
-	public UISingleAnswer() {
-		
-	}
-
-}

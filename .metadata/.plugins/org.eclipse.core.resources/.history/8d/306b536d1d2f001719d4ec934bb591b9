@@ -1,0 +1,38 @@
+package GUI.Windows.Controllers;
+
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
+
+import Application.Unit;
+import GUI.Windows.CreateTest;
+import GUI.Windows.EditTest;
+import Test.Exercise;
+
+public class CreateTestController implements ActionListener{
+
+	private CreateTest view;
+	private Unit model;
+	
+	public CreateTestController(CreateTest view, Unit model){
+		this.view = view;
+		this.model = model;
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		//Exercise data
+		double weight = view.getWeight();
+		Date end = view.getDateEnd();
+		Date start = view.getDateBegining();
+		boolean visibility = view.getVisibility();
+		
+		Exercise e = new Exercise(visibility, start, end, weight);
+		model.addTest(e);
+		view.dispose();
+		
+		if(((JButton) arg0.getSource()).getText().equals("Edit"))
+			new EditTest(e);
+	}
+
+}

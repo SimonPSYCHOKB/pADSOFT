@@ -1,0 +1,43 @@
+package gui.panels.Controllers;
+
+import gui.CancelController;
+import gui.Windows.CreateNotes;
+import gui.Windows.General;
+import gui.panels.UICourseEditable;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import application.Application;
+import application.Note;
+import application.Unit;
+
+
+public class AddNotesController implements ActionListener{
+
+	private Unit u;
+	private Application app;
+	private General gen;
+	
+	public AddNotesController(Unit u, Application app, General gen){
+		this.u = u;
+		this.app = app;
+		this.gen = gen;
+	}
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0){
+		final CreateNotes cn = new CreateNotes();
+		cn.setControllerCancel(new CancelController(cn));
+		cn.setControllerDone(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0){
+				u.addNotes(new Note(cn.getNotes().getText(), cn.getVisibility().isSelected()));
+				cn.dispose();
+				gen.addPanel(new UICourseEditable(u.getCourse(), app, gen));
+			}
+		});
+	}
+}
+

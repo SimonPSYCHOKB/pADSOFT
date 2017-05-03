@@ -1,0 +1,16 @@
+package GUI.Windows.Controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CreateTestController implements ActionListener{
+
+	public CreateTestController(CreateTest view, Application model){
+		this
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}

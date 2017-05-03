@@ -1,0 +1,79 @@
+package GUI;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
+
+import javax.swing.*;
+
+import Application.Application;
+import Application.Course;
+import Statistics.CourseStatistic;
+import Statistics.QuestionStatistic;
+import Statistics.SingleUserStatistic;
+import Statistics.Statistic;
+import Users.Student;
+
+public class ExercisesStatsController extends MouseAdapter{
+	
+	private Course model;
+	private General view;
+	private Application app;
+	
+	public ExercisesStatsController(Course model, General view, Application app){
+		this.model = model;
+		this.view = view;
+		this.app = app;
+	}
+	
+	
+	public void mouseClicked(MouseEvent me) {
+		int row = ((JTable) me.getSource()).getSelectedRow();
+		CoursesStats s; 
+
+		if(app.getCurrentUser().equals(app.getTeacher())){
+			Statistic current = new Statistic(model.getTests().get(row));
+			List<QuestionStatistic> questions = current.getQuestionStatistics();
+			
+			Object[][] objs = new Object[questions.size()][5];
+			String[] titles = {"Question", "Mean", "Wrong", "Right", "Blank"};
+			
+			int i = 0;
+			for(QuestionStatistic qs : questions){
+				objs[i][0] = "Question " + i;
+				objs[i][1] = qs.getMean();
+				objs[i][2] = qs.getWrongNumber();
+				objs[i][3] = qs.getCorrectNumber();
+				objs[i][4] = qs.getBlankNumber();
+				i += 1;
+			}
+			s = new CoursesStats(objs, titles);
+
+		}
+		else{
+			Student student = app.searchStudentByName(app.getCurrentUser().getName());
+			SingleUserStatistic statis = new SingleUserStatistic(student);
+			List<CourseStatistic> cs = statis.getCourseStatistics();		
+			List<Statistic> stats = cs.get(row).getStatistics();
+			List<QuestionStatistic> questions = stats.get(row).getQuestionStatistics();
+			
+			Object[][] objs = new Object[questions.size()][2];
+			String[] titles = {"Question", "Mark"};
+			
+			int i = 0;
+			for(QuestionStatistic qs : stats.get(row).getQuestionStatistics()){
+				objs[i][0] = "Question " + i;
+				objs[i][1] = qs.getMean();
+				i += 1;
+			}
+			s = new CoursesStats(objs, titles);
+		}
+		
+		JButton back = new JButton("Back");
+		back.addActionListener(new BackController(view));
+		s.addButton(back);
+		
+		view.addPanel(s);
+		SwingUtilities.updateComponentTreeUI(view);
+	}
+}

@@ -1,0 +1,53 @@
+package GUI;
+
+import java.awt.event.*;
+import java.util.List;
+
+import javax.swing.*;
+
+import Statistics.CourseStatistic;
+import Statistics.Statistic;
+
+import Application.Application;
+import Application.Course;
+
+
+public class CoursesStatsController extends MouseAdapter{
+
+	private Application model;
+	private General view;
+	
+	public CoursesStatsController(Application model, General view){
+		this.model = model;
+		this.view = view;
+	}
+	
+	public void mouseClicked(MouseEvent me){
+		int row = ((JTable) me.getSource()).getSelectedRow();
+		Course c = model.getCourses().get(row);
+		CourseStatistic current = new CourseStatistic(c);
+		
+		final List<Statistic> exe = current.getStatistics();
+//		System.out.println(cs.toString());
+		
+		Object[][] objs = new Object[exe.size()][2];
+		String[] titles = {"Exercise", "Mean"};
+		
+		int i = 0;
+		for(Statistic e : exe){
+			objs[i][0] = "Exercise " + i;
+			objs[i][1] = e.getMean();
+			i += 1;
+		}
+		
+		CoursesStats es = new CoursesStats(objs, titles);
+		
+		JButton back = new JButton("Back");
+		back.addActionListener(new BackController(view));
+		es.addButton(back);
+		
+		view.addPanel(es);		
+		SwingUtilities.updateComponentTreeUI(view);
+		es.addController(new ExercisesStatsController(c, view));
+	}
+}
