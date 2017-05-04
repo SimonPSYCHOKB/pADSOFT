@@ -46,7 +46,7 @@ public class ExercisesStatsController extends MouseAdapter{
 			
 			int i = 0;
 			for(QuestionStatistic qs : questions){
-				objs[i][0] = "Question " + i;
+				objs[i][0] = "Question " + i + " (" + (float) qs.getQuestion().getRelativeWeight() + " %)";
 				objs[i][1] = qs.getMean();
 				objs[i][2] = qs.getWrongNumber();
 				objs[i][3] = qs.getCorrectNumber();
@@ -68,7 +68,7 @@ public class ExercisesStatsController extends MouseAdapter{
 			
 			int i = 0;
 			for(QuestionStatistic qs : stats.get(row).getQuestionStatistics()){
-				objs[i][0] = "Question " + i;
+				objs[i][0] = "Question " + i + " (" + (float) qs.getQuestion().getRelativeWeight() + " %)";
 				objs[i][1] = qs.getMean();
 				i += 1;
 			}

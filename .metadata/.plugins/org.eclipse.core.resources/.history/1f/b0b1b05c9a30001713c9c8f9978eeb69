@@ -1,0 +1,46 @@
+package gui.panels;
+
+import java.awt.BorderLayout;
+import java.util.List;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import users.Student;
+
+public class StudentsTable extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	private JTable stud;
+	
+	public StudentsTable(List<Student> students){
+		
+		Object[][] objs = new Object[students.size()][1];
+		String[] titles = {"Students"};
+		
+		int i = 0;
+		for(Student s : students){
+			objs[i][0] = s.toString();
+			i += 1;
+		}
+				
+		DefaultTableModel tableModel = new DefaultTableModel(objs, titles){
+			
+			private static final long serialVersionUID = 1L;
+
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
+		
+		stud = new JTable(tableModel);
+		stud.setTableHeader(null);
+		
+		JScrollPane scrollBar =	new	JScrollPane(stud);
+		add(BorderLayout.CENTER, scrollBar);		
+		setVisible(true);
+	}
+
+}

@@ -45,7 +45,7 @@ public class UIStatsController extends MouseAdapter{
 			
 			int i = 0;
 			for(Statistic e : exe){
-				objs[i][0] = "Exercise " + i;
+				objs[i][0] = "Exercise " + i + " (" + (float) e.getExercise().getRelativeWeight() + " %)";
 				objs[i][1] = e.getMean();
 				i += 1;
 			}
@@ -61,7 +61,7 @@ public class UIStatsController extends MouseAdapter{
 			int i = 0;
 			List<Statistic> stats = cs.get(row).getStatistics();
 			for(Statistic s : stats){
-				objs[i][0] = "Exercise " + i;
+				objs[i][0] = "Exercise " + i + " (" + (float) s.getExercise().getRelativeWeight() + " %)";
 				objs[i][1] = s.getMean();
 				i += 1;
 			}

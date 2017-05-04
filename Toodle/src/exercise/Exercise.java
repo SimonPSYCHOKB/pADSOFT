@@ -123,6 +123,7 @@ public class Exercise extends LearningObj implements Serializable{
 	public void addQuestion(Question q){
 		questions.add(q);
 		total = total + q.getWeight();
+		q.setExercise(this);
 	}
 	
 	/**
@@ -130,8 +131,8 @@ public class Exercise extends LearningObj implements Serializable{
 	 * @param dateOfEnd - LocalDate which is the new date of end
 	 */
 	public void editDateOfEnd(Date dateOfEnd){
-		if(started == true)
-			return;
+//		if(started == true)
+//			return;
 		this.dateOfEnd = dateOfEnd; 
 	}
 	
@@ -218,6 +219,10 @@ public class Exercise extends LearningObj implements Serializable{
 		if(started == true) return;
 		super.setVisibility(vis);
 	}
+	
+	public double getRelativeWeight(){
+		return weight/course.getTotal();
+	}
 
 	@Override
 	public int hashCode() {
@@ -260,11 +265,11 @@ public class Exercise extends LearningObj implements Serializable{
 				return false;
 		} else if (!dateOfBegining.equals(other.dateOfBegining))
 			return false;
-		if (dateOfEnd == null) {
-			if (other.dateOfEnd != null)
-				return false;
-		} else if (!dateOfEnd.equals(other.dateOfEnd))
-			return false;
+//		if (dateOfEnd == null) {
+//			if (other.dateOfEnd != null)
+//				return false;
+//		} else if (!dateOfEnd.equals(other.dateOfEnd))
+//			return false;
 		if (questions == null) {
 			if (other.questions != null)
 				return false;

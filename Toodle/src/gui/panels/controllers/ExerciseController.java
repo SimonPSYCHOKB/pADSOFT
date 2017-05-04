@@ -2,14 +2,13 @@ package gui.panels.controllers;
 
 import exercise.Exercise;
 import gui.CancelController;
-import gui.panels.UICourseEditable;
 import gui.windows.EditTest;
 import gui.windows.General;
+import gui.windows.PastTest;
 import gui.windows.Test;
 import gui.windows.controllers.AnswerExerciseController;
-import gui.windows.controllers.EditCourseController;
+import gui.windows.controllers.EditTestController;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -21,8 +20,6 @@ import users.Student;
 
 
 import application.Application;
-import application.Unit;
-
 
 
 public class ExerciseController extends MouseAdapter{
@@ -41,29 +38,19 @@ public class ExerciseController extends MouseAdapter{
 		//If the current user is the teacher we display an editable test
 		if(model.getCurrentUser().equals(model.getTeacher())){
 			final EditTest et = new EditTest(e);
-			et.setControllerSave(new CancelController(et));
-			et.setControllerDelete(new ActionListener(){
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					Unit u = e.getUnit();
-					u.removeTest(e);
-					et.dispose();
-					
-					UICourseEditable ce = new UICourseEditable(u.getCourse(), model, gen);
-					ce.addControllerUnit(new UnitController(model, ce, gen));
-					ce.addControllerEditCourse(new EditCourseController(u.getCourse(), gen, model));
-					gen.addPanel(ce);
-				}
-			});
+			et.setControllerSave(new EditTestController(e, et));
+			et.setControllerDelete(new DeleteTestController(e, model, gen, et));
+			et.setControllerCancel(new CancelController(et));
 		}
 		
 		//If the user is a student we display the test
 		else{
 			if(e.beginExercise((Student) model.getCurrentUser()) == false){
 				if(((Student) model.getCurrentUser()).getAnsweredTest(e) != null)
-					JOptionPane.showMessageDialog(new JFrame(),((Student) model.getCurrentUser()).viewPastTest(e),((Student) model.getCurrentUser()).getAnsweredTest(e).getGradeTest() + " " , JOptionPane.ERROR_MESSAGE);
+					new PastTest(((Student) model.getCurrentUser()).getAnsweredTest(e));
 
-				JOptionPane.showMessageDialog(new JFrame(),"Fecha limite rebasada", "Error", JOptionPane.INFORMATION_MESSAGE);
+				else 
+					JOptionPane.showMessageDialog(new JFrame(),"Fecha limite rebasada", "Error", JOptionPane.INFORMATION_MESSAGE);
 				return;
 			}
 			else{

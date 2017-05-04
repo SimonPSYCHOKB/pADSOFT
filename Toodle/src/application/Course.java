@@ -133,7 +133,8 @@ public class Course implements Serializable{
 	 * @param u - The Unit we want to remove
 	 */
 	public void deleteUnit(Unit u){
-		units.remove(u);
+		if(units.contains(u)) units.remove(u);
+		if(u.getUnit() == null) return;
 		u.getUnit().removeUnit(u);
 	}
 	
@@ -152,12 +153,10 @@ public class Course implements Serializable{
 		int result = 1;
 		result = prime * result
 				+ ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((tests == null) ? 0 : tests.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(total);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((units == null) ? 0 : units.hashCode());
 		result = prime * result + (visibility ? 1231 : 1237);
 		return result;
 	}
@@ -175,11 +174,6 @@ public class Course implements Serializable{
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
-			return false;
-		if (tests == null) {
-			if (other.tests != null)
-				return false;
-		} else if (!tests.equals(other.tests))
 			return false;
 		if (title == null) {
 			if (other.title != null)

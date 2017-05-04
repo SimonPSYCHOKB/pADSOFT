@@ -90,6 +90,7 @@ public class Statistic extends Stats implements Serializable{
 	 * @param s - Student
 	 */
 	public Statistic(Exercise e, Student s){
+		test = e;
 		ansTests = new ArrayList<AnsweredTest>();
 		qestStat = new ArrayList<QuestionStatistic>();
 //		if(s.getAnsweredTest(e) == null) return;

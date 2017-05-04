@@ -72,6 +72,18 @@ public abstract class General extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
+	public void addPanelWest(JPanel p){
+		p.setVisible(true);
+		this.getContentPane().add(BorderLayout.WEST, p);
+		SwingUtilities.updateComponentTreeUI(this);
+	}
+	
+	public void addPanelEast(JPanel p){
+		p.setVisible(true);
+		this.getContentPane().add(BorderLayout.EAST, p);
+		SwingUtilities.updateComponentTreeUI(this);
+	}
+	
 	public void previous(){
 		central.setVisible(false);
 		if(previous.equals(central)){

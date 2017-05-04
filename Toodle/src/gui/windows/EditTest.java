@@ -8,12 +8,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Date;
 import java.util.ArrayList;
 
 import javax.swing.*;
-import javax.swing.event.*;
-
 
 
 public class EditTest extends JFrame{
@@ -28,6 +25,7 @@ public class EditTest extends JFrame{
 	private JSpinner spinner3;
 	private JCheckBox ok;
 	private JButton remove;
+	private JButton cancel;
 
 	public EditTest(final Exercise e){
 		this.e = e;
@@ -35,6 +33,7 @@ public class EditTest extends JFrame{
 		this.setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
 		quest = new ArrayList<EditQuestion>();
 		JPanel test = new JPanel();
+		
 		// Setting layout
 		SpringLayout layout = new SpringLayout();
 		test.setLayout(layout);
@@ -50,13 +49,6 @@ public class EditTest extends JFrame{
 		layout.putConstraint(SpringLayout.WEST, spinner1, 30, SpringLayout.EAST, start);
 		test.add(spinner1);
 		
-		spinner1.addChangeListener(new ChangeListener(){
-			@Override
-			public void stateChanged(ChangeEvent arg0) {
-			    e.editDateOfBegining((Date) (spinner1.getValue()));
-//			    System.out.println(e.getDateOfBegining().toString());
-			}
-		});
 		
 		// Date of End
 		JLabel end = new JLabel("Date of end");
@@ -68,14 +60,7 @@ public class EditTest extends JFrame{
 		layout.putConstraint(SpringLayout.NORTH, spinner2, 15, SpringLayout.SOUTH, spinner1);
 		layout.putConstraint(SpringLayout.WEST, spinner2, 75, SpringLayout.EAST, end);
 		test.add(spinner2);
-		
-		spinner2.addChangeListener(new ChangeListener(){
-			@Override
-			public void stateChanged(ChangeEvent arg0) {
-			    e.editDateOfEnd((Date) (spinner2.getValue()));
-//			    System.out.println(e.getDateOfEnd().toString());
-			}
-		});
+
 		
 		//Weigth
 		JLabel weight = new JLabel("Weight");
@@ -87,13 +72,7 @@ public class EditTest extends JFrame{
 		layout.putConstraint(SpringLayout.NORTH, spinner3, 15, SpringLayout.SOUTH, spinner2);
 		layout.putConstraint(SpringLayout.WEST, spinner3, 106, SpringLayout.EAST, weight);
 		test.add(spinner3);
-		
-		spinner3.addChangeListener(new ChangeListener(){
-			@Override
-			public void stateChanged(ChangeEvent arg0) {
-				e.setWeigth((double) spinner3.getValue());
-			}
-		});
+
 		
 		//Visibility
 		JLabel visibility = new JLabel("Visible");
@@ -106,12 +85,6 @@ public class EditTest extends JFrame{
 		layout.putConstraint(SpringLayout.WEST, ok, 106, SpringLayout.EAST, visibility);
 		test.add(ok);
 		
-		ok.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				e.setVisibility(ok.isSelected());
-			}
-		});
 		
 		//Add Question
 		JButton add = new JButton("Add Question");
@@ -122,7 +95,9 @@ public class EditTest extends JFrame{
 		add.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				new CreateQuestion(e, dispose);
+				CreateQuestion cq = new CreateQuestion(e, dispose);
+				cq.setControllerCancel(new CancelController(cq));
+				cq.setControllerNext(new CreateQuestionController(cq, e));
 			}			
 		});
 		
@@ -144,11 +119,12 @@ public class EditTest extends JFrame{
 	
 		//Button
 		JPanel buttons = new JPanel(new FlowLayout());
-		close = new JButton("Save");	
-		buttons.add(close);
-		close.addActionListener(new CancelController(this));
+		cancel = new JButton("Cancel");
+		buttons.add(cancel);
 		remove = new JButton("Delete test");
 		buttons.add(remove);
+		close = new JButton("Save");	
+		buttons.add(close);
 		add(buttons);
 		
 		//Window settings
@@ -166,6 +142,10 @@ public class EditTest extends JFrame{
 	
 	public void setControllerDelete(ActionListener al){
 		remove.addActionListener(al);
+	}
+	
+	public void setControllerCancel(ActionListener al){
+		cancel.addActionListener(al);
 	}
 	
 	public List<EditQuestion> getQuestions(){
@@ -187,5 +167,9 @@ public class EditTest extends JFrame{
 	public JSpinner getDateBegining(){
 		return spinner1;
 	}	
+	
+	public JCheckBox getVisibility(){
+		return ok;
+	}
 	
 }

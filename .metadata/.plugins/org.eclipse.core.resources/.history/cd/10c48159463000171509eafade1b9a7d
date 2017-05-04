@@ -1,0 +1,36 @@
+package gui.windows.controllers;
+
+import gui.panels.StudentsTable;
+import gui.windows.General;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import users.Student;
+
+import application.Application;
+
+public class StudentsController implements ActionListener{
+	
+	private General view;
+	private Application model;
+	
+	public StudentsController(General view, Application model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		view.addPanel(new StudentsTable(model.getStudents()));
+		
+	}
+
+}

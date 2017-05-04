@@ -1,0 +1,79 @@
+package gui.windows.controllers;
+
+import gui.panels.UIStats;
+import gui.panels.controllers.UIStatsController;
+import gui.windows.General;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
+import javax.swing.SwingUtilities;
+import javax.swing.JTable;
+
+import statistics.CourseStatistic;
+import statistics.SingleUserStatistic;
+import users.Student;
+
+import application.Application;
+
+public class StudentsController implements ActionListener{
+	
+	private General view;
+	private Application model;
+	
+	public StudentsController(General view, Application model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		final List<Student> students = model.getStudents();
+		
+		String[] titles = {"Title"};
+		Object[][] objs = new Object[students.size()][1];
+		
+		int i = 0;
+		for(Student s : students){
+			objs[i][0] = s.toString();
+			i += 1;
+		}
+	
+		UIStats std = new UIStats(objs, titles);
+		std.addController(new MouseAdapter(){
+			public void mouseClicked(MouseEvent e){
+				int row = ((JTable) e.getSource()).getSelectedRow();
+				Student student = model.searchStudentByName(students.get(row).getName());
+				SingleUserStatistic stats = new SingleUserStatistic(student);
+				final List<CourseStatistic> cs = stats.getCourseStatistics();
+				Object[][] objs = new Object[cs.size()][2];
+				String[] titles = {"Course", "Mean"};
+				
+				int i = 0;
+				for(CourseStatistic c : cs){
+					objs[i][0] = c.getCourse().getTitle();
+					if(c.getCourse().getTests().isEmpty() == true)
+						objs[i][1] = "--";
+					else objs[i][1] = c.getMean();
+						i += 1;
+				}
+				UIStats s = new UIStats(objs, titles);
+				view.addPanel(s);
+				SwingUtilities.updateComponentTreeUI(view);
+				s.addController(new MouseAdapter(){
+					@Override
+					public void mouseClicked(MouseEvent e){
+						
+					}
+				});	
+			}
+		});
+		view.addPanel(std);
+		
+		
+	}
+
+}

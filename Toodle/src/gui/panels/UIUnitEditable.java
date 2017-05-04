@@ -15,10 +15,12 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.font.TextAttribute;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -39,8 +41,11 @@ public class UIUnitEditable extends JScrollPane{
 	private JButton subunit;
 	private JButton notes;
 	private JButton remove;
+	private ArrayList<UIUnitEditable> units;
 
 	public UIUnitEditable(final Unit u, final Application app, final General gen){
+		
+		units = new ArrayList<UIUnitEditable>();
 				
 		//Layout for the main panel
 		JPanel root = new JPanel();
@@ -52,12 +57,14 @@ public class UIUnitEditable extends JScrollPane{
 		for(Note n : u.getNotes()){
 			JTextArea note = new JTextArea(n.toString());
 			note.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			note.setEditable(false);
 			note.addMouseListener(new NotesController(n, gen, app));
-			
+		
+			unit.add(Box.createRigidArea(new Dimension(0,50)));
 			unit.add(note);
 		}
 		int i = 0;
-		for(final Exercise e : u.getTests()){
+		for(Exercise e : u.getTests()){
 			JLabel test = new JLabel("Exercise " + i);
 			Font font = test.getFont();
 			Map<TextAttribute, Object> attributes = new HashMap<>(font.getAttributes());
@@ -65,19 +72,22 @@ public class UIUnitEditable extends JScrollPane{
 			test.setFont(font.deriveFont(attributes));
 			test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			test.addMouseListener(new ExerciseController(app, e, gen));
-
+			
+			unit.add(Box.createRigidArea(new Dimension(0,50)));
 			unit.add(test);
 			i += 1;
 		}
 	
 		for(Unit ss : u.getSubUnits()){
 			UIUnitEditable sube = new UIUnitEditable(ss, app, gen);
-//			final JPanel rootSub = new JPanel(new FlowLayout());
 			sube.setBorder(BorderFactory.createTitledBorder(ss.getName()));
-
+			
+			unit.add(Box.createRigidArea(new Dimension(0,50)));
 			unit.add(sube);
+			
+			units.add(sube);
 		}
-
+		
 		//Buttons for editing
 		JPanel editing = new JPanel();
 		editing.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -104,7 +114,7 @@ public class UIUnitEditable extends JScrollPane{
 			public void actionPerformed(ActionEvent arg0) {
 				Course course = u.getCourse();
 				course.deleteUnit(u);
-				
+
 				UICourseEditable ce = new UICourseEditable(course, app, gen);
 				gen.addPanel(ce);
 			}
@@ -116,11 +126,9 @@ public class UIUnitEditable extends JScrollPane{
 		buttons.add(removing);
 		buttons.add(editing);
 		
-		unit.setVisible(true);
-
 		root.add(buttons);
-        root.add(unit);
-
+		root.add(unit);
+		
 		root.setVisible(true);
 		
 		this.setViewportView(root);
@@ -128,18 +136,21 @@ public class UIUnitEditable extends JScrollPane{
 		setBorder(BorderFactory.createEmptyBorder());
 		this.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		this.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		units.add(this);
 
 	}
 	
-//	public void setControllerExercise(ActionListener al){
-//		exercise.addActionListener(al);
-//	}
-//	
-//	public void setControllerSubunit(ActionListener al){
-//		subunit.addActionListener(al);
-//	}
-//	
-//	public void setControllerNotes(ActionListener al){
-//		notes.addActionListener(al);
-//	}
+	public void setControllerExercise(ActionListener al){
+		exercise.addActionListener(al);
+	}
+	
+	public void setControllerSubunit(ActionListener al){
+		subunit.addActionListener(al);
+	}
+	
+	public void setControllerNotes(ActionListener al){
+		notes.addActionListener(al);
+	}
+	
 }

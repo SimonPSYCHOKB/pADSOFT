@@ -1,0 +1,78 @@
+package gui.windows.controllers;
+
+import exercise.Exercise;
+import exercise.FreeText;
+import exercise.TrueFalse;
+import exercise.MultipleAnswer;
+import exercise.Question;
+import exercise.SingleAnswer;
+import gui.panels.EditQuestion;
+import gui.windows.EditTest;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JTextField;
+
+public class EditTestController implements ActionListener{
+	
+	private Exercise model;
+	private EditTest view;
+
+	public EditTestController(Exercise model, EditTest view){
+		this.model = model;
+		this.view = view;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		List<EditQuestion> questions = view.getQuestions();
+		List<Question> exquestions = model.getQuestions();
+		
+		//Editing each question
+		int i = 0;
+		for(EditQuestion eq : questions){
+			//Penalty, weight and wording
+			exquestions.get(i).setPenalty((double) eq.getPenalty().getValue());
+			exquestions.get(i).setWeight((double) eq.getWeight().getValue());
+			exquestions.get(i).setQuestion(eq.getWording().getText());
+			
+			//Options ans answers
+			if(exquestions.get(i) instanceof MultipleAnswer){
+				List<String> options = new ArrayList<String>();
+				for(JTextField text : eq.getOptions())
+					options.add(text.getText());
+				
+				((MultipleAnswer) exquestions.get(i)).setOptions(options);
+				
+				List<String> answers = new ArrayList<String>();
+				for(JTextField text : eq.getAnswers())
+					answers.add(text.getText());
+				
+				((MultipleAnswer) exquestions.get(i)).setAnswer(answers);
+			}
+			else if(exquestions.get(i) instanceof SingleAnswer){
+				List<String> options = new ArrayList<String>();
+				for(JTextField text : eq.getOptions())
+					options.add(text.getText());
+				
+				((SingleAnswer) exquestions.get(i)).setOptions(options);
+				
+				String answer = eq.getAnswers().get(0).getText();				
+				((SingleAnswer) exquestions.get(i)).setAnswer(answer);
+			}
+			else{
+				String answer = eq.getAnswers().get(0).getText();
+				if(exquestions.get(i) instanceof FreeText)
+					((FreeText) exquestions.get(i)).setAnswer(answer);
+				else
+					((TrueFalse) exquestions.get(i)).setAnswer(answer);
+			}
+			
+		}
+	}
+
+}

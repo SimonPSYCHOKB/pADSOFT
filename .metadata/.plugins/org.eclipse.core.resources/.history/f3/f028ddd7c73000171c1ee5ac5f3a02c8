@@ -1,0 +1,18 @@
+package gui.windows;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+
+public class CreateTextQuestion extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+	
+	public CreateTextQuestion(String title){
+		super(title);
+		
+		//Layout for the window
+		setLayout(new BorderLayout());
+	}
+
+}

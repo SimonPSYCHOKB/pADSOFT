@@ -1,0 +1,27 @@
+package gui.windows;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class CreateTextQuestion extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+	
+	public CreateTextQuestion(String title){
+		super(title);
+		
+		//Layout for the window
+		setLayout(new BorderLayout());
+		
+		//Panel with the answer
+		JPanel center = new JPanel(new FlowLayout());
+		
+		JLabel answer = new JLabel("Answer : ");
+		center.add(answer);
+	}
+
+}

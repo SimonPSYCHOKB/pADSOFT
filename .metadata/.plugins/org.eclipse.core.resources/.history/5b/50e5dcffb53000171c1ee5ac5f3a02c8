@@ -1,0 +1,57 @@
+package gui.windows.controllers;
+
+import gui.panels.UIStats;
+import gui.panels.controllers.UIStatsController;
+import gui.windows.General;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+
+import statistics.CourseStatistic;
+import statistics.SingleUserStatistic;
+import users.Student;
+
+import application.Application;
+import application.Course;
+
+public class StudentsController implements ActionListener{
+	
+	private General view;
+	private Application model;
+	
+	public StudentsController(General view, Application model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		final List<Student> students = model.getStudents();
+		
+		String[] titles = {"Title"};
+		Object[][] objs = new Object[students.size()][1];
+		
+		int i = 0;
+		for(Student s : students){
+			objs[i][0] = s.toString();
+			i += 1;
+		}
+	
+		UIStats std = new UIStats(objs, titles);
+		std.addController(new MouseAdapter(){
+			public void mouseClicked(MouseEvent e){
+				UIStatsController(model, view));	
+			}
+		});
+		view.addPanel(std);
+		
+		
+	}
+
+}

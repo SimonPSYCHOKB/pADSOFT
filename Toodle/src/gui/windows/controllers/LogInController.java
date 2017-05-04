@@ -56,9 +56,10 @@ public class LogInController implements ActionListener{
 				frame.addControllerLogOut(new LogOutController(model, frame));
 				frame.addControllerCourses(new CoursesController(model, frame));
 				frame.addControllerStats(new StatsController(frame, model));
+				frame.addControllerStudents(new StudentsController(frame, model));
 				
 				//Panel with the list of courses
-				final Courses course = new Courses(frame, objs, rows);
+				Courses course = new Courses(frame, objs, rows);
 				frame.addPanel(course);
 				course.setController(new CoursesTableController(model, frame));
 				

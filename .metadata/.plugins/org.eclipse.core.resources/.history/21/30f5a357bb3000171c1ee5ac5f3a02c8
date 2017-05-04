@@ -1,0 +1,7 @@
+package gui.panels.controllers;
+
+import java.awt.event.ActionListener;
+
+public class DeleteTestController implements ActionListener{
+
+}

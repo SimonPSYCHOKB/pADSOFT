@@ -1,0 +1,13 @@
+package gui.panels;
+
+import javax.swing.JPanel;
+
+public class StudentsTable extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	
+	public StudentsTable(List<Student> students){
+		Object[][] objs = new Object[][];
+	}
+
+}

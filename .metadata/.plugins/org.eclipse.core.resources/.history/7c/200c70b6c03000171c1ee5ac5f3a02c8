@@ -1,0 +1,28 @@
+package gui.windows;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CreateQuestion2 implements ActionListener {
+	
+	
+	private CreateQuestion view;
+
+	public CreateQuestion2(CreateQuestion view, Exercise model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		//Question data
+		String wording = view.getWording().getText();
+		double penalty = (double) view.getPenalty().getValue();
+		double weight = (double) view.getWeight().getValue();
+		String type = (String) view.getTypeQuestion().getSelectedItem();
+		
+		Question q 
+		if(type.equals("Multiple Answer"))
+	}
+
+}

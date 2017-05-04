@@ -1,0 +1,18 @@
+package gui.windows.controllers;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class StudentsController implements ActionListener{
+	
+	public StudentsController(General view, Application model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}

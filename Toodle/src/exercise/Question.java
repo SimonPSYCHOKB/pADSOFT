@@ -14,6 +14,7 @@ public abstract class Question implements Serializable{
 	private String question;
 	private double weight;
 	private double penalty;
+	private Exercise test;
 
 	
 	/**
@@ -63,6 +64,14 @@ public abstract class Question implements Serializable{
 	
 	public void setPenalty(double p){
 		penalty = p;
+	}
+	
+	public void setExercise(Exercise test){
+		this.test = test;
+	}
+	
+	public double getRelativeWeight(){
+		return weight/test.getTotal();
 	}
 	
 	/**

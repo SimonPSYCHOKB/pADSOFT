@@ -7,6 +7,7 @@ import gui.windows.CreateTest;
 import gui.windows.EditTest;
 import gui.windows.General;
 import gui.windows.controllers.EditCourseController;
+import gui.windows.controllers.EditTestController;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -56,19 +57,9 @@ public class AddExerciseController implements ActionListener{
 				
 				if(((JButton) arg0.getSource()).getText().equals("Edit")){
 					final EditTest et = new EditTest(e);
-					et.setControllerSave(new CancelController(et));
-					et.setControllerDelete(new ActionListener(){
-						@Override
-						public void actionPerformed(ActionEvent arg0) {
-							Unit u = e.getUnit();
-							u.removeTest(e);
-							et.dispose();
-							
-							UICourseEditable ce = new UICourseEditable(u.getCourse(), app, gen);
-							ce.addControllerUnit(new UnitController(app, ce, gen));
-							ce.addControllerEditCourse(new EditCourseController(u.getCourse(), gen, app));
-						}
-					});
+					et.setControllerSave(new EditTestController(e, et));
+					et.setControllerDelete(new DeleteTestController(e, app, gen, et));
+					et.setControllerCancel(new CancelController(et));
 				}
 			}
 		});

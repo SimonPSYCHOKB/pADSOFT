@@ -1,0 +1,9 @@
+package gui.panels;
+
+import javax.swing.JPanel;
+
+public class UIAnsweredQuestion extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+
+}

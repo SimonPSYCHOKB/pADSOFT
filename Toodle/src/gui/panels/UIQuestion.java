@@ -21,7 +21,7 @@ public class UIQuestion extends JPanel{
 		SpringLayout layout = new SpringLayout();
 		setLayout(layout);
 	
-		JLabel wording = new JLabel(question.getQuestion());
+		JLabel wording = new JLabel(question.getQuestion() +" (" + question.getWeight() + " points)");
 		layout.putConstraint(SpringLayout.NORTH, wording, 150, SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.WEST, wording, 150, SpringLayout.WEST, this);
 		add(wording);

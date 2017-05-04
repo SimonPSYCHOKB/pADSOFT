@@ -42,16 +42,12 @@ public class SingleAnswer extends Question implements Serializable{
 		return Collections.unmodifiableList(options);
 	}
 	
+	public void setOptions(List<String> options){
+		this.options = options;
+	}
+	
 	public String getAnswer(){
 		return answer;
-	}
-	
-	public void removeOption(String opt){
-		options.remove(opt);
-	}
-	
-	public void addOption(String opt){
-		options.add(opt);
 	}
 	
 	public void setAnswer(String answ){

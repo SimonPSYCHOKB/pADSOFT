@@ -1,0 +1,15 @@
+package gui.windows;
+
+import javax.swing.JFrame;
+
+public class PastTest extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+	
+	public PastTest(Exercise e){
+		
+		//Layout for the window
+		getContentPane().setLayout(new BorderLayout());
+	}
+
+}

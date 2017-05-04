@@ -70,7 +70,7 @@ public class Unit extends LearningObj implements Serializable{
 	}
 	
 	public void removeUnit(Unit u){
-		if(u.getSubUnits().contains(u) == false) return;
+		if(getSubUnits().contains(u) == false) return;
 		units.remove(u);
 	}
 	
@@ -162,7 +162,6 @@ public class Unit extends LearningObj implements Serializable{
 		result = prime * result + ((course == null) ? 0 : course.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((notes == null) ? 0 : notes.hashCode());
-		result = prime * result + ((tests == null) ? 0 : tests.hashCode());
 		result = prime * result + ((units == null) ? 0 : units.hashCode());
 		return result;
 	}
@@ -185,11 +184,6 @@ public class Unit extends LearningObj implements Serializable{
 			if (other.notes != null)
 				return false;
 		} else if (!notes.equals(other.notes))
-			return false;
-		if (tests == null) {
-			if (other.tests != null)
-				return false;
-		} else if (!tests.equals(other.tests))
 			return false;
 		if (units == null) {
 			if (other.units != null)

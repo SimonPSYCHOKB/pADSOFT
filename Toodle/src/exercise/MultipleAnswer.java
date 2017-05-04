@@ -59,24 +59,16 @@ public class MultipleAnswer extends Question implements Serializable{
 		return Collections.unmodifiableList(options);
 	}
 	
-	public void removeOption(String opt){
-		options.remove(opt);
-	}
-	
-	public void addOption(String opt){
-		options.add(opt);
-	}
-	
-	public void removeAnswer(String answ){
-		answers.remove(answ);
-	}
-	
-	public void addAnswer(String answ){
-		answers.add(answ);
+	public void setOptions(List<String> options){
+		this.options = options; 
 	}
 	
 	public List<String> getAnswer(){
 		return Collections.unmodifiableList(answers);
+	}
+	
+	public void setAnswer(List<String> answers){
+		this.answers = answers;
 	}
 	
 	public String showQuestion(){

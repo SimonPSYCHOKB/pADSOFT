@@ -1,11 +1,9 @@
 package gui.panels;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.util.ArrayList;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import exercise.*;
 
@@ -16,6 +14,8 @@ public class EditQuestion extends JPanel{
 	private JPanel quest;
 	private JTextField wording;
 	private JSpinner spinner1, spinner2;
+	private ArrayList<JTextField> options;
+	private ArrayList<JTextField> answers;
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,74 +30,28 @@ public class EditQuestion extends JPanel{
 		
 		//Wording
 		wording = new JTextField(q.getQuestion());
-		wording.addFocusListener(new FocusListener(){
-			@Override
-			public void focusGained(FocusEvent arg0) {
-				wording.setText("");
-			}
-			@Override
-			public void focusLost(FocusEvent arg0){
-				wording.setText(q.getQuestion());
-			}
-		});
-		wording.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				q.setQuestion(wording.getText());
-			}
-		});
 		quest.add(wording);
 		
 		//Options and answers
+		options = new ArrayList<JTextField>();
+		answers = new ArrayList<JTextField>();
 		// MultipleAnswer
 		if(q instanceof MultipleAnswer){
 			
 			JLabel a = new JLabel("Options :");
 			quest.add(a);
 			
-			for(final String option : ((MultipleAnswer) q).getOptions()){
-				final JTextField op = new JTextField(option);
-				op.addFocusListener(new FocusListener(){
-					@Override
-					public void focusGained(FocusEvent arg0) {
-						op.setText("");
-					}
-					@Override
-					public void focusLost(FocusEvent arg0){
-						op.setText(option);
-					}
-				});
-				op.addActionListener(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						System.out.println(option + " " + op.getText());
-						((MultipleAnswer) q).removeOption(option);
-						((MultipleAnswer) q).addOption(op.getText());
-					}
-				});
+			for(String option : ((MultipleAnswer) q).getOptions()){
+				JTextField op = new JTextField(option);
+				options.add(op);
 				quest.add(op);
 			}
 			
 			a = new JLabel("Answers :");
 			quest.add(a);
-			for(final String answer : ((MultipleAnswer) q).getAnswer()){
-				final JTextField answ = new JTextField(answer);
-				answ.addFocusListener(new FocusListener(){
-					@Override
-					public void focusGained(FocusEvent arg0) {
-						answ.setText("");
-					}
-					@Override
-					public void focusLost(FocusEvent arg0){
-						answ.setText(answer);
-					}
-				});
-				answ.addActionListener(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						
-					}
-				});
+			for(String answer : ((MultipleAnswer) q).getAnswer()){
+				JTextField answ = new JTextField(answer);
+				answers.add(answ);
 				quest.add(answ);
 			}
 		} 
@@ -107,47 +61,16 @@ public class EditQuestion extends JPanel{
 			JLabel a = new JLabel("Options :");
 			quest.add(a);
 			
-			for(final String option : ((SingleAnswer) q).getOptions()){
-				final JTextField op = new JTextField(option);
-				op.addFocusListener(new FocusListener(){
-					@Override
-					public void focusGained(FocusEvent arg0) {
-						op.setText("");
-					}
-					@Override
-					public void focusLost(FocusEvent arg0){
-						op.setText(option);
-					}
-				});
-				op.addActionListener(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						((SingleAnswer) q).removeOption(option);
-						((SingleAnswer) q).addOption(op.getText());
-					}
-				});
+			for(String option : ((SingleAnswer) q).getOptions()){
+				JTextField op = new JTextField(option);
+				options.add(op);
 				quest.add(op);
 			}
 						
 			a = new JLabel("Answer :");
 			quest.add(a);
-			final JTextField answ = new JTextField(((SingleAnswer) q).getAnswer());
-			answ.addFocusListener(new FocusListener(){
-				@Override
-				public void focusGained(FocusEvent arg0) {
-					answ.setText("");
-				}
-				@Override
-				public void focusLost(FocusEvent arg0){
-					answ.setText(((SingleAnswer) q).getAnswer());
-				}
-			});
-			answ.addActionListener(new ActionListener(){
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					((SingleAnswer) q).setAnswer(answ.getText());
-				}
-			});
+			JTextField answ = new JTextField(((SingleAnswer) q).getAnswer());
+			answers.add(answ);
 			quest.add(answ);
 		} 
 		//FreeText and TrueFalse
@@ -161,28 +84,7 @@ public class EditQuestion extends JPanel{
 			else
 				text = ((TrueFalse) q).getAnswer();
 			answ.setText(text);
-			answ.addFocusListener(new FocusListener(){
-				@Override
-				public void focusGained(FocusEvent arg0) {
-					answ.setText("");
-				}
-				@Override
-				public void focusLost(FocusEvent arg0){
-					if(q instanceof FreeText)
-						answ.setText(((FreeText) q).getAnswer());
-					else
-						answ.setText(((TrueFalse) q).getAnswer());
-				}
-			});
-			answ.addActionListener(new ActionListener(){
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					if(q instanceof FreeText)
-						((FreeText) q).setAnswer(answ.getText());
-					else
-						((TrueFalse) q).setAnswer(answ.getText());
-				}
-			});
+			answers.add(answ);
 			quest.add(answ);
 		}
 		
@@ -205,12 +107,6 @@ public class EditQuestion extends JPanel{
 		layout.putConstraint(SpringLayout.NORTH, spinner1, 40, SpringLayout.NORTH, data);
 		layout.putConstraint(SpringLayout.WEST, spinner1, 100, SpringLayout.WEST, weight);
 		data.add(spinner1);
-		spinner1.addChangeListener(new ChangeListener(){
-			@Override
-			public void stateChanged(ChangeEvent arg0) {
-				q.setWeight((double) spinner1.getValue());
-			}
-		});
 		
 		//Penalty
 		JLabel penalty = new JLabel("Penalty :");
@@ -222,12 +118,6 @@ public class EditQuestion extends JPanel{
 		layout.putConstraint(SpringLayout.NORTH, spinner2, 20, SpringLayout.NORTH, spinner1);
 		layout.putConstraint(SpringLayout.WEST, spinner2, 100, SpringLayout.WEST, penalty);
 		data.add(spinner2);
-		spinner1.addChangeListener(new ChangeListener(){
-			@Override
-			public void stateChanged(ChangeEvent arg0) {
-				q.setPenalty((double) spinner2.getValue());
-			}
-		});
 		
 		data.setVisible(true);
 		data.setPreferredSize(new Dimension(300, 150));
@@ -253,5 +143,13 @@ public class EditQuestion extends JPanel{
 	
 	public JSpinner getPenalty(){
 		return spinner2;
+	}
+	
+	public ArrayList<JTextField> getOptions(){
+		return options;
+	}
+	
+	public ArrayList<JTextField> getAnswers(){
+		return answers;
 	}
 }

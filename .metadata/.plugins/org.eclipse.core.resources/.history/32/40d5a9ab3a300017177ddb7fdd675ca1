@@ -1,0 +1,77 @@
+package gui.panels;
+
+import exercise.Exercise;
+import gui.panels.controllers.ExerciseController;
+import gui.windows.General;
+
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.font.TextAttribute;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import application.Application;
+import application.Note;
+import application.Unit;
+
+public class UIUnit extends JScrollPane{
+
+	private static final long serialVersionUID = 1L;
+
+	public UIUnit(final Unit u, final Application app, final General gen){
+		
+		//Layout for the main panel
+		JPanel root = new JPanel();
+		root.setLayout(new BoxLayout(root, BoxLayout.Y_AXIS));
+		
+		JPanel unit = new JPanel();
+		unit.setLayout(new BoxLayout(unit, BoxLayout.PAGE_AXIS));
+		
+		for(Note n : u.getNotes()){
+			JTextArea note = new JTextArea(n.toString());
+		    note.setEditable(false);
+			note.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));			
+			unit.add(note);
+		}
+		int i = 0;
+		for(Exercise e : u.getTests()){
+			JLabel test = new JLabel("Exercise " + i + " available until " + e.getDateOfEnd());
+			Font font = test.getFont();
+			Map<TextAttribute, Object> attributes = new HashMap<>(font.getAttributes());
+			attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+			test.setFont(font.deriveFont(attributes));
+			test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			test.addMouseListener(new ExerciseController(app, e, gen));
+
+			unit.add(test);
+			i += 1;
+		}
+	
+		for(Unit ss : u.getSubUnits()){
+			UIUnit sube = new UIUnit(ss, app, gen);
+			sube.setBorder(BorderFactory.createTitledBorder(ss.getName()));
+			unit.add(sube);
+		}
+		
+		unit.setVisible(true);
+
+        root.add(unit);
+
+		root.setVisible(true);
+		
+		this.setViewportView(root);
+		setPreferredSize(new Dimension(1000, 600));
+		setBorder(BorderFactory.createEmptyBorder());
+		this.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		this.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+	}
+}

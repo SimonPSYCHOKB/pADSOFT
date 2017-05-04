@@ -1,0 +1,15 @@
+package gui.windows;
+
+import javax.swing.JFrame;
+
+public class CreateMultipleAnswer extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+	
+	public CreateMultipleAnswer(){
+		super("Create Multiple Choice Question");
+		
+		
+	}
+
+}

@@ -82,6 +82,10 @@ public class QuestionStatistic extends Stats implements Serializable{
 		return blankNumber;
 	}
 	
+	public Question getQuestion(){
+		return question;
+	}
+	
 	@Override
 	public String toString(){
 		NumberFormat formatter = new DecimalFormat("#0.00"); 

@@ -1,0 +1,42 @@
+package gui.windows.controllers;
+
+import gui.panels.StudentsTable;
+import gui.windows.General;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+import users.Student;
+
+import application.Application;
+
+public class StudentsController implements ActionListener{
+	
+	private General view;
+	private Application model;
+	
+	public StudentsController(General view, Application model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		List<Student> students = model.getStudents();
+		
+		String[] titles = {"Title"};
+		Object[][] objs = new Object[students.size()][1];
+		
+		int i = 0;
+		for(Student s : students){
+			objs[i][0] = s.toString();
+			i += 1;
+		}
+	
+		view.addPanel(new UIStats(objs, titles));
+		
+	}
+
+}

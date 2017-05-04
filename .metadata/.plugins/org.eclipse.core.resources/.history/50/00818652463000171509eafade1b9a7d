@@ -1,0 +1,45 @@
+package gui.windows.controllers;
+
+import gui.windows.General;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import users.Student;
+
+import application.Application;
+
+public class StudentsController implements ActionListener{
+	
+	private General view;
+	private Application model;
+	
+	public StudentsController(General view, Application model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		JPanel students = new JPanel();
+		students.setLayout(new BoxLayout(students, BoxLayout.Y_AXIS));
+		
+		for(Student s : model.getStudents()){
+			JLabel name = new JLabel(s.toString());
+			name.addMouseListener(new MouseAdapter(){
+				public void mouseClicked(MouseEvent e){
+					
+				}
+			});
+		}
+		
+	}
+
+}

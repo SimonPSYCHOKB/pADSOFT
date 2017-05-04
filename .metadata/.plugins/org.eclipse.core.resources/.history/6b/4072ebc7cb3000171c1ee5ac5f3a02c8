@@ -1,0 +1,82 @@
+package gui.panels.controllers;
+
+import gui.BackController;
+import gui.panels.UIStats;
+import gui.windows.General;
+
+import java.awt.event.*;
+import java.util.List;
+
+import javax.swing.*;
+
+import statistics.CourseStatistic;
+import statistics.SingleUserStatistic;
+import statistics.Statistic;
+import users.Student;
+
+import application.Application;
+import application.Course;
+
+
+
+
+public class UIStatsController extends MouseAdapter{
+
+	private Application model;
+	private General view;
+	
+	public UIStatsController(Application model, General view){
+		this.model = model;
+		this.view = view;
+	}
+	
+	public void mouseClicked(MouseEvent me){
+		int row = ((JTable) me.getSource()).getSelectedRow();
+			
+		Course c;
+		Object[][] objs;
+		String[] titles = {"Exercise", "Mean"};
+		if(model.getCurrentUser().equals(model.getTeacher())){
+			c = model.getCourses().get(row);
+			CourseStatistic current = new CourseStatistic(c);
+			List<Statistic> exe = current.getStatistics();
+			
+			objs = new Object[exe.size()][2];
+			
+			int i = 0;
+			for(Statistic e : exe){
+				objs[i][0] = "Exercise " + i + " (" + e.getExercise().getRelativeWeight() + " points)";
+				objs[i][1] = e.getMean();
+				i += 1;
+			}
+		}
+		else{
+			Student student = model.searchStudentByName(model.getCurrentUser().getName());
+			SingleUserStatistic statis = new SingleUserStatistic(student);
+			List<CourseStatistic> cs = statis.getCourseStatistics();			
+			CourseStatistic course = cs.get(row);
+			
+			objs = new Object[course.getStatistics().size()][2];
+			
+			int i = 0;
+			List<Statistic> stats = cs.get(row).getStatistics();
+			for(Statistic s : stats){
+				objs[i][0] = "Exercise " + i + " (" + s.getExercise().getWeight() + " points)";
+				objs[i][1] = s.getMean();
+				i += 1;
+			}
+			c = course.getCourse();
+		}
+		
+		
+		UIStats es = new UIStats(objs, titles);
+		
+		JButton back = new JButton("Back");
+		back.addActionListener(new BackController(view));
+		es.addButton(back);
+		
+		view.addPanel(es);		
+		SwingUtilities.updateComponentTreeUI(view);
+		es.addController(new ExercisesStatsController(c, view, model));
+	}
+}

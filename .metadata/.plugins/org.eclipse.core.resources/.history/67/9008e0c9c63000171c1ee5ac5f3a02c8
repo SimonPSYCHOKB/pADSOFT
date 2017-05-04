@@ -1,0 +1,98 @@
+package gui.windows;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+import exercise.Exercise;
+import exercise.MultipleAnswer;
+import exercise.Question;
+import exercise.SingleAnswer;
+import gui.CancelController;
+
+public class CreateQuestionController implements ActionListener {
+	
+	
+	private CreateQuestion view;
+	private Exercise model;
+
+	public CreateQuestionController(CreateQuestion view, Exercise model){
+		this.view = view;
+		this.model = model;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		//Question data
+		final String wording = view.getWording().getText();
+		final double penalty = (double) view.getPenalty().getValue();
+		final double weight = (double) view.getWeight().getValue();
+		final String type = (String) view.getTypeQuestion().getSelectedItem();
+		
+		if(type.equals("Multiple Choice")){
+			final CreateMultipleAnswer cma = new CreateMultipleAnswer();
+			cma.setControllerCancel(new CancelController(cma));
+			cma.setControllerDone(new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					List<String> options = new ArrayList<String>();
+					List<String> answers = new ArrayList<String>();
+
+					List<JCheckBox> answer = cma.getAnswers();
+					int i = 0;
+					for(JTextField option : cma.getOptions()){
+						if(option.getText().equals(" ")){
+							i += 1;
+							continue;
+						}
+						options.add(option.getText());
+						if(answer.get(i).isSelected())
+							answers.add(option.getText());
+						i += 1;
+					}
+					if(answers.isEmpty()){
+						JOptionPane.showMessageDialog(cma, "The options must include the answers", "Error", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					model.addQuestion(new MultipleAnswer(wording, weight, penalty, answers, options));
+				}
+			});
+		}
+		else if(type.equals("Single Answer")){
+			final CreateSingleAnswer csa = new CreateSingleAnswer();
+			csa.setControllerCancel(new CancelController(csa));
+			csa.setControllerDone(new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					List<String> options = new ArrayList<String>();
+					String answers = " ";
+
+					List<JRadioButton> answer = csa.getAnswers();
+					int i = 0;
+					for(JTextField option : csa.getOptions()){
+						if(option.getText().equals(" ")){
+							i += 1;
+							continue;
+						}
+						options.add(option.getText());
+						if(answer.get(i).isSelected())
+							answers = option.getText();
+						i += 1;
+					}
+					if(answer.equals(" ")){
+						JOptionPane.showMessageDialog(csa, "The options must include the answers", "Error", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					model.addQuestion(new SingleAnswer(wording, weight, penalty, answers, options));
+				}
+			});
+		}
+	}
+
+}

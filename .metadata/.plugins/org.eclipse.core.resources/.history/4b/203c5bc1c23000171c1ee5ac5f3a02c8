@@ -1,0 +1,96 @@
+package gui.windows;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
+
+public class CreateMultipleAnswer extends JFrame{
+
+	private static final long serialVersionUID = 1L;
+	
+	public CreateMultipleAnswer(){
+		super("Create Multiple Choice Question");
+		
+		//Layout for the window
+		setLayout(new BorderLayout());
+		
+		//Panel with the options/answers
+		JPanel center = new JPanel();
+		SpringLayout layout  = new SpringLayout();
+		center.setLayout(layout);
+		
+		final JCheckBox c1 = new JCheckBox();
+		layout.putConstraint(SpringLayout.NORTH, c1, 30, SpringLayout.NORTH, center);
+		layout.putConstraint(SpringLayout.WEST, c1, 40, SpringLayout.WEST, center);
+		center.add(c1);
+		JLabel a1 = new JLabel("Option 1 :");
+		layout.putConstraint(SpringLayout.NORTH, a1, 30, SpringLayout.NORTH, center);
+		layout.putConstraint(SpringLayout.WEST, a1, 80, SpringLayout.WEST, center);
+		center.add(a1);
+		final JTextField i1 = new JTextField(10);
+		layout.putConstraint(SpringLayout.NORTH, i1, 30, SpringLayout.NORTH, center);
+		layout.putConstraint(SpringLayout.WEST, i1, 22, SpringLayout.EAST, a1);
+		center.add(i1);
+		final JCheckBox c2 = new JCheckBox();
+		layout.putConstraint(SpringLayout.NORTH, c2, 30, SpringLayout.NORTH, c1);
+		layout.putConstraint(SpringLayout.WEST, c2, 40, SpringLayout.WEST, center);
+		center.add(c2);
+		JLabel a2 = new JLabel("Option 2 :");
+		layout.putConstraint(SpringLayout.NORTH, a2, 30, SpringLayout.NORTH, a1);
+		layout.putConstraint(SpringLayout.WEST, a2, 80, SpringLayout.WEST, center);
+		center.add(a2);
+		final JTextField i2 = new JTextField(10);
+		layout.putConstraint(SpringLayout.NORTH, i2, 30, SpringLayout.NORTH, i1);
+		layout.putConstraint(SpringLayout.WEST, i2, 22, SpringLayout.EAST, a2);
+		center.add(i2);
+		final JCheckBox c3 = new JCheckBox();
+		layout.putConstraint(SpringLayout.NORTH, c3, 30, SpringLayout.NORTH, c2);
+		layout.putConstraint(SpringLayout.WEST, c3, 40, SpringLayout.WEST, center);
+		center.add(c3);
+		JLabel a3 = new JLabel("Option 3 :");
+		layout.putConstraint(SpringLayout.NORTH, a3, 30, SpringLayout.NORTH, a2);
+		layout.putConstraint(SpringLayout.WEST, a3, 80, SpringLayout.WEST, center);
+		center.add(a3);
+		final JTextField i3 = new JTextField(10);
+		layout.putConstraint(SpringLayout.NORTH, i3, 30, SpringLayout.NORTH, i2);
+		layout.putConstraint(SpringLayout.WEST, i3, 22, SpringLayout.EAST, a3);
+		center.add(i3);
+		final JCheckBox c4 = new JCheckBox();
+		layout.putConstraint(SpringLayout.NORTH, c4, 30, SpringLayout.NORTH, c3);
+		layout.putConstraint(SpringLayout.WEST, c4, 40, SpringLayout.WEST, center);
+		center.add(c4);
+		JLabel a4 = new JLabel("Option 4 :");
+		layout.putConstraint(SpringLayout.NORTH, a4, 30, SpringLayout.NORTH, a3);
+		layout.putConstraint(SpringLayout.WEST, a4, 80, SpringLayout.WEST, center);
+		center.add(a4);
+		final JTextField i4 = new JTextField(10);
+		layout.putConstraint(SpringLayout.NORTH, i4, 30, SpringLayout.NORTH, i3);
+		layout.putConstraint(SpringLayout.WEST, i4, 22, SpringLayout.EAST, a4);
+		center.add(i4);
+		
+//		word.setPreferredSize(new Dimension(400, 400));
+//		word.setVisible(true);
+//		
+//		JPanel buttons = new JPanel(new FlowLayout());
+//		JButton cancel = new JButton("Cancel");
+//		JButton done = new JButton("Done");
+//		buttons.add(cancel);
+//		buttons.add(done);
+//		buttons.setVisible(true);
+//		
+//		tf.add(word, BorderLayout.CENTER);
+//		tf.add(buttons, BorderLayout.SOUTH);
+//		
+//		tf.setVisible(true);
+//		tf.setSize(400, 300);
+//		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//		tf.setLocation(dim.width/2-tf.getSize().width/2, dim.height/2-tf.getSize().height/2);
+//		tf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+
+}

@@ -24,6 +24,7 @@ public class Courses extends JPanel{
 		this.gn = gn;
 		this.setLayout(new BorderLayout());
 		
+		//Title 
 		top = new JPanel();
 		layout = new SpringLayout();
 		top.setLayout(layout);
@@ -38,8 +39,8 @@ public class Courses extends JPanel{
 		
 		this.add(BorderLayout.NORTH, top);
 		
+		//Table with all the courses
 		String[] title = {"Title"};
-//		cs = new JTable(courses, title);
 		DefaultTableModel tableModel = new DefaultTableModel(courses, title) {
 
 			private static final long serialVersionUID = 1L;
@@ -48,7 +49,7 @@ public class Courses extends JPanel{
 		       return false;
 		    }
 		};
-//		cs.setModel(tableModel);
+		//Maked cells for the registered courses 
 		cs = new JTable(tableModel){
 			private static final long serialVersionUID = 1L;
 			
@@ -65,8 +66,8 @@ public class Courses extends JPanel{
 		};
 		cs.setTableHeader(null);
 
+		//Scroll bar
 		JScrollPane scrollBar =	new	JScrollPane(cs);
-		
 		this.add(BorderLayout.CENTER, scrollBar);		
 		
 		this.setVisible(true);
