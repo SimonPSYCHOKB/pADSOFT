@@ -250,4 +250,21 @@ public class Student extends User implements Serializable{
 	public void removeAnsweredTest(Exercise e){
 		answeredTests.remove(getAnsweredTest(e));
 	}
+
+	public void eraseTrakCourse(Course course) {
+		if(rejectedCourses.contains(course))
+			rejectedCourses.remove(course);
+		if(expelledCourses.contains(course))
+			expelledCourses.remove(course);
+		if(registeredCourses.contains(course))
+			registeredCourses.remove(course);
+		if(pendingCourses.contains(course))
+			pendingCourses.remove(course);
+		for(Exercise e : currentExercises)
+			if(e.getCourse().equals(course))
+				currentExercises.remove(e);
+		for(AnsweredTest at : answeredTests)
+			if(at.getTest().getCourse().equals(course))
+				answeredTests.remove(at);
+	}
 }

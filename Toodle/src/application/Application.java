@@ -240,6 +240,13 @@ public class Application implements Serializable{
 		return null;
 	}
 	
+	public void deleteCourse(Course course){
+		if(courses.contains(course) == false) return;
+		courses.remove(course);
+		for(Student stud : students)
+			stud.eraseTrakCourse(course);
+	}
+	
 	/**
 	 * This method sends an email to a user
 	 * @param u - User that recieves the email

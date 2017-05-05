@@ -67,7 +67,6 @@ public class CoursesController implements ActionListener {
 		panel = new Courses(view, objs, rows);
 		view.addPanel(panel);
 		if(cond){
-			System.out.println("hags");
 			JButton create = new JButton("Create new Course");
 			create.addActionListener(new CreateCourseController(model, view));
 			panel.addButtonTop(create);

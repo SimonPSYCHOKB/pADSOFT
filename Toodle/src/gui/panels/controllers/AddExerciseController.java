@@ -32,7 +32,6 @@ public class AddExerciseController implements ActionListener{
 		this.gen = gen;
 	}	
 		
-		
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		final CreateTest ct = new CreateTest();

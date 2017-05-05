@@ -9,13 +9,15 @@ public abstract class General extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	JMenu options;
-	JMenuItem logOut;
-	JMenuItem courses;
-	JPanel central;
-	JPanel previous;
-	JPanel preprevious;
-	JPanel top;
+	private JMenu options;
+	private JMenuItem logOut;
+	private JMenuItem courses;
+	private JPanel central;
+	private JPanel previous;
+	private JPanel preprevious;
+	private JPanel top;
+	private JPanel east;
+	private JPanel west;
 	
 	public General() {
 		super("Toodle");
@@ -49,6 +51,8 @@ public abstract class General extends JFrame {
 		
 		//Central panel
 		central = new JPanel();
+		east = new JPanel();
+		west = new JPanel();
 		
 		this.getContentPane().add(BorderLayout.NORTH, top);
 		this.getContentPane().add(BorderLayout.WEST, new JPanel());
@@ -66,6 +70,8 @@ public abstract class General extends JFrame {
 		preprevious = previous;
 		previous = central;
 		central.setVisible(false);
+		west.setVisible(false);
+		east.setVisible(false);
 		p.setVisible(true);
 		central = p;
 		this.getContentPane().add(BorderLayout.CENTER, p);
@@ -73,12 +79,18 @@ public abstract class General extends JFrame {
 	}
 	
 	public void addPanelWest(JPanel p){
+		central.setVisible(false);
+		west.setVisible(false);
+		west = p;
 		p.setVisible(true);
 		this.getContentPane().add(BorderLayout.WEST, p);
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
 	public void addPanelEast(JPanel p){
+		central.setVisible(false);
+		east.setVisible(false);
+		east = p;
 		p.setVisible(true);
 		this.getContentPane().add(BorderLayout.EAST, p);
 		SwingUtilities.updateComponentTreeUI(this);

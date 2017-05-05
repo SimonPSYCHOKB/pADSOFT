@@ -3,7 +3,10 @@ package gui.panels;
 import gui.windows.General;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 
@@ -15,6 +18,8 @@ public class UICourseEditable extends JPanel{
 	private JButton addUnit;
 	private Course c;
 	private JButton editCourse;
+	private JButton students;
+	private JButton remove;
 
 	private static final long serialVersionUID = 1L;
 
@@ -35,19 +40,46 @@ public class UICourseEditable extends JPanel{
 		
 		add(root, BorderLayout.CENTER);
 		
-		//Title of the course and edit course button
+		//Title of the course 
 		JPanel title = new JPanel(new FlowLayout());
 		JLabel course = new JLabel(c.getTitle());
 		course.setPreferredSize(new Dimension(100, 50));
 		title.add(course);
+		//Delete course button
+		remove = new JButton("Delete course");
+		title.add(remove);
+		//Edit course button
 		editCourse = new JButton("Edit course");
 		title.add(editCourse);
+		//Add unit button
 		addUnit = new JButton("Add unit");
 		title.add(addUnit);
+		//View the students button
+		students = new JButton("View students");
+		title.add(students);
 		title.setVisible(true);
 		add(title, BorderLayout.NORTH);
 		
 		setVisible(true);
+		
+		remove.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				app.deleteCourse(c);
+				
+				List<Course> courses = app.getCourses();
+				ArrayList<Integer> rows = new ArrayList<Integer>();
+				Object[][] objs = new Object[courses.size()][1];
+				
+				int i = 0;
+				for(Course c: courses){
+					objs[i][0] = c.getTitle();
+					i += 1;
+				}
+				
+				gen.addPanel(new Courses(gen, objs, rows));
+			}
+		});
 	}
 		
 	public void addControllerUnit(ActionListener al){
@@ -56,6 +88,14 @@ public class UICourseEditable extends JPanel{
 	
 	public void addControllerEditCourse(ActionListener al){
 		editCourse.addActionListener(al);
+	}
+	
+	public void addControllerStudents(ActionListener al){
+		students.addActionListener(al);
+	}
+	
+	public void addControllerDelete(ActionListener al){
+		remove.addActionListener(al);
 	}
 	
 	public Course getCourse(){

@@ -3,11 +3,13 @@ package gui.panels.controllers;
 import gui.CancelController;
 import gui.panels.UICourse;
 import gui.panels.UICourseEditable;
+import gui.panels.UIStats;
 import gui.windows.General;
 import gui.windows.Register;
 import gui.windows.controllers.EditCourseController;
 
 import java.awt.event.*;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -42,7 +44,21 @@ public class CoursesTableController extends MouseAdapter{
 			UICourseEditable ce = new UICourseEditable(selected, model, view);
 			ce.addControllerUnit(new UnitController(model, ce, view));
 			ce.addControllerEditCourse(new EditCourseController(selected, view, model));
-			view.addPanel(ce);
+			view.addPanelWest(ce);
+			
+			List<Student> students = model.getStudents();
+			
+			String[] titles = {"Students"};
+			Object[][] objs = new Object[students.size()][1];
+			
+			int i = 0;
+			for(Student s : students){
+				objs[i][0] = s.toString();
+				i += 1;
+			}
+		
+			UIStats std = new UIStats(objs, titles);
+			view.addPanelEast(std);
 		}
 		//If not, well, that
 		else{

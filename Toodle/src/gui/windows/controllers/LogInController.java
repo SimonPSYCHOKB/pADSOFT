@@ -63,6 +63,8 @@ public class LogInController implements ActionListener{
 				frame.addPanel(course);
 				course.setController(new CoursesTableController(model, frame));
 				
+				//Panel with the student of the course
+				
 				//Button for creating a new course
 				JButton create = new JButton("Create new Course");
 				create.addActionListener(new CreateCourseController(model, frame));
