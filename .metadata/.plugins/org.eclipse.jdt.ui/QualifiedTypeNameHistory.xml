@@ -30,7 +30,6 @@
 <fullyQualifiedTypeName name="gui.windows.controllers.EditTestController"/>
 <fullyQualifiedTypeName name="application.Application"/>
 <fullyQualifiedTypeName name="gui.windows.General"/>
-<fullyQualifiedTypeName name="gui.windows.EditTest"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseAdapter"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseEvent"/>
 <fullyQualifiedTypeName name="exercise.Exercise"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="gui.windows.EditTest"/>
 </qualifiedTypeNameHistroy>

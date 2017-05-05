@@ -69,8 +69,8 @@ public class Courses extends JPanel{
 		//Scroll bar
 		JScrollPane scrollBar =	new	JScrollPane(cs);
 		this.add(BorderLayout.CENTER, scrollBar);		
-		
 		this.setVisible(true);
+		setSize(1600, 300);
 	}
 	
 	public void setController(MouseListener al){

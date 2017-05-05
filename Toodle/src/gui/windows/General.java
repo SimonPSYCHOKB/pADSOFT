@@ -18,11 +18,14 @@ public abstract class General extends JFrame {
 	private JPanel top;
 	private JPanel east;
 	private JPanel west;
+
+	private BorderLayout layout;
 	
 	public General() {
 		super("Toodle");
 		
-		this.getContentPane().setLayout(new BorderLayout());
+		layout = new BorderLayout();
+		this.getContentPane().setLayout(layout);
 		
 		SpringLayout layout = new SpringLayout();
 		top = new JPanel();
@@ -55,7 +58,10 @@ public abstract class General extends JFrame {
 		west = new JPanel();
 		
 		this.getContentPane().add(BorderLayout.NORTH, top);
-		this.getContentPane().add(BorderLayout.WEST, new JPanel());
+		this.getContentPane().add(BorderLayout.WEST, west);
+		this.getContentPane().add(BorderLayout.EAST, east);
+		this.getContentPane().add(BorderLayout.CENTER, central);
+
 		
 		//Window settings
 		this.setSize(1800, 1000);
@@ -69,9 +75,18 @@ public abstract class General extends JFrame {
 	public void addPanel(JPanel p){
 		preprevious = previous;
 		previous = central;
-		central.setVisible(false);
-		west.setVisible(false);
-		east.setVisible(false);
+		if(central != null){
+			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
+			central = null;
+		}
+		if(west != null){
+			remove(layout.getLayoutComponent(BorderLayout.WEST));
+			west = null;
+		}
+		if(east != null){
+			remove(layout.getLayoutComponent(BorderLayout.EAST));
+			east = null;
+		}
 		p.setVisible(true);
 		central = p;
 		this.getContentPane().add(BorderLayout.CENTER, p);
@@ -79,8 +94,14 @@ public abstract class General extends JFrame {
 	}
 	
 	public void addPanelWest(JPanel p){
-		central.setVisible(false);
-		west.setVisible(false);
+		if(central != null){
+			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
+			central = null;
+		}
+		if(west != null){
+			remove(layout.getLayoutComponent(BorderLayout.WEST));
+			west = null;
+		}
 		west = p;
 		p.setVisible(true);
 		this.getContentPane().add(BorderLayout.WEST, p);
@@ -88,8 +109,14 @@ public abstract class General extends JFrame {
 	}
 	
 	public void addPanelEast(JPanel p){
-		central.setVisible(false);
-		east.setVisible(false);
+		if(central != null){
+			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
+			central = null;
+		}
+		if(east != null){
+			remove(layout.getLayoutComponent(BorderLayout.EAST));
+			east = null;
+		}
 		east = p;
 		p.setVisible(true);
 		this.getContentPane().add(BorderLayout.EAST, p);
