@@ -35,7 +35,7 @@ public class ApplicationTest {
 
 	@Before
 	public void setUp() throws Exception {
-		app = new Application("src/data.txt");
+		app = new Application("Toodle/src/data.txt");
 		c = new Course(true, "Course 1", "This is Course 1");
 		u = new Unit(true, "Unit");
 		su = new Unit(true, "SubUnit");
@@ -52,7 +52,7 @@ public class ApplicationTest {
 		List<Student> students = new ArrayList<Student>();
 		try
 		{
-		  BufferedReader reader = new BufferedReader(new FileReader("src/data.txt"));
+		  BufferedReader reader = new BufferedReader(new FileReader("Toodle/src/data.txt"));
 		  String line;
 		  reader.readLine();
 		  while ((line = reader.readLine()) != null)
