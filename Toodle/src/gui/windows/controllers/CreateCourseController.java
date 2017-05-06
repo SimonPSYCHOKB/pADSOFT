@@ -47,7 +47,7 @@ public class CreateCourseController implements ActionListener {
 					i += 1;
 				}
 				
-				Courses panel = new Courses(view, objs, new ArrayList<Integer>());
+				Courses panel = new Courses(objs, new ArrayList<Integer>());
 				panel.setController(new CoursesTableController(model, view));
 				JButton button = new JButton("Create new Course");
 				button.addActionListener(new CreateCourseController(model, view));

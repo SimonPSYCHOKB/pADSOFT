@@ -1,0 +1,157 @@
+package gui.windows;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public abstract class General extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	
+	private JMenu options;
+	private JMenuItem logOut;
+	private JMenuItem courses;
+	private JPanel central;
+	private JPanel previous;
+	private JPanel preprevious;
+	private JPanel top;
+	private JPanel east;
+	private JPanel west;
+
+	private BorderLayout layout;
+	
+	public General() {
+		super("Toodle");
+		
+		layout = new BorderLayout();
+		this.getContentPane().setLayout(layout);
+		
+		SpringLayout layout = new SpringLayout();
+		top = new JPanel();
+		top.setLayout(layout);
+		
+		//Menu with the user options
+		JMenuBar bar = new JMenuBar();
+		bar.add(Box.createHorizontalGlue());
+		
+		options = new JMenu("User", true);
+		options.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT); 
+		
+		bar.add(options);
+				
+		courses = new JMenuItem("Courses");
+		options.add(courses);
+		logOut = new JMenuItem("Log out");
+		options.add(logOut);
+		
+		setJMenuBar(bar);
+		
+		//Top panel
+//		top.setBorder(BorderFactory.createLineBorder(getForeground(), 1));
+		top.setPreferredSize(new Dimension(250, 50));
+		top.setVisible(true);
+		
+		//Central panel
+		central = new JPanel();
+		east = new JPanel();
+		west = new JPanel();
+		
+		this.getContentPane().add(BorderLayout.NORTH, top);
+		this.getContentPane().add(BorderLayout.WEST, west);
+		this.getContentPane().add(BorderLayout.EAST, east);
+		this.getContentPane().add(BorderLayout.CENTER, central);
+
+		
+		//Window settings
+		this.setSize(1800, 1000);
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+		
+		this.setVisible(true);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	
+	public void addPanel(JPanel p){
+		preprevious = previous;
+		previous = central;
+		if(central != null){
+			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
+			central = null;
+		}
+		if(west != null){
+			remove(layout.getLayoutComponent(BorderLayout.WEST));
+			west = null;
+		}
+		if(east != null){
+			remove(layout.getLayoutComponent(BorderLayout.EAST));
+			east = null;
+		}
+		p.setVisible(true);
+		central = p;
+		this.getContentPane().add(BorderLayout.CENTER, p);
+		SwingUtilities.updateComponentTreeUI(this);
+	}
+	
+	public void addPanelWest(JPanel p){
+		if(central != null){
+			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
+			central = null;
+		}
+		if(west != null){
+			remove(layout.getLayoutComponent(BorderLayout.WEST));
+			west = null;
+		}
+		west = p;
+		p.setVisible(true);
+		this.getContentPane().add(BorderLayout.WEST, p);
+		SwingUtilities.updateComponentTreeUI(this);
+	}
+	
+	public void addPanelEast(JPanel p){
+		if(central != null){
+			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
+			central = null;
+		}
+		if(east != null){
+			remove(layout.getLayoutComponent(BorderLayout.EAST));
+			east = null;
+		}
+		east = p;
+		p.setVisible(true);
+		this.getContentPane().add(BorderLayout.EAST, p);
+		SwingUtilities.updateComponentTreeUI(this);
+	}
+	
+	public void previous(){
+		central.setVisible(false);
+		if(previous.equals(central)){
+			central = preprevious;
+			preprevious.setVisible(true);
+		}
+		else{
+			central = previous;
+			previous = preprevious;
+			central.setVisible(true);
+		}
+		this.getContentPane().add(BorderLayout.CENTER, central);
+		SwingUtilities.updateComponentTreeUI(this);
+	}
+	
+//	public void addNotifications(JPanel p){
+//		this.getContentPane().add(BorderLayout.WEST, p);
+//		SwingUtilities.updateComponentTreeUI(this);
+//	}
+	
+	public void addControllerLogOut(ActionListener al){
+		logOut.addActionListener(al);
+	}
+	
+	public void addControllerCourses(ActionListener al){
+		courses.addActionListener(al);
+	}
+	
+	public void addOption(JMenuItem mi){
+		options.add(mi, 0);
+	}
+}

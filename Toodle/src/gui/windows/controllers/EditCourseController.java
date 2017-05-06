@@ -1,6 +1,7 @@
 package gui.windows.controllers;
 
 import gui.CancelController;
+import gui.panels.StudentsCourse;
 import gui.panels.UICourseEditable;
 import gui.panels.controllers.UnitController;
 import gui.windows.EditCourse;
@@ -38,7 +39,11 @@ public class EditCourseController implements ActionListener{
 				UICourseEditable nec = new UICourseEditable(model, app, view);
 				nec.addControllerUnit(new UnitController(app, nec, view));
 				nec.addControllerEditCourse(new EditCourseController(model, view, app));
-				view.addPanel(nec);
+				view.addPanelWest(nec);
+				
+				StudentsCourse sc = new StudentsCourse(model.getRegistered(), model.getPending(), model.getExpelled());
+				view.addPanelEast(sc);
+				
 				ec.dispose();
 			}
 		});

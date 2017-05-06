@@ -44,7 +44,6 @@ public class UIStats extends JPanel{
 		layout.putConstraint(SpringLayout.NORTH, scrollBar, 50, SpringLayout.NORTH, this);		
 		
 		add(scrollBar);
-//		setVisible(true);
 		setPreferredSize(new Dimension(600, 500));
 		
 	}

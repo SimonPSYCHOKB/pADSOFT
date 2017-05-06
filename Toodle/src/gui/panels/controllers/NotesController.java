@@ -1,6 +1,7 @@
 package gui.panels.controllers;
 
 import gui.CancelController;
+import gui.panels.StudentsCourse;
 import gui.panels.UICourseEditable;
 import gui.windows.EditNotes;
 import gui.windows.General;
@@ -41,6 +42,9 @@ public class NotesController extends MouseAdapter{
 				ce.addControllerEditCourse(new EditCourseController(note.getUnit().getCourse(), gen, app));
 				ce.addControllerUnit(new UnitController(app, ce, gen));
 				gen.addPanel(ce);
+				
+				StudentsCourse sc = new StudentsCourse(note.getUnit().getCourse().getRegistered(), note.getUnit().getCourse().getPending(), note.getUnit().getCourse().getExpelled());
+				gen.addPanelEast(sc);
 			}
 		});
 		
@@ -55,7 +59,10 @@ public class NotesController extends MouseAdapter{
 				UICourseEditable ce = new UICourseEditable(c, app, gen);
 				ce.addControllerEditCourse(new EditCourseController(c, gen, app));
 				ce.addControllerUnit(new UnitController(app, ce, gen));
-				gen.addPanel(ce);
+				gen.addPanelWest(ce);
+				
+				StudentsCourse sc = new StudentsCourse(note.getUnit().getCourse().getRegistered(), note.getUnit().getCourse().getPending(), note.getUnit().getCourse().getExpelled());
+				gen.addPanelEast(sc);
 			}
 		});
 	}

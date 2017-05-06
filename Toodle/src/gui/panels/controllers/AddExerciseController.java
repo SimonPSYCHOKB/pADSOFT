@@ -2,6 +2,7 @@ package gui.panels.controllers;
 
 import exercise.Exercise;
 import gui.CancelController;
+import gui.panels.StudentsCourse;
 import gui.panels.UICourseEditable;
 import gui.windows.CreateTest;
 import gui.windows.EditTest;
@@ -14,7 +15,6 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 import javax.swing.JButton;
-
 
 import application.Application;
 import application.Unit;
@@ -52,7 +52,10 @@ public class AddExerciseController implements ActionListener{
 				UICourseEditable ce = new UICourseEditable(u.getCourse(), app, gen);
 				ce.addControllerUnit(new UnitController(app, ce, gen));
 				ce.addControllerEditCourse(new EditCourseController(u.getCourse(), gen, app));
-				gen.addPanel(ce);
+				gen.addPanelWest(ce);
+				
+				StudentsCourse sc = new StudentsCourse(u.getCourse().getRegistered(), u.getCourse().getPending(), u.getCourse().getExpelled());
+				gen.addPanelEast(sc);
 				
 				if(((JButton) arg0.getSource()).getText().equals("Edit")){
 					final EditTest et = new EditTest(e);

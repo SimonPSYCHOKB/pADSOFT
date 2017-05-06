@@ -142,7 +142,9 @@ public class Student extends User implements Serializable{
 	 */
 	public void acceptStudent(Course c){
 		pendingCourses.remove(c);
+		expelledCourses.remove(c);
 		registeredCourses.add(c);
+		c.registerStudent(this);
 	}
 	
 	/**
@@ -152,6 +154,7 @@ public class Student extends User implements Serializable{
 	public void rejectStudent(Course c){
 		pendingCourses.remove(c);
 		rejectedCourses.add(c);
+		c.expelStudent(this);
 	}
 	
 	/**
@@ -161,6 +164,7 @@ public class Student extends User implements Serializable{
 	public void expellStudent(Course c){
 		registeredCourses.remove(c);
 		expelledCourses.add(c);
+		c.expelStudent(this);
 	}
 	
 	/**
@@ -211,6 +215,7 @@ public class Student extends User implements Serializable{
 	 */
 	public void apply(Course c){
 		pendingCourses.add(c);
+		c.applyStudent(this);
 	}
 
 	/**
@@ -251,7 +256,7 @@ public class Student extends User implements Serializable{
 		answeredTests.remove(getAnsweredTest(e));
 	}
 
-	public void eraseTrakCourse(Course course) {
+	public void eraseTrackCourse(Course course) {
 		if(rejectedCourses.contains(course))
 			rejectedCourses.remove(course);
 		if(expelledCourses.contains(course))

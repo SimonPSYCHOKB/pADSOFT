@@ -120,7 +120,10 @@ public class UIUnitEditable extends JScrollPane{
 				course.deleteUnit(u);
 
 				UICourseEditable ce = new UICourseEditable(course, app, gen);
-				gen.addPanel(ce);
+				gen.addPanelWest(ce);
+				
+				StudentsCourse sc = new StudentsCourse(course.getRegistered(), course.getPending(), course.getExpelled());
+				gen.addPanelEast(sc);
 			}
 		});
 		

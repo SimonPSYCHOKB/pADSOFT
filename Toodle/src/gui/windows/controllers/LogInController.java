@@ -59,7 +59,7 @@ public class LogInController implements ActionListener{
 				frame.addControllerStudents(new StudentsController(frame, model));
 				
 				//Panel with the list of courses
-				Courses course = new Courses(frame, objs, rows);
+				Courses course = new Courses(objs, rows);
 				frame.addPanel(course);
 				course.setController(new CoursesTableController(model, frame));
 				
@@ -78,12 +78,14 @@ public class LogInController implements ActionListener{
 				frame.addControllerLogOut(new LogOutController(model, frame));
 				
 				List<Course> registered = ((Student) model.getCurrentUser()).getRegisteredCourses();
+				System.out.println(registered.size());
 				List<Course> visible = new ArrayList<Course>();
 				int i = 0;
 				for(Course c: courses){						
 					if(c.isVisibility()){
-						if(registered.contains(c))
+						if(registered.contains(c)){
 							rows.add(i);
+						}
 						visible.add(c);
 						i += 1;
 					}
@@ -96,7 +98,7 @@ public class LogInController implements ActionListener{
 					i = i + 1;
 				}
 				//Panel with the visible courses
-				Courses course = new Courses(frame, objs, rows); 
+				Courses course = new Courses(objs, rows); 
 				frame.addPanel(course);
 				frame.addControllerCourses(new CoursesController(model, frame));
 				course.setController(new CoursesTableController(model, frame));

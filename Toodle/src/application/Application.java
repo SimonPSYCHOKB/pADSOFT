@@ -244,7 +244,7 @@ public class Application implements Serializable{
 		if(courses.contains(course) == false) return;
 		courses.remove(course);
 		for(Student stud : students)
-			stud.eraseTrakCourse(course);
+			stud.eraseTrackCourse(course);
 	}
 	
 	/**

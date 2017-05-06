@@ -20,9 +20,8 @@ public class Courses extends JPanel{
 	JPanel top;
 	JLabel label;
 
-	public Courses(General gn, Object[][] courses, final ArrayList<Integer> rows) {
-		this.gn = gn;
-		this.setLayout(new BorderLayout());
+	public Courses(Object[][] courses, final ArrayList<Integer> rows) {
+		super(new BorderLayout());
 		
 		//Title 
 		top = new JPanel();
@@ -75,14 +74,6 @@ public class Courses extends JPanel{
 	
 	public void setController(MouseListener al){
 		cs.addMouseListener(al);
-	}
-	
-	public JTable getTable(){
-		return cs;
-	}
-	
-	public General getGeneral(){
-		return gn;
 	}
 	
 	public void addButtonTop(JButton button){

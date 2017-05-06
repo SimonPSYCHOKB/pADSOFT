@@ -1,0 +1,26 @@
+package gui.panels.controllers;
+
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+
+public class TablePopUp extends MouseAdapter{
+	
+	private JTable table;
+
+	public TablePopUp(JTable table){
+		this.table = table;
+	}
+	
+	@Override
+    public void mousePressed(MouseEvent event) {
+        Point point = event.getPoint();
+        int currentRow = table.rowAtPoint(point);
+        ListSelectionModel model = table.getSelectionModel();
+        model.setSelectionInterval(currentRow, currentRow);
+    }
+
+}

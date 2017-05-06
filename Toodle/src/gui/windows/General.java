@@ -2,7 +2,11 @@ package gui.windows;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public abstract class General extends JFrame {
@@ -18,18 +22,15 @@ public abstract class General extends JFrame {
 	private JPanel top;
 	private JPanel east;
 	private JPanel west;
-
 	private BorderLayout layout;
+	private BufferedImage myPicture;
+	
 	
 	public General() {
 		super("Toodle");
 		
 		layout = new BorderLayout();
 		this.getContentPane().setLayout(layout);
-		
-		SpringLayout layout = new SpringLayout();
-		top = new JPanel();
-		top.setLayout(layout);
 		
 		//Menu with the user options
 		JMenuBar bar = new JMenuBar();
@@ -47,9 +48,18 @@ public abstract class General extends JFrame {
 		
 		setJMenuBar(bar);
 		
-		//Top panel
-		top.setBorder(BorderFactory.createLineBorder(getForeground(), 1));
-		top.setPreferredSize(new Dimension(250, 50));
+		//Top panel with the logo
+		top = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		
+		try {
+			myPicture = ImageIO.read(new File("src/Toodle.logo.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+		top.add(picLabel);
+//		top.setBorder(BorderFactory.createLineBorder(getForeground(), 1));
+		top.setPreferredSize(new Dimension(250, 130));
 		top.setVisible(true);
 		
 		//Central panel

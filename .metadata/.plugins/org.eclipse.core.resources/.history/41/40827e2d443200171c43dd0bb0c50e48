@@ -1,0 +1,15 @@
+package gui.panels.controllers;
+
+import java.awt.event.MouseAdapter;
+
+import javax.swing.JTable;
+
+public class TablePopUp extends MouseAdapter{
+	
+	private JTable table;
+
+	public TablePopUp(JTable table){
+		this.table = table;
+	}
+
+}

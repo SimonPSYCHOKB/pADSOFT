@@ -1,0 +1,72 @@
+package gui.panels;
+
+import java.awt.FlowLayout;
+import java.util.List;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+
+import users.Student;
+
+public class StudentsCourse extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	
+	public StudentsCourse(List<Student> registered, List<Student> pending, List<Student> expelled){
+		super(new FlowLayout());
+		
+		JTabbedPane root = new JTabbedPane();
+		
+		JPanel reg = new JPanel(new FlowLayout());
+		JPanel pend = new JPanel(new FlowLayout());
+		JPanel exp = new JPanel(new FlowLayout());
+		
+		Object[][] objs = new Object[registered.size()][1];
+		String[] title = {"Title"};
+		int i = 0;
+		for(Student s : registered){
+			objs[i][0] = s.getName();
+			i += 1;
+		}
+		JTable tableR = new JTable(objs, title);
+		tableR.setTableHeader(null);
+
+		objs = new Object[pending.size()][1];
+		i = 0;
+		for(Student s : pending){
+			objs[i][0] = s.getName();
+			i += 1;
+		}
+		JTable tableP = new JTable(objs, title);
+		tableP.setTableHeader(null);
+		
+		objs = new Object[expelled.size()][1];
+		i = 0;
+		for(Student s : expelled){
+			objs[i][0] = s.getName();
+			i += 1;
+		}
+		JTable tableE = new JTable(objs, title);
+		tableE.setTableHeader(null);
+		
+		JScrollPane scrollR = new JScrollPane(tableR);
+		JScrollPane scrollP = new JScrollPane(tableP);
+		JScrollPane scrollE = new JScrollPane(tableE);
+
+		reg.add(scrollR);
+		pend.add(scrollP);
+		exp.add(scrollE);
+		
+		root.addTab("Registered", reg);
+		root.addTab("Pending", pend);
+		root.addTab("Expelled", exp);
+
+		add(root);
+		
+		setVisible(true);
+		
+	}
+
+}

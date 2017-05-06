@@ -1,5 +1,6 @@
 package gui.windows.controllers;
 
+import gui.panels.StudentsCourse;
 import gui.panels.UICourseEditable;
 import gui.panels.controllers.UnitController;
 import gui.windows.CreateUnit;
@@ -32,7 +33,11 @@ public class CreateUnitController implements ActionListener{
 		UICourseEditable ce = new UICourseEditable(view.getCourse(), model, gen); 
 		ce.addControllerUnit(new UnitController(model, ce, gen));
 		ce.addControllerEditCourse(new EditCourseController(view.getCourse(), gen, model));
-		gen.addPanel(ce);
+		gen.addPanelWest(ce);
+		
+		StudentsCourse sc = new StudentsCourse(view.getCourse().getRegistered(), view.getCourse().getPending(), view.getCourse().getExpelled());
+		gen.addPanelEast(sc);
+		
 		frame.dispose();
 	}
 }

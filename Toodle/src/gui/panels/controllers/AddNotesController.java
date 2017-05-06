@@ -1,6 +1,7 @@
 package gui.panels.controllers;
 
 import gui.CancelController;
+import gui.panels.StudentsCourse;
 import gui.panels.UICourseEditable;
 import gui.windows.CreateNotes;
 import gui.windows.General;
@@ -35,7 +36,10 @@ public class AddNotesController implements ActionListener{
 			public void actionPerformed(ActionEvent arg0){
 				u.addNotes(new Note(cn.getNotes().getText(), cn.getVisibility().isSelected()));
 				cn.dispose();
-				gen.addPanel(new UICourseEditable(u.getCourse(), app, gen));
+				gen.addPanelWest(new UICourseEditable(u.getCourse(), app, gen));
+				
+				StudentsCourse sc = new StudentsCourse(u.getCourse().getRegistered(), u.getCourse().getPending(), u.getCourse().getExpelled());
+				gen.addPanelEast(sc);
 			}
 		});
 	}

@@ -1,6 +1,7 @@
 package gui.panels.controllers;
 
 import exercise.Exercise;
+import gui.panels.StudentsCourse;
 import gui.panels.UICourseEditable;
 import gui.windows.EditTest;
 import gui.windows.General;
@@ -36,7 +37,10 @@ public class DeleteTestController implements ActionListener{
 		UICourseEditable ce = new UICourseEditable(u.getCourse(), app, gen);
 		ce.addControllerUnit(new UnitController(app, ce, gen));
 		ce.addControllerEditCourse(new EditCourseController(u.getCourse(), gen, app));
-		gen.addPanel(ce);
+		gen.addPanelWest(ce);
+		
+		StudentsCourse sc = new StudentsCourse(u.getCourse().getRegistered(), u.getCourse().getPending(), u.getCourse().getExpelled());
+		gen.addPanelEast(sc);
 
 	}
 

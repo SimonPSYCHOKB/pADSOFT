@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import users.Student;
+
 import exercise.Exercise;
 
 
@@ -26,6 +28,9 @@ public class Course implements Serializable{
 	private List<Unit> units; 
 	private List<Exercise> tests;
 	private double total;
+	private List<Student> registered;
+	private List<Student> pending;
+	private List<Student> expelled;
 	
 	/**
 	 * Constructor
@@ -39,6 +44,9 @@ public class Course implements Serializable{
 		this.description = description;
 		units = new ArrayList<Unit>();
 		tests = new ArrayList<Exercise>();
+		registered = new ArrayList<Student>();
+		pending = new ArrayList<Student>();
+		expelled = new ArrayList<Student>();
 		total = 0;
 	}
 
@@ -145,6 +153,33 @@ public class Course implements Serializable{
 	public void addUnit(Unit u){
 		units.add(u);
 		u.setCourse(this);
+	}
+	
+	public void expelStudent(Student s){
+		expelled.add(s);
+		registered.remove(s);
+		pending.remove(s);
+	}
+	
+	public void registerStudent(Student s){
+		registered.add(s);
+		pending.remove(s);
+	}
+	
+	public void applyStudent(Student s){
+		pending.add(s);
+	}
+	
+	public List<Student> getRegistered(){
+		return Collections.unmodifiableList(registered);
+	}
+	
+	public List<Student> getPending(){
+		return Collections.unmodifiableList(pending);
+	}
+	
+	public List<Student> getExpelled(){
+		return Collections.unmodifiableList(expelled);
 	}
 
 	@Override

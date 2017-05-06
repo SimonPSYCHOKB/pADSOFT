@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.swing.Scrollable"/>
 <fullyQualifiedTypeName name="GUI.Panels.Controllers.CreateExerciseController"/>
 <fullyQualifiedTypeName name="GUI.Panels.Controllers.AddSubunitController"/>
 <fullyQualifiedTypeName name="Application.Unit"/>
@@ -44,7 +43,6 @@
 <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
 <fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
 <fullyQualifiedTypeName name="exercise.SingleAnswer"/>
-<fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
@@ -59,5 +57,7 @@
 <fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="gui.windows.EditTest"/>
 </qualifiedTypeNameHistroy>

@@ -19,7 +19,7 @@ public class EditQuestion extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 
-	public EditQuestion(final Question q){
+	public EditQuestion(Question q){
 		
 		//BorderLayout
 		setLayout(new BorderLayout());
@@ -77,8 +77,8 @@ public class EditQuestion extends JPanel{
 		else{			
 			JLabel a = new JLabel("Answer :");
 			quest.add(a);
-			final JTextField answ = new JTextField();
-			final String text;
+			JTextField answ = new JTextField();
+			String text;
 			if(q instanceof FreeText)
 				text = ((FreeText) q).getAnswer();
 			else
