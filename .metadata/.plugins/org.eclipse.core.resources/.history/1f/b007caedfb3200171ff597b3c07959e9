@@ -41,7 +41,7 @@ public class NotesController extends MouseAdapter{
 				UICourseEditable ce = new UICourseEditable(note.getUnit().getCourse(), app, gen);
 				ce.addControllerEditCourse(new EditCourseController(note.getUnit().getCourse(), gen, app));
 				ce.addControllerUnit(new UnitController(app, ce, gen));
-				gen.addPanelWest(ce);
+				gen.addPanel(ce);
 				
 				StudentsCourse sc = new StudentsCourse(note.getUnit().getCourse().getRegistered(), note.getUnit().getCourse().getPending(), note.getUnit().getCourse().getExpelled());
 				gen.addPanelEast(sc);
