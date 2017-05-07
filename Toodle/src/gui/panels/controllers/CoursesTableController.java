@@ -9,9 +9,13 @@ import gui.windows.Register;
 import gui.windows.controllers.EditCourseController;
 
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 
 import users.Student;
 
@@ -46,13 +50,19 @@ public class CoursesTableController extends MouseAdapter{
 			view.addPanelWest(ce);
 			
 			final StudentsCourse sc = new StudentsCourse(selected.getRegistered(), selected.getPending(), selected.getExpelled());
+			
 			sc.addControllerAccept(new ActionListener(){
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					JTable table = sc.getTablePending();
 					int row = table.getSelectedRow();
 					Student s = selected.getPending().get(row);
-					s.acceptStudent(selected);
+					Student stud = model.searchStudentByName(s.getName());
+					stud.acceptStudent(selected);
+					//Refreshes Data
+					((DefaultTableModel) sc.getTablePending().getModel()).fireTableDataChanged();
+					((DefaultTableModel) sc.getTableRegistered().getModel()).fireTableDataChanged();
+					
 				
 				}
 			});
@@ -62,7 +72,9 @@ public class CoursesTableController extends MouseAdapter{
 					JTable table = sc.getTablePending();
 					int row = table.getSelectedRow();
 					Student s = selected.getPending().get(row);
-					s.rejectStudent(selected);
+					Student stud = model.searchStudentByName(s.getName());
+					stud.rejectStudent(selected);
+
 				}
 			});
 			sc.addControllerExpel(new ActionListener(){
@@ -71,7 +83,8 @@ public class CoursesTableController extends MouseAdapter{
 					JTable table = sc.getTableRegistered();
 					int row = table.getSelectedRow();
 					Student s = selected.getRegistered().get(row);
-					s.expellStudent(selected);
+					Student stud = model.searchStudentByName(s.getName());
+					stud.expellStudent(selected);
 				}
 			});
 			sc.addControllerReadmit(new ActionListener(){
@@ -80,13 +93,16 @@ public class CoursesTableController extends MouseAdapter{
 					JTable table = sc.getTableExpelled();
 					int row = table.getSelectedRow();
 					Student s = selected.getExpelled().get(row);
-					s.acceptStudent(selected);
+					Student stud = model.searchStudentByName(s.getName());
+					stud.acceptStudent(selected);
 				}
 			});
 			view.addPanelEast(sc);
 		}
 		//If not, well, that
 		else{
+			List<Course>test= ((Student) model.getCurrentUser()).getRegisteredCourses();
+			List<Course>test2= ((Student) model.getCurrentUser()).getPendingCourses();
 			if(((Student) model.getCurrentUser()).getRegisteredCourses().contains(selected)){				
 				UICourse cr = new UICourse(selected, model, view);
 				view.addPanel(cr);

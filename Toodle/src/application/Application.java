@@ -356,7 +356,18 @@ public class Application implements Serializable{
 	 * @return current user - User
 	 */
 	public User getCurrentUser(){
-		return currentUser;
+		if(currentUser !=null){
+		if(currentUser.getClass().equals(Student.class)){
+		for( Student stud : this.students){
+			if(stud.equals( (Student) currentUser)  ){
+				return stud;
+			}
+		}
+		}
+		}
+		
+		return teacher;
+	
 	}
 	
 	/**
