@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -86,7 +85,7 @@ public class LogIn extends JFrame{
 		Font font = null;
 		try {
 			//File fontFile = new File(this.getClass().getResource("Toodle/src/babylon_font.ttf").toURI());
-			font = Font.createFont(Font.TRUETYPE_FONT,  new File("Toodle/src/babylon_font.ttf"));
+			font = Font.createFont(Font.TRUETYPE_FONT,  new File("src/babylon_font.ttf"));
 		} catch (FontFormatException | IOException e) {
 			
 			e.printStackTrace();
