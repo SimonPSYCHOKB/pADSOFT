@@ -2,8 +2,14 @@ package gui.windows;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 
 public class LogIn extends JFrame{
 
@@ -40,6 +46,14 @@ public class LogIn extends JFrame{
 		layout.putConstraint(SpringLayout.WEST, pField, 40, SpringLayout.EAST, password);
 		layout.putConstraint(SpringLayout.NORTH, pField, 10, SpringLayout.SOUTH, uField);	
 		
+		layout.putConstraint(SpringLayout.VERTICAL_CENTER, user, 0, SpringLayout.VERTICAL_CENTER, uField);
+		layout.putConstraint(SpringLayout.VERTICAL_CENTER, password, 0, SpringLayout.VERTICAL_CENTER, pField);
+		
+		layout.putConstraint(SpringLayout.WEST, pField, 0, SpringLayout.WEST, uField);
+		
+		
+		this.setPreferredSize(new Dimension(500,170));
+		
 		msg.add(user);
 		msg.add(uField);
 		msg.add(password);
@@ -62,6 +76,39 @@ public class LogIn extends JFrame{
 		
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		//Panel Style
+		msg.setBackground(Color.WHITE);
+		button.setBackground(Color.WHITE);
+		//button.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.GRAY));
+		
+		
+		Font font = null;
+		try {
+			//File fontFile = new File(this.getClass().getResource("Toodle/src/babylon_font.ttf").toURI());
+			font = Font.createFont(Font.TRUETYPE_FONT,  new File("Toodle/src/babylon_font.ttf"));
+		} catch (FontFormatException | IOException e) {
+			
+			e.printStackTrace();
+		}   
+
+		GraphicsEnvironment genv = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		
+		genv.registerFont(font);
+		
+		font = font.deriveFont(20f);
+		user.setFont(font);
+		password.setFont(font);
+		
+		enter.setBackground(Color.decode("#edeff2"));
+		
+		enter.setBorder(BorderFactory.createLineBorder(Color.decode("#a3a3a3"), 1, true));
+		Border border = enter.getBorder();
+		Border margin = new EmptyBorder(5,10,5,10);
+		enter.setBorder(new CompoundBorder(border, margin));
+		
+		
+		
 	}
 	
 	public void setController(ActionListener al){
