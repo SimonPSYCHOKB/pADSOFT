@@ -24,7 +24,10 @@ public class LogIn extends JFrame{
 	private JButton enter;
 	private JTextField uField;
 	private JPasswordField pField;
-
+	
+	/**
+	 * Constructor
+	 */
 	public LogIn() {
 		super("Log-in");
 		
@@ -126,6 +129,10 @@ public class LogIn extends JFrame{
 		pField.addActionListener(al);
 	}
 	
+	/**
+	 * 
+	 * @return the user name of the person trying to log in
+	 */
 	public String getUserName(){
 		return uField.getText();
 	}

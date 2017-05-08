@@ -15,19 +15,32 @@ import users.Student;
 
 import application.Application;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * The Controller for the answer of an exercise
+ *
+ */
 public class AnswerExerciseController implements ActionListener{
 		
 	private Application model;
 	private Test view;
 	private Exercise e;
 	
+	/**
+	 * 
+	 * @param model -the Application
+	 * @param view  -The view of the Test
+	 * @param e -The data type of the exercise
+	 */
 	public AnswerExerciseController(Application model, Test view, Exercise e){
 		this.model = model;
 		this.view = view;
 		this.e = e;
 	}
 
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {		
 		List<Answer> answer = new ArrayList<Answer>();

@@ -13,12 +13,22 @@ import javax.swing.*;
 
 import application.*;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * This is the controller used to create a course. It is linked to the main JFrame (General) 
+ *
+ */
 public class CreateCourseController implements ActionListener {
 	
 	private Application model;
 	private General view;
 	
+	/**
+	 * 
+	 * @param model- The application model to which the course will be added
+	 * @param view	-The view that supplies the action of creating a course
+	 */
 	public CreateCourseController(Application model, General view){
 		this.model = model;
 		this.view = view;

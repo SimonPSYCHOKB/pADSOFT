@@ -13,12 +13,24 @@ import java.awt.event.ActionListener;
 import application.Application;
 import application.Course;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *A controller to edit a course (only if done by a teacher)
+ */
 public class EditCourseController implements ActionListener{
 	
 	private Course model;
 	private General view;
 	private Application app;
 	
+	/**
+	 * 
+	 * @param model -The course you wish to edit
+	 * @param view -The View that will supply the information
+	 * @param app	-The general application, for context and saving data
+	 */
 	public EditCourseController(Course model, General view, Application app){
 		this.model = model;
 		this.view = view;

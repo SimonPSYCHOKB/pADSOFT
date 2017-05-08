@@ -17,6 +17,9 @@ public class GeneralTeacher extends General{
 	private JMenuItem stats;
 	private JMenuItem students;
 	
+	/**
+	 * Constructor
+	 */
 	public GeneralTeacher() {
 		//Statistics option in the user menu
 		stats = new JMenuItem("Statistics");
