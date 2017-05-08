@@ -13,6 +13,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ */
 public class CreateUnit extends JFrame{
 
 	private static final long serialVersionUID = 1L;

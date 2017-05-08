@@ -13,7 +13,12 @@ import application.Application;
 import application.Note;
 import application.Unit;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *A controller in order to add text to a note
+ */
 public class AddNotesController implements ActionListener{
 
 	private Unit u;

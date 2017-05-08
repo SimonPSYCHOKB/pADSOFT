@@ -35,6 +35,14 @@ import application.Note;
 import application.Unit;
 
 
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * The basic building block of UICourseEditable. Allows to add Notes, Exercises 
+ * and Subunits. The controllers for these actions are loaded in this class
+ *
+ */
 public class UIUnitEditable extends JScrollPane{
 
 	private static final long serialVersionUID = 1L;
@@ -142,22 +150,12 @@ public class UIUnitEditable extends JScrollPane{
 		setPreferredSize(new Dimension(1000, 600));
 		setBorder(BorderFactory.createEmptyBorder());
 		setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
 		units.add(this);
+		
 
 	}
 	
-//	public void setControllerExercise(ActionListener al){
-//		exercise.addActionListener(al);
-//	}
-//	
-//	public void setControllerSubunit(ActionListener al){
-//		subunit.addActionListener(al);
-//	}
-//	
-//	public void setControllerNotes(ActionListener al){
-//		notes.addActionListener(al);
-//	}
-	
+
 }

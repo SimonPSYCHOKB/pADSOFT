@@ -14,6 +14,17 @@ import javax.swing.*;
 import application.*;
 
 
+
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *The User Interface for the teacher. In this case, it is much like the UI for the student, but
+ *as the name suggests, it allows to add or edit subunits, exercises and Subunits.
+ *
+ *Of special Consideration is the fact that the controllers for editing the objects mentioned above
+ *are not loaded here, but in UIUnitEditable. This latter class forms the building block for UICourseEditable
+ */
 public class UICourseEditable extends JPanel{
 		
 	private JButton addUnit;
@@ -44,7 +55,7 @@ public class UICourseEditable extends JPanel{
 		//Title of the course 
 		JPanel title = new JPanel(new FlowLayout());
 		JLabel course = new JLabel(c.getTitle());
-		course.setPreferredSize(new Dimension(gen.getWidth()*50/100, course.getHeight()));
+		
 		title.add(course);
 		//Delete course button
 		remove = new JButton("Delete course");
@@ -59,6 +70,10 @@ public class UICourseEditable extends JPanel{
 		add(title, BorderLayout.NORTH);
 		
 		setVisible(true);
+		
+		this.setMaximumSize(new Dimension((int) (gen.getWidth()*0.6), course.getHeight()));
+		this.setPreferredSize(new Dimension((int) (gen.getWidth()*0.6), course.getHeight()));
+		this.setMinimumSize(new Dimension((int) (gen.getWidth()*0.6), course.getHeight()));
 		
 		remove.addActionListener(new ActionListener(){
 			@Override

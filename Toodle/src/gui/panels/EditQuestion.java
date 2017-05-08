@@ -12,7 +12,8 @@ import exercise.*;
  * 
  * @author Blanca, Simon
  * 
- * Once Edit Test is called, 
+ * Once Edit Test is called, this JPannel is called for every new Question Created, 
+ * Its constructor takes a Question and Displays it 
  *
  */
 public class EditQuestion extends JPanel{

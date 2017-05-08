@@ -11,6 +11,12 @@ import java.awt.event.ActionListener;
 import application.Application;
 import application.Unit;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *A simple controller called when a Subunit has been added in order to properly refresh the screen
+ */
 public class DoneAddSubunitController implements ActionListener{
 	
 	private Unit unit;

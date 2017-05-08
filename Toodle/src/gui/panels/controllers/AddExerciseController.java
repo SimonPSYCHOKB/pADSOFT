@@ -19,7 +19,15 @@ import javax.swing.JButton;
 import application.Application;
 import application.Unit;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * Controller passed to the button in order to add an Exercise.  Upon execution it calls the CreateTest JFrame,
+ * whos ActionController is passed here programmatically. Once the test is created, the Teacher then has to 
+ * Edit the Test from the Course UI in order to add questions
+ *
+ */
 public class AddExerciseController implements ActionListener{
 
 	private Unit u;

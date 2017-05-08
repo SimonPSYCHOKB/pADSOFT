@@ -8,7 +8,13 @@ import javax.swing.*;
 import exercise.*;
 
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *Here you choose the type of question you are going to create, as well as the wording,
+ *the weight and the penalization
+ */
 public class CreateQuestion extends JFrame{
 
 	private static final long serialVersionUID = 1L;

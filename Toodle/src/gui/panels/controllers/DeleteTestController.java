@@ -13,6 +13,12 @@ import java.awt.event.ActionListener;
 import application.Application;
 import application.Unit;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *A simple controller that permits the deletion of Tests and refreshes the screen
+ */
 public class DeleteTestController implements ActionListener{
 	
 	
