@@ -5,6 +5,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author Blanca,  Simon
+ * Generic Controller for the Cancel button which destroys the view that is passed to the Cancel button
+ *
+ */
 public class CancelController implements ActionListener{
 
 	private JFrame view;

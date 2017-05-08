@@ -20,7 +20,14 @@ import application.*;
 
 
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * Loads the relevant Statistics for the current user. If the User is a Student, it generates
+ * a SingleUserStatistic which is loaded with the UiStatsController 
+ *
+ */
 public class StatsController implements ActionListener {
 
 	private Application model;

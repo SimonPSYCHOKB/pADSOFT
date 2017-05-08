@@ -16,6 +16,25 @@ import users.Student;
 
 import application.*;
 
+/**
+ * 
+ * @author Blanca , Simon
+ * 
+ * Controller for the LogIn JFrame. If the Login is correct, makes the login window invisible 
+ * and sets up the main view for the Application using a General Frame, which then is loaded 
+ * with the relevant controllers
+ * 
+ * For Student, it loads:
+ * 		-Statistics Controller
+ * 		-LogOutController
+ * 		-Courses Controller
+ * 		-Courses Table Controller
+ * 
+ * Additionally, for the teacher, it loads:
+ * 		-StudentsController
+ * 		-CreateCourseController
+ *
+ */
 
 public class LogInController implements ActionListener{
 	
@@ -26,6 +45,11 @@ public class LogInController implements ActionListener{
 		this.model = model;
 		this.view = view;
 	}
+	
+	/**
+	 * This function loads all the relevant controllers, depending on whether the current user is a 
+	 * Teacher or a Student.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		

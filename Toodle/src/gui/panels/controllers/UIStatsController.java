@@ -20,6 +20,11 @@ import application.Course;
 
 
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ */
 public class UIStatsController extends MouseAdapter{
 
 	private Application model;

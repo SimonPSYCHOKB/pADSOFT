@@ -10,6 +10,14 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * JPanel that Displays a list of all Visible Courses. Must be created with a list of all Courses.
+ * 
+ *
+ */
 
 public class Courses extends JPanel{
 
@@ -72,6 +80,11 @@ public class Courses extends JPanel{
 		setSize(1600, 300);
 	}
 	
+	/**
+	 * 
+	 * @param MouseListener al
+	 * Sets the controller in order to define the behavior when someone clicks on a course
+	 */
 	public void setController(MouseListener al){
 		cs.addMouseListener(al);
 	}

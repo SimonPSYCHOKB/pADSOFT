@@ -10,6 +10,13 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * 
+ * @author Blanca, Simon
+ * JFrame for LogIn. 
+ * Consists of two pannels, one for The text fields and another one for The LogIn button.
+ * 
+ */
 public class LogIn extends JFrame{
 
 	private static final long serialVersionUID = 1L;
