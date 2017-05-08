@@ -10,7 +10,9 @@ import java.util.List;
 
 import javax.swing.*;
 
+import statistics.CourseStatistic;
 import statistics.QuestionStatistic;
+import statistics.SingleUserStatistic;
 import statistics.Statistic;
 import users.Student;
 
@@ -55,15 +57,17 @@ public class ExercisesStatsController extends MouseAdapter{
 
 		}
 		else{
-			Student student = app.searchStudentByName(app.getCurrentUser().getName());	
+			Student student = app.searchStudentByName(app.getCurrentUser().getName());
+//			SingleUserStatistic statis = new SingleUserStatistic(student);
+//			List<CourseStatistic> cs = statis.getCourseStatistics();	
 			Statistic stats = new Statistic(student.getTestsFromCourse(model).get(row).getTest());
-			List<QuestionStatistic> questions = stats.getQuestionStatistics();
+			List<QuestionStatistic> questions = stats.get(row).getQuestionStatistics();
 			
 			Object[][] objs = new Object[questions.size()][2];
 			String[] titles = {"Question", "Mark"};
 			
 			int i = 0;
-			for(QuestionStatistic qs :questions){
+			for(QuestionStatistic qs : stats.get(row).getQuestionStatistics()){
 				objs[i][0] = "Question " + i + " (" + (float) qs.getQuestion().getRelativeWeight() + " %)";
 				objs[i][1] = qs.getMean();
 				i += 1;

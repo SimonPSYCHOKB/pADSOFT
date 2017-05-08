@@ -10,7 +10,9 @@ import java.util.List;
 
 import javax.swing.*;
 
+import statistics.CourseStatistic;
 import statistics.QuestionStatistic;
+import statistics.SingleUserStatistic;
 import statistics.Statistic;
 import users.Student;
 
