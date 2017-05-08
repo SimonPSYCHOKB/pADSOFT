@@ -85,7 +85,7 @@ public class LogIn extends JFrame{
 		Font font = null;
 		try {
 			//File fontFile = new File(this.getClass().getResource("Toodle/src/babylon_font.ttf").toURI());
-			font = Font.createFont(Font.TRUETYPE_FONT,  new File("src/babylon_font.ttf"));
+			font = Font.createFont(Font.TRUETYPE_FONT,  new File("Toodle/src/babylon_font.ttf"));
 		} catch (FontFormatException | IOException e) {
 			
 			e.printStackTrace();

@@ -100,8 +100,10 @@ public class Exercise extends LearningObj implements Serializable{
 	 */
 	public boolean beginExercise(Student s){
 		if(dateOfEnd.before(new Date()) == true) return false;
-		if(s.getAnsweredTest(this) != null) 
-			s.removeAnsweredTest(this);
+		if(s.getAnsweredTest(this) != null) {
+			//s.removeAnsweredTest(this);
+			return false;
+		}
 		s.addTestStudent(this);
 		started = true;
 		return true;

@@ -31,13 +31,19 @@ public class DoneAddSubunitController implements ActionListener{
 		unit.createSubSection(new Unit(view.getVisibility().isSelected(), view.getNameField().getText()));
 		view.dispose();
 		
+		
+		gen.invalidate();
+		
 		UICourseEditable ce = new UICourseEditable(unit.getCourse(), app, gen);
-		ce.addControllerEditCourse(new EditCourseController(unit.getCourse(), gen, app));
-		ce.addControllerUnit(new UnitController(app, ce, gen));
+		//ce.addControllerEditCourse(new EditCourseController(unit.getCourse(), gen, app));
+		//ce.addControllerUnit(new UnitController(app, ce, gen));
 		gen.addPanelWest(ce);
 		
 		StudentsCourse sc = new StudentsCourse(unit.getCourse().getRegistered(), unit.getCourse().getPending(), unit.getCourse().getExpelled());
 		gen.addPanelEast(sc);
+		
+		
+		
 	}
 
 }
