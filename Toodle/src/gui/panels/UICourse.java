@@ -21,6 +21,12 @@ public class UICourse extends JPanel{
 	
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Constructor
+	 * @param c - the course to be displayed
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public UICourse(Course c, final Application app, General gen) {
 				
 		JTabbedPane root = new JTabbedPane();

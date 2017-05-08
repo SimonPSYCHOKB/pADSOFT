@@ -30,6 +30,11 @@ public class Courses extends JPanel{
 	JPanel top;
 	JLabel label;
 
+	/**
+	 * Constructor
+	 * @param courses - a matrix with the objects of the table
+	 * @param rows - a list with the indexes of the rows that has to be colored
+	 */
 	public Courses(Object[][] courses, final ArrayList<Integer> rows) {
 		super(new BorderLayout());
 		
@@ -91,6 +96,10 @@ public class Courses extends JPanel{
 		cs.addMouseListener(al);
 	}
 	
+	/**
+	 * This method sets a button at the top of the panel
+	 * @param button - the button to be added at the top
+	 */
 	public void addButtonTop(JButton button){
 		layout.putConstraint(SpringLayout.WEST, button, 150, SpringLayout.EAST, label);
 		layout.putConstraint(SpringLayout.NORTH, button, 10, SpringLayout.NORTH, top);

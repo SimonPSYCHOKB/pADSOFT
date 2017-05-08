@@ -25,6 +25,10 @@ public class CreateTextQuestion extends JFrame{
 	private JButton cancel;
 	private JButton done;
 	
+	/**
+	 * Constructor
+	 * @param title
+	 */
 	public CreateTextQuestion(String title){
 		super(title);
 		
@@ -60,14 +64,26 @@ public class CreateTextQuestion extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the answer of the question
+	 * @return field for the answer
+	 */
 	public JTextField getAnswer(){
 		return answer;
 	}

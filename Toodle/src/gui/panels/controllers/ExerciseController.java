@@ -40,6 +40,12 @@ public class ExerciseController extends MouseAdapter{
 	private Exercise e;
 	private General gen;
 	
+	/**
+	 * Constructor
+	 * @param model - the application
+	 * @param e - the exercise that has been clicked
+	 * @param gen - the general frame
+	 */
 	public ExerciseController(Application model, Exercise e, General gen){
 		this.model = model;
 		this.e = e;

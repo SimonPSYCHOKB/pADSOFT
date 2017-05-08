@@ -64,6 +64,10 @@ public class Test extends JFrame{
 		return uiquestions;
 	}
 	
+	/**
+	 * This method sets the controller for the finish button
+	 * @param al - the controller
+	 */
 	public void addControllerFinish(ActionListener al){
 		finish.addActionListener(al);
 	}

@@ -32,6 +32,9 @@ public class CreateMultipleAnswer extends JFrame{
 	private ArrayList<JTextField> options;
 	private ArrayList<JCheckBox> answers;
 	
+	/**
+	 * Constructor
+	 */
 	public CreateMultipleAnswer(){
 		super("Create Multiple Choice Question");
 		
@@ -86,18 +89,34 @@ public class CreateMultipleAnswer extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the options entered for the question
+	 * @return list with the fields of the options
+	 */
 	public ArrayList<JTextField> getOptions(){
 		return options;
 	}
 	
+	/**
+	 * This method returns the answers for the question
+	 * @return list with the fields of the answers
+	 */
 	public ArrayList<JCheckBox> getAnswers(){
 		return answers;
 	}

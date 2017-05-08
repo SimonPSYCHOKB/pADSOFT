@@ -117,6 +117,10 @@ public class LogIn extends JFrame{
 		
 	}
 	
+	/**
+	 * This method sets the controller for the enter button and password field
+	 * @param al - the controller
+	 */
 	public void setController(ActionListener al){
 		enter.addActionListener(al);
 		pField.addActionListener(al);

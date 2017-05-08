@@ -27,6 +27,13 @@ public class DeleteTestController implements ActionListener{
 	private General gen;
 	private EditTest et;
 
+	/**
+	 * Constructor
+	 * @param e - the exercise that is going to be deleted
+	 * @param app - the application
+	 * @param gen - the general frame
+	 * @param et - the view of the edition of the test
+	 */
 	public DeleteTestController(Exercise e, Application app, General gen, EditTest et){
 		this.e = e;
 		this.app = app;

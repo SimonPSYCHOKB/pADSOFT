@@ -21,6 +21,9 @@ public class CreateCourse extends JFrame{
 	private JButton done;
 	private JButton cancel;
 	
+	/**
+	 * Constructor
+	 */
 	public CreateCourse(){
 		super("New Course");
 		
@@ -76,22 +79,42 @@ public class CreateCourse extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller to the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller to the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the title entered for the course
+	 * @return the title
+	 */
 	public String getTitleField(){
 		return titleField.getText();
 	}
 	
+	/**
+	 * This method returns the description entered for the course
+	 * @return the description
+	 */
 	public String getDescField(){
 		return descField.getText();
 	}
 	
+	/**
+	 * This method returns the visibility selected for the course
+	 * @return true if the course is visible; false if not
+	 */
 	public boolean getVisibCheck(){
 		return visibCheck.isSelected(); 
 	}

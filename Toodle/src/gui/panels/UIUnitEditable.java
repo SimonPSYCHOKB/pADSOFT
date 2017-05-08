@@ -52,6 +52,12 @@ public class UIUnitEditable extends JScrollPane{
 	private JButton remove;
 	private ArrayList<UIUnitEditable> units;
 
+	/**
+	 * Constructor
+	 * @param u - the unit we are editing
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public UIUnitEditable(final Unit u, final Application app, final General gen){
 		
 		units = new ArrayList<UIUnitEditable>();

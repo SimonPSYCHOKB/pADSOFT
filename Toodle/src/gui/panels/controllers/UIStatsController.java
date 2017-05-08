@@ -33,6 +33,11 @@ public class UIStatsController extends MouseAdapter{
 	private Application model;
 	private General view;
 	
+	/**
+	 * Constructor
+	 * @param model - the application
+	 * @param view - the general frame
+	 */
 	public UIStatsController(Application model, General view){
 		this.model = model;
 		this.view = view;

@@ -36,6 +36,9 @@ public class CreateTest extends JFrame{
 	private JButton cancel;
 	private JButton done;
 
+	/**
+	 * Constructor
+	 */
 	public CreateTest(){
 		// Setting layout
 		getContentPane().setLayout(new BorderLayout());
@@ -110,26 +113,50 @@ public class CreateTest extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the weight entered for the test
+	 * @return the weight
+	 */
 	public double getWeight(){
 		return (double) spinner3.getValue();
 	}
 	
+	/**
+	 * This method returns the date of end entered for the test
+	 * @return date of end
+	 */
 	public Date getDateEnd(){
 		return (Date) spinner2.getValue();
 	}
 	
+	/**
+	 * This method returns the date of beginning for the test
+	 * @return date of beginning
+	 */
 	public Date getDateBegining(){
 		return (Date) spinner1.getValue();
 	}
 	
+	/**
+	 * This method returns the visibility for the test
+	 * @return true if it is visible; false if not
+	 */
 	public boolean getVisibility(){
 		return ok.isSelected();
 	}

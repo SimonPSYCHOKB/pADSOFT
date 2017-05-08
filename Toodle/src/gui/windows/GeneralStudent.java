@@ -24,6 +24,10 @@ public class GeneralStudent extends General{
 		addOption(grades);
 	}
 	
+	/**
+	 * This method sets the controller for the grades option on the menu
+	 * @param al - the controller
+	 */
 	public void addControllerGrades(ActionListener al){
 		grades.addActionListener(al);
 	}

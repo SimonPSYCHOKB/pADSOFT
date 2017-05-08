@@ -30,6 +30,9 @@ public class CreateNotes extends JFrame{
 	private JButton done;
 	private JCheckBox visib;
 	
+	/**
+	 * Constructor
+	 */
 	public CreateNotes(){
 		super("Add notes");
 		
@@ -89,18 +92,34 @@ public class CreateNotes extends JFrame{
 		
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the text entered for the note
+	 * @return the text area with the notes
+	 */
 	public JTextArea getNotes(){
 		return notes;
 	}
 	
+	/**
+	 * This method returns the visibility for the note
+	 * @return the check box with the visibility
+	 */
 	public JCheckBox getVisibility(){
 		return visib;
 	}

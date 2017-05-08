@@ -26,6 +26,10 @@ public class EditQuestion extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Constructor
+	 * @param q - the Question that is going to be edited
+	 */
 	public EditQuestion(Question q){
 		
 		//BorderLayout
@@ -136,26 +140,42 @@ public class EditQuestion extends JPanel{
 		
 	}
 	
-	public JPanel getPanel(){
-		return quest;
-	}
-	
+	/**
+	 * This method returns the wording entered
+	 * @return the text field with the wording
+	 */
 	public JTextField getWording(){
 		return wording;
 	}
 	
+	/**
+	 * This method returns the weight entered
+	 * @return the spinner with the weight
+	 */
 	public JSpinner getWeight(){
 		return spinner1;
 	}
 	
+	/**
+	 * This method returns the penalty entered
+	 * @return the spinner with the penalty
+	 */
 	public JSpinner getPenalty(){
 		return spinner2;
 	}
 	
+	/**
+	 * This method returns the options entered
+	 * @return list with the fields of the options
+	 */
 	public ArrayList<JTextField> getOptions(){
 		return options;
 	}
 	
+	/**
+	 * This method returns the answers entered
+	 * @return list with the field of the answers
+	 */
 	public ArrayList<JTextField> getAnswers(){
 		return answers;
 	}

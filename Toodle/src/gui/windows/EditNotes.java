@@ -33,6 +33,10 @@ public class EditNotes extends JFrame{
 	private JButton done;
 	private JButton remove;
 	
+	/**
+	 * Constructor
+	 * @param n - the notes no be edited
+	 */
 	public EditNotes(Note n){
 		super("Edit notes");
 		
@@ -95,22 +99,42 @@ public class EditNotes extends JFrame{
 	
 	}
 
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the remove button
+	 * @param al - the controller
+	 */
 	public void setControllerRemove(ActionListener al){
 		remove.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the text for the notes
+	 * @return field with the text
+	 */
 	public JTextArea getNotes(){
 		return notes;
 	}
 	
+	/**
+	 * This method returns the visibility for the notes
+	 * @return check box with the visibility
+	 */
 	public JCheckBox getVisibility(){
 		return visib;
 	}

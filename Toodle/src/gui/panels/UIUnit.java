@@ -40,6 +40,12 @@ public class UIUnit extends JScrollPane{
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Constructor
+	 * @param u - the unit we want to display
+	 * @param app - the application 
+	 * @param gen - the general view
+	 */
 	public UIUnit(final Unit u, final Application app, final General gen){
 		
 		//Layout for the main panel

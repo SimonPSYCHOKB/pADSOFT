@@ -35,6 +35,9 @@ public abstract class General extends JFrame {
 	private BufferedImage myPicture;
 	
 	
+	/**
+	 * Constructor
+	 */
 	public General() {
 		super("Toodle");
 		
@@ -91,6 +94,10 @@ public abstract class General extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * This method adds a panel in the center of the general frame
+	 * @param p - panel to be added
+	 */
 	public void addPanel(JPanel p){
 		preprevious = previous;
 		previous = central;
@@ -112,6 +119,10 @@ public abstract class General extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
+	/**
+	 * This method adds a panel in the west of the general frame
+	 * @param p - panel to be added
+	 */
 	public void addPanelWest(JPanel p){
 		if(central != null){
 			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
@@ -127,6 +138,10 @@ public abstract class General extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
+	/**
+	 * This method adds a panel in the east of the general frame
+	 * @param p
+	 */
 	public void addPanelEast(JPanel p){
 		if(central != null){
 			remove(layout.getLayoutComponent(BorderLayout.CENTER));	
@@ -142,6 +157,9 @@ public abstract class General extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
+	/**
+	 * This method shows the previous panel that was showed in the center of the frame
+	 */
 	public void previous(){
 		central.setVisible(false);
 		if(previous.equals(central)){
@@ -157,19 +175,26 @@ public abstract class General extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
-//	public void addNotifications(JPanel p){
-//		this.getContentPane().add(BorderLayout.WEST, p);
-//		SwingUtilities.updateComponentTreeUI(this);
-//	}
-	
+	/**
+	 * This method sets the controller for the log out option on the menu
+	 * @param al - the controller
+	 */
 	public void addControllerLogOut(ActionListener al){
 		logOut.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the courses option on the menu
+	 * @param al - the controller
+	 */
 	public void addControllerCourses(ActionListener al){
 		courses.addActionListener(al);
 	}
 	
+	/**
+	 * This method adds an option to the menu
+	 * @param mi - option to be added
+	 */
 	public void addOption(JMenuItem mi){
 		options.add(mi, 0);
 	}

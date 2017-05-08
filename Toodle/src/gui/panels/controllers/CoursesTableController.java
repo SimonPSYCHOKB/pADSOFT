@@ -35,11 +35,17 @@ public class CoursesTableController extends MouseAdapter{
 	private Application model;
 	private General view;
 	
+	/**
+	 * Constructor
+	 * @param model - the application
+	 * @param view - the general frame
+	 */
 	public CoursesTableController(Application model, General view){
 		this.view = view;
 		this.model = model;
 	}
 	
+
 	public void mouseClicked(MouseEvent e){
 		JTable table = (JTable) e.getSource();
 		int row = table.getSelectedRow();

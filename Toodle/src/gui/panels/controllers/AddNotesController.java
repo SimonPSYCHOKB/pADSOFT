@@ -25,6 +25,12 @@ public class AddNotesController implements ActionListener{
 	private Application app;
 	private General gen;
 	
+	/**
+	 * Constructor
+	 * @param u - the unit in which the note is going to be added
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public AddNotesController(Unit u, Application app, General gen){
 		this.u = u;
 		this.app = app;

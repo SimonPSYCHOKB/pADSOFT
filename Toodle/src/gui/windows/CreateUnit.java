@@ -28,6 +28,9 @@ public class CreateUnit extends JFrame{
 	JButton done;
 	JButton cancel;
 
+	/**
+	 * Constructor
+	 */
 	public CreateUnit(){
 		super("Add new unit");
 		
@@ -71,18 +74,34 @@ public class CreateUnit extends JFrame{
 		
 	}
 	
+	/**
+	 * This method returns the name of the unit
+	 * @return field with the name
+	 */
 	public JTextField getNameField(){
 		return name;
 	}
 	
+	/**
+	 * This method returns the visibility of the unit
+	 * @return check box with the visibility
+	 */
 	public JCheckBox getVisibility(){
 		return visib;
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}

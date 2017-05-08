@@ -11,6 +11,11 @@ import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * This class makes reference to the view of the statistics in a table
+ * @author Simon, Blanca
+ *
+ */
 public class UIStats extends JPanel{
 
 	private static final long serialVersionUID = 1L;
@@ -19,6 +24,11 @@ public class UIStats extends JPanel{
 	private JScrollPane scrollBar;
 	private SpringLayout layout;
 	
+	/**
+	 * Constructor
+	 * @param objs - matrix with the contents of the table
+	 * @param titles - titles of the table
+	 */
 	public UIStats(Object[][] objs, String[] titles){
 		
 		
@@ -48,10 +58,18 @@ public class UIStats extends JPanel{
 		
 	}
 	
+	/**
+	 * This method adds a controller to the table of statistics
+	 * @param ma - the controller
+	 */
 	public void addController(MouseAdapter ma){
 		course.addMouseListener(ma);
 	}
 	
+	/**
+	 * This method adds a button under the table
+	 * @param back - button that is to be added
+	 */
 	public void addButton(JButton back){
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, back, 0, SpringLayout.HORIZONTAL_CENTER, this);
 		layout.putConstraint(SpringLayout.NORTH, back, 50, SpringLayout.SOUTH, scrollBar);

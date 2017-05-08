@@ -16,6 +16,13 @@ import javax.swing.table.DefaultTableModel;
 
 import users.Student;
 
+/**
+ * This class makes reference to the panel that contains the information
+ * of the registered, pending and expelled students in a course.
+ * 
+ * @author Simon, Blanca
+ *
+ */
 public class StudentsCourse extends JPanel{
 
 	private static final long serialVersionUID = 1L;
@@ -27,6 +34,12 @@ public class StudentsCourse extends JPanel{
 	private JMenuItem expel;
 	private JMenuItem readmit;
 	
+	/**
+	 * Constructor
+	 * @param registered - list with the registered students in the course
+	 * @param pending - list with the students that have pending applications in the course
+	 * @param expelled - list with the expelled students in the course
+	 */
 	public StudentsCourse(List<Student> registered, List<Student> pending, List<Student> expelled){
 		super(new FlowLayout());
 		
@@ -126,30 +139,58 @@ public class StudentsCourse extends JPanel{
 		
 	}
 	
+	/**
+	 * This method returns the table that contains the registered students
+	 * @return table with the registered students
+	 */
 	public JTable getTableRegistered(){
 		return tableR;
 	}
 	
+	/**
+	 * This method returns the table that contains the pending students
+	 * @return table with the pending students
+	 */
 	public JTable getTablePending(){
 		return tableP;
 	}
 	
+	/**
+	 * This method returns the table that contains the expelled students
+	 * @return table with the expelled students
+	 */
 	public JTable getTableExpelled(){
 		return tableE;
 	}
 	
+	/**
+	 * This method adds the controller to the accept option 
+	 * @param al - the controller
+	 */
 	public void addControllerAccept(ActionListener al){
 		accept.addActionListener(al);
 	}
 	
+	/**
+	 * This method adds the controller to the reject option 
+	 * @param al - the controller
+	 */
 	public void addControllerReject(ActionListener al){
 		reject.addActionListener(al);
 	}
 	
+	/**
+	 * This method adds the controller to the readmit option 
+	 * @param al - the controller
+	 */
 	public void addControllerReadmit(ActionListener al){
 		readmit.addActionListener(al);
 	}
 	
+	/**
+	 * This method adds the controller to the expel option 
+	 * @param al - the controller
+	 */
 	public void addControllerExpel(ActionListener al){
 		expel.addActionListener(al);
 	}
