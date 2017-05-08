@@ -23,26 +23,11 @@ import users.Student;
 import application.Application;
 import application.Course;
 
-/**
- * This class makes reference to the controller of the menu option students in the menu 
- * bar, creates a table with all the students and displays it for the teacher to consoult
- * one of the students grades in the courses he/she is registered in, the exercises in the course
- * and the questions of the tests.
- * 
- * @author Simon Valcarcel
- * @author Blanca Martin
- *
- */
 public class StudentsController implements ActionListener{
 	
 	private General view;
 	private Application model;
 	
-	/**
-	 * Contructor
-	 * @param view - the general frame
-	 * @param model - the application
-	 */
 	public StudentsController(General view, Application model){
 		this.view = view;
 		this.model = model;

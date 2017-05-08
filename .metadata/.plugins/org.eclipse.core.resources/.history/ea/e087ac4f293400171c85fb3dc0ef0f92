@@ -9,15 +9,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-/**
- * 
- * @author Blanca, Simon
- * 
- * This asbtract JFrame is the foundation upon most of the Application rest. 
- * It has the logo, as well as the options, and all the JPannels necessary for a 
- * good user experience
- *
- */
 public abstract class General extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -61,7 +52,7 @@ public abstract class General extends JFrame {
 		top = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		
 		try {
-			myPicture = ImageIO.read(new File("src/Toodle.logo.jpg"));
+			myPicture = ImageIO.read(new File("Toodle/src/Toodle.logo.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
