@@ -24,6 +24,12 @@ public class AddSubunitController implements ActionListener{
 	private Application app;
 	private General gen;
 		
+	/**
+	 * Constructor
+	 * @param u - the unit in which the unit is going to be added
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public AddSubunitController(Unit u, Application app, General gen){
 		this.u = u;
 		this.app = app;

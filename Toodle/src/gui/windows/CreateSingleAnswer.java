@@ -17,6 +17,11 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+/**
+ * This class makes reference to the creation of a single - answer question
+ * @author Simon, Blanca
+ *
+ */
 public class CreateSingleAnswer extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
@@ -25,6 +30,9 @@ public class CreateSingleAnswer extends JFrame{
 	private ArrayList<JTextField> options;
 	private ArrayList<JRadioButton> answers;
 	
+	/**
+	 * Constructor
+	 */
 	public CreateSingleAnswer(){
 		super("Create Single Answer Question");
 		
@@ -81,18 +89,34 @@ public class CreateSingleAnswer extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the options of the question
+	 * @return list with the fields for the options
+	 */
 	public ArrayList<JTextField> getOptions(){
 		return options;
 	}
 	
+	/**
+	 * This method returns the answers of the question 
+	 * @return list with the buttons for the answers
+	 */
 	public ArrayList<JRadioButton> getAnswers(){
 		return answers;
 	}

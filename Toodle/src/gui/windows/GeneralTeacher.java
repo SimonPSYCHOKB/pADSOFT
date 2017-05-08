@@ -29,10 +29,18 @@ public class GeneralTeacher extends General{
 		addOption(students);
 	}
 	
+	/**
+	 * This method sets the controller for the stats option on the menu
+	 * @param al - the controller
+	 */
 	public void addControllerStats(ActionListener al){
 		stats.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the students option on the menu
+	 * @param al - the controller
+	 */
 	public void addControllerStudents(ActionListener al){
 		students.addActionListener(al);
 	}

@@ -20,6 +20,11 @@ public class TablePopUp implements PopupMenuListener{
 	private JTable table;
 	private JPopupMenu popup;
 
+	/**
+	 * Constructor
+	 * @param table - the table with the pop up menu
+	 * @param popup - the pop up menu
+	 */
 	public TablePopUp(JTable table, JPopupMenu popup){
 		this.table = table;
 		this.popup = popup;

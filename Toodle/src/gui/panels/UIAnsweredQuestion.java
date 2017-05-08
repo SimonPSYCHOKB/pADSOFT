@@ -17,10 +17,20 @@ import javax.swing.SpringLayout;
 
 import exercise.*;
 
+/**
+ * This class makes reference to the panel that shows an answered question, showing too the correct answer
+ * @author Simon, Blanca
+ *
+ */
 public class UIAnsweredQuestion extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Constructor
+	 * @param question - the question 
+	 * @param answer - the answer to the question
+	 */
 	public UIAnsweredQuestion(Question question, Answer answer) {
 		
 		//Layout for the panel

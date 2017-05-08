@@ -23,6 +23,12 @@ public class UnitController implements ActionListener{
 	private Application model;
 	private General gen;
 	
+	/**
+	 * Constructor
+	 * @param model - the application
+	 * @param view - the panel with the course in which we want to add a unit
+	 * @param gen - the general frame
+	 */
 	public UnitController(Application model, UICourseEditable view, General gen){
 		this.view = view;
 		this.model = model;

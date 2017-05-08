@@ -28,6 +28,11 @@ public class CreateQuestion extends JFrame{
 
 	private JSpinner spinner2;
 
+	/**
+	 * Constructor
+	 * @param e - exercise to which the question is being added
+	 * @param et - the view of the edition of the exercise 
+	 */
 	public CreateQuestion(final Exercise e, final JFrame et){
 		super("Add question");
 		
@@ -116,26 +121,50 @@ public class CreateQuestion extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller for the next button
+	 * @param al - the controller
+	 */
 	public void setControllerNext(ActionListener al){
 		next.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the wording of the question
+	 * @return the field with the wording
+	 */
 	public JTextField getWording(){
 		return w;
 	}
 	
+	/**
+	 * This method returns the weight for the question
+	 * @return the spinner with the weight
+	 */
 	public JSpinner getWeight(){
 		return spinner;
 	}
 	
+	/**
+	 * This method returns the penalty for the question
+	 * @return spinner with the penalty
+	 */
 	public JSpinner getPenalty(){
 		return spinner2;
 	}
 	
+	/**
+	 * This method returns the type of question
+	 * @return combo box with the type
+	 */
 	public JComboBox<String> getTypeQuestion(){
 		return types;
 	}

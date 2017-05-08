@@ -1,0 +1,76 @@
+package gui.panels.controllers;
+
+import gui.CancelController;
+import gui.panels.StudentsCourse;
+import gui.panels.UICourseEditable;
+import gui.windows.EditNotes;
+import gui.windows.General;
+import gui.windows.controllers.EditCourseController;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import application.Application;
+import application.Course;
+import application.Note;
+
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *Opens a note, and when is closed, it refreshes the screen
+ */
+public class NotesController extends MouseAdapter{
+	
+	private Note note;
+	private General gen;
+	private Application app;
+	
+	public NotesController(Note note, General gen, Application app){
+		this.note = note;
+		this.gen = gen;
+		this.app = app;
+	}
+
+	public void mouseClicked(MouseEvent me) {
+		final EditNotes en = new EditNotes(note);
+		en.setControllerCancel(new CancelController(en));
+		en.setControllerDone(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				note.setTextNotes(en.getNotes().getText());
+				note.setVisibility(en.getVisibility().isSelected());
+				en.dispose();
+				
+				UICourseEditable ce = new UICourseEditable(note.getUnit().getCourse(), app, gen);
+				ce.addControllerEditCourse(new EditCourseController(note.getUnit().getCourse(), gen, app));
+				ce.addControllerUnit(new UnitController(app, ce, gen));
+				gen.addPanelWest(ce);
+				
+				StudentsCourse sc = new StudentsCourse(note.getUnit().getCourse().getRegistered(), note.getUnit().getCourse().getPending(), note.getUnit().getCourse().getExpelled());
+				gen.addPanelEast(sc);
+			}
+		});
+		
+		en.setControllerRemove(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Course c = note.getUnit().getCourse();
+				
+				note.getUnit().removeNotes(note);
+				en.dispose();
+				
+				UICourseEditable ce = new UICourseEditable(c, app, gen);
+				ce.addControllerEditCourse(new EditCourseController(c, gen, app));
+				ce.addControllerUnit(new UnitController(app, ce, gen));
+				gen.addPanelWest(ce);
+				
+				StudentsCourse sc = new StudentsCourse(c.getRegistered(), c.getPending(), c.getExpelled());
+				gen.addPanelEast(sc);
+			}
+		});
+	}
+
+}

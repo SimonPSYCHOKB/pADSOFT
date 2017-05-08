@@ -30,11 +30,16 @@ public class UICourseEditable extends JPanel{
 	private JButton addUnit;
 	private Course c;
 	private JButton editCourse;
-	private JButton students;
 	private JButton remove;
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Constructor
+	 * @param c - the course to be edited
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public UICourseEditable(final Course c, final Application app, final General gen) {
 		
 		this.c = c;
@@ -97,22 +102,34 @@ public class UICourseEditable extends JPanel{
 		});
 	}
 		
+	/**
+	 * This method adds a controller to the add unit button
+	 * @param al - the controller
+	 */
 	public void addControllerUnit(ActionListener al){
 		addUnit.addActionListener(al);
 	}
 	
+	/**
+	 * This method adds a controller to the edit course button
+	 * @param al - the controller
+	 */
 	public void addControllerEditCourse(ActionListener al){
 		editCourse.addActionListener(al);
 	}
 	
-	public void addControllerStudents(ActionListener al){
-		students.addActionListener(al);
-	}
-	
+	/**
+	 * This method adds a controller to the delete course button
+	 * @param al - the controller
+	 */
 	public void addControllerDelete(ActionListener al){
 		remove.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the course that is being edited
+	 * @return the Course edited
+	 */
 	public Course getCourse(){
 		return c;
 	}

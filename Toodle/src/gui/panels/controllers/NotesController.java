@@ -28,6 +28,12 @@ public class NotesController extends MouseAdapter{
 	private General gen;
 	private Application app;
 	
+	/**
+	 * Constructor
+	 * @param note - the note that has been clicked
+	 * @param gen - the general frame
+	 * @param app - the application
+	 */
 	public NotesController(Note note, General gen, Application app){
 		this.note = note;
 		this.gen = gen;

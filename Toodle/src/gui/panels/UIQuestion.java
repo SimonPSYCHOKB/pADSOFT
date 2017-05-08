@@ -8,6 +8,11 @@ import exercise.*;
 
 
 
+/**
+ * This class makes reference to the view of a question to be answered
+ * @author Simon, Blanca
+ *
+ */
 public class UIQuestion extends JPanel{
 
 	private static final long serialVersionUID = 1L;
@@ -15,6 +20,10 @@ public class UIQuestion extends JPanel{
 	private List<AbstractButton> options;
 	private JTextField answer;
 	
+	/**
+	 * Constructor
+	 * @param question - the question to be displayed
+	 */
 	public UIQuestion(Question question) {
 		options = new ArrayList<AbstractButton>();
 		
@@ -61,10 +70,18 @@ public class UIQuestion extends JPanel{
 		setVisible(true);
 	}
 	
+	/**
+	 * This method returns the options of the question
+	 * @return buttons of the options
+	 */
 	public List<AbstractButton> getOptions(){
 		return options;
 	}
 	
+	/**
+	 * This method returns the answer of the question
+	 * @return field with the answer
+	 */
 	public JTextField getField(){
 		return answer;
 	}

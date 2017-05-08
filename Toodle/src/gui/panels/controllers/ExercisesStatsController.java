@@ -18,7 +18,6 @@ import users.Student;
 
 import application.Application;
 import application.Course;
-import exercise.AnsweredTest;
 
 /**
  * 
@@ -34,6 +33,12 @@ public class ExercisesStatsController extends MouseAdapter{
 	private General view;
 	private Application app;
 	
+	/**
+	 * Constructor
+	 * @param model - the course of the statistic
+	 * @param view - the general frame
+	 * @param app - the application
+	 */
 	public ExercisesStatsController(Course model, General view, Application app){
 		this.model = model;
 		this.view = view;

@@ -29,6 +29,10 @@ public class EditCourse extends JFrame{
 	private JButton done;
 	private JButton cancel;
 	
+	/**
+	 * Constructor
+	 * @param c - the course to be edited
+	 */
 	public EditCourse(Course c){
 		super("Edit course");
 		
@@ -78,22 +82,42 @@ public class EditCourse extends JFrame{
 		
 	}
 	
+	/**
+	 * This method returns the title of the course
+	 * @return field with the title
+	 */
 	public JTextField getTitleField(){
 		return title;
 	}
 
+	/**
+	 * This method returns the description of the course
+	 * @return field with the description
+	 */
 	public JTextField getDescField(){
 		return desc;
 	}
 	
+	/**
+	 * This method returns the visibility of the course
+	 * @return check box with the visibility
+	 */
 	public JCheckBox getVisibility(){
 		return visib;
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the done button
+	 * @param al - the controller
+	 */
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
 	}

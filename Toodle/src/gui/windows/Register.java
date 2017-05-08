@@ -51,10 +51,18 @@ public class Register extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller for the ok button
+	 * @param al - the controller
+	 */
 	public void setControllerOK(ActionListener al){
 		ok.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}

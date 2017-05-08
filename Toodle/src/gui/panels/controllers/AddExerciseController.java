@@ -34,6 +34,12 @@ public class AddExerciseController implements ActionListener{
 	private Application app;
 	private General gen;
 	
+	/**
+	 * Constructor
+	 * @param u - the unit that is going to contain the exercise
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public AddExerciseController(Unit u, Application app, General gen){
 		this.u = u;
 		this.app = app;

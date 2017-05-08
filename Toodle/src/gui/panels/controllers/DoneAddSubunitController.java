@@ -24,6 +24,13 @@ public class DoneAddSubunitController implements ActionListener{
 	private Application app;
 	private General gen;
 	
+	/**
+	 * Constructor
+	 * @param unit - the unit in which the subunit is added
+	 * @param view - the window for the creation of a subunit
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public DoneAddSubunitController(Unit unit, CreateUnit view, Application app, General gen){
 		this.unit = unit;
 		this.view = view;

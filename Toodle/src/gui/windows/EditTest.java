@@ -38,6 +38,12 @@ public class EditTest extends JFrame{
 	private JButton remove;
 	private JButton cancel;
 
+	/**
+	 * Constructor
+	 * @param e - the exercise to be edited
+	 * @param app - the application
+	 * @param gen - the general frame
+	 */
 	public EditTest(final Exercise e, final Application app, final General gen){
 		this.e = e;
 		final JFrame dispose = this;
@@ -148,38 +154,74 @@ public class EditTest extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
+	/**
+	 * This method sets the controller for the save button
+	 * @param al - the controller
+	 */
 	public void setControllerSave(ActionListener al){
 		close.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the delete button
+	 * @param al - the controller
+	 */
 	public void setControllerDelete(ActionListener al){
 		remove.addActionListener(al);
 	}
 	
+	/**
+	 * This method sets the controller for the cancel button
+	 * @param al - the controller
+	 */
 	public void setControllerCancel(ActionListener al){
 		cancel.addActionListener(al);
 	}
 	
+	/**
+	 * This method returns the questions of a test
+	 * @return list of panels for the edition of the questions
+	 */
 	public List<EditQuestion> getQuestions(){
 		return quest;
 	}
 	
+	/**
+	 * This method returns the exercise which is being edited
+	 * @return the exercise edited
+	 */
 	public Exercise getExercise(){
 		return e;
 	}
 	
+	/**
+	 * This method returns the weight for the exercise
+	 * @return spinner with the weight
+	 */
 	public JSpinner getWeigth(){
 		return spinner3;
 	}
 	
+	/**
+	 * This method returns the date of end for the exercise
+	 * @return spinner with the date of end
+	 */
 	public JSpinner getDateEnd(){
 		return spinner2;
 	}
 	
+	/**
+	 * This method returns the date of beginning for the exercise
+	 * @return spinner with the date of beginning
+	 */
 	public JSpinner getDateBegining(){
 		return spinner1;
 	}	
 	
+	/**
+	 * This method returns the visibility for the exercise
+	 * @return check box with the visibility
+	 */
 	public JCheckBox getVisibility(){
 		return ok;
 	}
