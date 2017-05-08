@@ -15,10 +15,6 @@ public class CancelController implements ActionListener{
 
 	private JFrame view;
 	
-	/**
-	 * Constructor
-	 * @param view - the frame we want to dispose
-	 */
 	public CancelController(JFrame view){
 		this.view = view;
 	}

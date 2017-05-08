@@ -15,10 +15,6 @@ public class BackController implements ActionListener{
 
 	private General view;
 	
-	/**
-	 * Constructor
-	 * @param view - the general frame
-	 */
 	public BackController(General view){
 		this.view = view;
 	}
