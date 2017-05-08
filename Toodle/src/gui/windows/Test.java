@@ -25,7 +25,7 @@ public class Test extends JFrame{
 	private List<UIQuestion> uiquestions;
 	
 	/**
-	 * 
+	 * Constructor
 	 * @param e -The test that will be displayed
 	 */
 	public Test(Exercise e) {

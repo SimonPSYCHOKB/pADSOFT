@@ -28,7 +28,7 @@ public class PastTest extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * 
+	 * Constructor
 	 * @param at -The past test that you wish to display in the JFrame
 	 */
 	public PastTest(AnsweredTest at){

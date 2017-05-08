@@ -29,7 +29,7 @@ public class AnswerExerciseController implements ActionListener{
 	private Exercise e;
 	
 	/**
-	 * 
+	 * Constructor
 	 * @param model -the Application
 	 * @param view  -The view of the Test
 	 * @param e -The data type of the exercise

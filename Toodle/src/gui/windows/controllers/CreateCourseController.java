@@ -25,8 +25,8 @@ public class CreateCourseController implements ActionListener {
 	private General view;
 	
 	/**
-	 * 
-	 * @param model- The application model to which the course will be added
+	 * Constructor
+	 * @param model - The application model to which the course will be added
 	 * @param view	-The view that supplies the action of creating a course
 	 */
 	public CreateCourseController(Application model, General view){

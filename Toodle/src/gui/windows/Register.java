@@ -19,7 +19,7 @@ public class Register extends JFrame{
 	JButton cancel;
 
 	/**
-	 * 
+	 * Constructor
 	 * @param str -The message to be displayed to the student
 	 */
 	public Register(String str) {

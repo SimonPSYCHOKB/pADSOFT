@@ -125,9 +125,9 @@
 		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="JavadocWizardDialog">
-		<item value="700" key="DIALOG_WIDTH"/>
+		<item value="680" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="676" key="DIALOG_HEIGHT"/>
+		<item value="656" key="DIALOG_HEIGHT"/>
 		<item value="610" key="DIALOG_X_ORIGIN"/>
 		<item value="92" key="DIALOG_Y_ORIGIN"/>
 	</section>

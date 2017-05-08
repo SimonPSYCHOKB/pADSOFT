@@ -26,8 +26,8 @@ public class CreateUnitController implements ActionListener{
 	private General gen;
 	
 	/**
-	 * 
-	 * @param model- The main Application
+	 * Constructor
+	 * @param model - The main Application
 	 * @param view - The UICourseeditable view where the teacher updates the course
 	 * @param frame - The frame used to create a new course
 	 * @param gen - The general JFrame that displays the course

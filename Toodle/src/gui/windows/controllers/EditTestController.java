@@ -33,7 +33,7 @@ public class EditTestController implements ActionListener{
 	private EditTest view;
 
 	/**
-	 * 
+	 * Constructor
 	 * @param model -The exercise to be edited
 	 * @param view	-The EditTest view
 	 */

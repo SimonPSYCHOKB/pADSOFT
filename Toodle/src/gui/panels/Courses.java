@@ -89,7 +89,7 @@ public class Courses extends JPanel{
 	
 	/**
 	 * 
-	 * @param MouseListener al
+	 * @param al - the mouse listener
 	 * Sets the controller in order to define the behavior when someone clicks on a course
 	 */
 	public void setController(MouseListener al){

@@ -26,7 +26,7 @@ public class EditCourseController implements ActionListener{
 	private Application app;
 	
 	/**
-	 * 
+	 * Constructor
 	 * @param model -The course you wish to edit
 	 * @param view -The View that will supply the information
 	 * @param app	-The general application, for context and saving data
