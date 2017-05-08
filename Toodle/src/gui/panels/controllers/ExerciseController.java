@@ -12,6 +12,7 @@ import gui.windows.controllers.EditTestController;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -48,8 +49,12 @@ public class ExerciseController extends MouseAdapter{
 			//Too late, or test has already been answered
 			if(e.beginExercise((Student) model.getCurrentUser()) == false){
 				//If test has already been answered
-				if(((Student) model.getCurrentUser()).getAnsweredTest(e) != null)
-					new PastTest(((Student) model.getCurrentUser()).getAnsweredTest(e));
+				if(((Student) model.getCurrentUser()).getAnsweredTest(e) != null){
+					if(e.getDateOfEnd().before(new Date()))					
+						new PastTest(((Student) model.getCurrentUser()).getAnsweredTest(e));
+					else
+						JOptionPane.showMessageDialog(new JFrame(),"The test has already been answered", "Error", JOptionPane.INFORMATION_MESSAGE);
+				}
 
 				else 
 					JOptionPane.showMessageDialog(new JFrame(),"Fecha limite rebasada", "Error", JOptionPane.INFORMATION_MESSAGE);

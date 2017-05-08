@@ -133,8 +133,8 @@ public class Exercise extends LearningObj implements Serializable{
 	 * @param dateOfEnd - LocalDate which is the new date of end
 	 */
 	public void editDateOfEnd(Date dateOfEnd){
-//		if(started == true)
-//			return;
+		if(started == true)
+			return;
 		this.dateOfEnd = dateOfEnd; 
 	}
 	
@@ -267,11 +267,6 @@ public class Exercise extends LearningObj implements Serializable{
 				return false;
 		} else if (!dateOfBegining.equals(other.dateOfBegining))
 			return false;
-//		if (dateOfEnd == null) {
-//			if (other.dateOfEnd != null)
-//				return false;
-//		} else if (!dateOfEnd.equals(other.dateOfEnd))
-//			return false;
 		if (questions == null) {
 			if (other.questions != null)
 				return false;
