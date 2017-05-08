@@ -14,7 +14,15 @@ import users.Student;
 
 import application.*;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * Controller for the table of Courses displayed upon login. This controller
+ * determines what courses are displayed. Aditionally, the Controller for the click 
+ * behaviour is loaded
+ *
+ */
 public class CoursesController implements ActionListener {
 
 	private General view;
@@ -31,7 +39,9 @@ public class CoursesController implements ActionListener {
 		final List<Course> courses = model.getCourses();
 		
 		Object[][] objs = new Object[courses.size()][1];
+		
 		//If the current user is the teacher we display all the courses
+		
 		boolean cond = model.getCurrentUser().equals(model.getTeacher());
 		ArrayList<Integer> rows = new ArrayList<Integer>();
 		if(cond){
@@ -63,7 +73,7 @@ public class CoursesController implements ActionListener {
 				i = i + 1;
 			}
 		}
-		//Creation of the new view
+		//Creation of the new view that contains the courses
 		panel = new Courses(objs, rows);
 		view.addPanel(panel);
 		if(cond){

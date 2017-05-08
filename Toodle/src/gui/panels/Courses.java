@@ -15,6 +15,8 @@ import javax.swing.table.TableCellRenderer;
  * @author Blanca, Simon
  * 
  * JPanel that Displays a list of all Visible Courses. Must be created with a list of all Courses.
+ * From here, a student may choose a Course he is registered in, as well as a course he wishes to apply to
+ * 
  * 
  *
  */

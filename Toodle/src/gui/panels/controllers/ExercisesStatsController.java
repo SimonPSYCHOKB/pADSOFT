@@ -18,8 +18,16 @@ import users.Student;
 
 import application.Application;
 import application.Course;
+import exercise.AnsweredTest;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * Controller for the exercise Statistics. Upon click, it displays the individual questions
+ * that made up the exercise with the punctuation
+ *
+ */
 public class ExercisesStatsController extends MouseAdapter{
 	
 	private Course model;
@@ -58,6 +66,7 @@ public class ExercisesStatsController extends MouseAdapter{
 		}
 		else{
 			Student student = app.searchStudentByName(app.getCurrentUser().getName());
+
 			List<Exercise> all = model.getTests();
 			List<Exercise> visible = new ArrayList<Exercise>();
 			for(Exercise e : all){
@@ -66,6 +75,7 @@ public class ExercisesStatsController extends MouseAdapter{
 			}
 			Statistic stats = new Statistic(visible.get(row), student);
 			
+
 			List<QuestionStatistic> questions = stats.getQuestionStatistics();
 			
 			Object[][] objs = new Object[questions.size()][2];

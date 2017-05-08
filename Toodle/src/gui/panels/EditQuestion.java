@@ -8,7 +8,13 @@ import javax.swing.*;
 import exercise.*;
 
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * Once Edit Test is called, 
+ *
+ */
 public class EditQuestion extends JPanel{
 	
 	private JPanel quest;

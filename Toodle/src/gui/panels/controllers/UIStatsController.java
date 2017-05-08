@@ -23,6 +23,9 @@ import application.Course;
 /**
  * 
  * @author Blanca, Simon
+ * 
+ * Controller for the Statistics Panel that displays the Statistics. Initially it presents a list
+ * of 
  *
  */
 public class UIStatsController extends MouseAdapter{
@@ -41,6 +44,7 @@ public class UIStatsController extends MouseAdapter{
 		Course c;
 		Object[][] objs;
 		String[] titles = {"Exercise", "Mean"};
+		
 		if(model.getCurrentUser().equals(model.getTeacher())){
 			c = model.getCourses().get(row);
 			CourseStatistic current = new CourseStatistic(c);
@@ -56,6 +60,7 @@ public class UIStatsController extends MouseAdapter{
 			}
 		}
 		else{
+			
 			Student student = model.searchStudentByName(model.getCurrentUser().getName());
 			SingleUserStatistic statis = new SingleUserStatistic(student);
 			List<CourseStatistic> cs = statis.getCourseStatistics();			

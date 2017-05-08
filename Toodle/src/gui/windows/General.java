@@ -52,7 +52,7 @@ public abstract class General extends JFrame {
 		top = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		
 		try {
-			myPicture = ImageIO.read(new File("src/Toodle.logo.jpg"));
+			myPicture = ImageIO.read(new File("Toodle/src/Toodle.logo.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -18,11 +18,19 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *
+ */
 public class EditTestController implements ActionListener{
 	
 	private Exercise model;
 	private EditTest view;
 
+	
 	public EditTestController(Exercise model, EditTest view){
 		this.model = model;
 		this.view = view;
