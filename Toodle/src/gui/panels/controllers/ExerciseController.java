@@ -21,7 +21,18 @@ import users.Student;
 
 import application.Application;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * Controller for the exercise. If the current User is a teacher, it displays an editable 
+ * Course, loading the pertinent controllers:
+ * 		-EditTest
+ * 		-DeleteTest
+ * 		-CancelButton
+ *
+ *If the User is a Student, it adds the controller for finishing the exercise
+ */
 public class ExerciseController extends MouseAdapter{
 
 	private Application model;

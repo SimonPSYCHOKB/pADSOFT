@@ -44,6 +44,7 @@ public class StatsController implements ActionListener {
 		
 		String titles[] = {"Course", "Mean"};
 		Object[][] objs;
+		
 		if(model.getCurrentUser().equals(model.getTeacher())){
 			int i = 0;
 			objs = new Object[courses.size()][2];

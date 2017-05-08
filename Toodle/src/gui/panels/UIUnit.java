@@ -24,6 +24,18 @@ import application.Application;
 import application.Note;
 import application.Unit;
 
+
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * The scroll panel for a unit. These can be nested for subunits. They are the basic building blocks of
+ * a Course UI. It displays:
+ * 		-Notes
+ * 		-Tests
+ * 		-Subunits
+ *
+ */
 public class UIUnit extends JScrollPane{
 
 	private static final long serialVersionUID = 1L;
@@ -39,6 +51,8 @@ public class UIUnit extends JScrollPane{
 		
 		for(Note n : u.getNotes()){
 			JTextArea note = new JTextArea(n.toString());
+			
+			//Controllers for the course
 		    note.setEditable(false);
 			note.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			unit.add(Box.createRigidArea(new Dimension(0,50)));
@@ -58,6 +72,9 @@ public class UIUnit extends JScrollPane{
 			Font font = test.getFont();
 			Map<TextAttribute, Object> attributes = new HashMap<>(font.getAttributes());
 			attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+			
+			
+			//Controllers for the test 
 			test.setFont(font.deriveFont(attributes));
 			test.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			test.addMouseListener(new ExerciseController(app, e, gen));

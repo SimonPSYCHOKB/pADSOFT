@@ -20,6 +20,16 @@ import application.*;
 
 
 
+/**
+ * 
+ * @author Blanca, Simon
+ * Controller for the Table of all Courses. If the Current user is a student, determines if
+ * the Student is enrolled in a course. Being this case, a Course UI is loaded. If he is not enrolled,
+ * he may choose to do so. If he is expelled, he will be informed of the fact.
+ * 
+ * For a teacher, it loads an editable Course UI
+ *
+ */
 public class CoursesTableController extends MouseAdapter{
 
 	private Application model;
@@ -98,6 +108,7 @@ public class CoursesTableController extends MouseAdapter{
 		}
 		//If not, well, that
 		else{
+			//If the student is a member of the Course
 			if(((Student) model.getCurrentUser()).getRegisteredCourses().contains(selected)){				
 				UICourse cr = new UICourse(selected, model, view);
 				view.addPanel(cr);

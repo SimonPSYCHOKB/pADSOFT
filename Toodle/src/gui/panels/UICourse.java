@@ -11,7 +11,12 @@ import javax.swing.*;
 import application.*;
 
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ * The JPanel for a course, loading units as UIUnits and taking into account the visibility 
+ * of each 
+ */
 public class UICourse extends JPanel{
 	
 	private static final long serialVersionUID = 1L;

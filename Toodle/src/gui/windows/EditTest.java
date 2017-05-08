@@ -14,6 +14,14 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ * UI for Editing a Test. It allows the teacher to set the beginning and End dates,
+ * the weight and the Penalization. Additionally, it loads the controller for creation 
+ * of an exercise  
+ */
 public class EditTest extends JFrame{
 
 	private static final long serialVersionUID = 1L;
