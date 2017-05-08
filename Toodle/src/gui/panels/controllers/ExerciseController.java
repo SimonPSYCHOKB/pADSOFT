@@ -45,7 +45,9 @@ public class ExerciseController extends MouseAdapter{
 		
 		//If the user is a student we display the test
 		else{
+			//Too late, or test has already been answered
 			if(e.beginExercise((Student) model.getCurrentUser()) == false){
+				//If test has already been answered
 				if(((Student) model.getCurrentUser()).getAnsweredTest(e) != null)
 					new PastTest(((Student) model.getCurrentUser()).getAnsweredTest(e));
 
