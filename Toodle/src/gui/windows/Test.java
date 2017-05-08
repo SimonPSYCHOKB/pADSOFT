@@ -24,6 +24,10 @@ public class Test extends JFrame{
 	private JButton finish;
 	private List<UIQuestion> uiquestions;
 	
+	/**
+	 * 
+	 * @param e -The test that will be displayed
+	 */
 	public Test(Exercise e) {
 		uiquestions = new ArrayList<UIQuestion>();
 		getContentPane().setLayout(new BorderLayout());
@@ -60,6 +64,11 @@ public class Test extends JFrame{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
+	/**
+	 * 
+	 * @return returns a list with all the UIQuestions, that is, all the questions of a list,
+	 * nicely put in a Frame
+	 */
 	public List<UIQuestion> getQuestions(){
 		return uiquestions;
 	}

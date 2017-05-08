@@ -23,6 +23,8 @@ import javax.swing.JTextField;
  * 
  * @author Blanca, Simon
  *
+ *The controller that allows for the teacher to edit a Test, transferring the data from
+ *the View to the model
  *
  */
 public class EditTestController implements ActionListener{
@@ -30,7 +32,11 @@ public class EditTestController implements ActionListener{
 	private Exercise model;
 	private EditTest view;
 
-	
+	/**
+	 * 
+	 * @param model -The exercise to be edited
+	 * @param view	-The EditTest view
+	 */
 	public EditTestController(Exercise model, EditTest view){
 		this.model = model;
 		this.view = view;

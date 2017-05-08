@@ -26,6 +26,12 @@ import gui.windows.CreateTextQuestion;
 import gui.windows.EditTest;
 import gui.windows.General;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *Controller to create a question by the teacher, based on the type selected, further Pannels are opened
+ */
 public class CreateQuestionController implements ActionListener {
 	
 	
@@ -35,6 +41,14 @@ public class CreateQuestionController implements ActionListener {
 	private Application app;
 	private General gen;
 
+	/**
+	 * 
+	 * @param view -the Frame where the question was created
+ 	 * @param model -The created exercise with the fetched data from the view
+	 * @param update - If the test has been updated
+	 * @param app	-The general application, for Model context
+	 * @param gen	-The General JFrame, for View Context
+	 */
 	public CreateQuestionController(CreateQuestion view, Exercise model, EditTest update, Application app, General gen){
 		this.view = view;
 		this.model = model;

@@ -9,6 +9,7 @@ import javax.swing.*;
  * 
  * @author Blanca, Simon
  *
+ *This JFRame is displayed when a student want to apply to a course
  */
 public class Register extends JFrame{
 
@@ -17,6 +18,10 @@ public class Register extends JFrame{
 	JButton ok;
 	JButton cancel;
 
+	/**
+	 * 
+	 * @param str -The message to be displayed to the student
+	 */
 	public Register(String str) {
 		setLayout(new BorderLayout());
 		

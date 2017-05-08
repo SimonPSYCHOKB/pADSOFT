@@ -28,7 +28,11 @@ public class CoursesController implements ActionListener {
 	private General view;
 	private Application model;
 	private Courses panel;
-	
+	/**
+	 * 
+	 * @param model- The application model to which the courses belong
+	 * @param view	-The view that supplies the action of choosing
+	 */
 	public CoursesController(Application model, General view){
 		this.model = model;
 		this.view = view;

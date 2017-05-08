@@ -17,6 +17,9 @@ public class GeneralStudent extends General{
 	private static final long serialVersionUID = 1L;
 	JMenuItem grades;
 
+	/**
+	 * Constructor
+	 */
 	public GeneralStudent() {
 		super();
 		//My grades option in the general window

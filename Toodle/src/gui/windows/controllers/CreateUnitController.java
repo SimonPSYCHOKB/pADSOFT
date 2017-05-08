@@ -12,7 +12,12 @@ import java.awt.event.ActionListener;
 import application.Application;
 import application.Unit;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *This Controller allows the teacher to create a unit
+ */
 public class CreateUnitController implements ActionListener{
 
 	private Application model;
@@ -20,6 +25,13 @@ public class CreateUnitController implements ActionListener{
 	private CreateUnit frame;
 	private General gen;
 	
+	/**
+	 * 
+	 * @param model- The main Application
+	 * @param view - The UICourseeditable view where the teacher updates the course
+	 * @param frame - The frame used to create a new course
+	 * @param gen - The general JFrame that displays the course
+	 */
 	public CreateUnitController(Application model, UICourseEditable view, CreateUnit frame, General gen){
 		this.model = model;
 		this.view = view;
