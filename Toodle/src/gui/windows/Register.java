@@ -5,6 +5,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ */
 public class Register extends JFrame{
 
 	private static final long serialVersionUID = 1L;

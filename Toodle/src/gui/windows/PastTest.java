@@ -17,6 +17,12 @@ import exercise.Exercise;
 import exercise.Question;
 import gui.panels.UIAnsweredQuestion;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *With this Frame, a student Can view a past test so that he may check how he answered
+ */
 public class PastTest extends JFrame{
 
 	private static final long serialVersionUID = 1L;
