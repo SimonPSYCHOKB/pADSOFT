@@ -27,7 +27,7 @@
 </coolbarLayout>
 <page aggregateWorkingSetId="Aggregate for window 1490690902275" focus="true" label="Workspace - Java">
 <editors>
-<editorArea activeWorkbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
+<editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -73,6 +73,18 @@
 <part id="39"/>
 <part id="40"/>
 <part id="41"/>
+<part id="42"/>
+<part id="43"/>
+<part id="44"/>
+<part id="45"/>
+<part id="46"/>
+<part id="47"/>
+<part id="48"/>
+<part id="49"/>
+<part id="50"/>
+<part id="51"/>
+<part id="52"/>
+<part id="53"/>
 </presentation>
 </folder>
 </info>
@@ -90,6 +102,8 @@
 <part id="6"/>
 <part id="7"/>
 <part id="9"/>
+<part id="11"/>
+<part id="12"/>
 </presentation>
 </folder>
 </info>
@@ -124,7 +138,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CreateQuestion.java" partName="CreateQuestion.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/CreateQuestion.java" title="CreateQuestion.java" tooltip="Toodle/src/gui/windows/CreateQuestion.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/CreateQuestion.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1156"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="487" selectionTopPixel="150"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CreateSingleAnswer.java" partName="CreateSingleAnswer.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/CreateSingleAnswer.java" title="CreateSingleAnswer.java" tooltip="Toodle/src/gui/windows/CreateSingleAnswer.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/CreateSingleAnswer.java"/>
@@ -156,7 +170,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="General.java" partName="General.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/General.java" title="General.java" tooltip="Toodle/src/gui/windows/General.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/General.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3518" selectionTopPixel="1664"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1251" selectionTopPixel="507"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GeneralStudent.java" partName="GeneralStudent.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/GeneralStudent.java" title="GeneralStudent.java" tooltip="Toodle/src/gui/windows/GeneralStudent.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/GeneralStudent.java"/>
@@ -168,7 +182,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogIn.java" partName="LogIn.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/LogIn.java" title="LogIn.java" tooltip="Toodle/src/gui/windows/LogIn.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/LogIn.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2773" selectionTopPixel="991"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2926" selectionTopPixel="991"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PastTest.java" partName="PastTest.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/PastTest.java" title="PastTest.java" tooltip="Toodle/src/gui/windows/PastTest.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/PastTest.java"/>
@@ -200,11 +214,11 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogInController.java" partName="LogInController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/controllers/LogInController.java" title="LogInController.java" tooltip="Toodle/src/gui/windows/controllers/LogInController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/controllers/LogInController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1959" selectionTopPixel="710"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1065" selectionTopPixel="1154"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StatsController.java" partName="StatsController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/controllers/StatsController.java" title="StatsController.java" tooltip="Toodle/src/gui/windows/controllers/StatsController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/controllers/StatsController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="775" selectionTopPixel="239"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="818" selectionTopPixel="329"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DeleteTestController.java" partName="DeleteTestController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/panels/controllers/DeleteTestController.java" title="DeleteTestController.java" tooltip="Toodle/src/gui/panels/controllers/DeleteTestController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/controllers/DeleteTestController.java"/>
@@ -218,13 +232,13 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/controllers/AddNotesController.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1208" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" partName="MainTester.java" path="/home/blanca/pADSOFT/Toodle/src/tester/MainTester.java" title="MainTester.java" tooltip="Toodle/src/tester/MainTester.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainTester.java" partName="MainTester.java" path="/home/blanca/pADSOFT/Toodle/src/tester/MainTester.java" title="MainTester.java" tooltip="Toodle/src/tester/MainTester.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/tester/MainTester.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="12389" selectionTopPixel="6690"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="945" selectionTopPixel="0"/>
 </editor>
-<editor focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" partName="Application.java" path="/home/blanca/pADSOFT/Toodle/src/application/Application.java" title="Application.java" tooltip="Toodle/src/application/Application.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" partName="Application.java" path="/home/blanca/pADSOFT/Toodle/src/application/Application.java" title="Application.java" tooltip="Toodle/src/application/Application.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/application/Application.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11277" selectionTopPixel="5234"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="645" selectionTopPixel="165"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CoursesTableController.java" partName="CoursesTableController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/panels/controllers/CoursesTableController.java" title="CoursesTableController.java" tooltip="Toodle/src/gui/panels/controllers/CoursesTableController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/controllers/CoursesTableController.java"/>
@@ -236,7 +250,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ExercisesStatsController.java" partName="ExercisesStatsController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/panels/controllers/ExercisesStatsController.java" title="ExercisesStatsController.java" tooltip="Toodle/src/gui/panels/controllers/ExercisesStatsController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/controllers/ExercisesStatsController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="33" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="667" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ExerciseController.java" partName="ExerciseController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/panels/controllers/ExerciseController.java" title="ExerciseController.java" tooltip="Toodle/src/gui/panels/controllers/ExerciseController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/controllers/ExerciseController.java"/>
@@ -244,23 +258,71 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exercise.java" partName="Exercise.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/Exercise.java" title="Exercise.java" tooltip="Toodle/src/exercise/Exercise.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/Exercise.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6728" selectionTopPixel="1879"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5652" selectionTopPixel="3614"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AnsweredTest.java" partName="AnsweredTest.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/AnsweredTest.java" title="AnsweredTest.java" tooltip="Toodle/src/exercise/AnsweredTest.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/AnsweredTest.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1274"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1331" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Stats.java" partName="Stats.java" path="/home/blanca/pADSOFT/Toodle/src/statistics/Stats.java" title="Stats.java" tooltip="Toodle/src/statistics/Stats.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/statistics/Stats.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="473" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EditTestController.java" partName="EditTestController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/controllers/EditTestController.java" title="EditTestController.java" tooltip="Toodle/src/gui/windows/controllers/EditTestController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/controllers/EditTestController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="735" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddExerciseController.java" partName="AddExerciseController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/panels/controllers/AddExerciseController.java" title="AddExerciseController.java" tooltip="Toodle/src/gui/panels/controllers/AddExerciseController.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/controllers/AddExerciseController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1864" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="821" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Course.java" partName="Course.java" path="/home/blanca/pADSOFT/Toodle/src/application/Course.java" title="Course.java" tooltip="Toodle/src/application/Course.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/application/Course.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4875" selectionTopPixel="3254"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LearningObj.java" partName="LearningObj.java" path="/home/blanca/pADSOFT/Toodle/src/application/LearningObj.java" title="LearningObj.java" tooltip="Toodle/src/application/LearningObj.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/application/LearningObj.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Note.java" partName="Note.java" path="/home/blanca/pADSOFT/Toodle/src/application/Note.java" title="Note.java" tooltip="Toodle/src/application/Note.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/application/Note.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1069" selectionTopPixel="644"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Unit.java" partName="Unit.java" path="/home/blanca/pADSOFT/Toodle/src/application/Unit.java" title="Unit.java" tooltip="Toodle/src/application/Unit.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/application/Unit.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3417" selectionTopPixel="2519"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Answer.java" partName="Answer.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/Answer.java" title="Answer.java" tooltip="Toodle/src/exercise/Answer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/Answer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1349"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FreeText.java" partName="FreeText.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/FreeText.java" title="FreeText.java" tooltip="Toodle/src/exercise/FreeText.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/FreeText.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1194" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultipleAnswer.java" partName="MultipleAnswer.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/MultipleAnswer.java" title="MultipleAnswer.java" tooltip="Toodle/src/exercise/MultipleAnswer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/MultipleAnswer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2172" selectionTopPixel="674"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Question.java" partName="Question.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/Question.java" title="Question.java" tooltip="Toodle/src/exercise/Question.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/Question.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1944" selectionTopPixel="1499"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleAnswer.java" partName="SingleAnswer.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/SingleAnswer.java" title="SingleAnswer.java" tooltip="Toodle/src/exercise/SingleAnswer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/SingleAnswer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1766" selectionTopPixel="359"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TrueFalse.java" partName="TrueFalse.java" path="/home/blanca/pADSOFT/Toodle/src/exercise/TrueFalse.java" title="TrueFalse.java" tooltip="Toodle/src/exercise/TrueFalse.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/exercise/TrueFalse.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1401" selectionTopPixel="104"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StudentsController.java" partName="StudentsController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/controllers/StudentsController.java" title="StudentsController.java" tooltip="Toodle/src/gui/windows/controllers/StudentsController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/controllers/StudentsController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1200" selectionTopPixel="884"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogOutController.java" partName="LogOutController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/controllers/LogOutController.java" title="LogOutController.java" tooltip="Toodle/src/gui/windows/controllers/LogOutController.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/controllers/LogOutController.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="504" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UIQuestion.java" partName="UIQuestion.java" path="/home/blanca/pADSOFT/Toodle/src/gui/panels/UIQuestion.java" title="UIQuestion.java" tooltip="Toodle/src/gui/panels/UIQuestion.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/UIQuestion.java"/>
@@ -280,31 +342,39 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CourseStatistic.java" partName="CourseStatistic.java" path="/home/blanca/pADSOFT/Toodle/src/statistics/CourseStatistic.java" title="CourseStatistic.java" tooltip="Toodle/src/statistics/CourseStatistic.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/statistics/CourseStatistic.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1049" selectionTopPixel="165"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1448" selectionTopPixel="449"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestionStatistic.java" partName="QuestionStatistic.java" path="/home/blanca/pADSOFT/Toodle/src/statistics/QuestionStatistic.java" title="QuestionStatistic.java" tooltip="Toodle/src/statistics/QuestionStatistic.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/statistics/QuestionStatistic.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="291" selectionTopPixel="660"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1704" selectionTopPixel="660"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleUserStatistic.java" partName="SingleUserStatistic.java" path="/home/blanca/pADSOFT/Toodle/src/statistics/SingleUserStatistic.java" title="SingleUserStatistic.java" tooltip="Toodle/src/statistics/SingleUserStatistic.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/statistics/SingleUserStatistic.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="703" selectionTopPixel="149"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="703" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Student.java" partName="Student.java" path="/home/blanca/pADSOFT/Toodle/src/users/Student.java" title="Student.java" tooltip="Toodle/src/users/Student.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/users/Student.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="2649" selectionTopPixel="696"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7478" selectionTopPixel="3299"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Statistic.java" partName="Statistic.java" path="/home/blanca/pADSOFT/Toodle/src/statistics/Statistic.java" title="Statistic.java" tooltip="Toodle/src/statistics/Statistic.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/statistics/Statistic.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2473" selectionTopPixel="1124"/>
+<editorState selectionHorizontalPixel="35" selectionLength="0" selectionOffset="3257" selectionTopPixel="1184"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StudentsCourse.java" partName="StudentsCourse.java" path="/home/blanca/pADSOFT/Toodle/src/gui/panels/StudentsCourse.java" title="StudentsCourse.java" tooltip="Toodle/src/gui/panels/StudentsCourse.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/panels/StudentsCourse.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1074"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CreateQuestionController.java" partName="CreateQuestionController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/controllers/CreateQuestionController.java" title="CreateQuestionController.java" tooltip="Toodle/src/gui/windows/controllers/CreateQuestionController.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CreateQuestionController.java" partName="CreateQuestionController.java" path="/home/blanca/pADSOFT/Toodle/src/gui/windows/controllers/CreateQuestionController.java" title="CreateQuestionController.java" tooltip="Toodle/src/gui/windows/controllers/CreateQuestionController.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/gui/windows/controllers/CreateQuestionController.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2514" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Teacher.java" partName="Teacher.java" path="/home/blanca/pADSOFT/Toodle/src/users/Teacher.java" title="Teacher.java" tooltip="Toodle/src/users/Teacher.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/users/Teacher.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="494"/>
+</editor>
+<editor focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" partName="User.java" path="/home/blanca/pADSOFT/Toodle/src/users/User.java" title="User.java" tooltip="Toodle/src/users/User.java" workbook="org.eclipse.ui.internal.EditorStack@6f0d72ff">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Toodle/src/users/User.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2298" selectionTopPixel="854"/>
 </editor>
 </editors>
 <views>
@@ -346,7 +416,6 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="725" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
@@ -383,7 +452,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -579,167 +648,194 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/UIUnit.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/controllers/ExerciseController.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/UICourseEditable.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/StudentsCourse.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/EditTestController.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/CreateQuestionController.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/EditTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/CreateTest.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/UIUnitEditable.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/controllers/AddExerciseController.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/application/Application.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/application/Application.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/application/Course.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/application/LearningObj.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/application/Note.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/application/Unit.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/Answer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/AnsweredTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/Exercise.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/FreeText.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/MultipleAnswer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/Question.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/SingleAnswer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/exercise/TrueFalse.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/statistics/CourseStatistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/statistics/QuestionStatistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/statistics/SingleUserStatistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/statistics/Statistic.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/statistics/Stats.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/users/Student.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/users/Teacher.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/users/User.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/controllers/ExercisesStatsController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/tester/MainTester.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/LogIn.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/General.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/CreateQuestion.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/AnswerExerciseController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/StudentsController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/StatsController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/LogOutController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/LogInController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/windows/controllers/EditTestController.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Toodle/src/gui/panels/controllers/AddExerciseController.java"/>
 </editors>
-<item historyLabel="UICourseEditable.java" index="2">
-<position info="not_deleted" x="1997" y="36"/>
-</item>
-<item historyLabel="UICourseEditable.java" index="2">
-<position info="not_deleted" x="1118" y="0"/>
-</item>
-<item historyLabel="UIUnit.java" index="0">
-<position info="not_deleted" x="1821" y="0"/>
-</item>
-<item historyLabel="StudentsCourse.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UICourseEditable.java" index="2">
-<position info="not_deleted" x="469" y="0"/>
-</item>
-<item historyLabel="EditTestController.java" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="1068" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="1023" y="8"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position/>
-</item>
-<item historyLabel="EditTest.java" index="6">
-<position info="not_deleted" x="3788" y="0"/>
-</item>
-<item historyLabel="EditTestController.java" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="2732" y="0"/>
-</item>
-<item historyLabel="EditTest.java" index="6">
-<position info="not_deleted" x="3788" y="0"/>
-</item>
-<item historyLabel="UICourseEditable.java" index="2">
-<position info="not_deleted" x="469" y="0"/>
-</item>
-<item historyLabel="CreateTest.java" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="2118" y="0"/>
-</item>
-<item historyLabel="UIUnitEditable.java" index="8">
-<position info="not_deleted" x="2358" y="0"/>
-</item>
-<item historyLabel="ExerciseController.java" index="1">
-<position info="not_deleted" x="1959" y="0"/>
-</item>
-<item historyLabel="UIUnitEditable.java" index="8">
-<position info="not_deleted" x="2358" y="0"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position info="not_deleted" x="893" y="0"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="2061" y="0"/>
-</item>
-<item historyLabel="EditTestController.java" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position info="not_deleted" x="949" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="1838" y="0"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position info="not_deleted" x="893" y="0"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position/>
-</item>
-<item historyLabel="ExerciseController.java" index="1">
-<position info="not_deleted" x="986" y="229"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position info="not_deleted" x="764" y="0"/>
-</item>
-<item historyLabel="CreateTest.java" index="7">
-<position info="not_deleted" x="756" y="0"/>
-</item>
-<item historyLabel="ExerciseController.java" index="1">
-<position info="not_deleted" x="1038" y="177"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
-<position info="not_deleted" x="764" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="1784" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="1068" y="0"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="1040" y="11"/>
-</item>
-<item historyLabel="CreateQuestionController.java" index="5">
-<position info="not_deleted" x="1057" y="7"/>
-</item>
-<item historyLabel="AddExerciseController.java" index="9">
+<item historyLabel="AddExerciseController.java" index="3">
 <position info="not_deleted" x="1003" y="0"/>
 </item>
-<item historyLabel="CreateQuestionController.java" index="5">
+<item historyLabel="CreateQuestionController.java" index="1">
 <position info="not_deleted" x="1172" y="0"/>
 </item>
-<item historyLabel="EditTest.java" index="6">
+<item historyLabel="EditTest.java" index="2">
 <position info="not_deleted" x="3788" y="0"/>
 </item>
-<item historyLabel="EditTest.java" index="6">
+<item historyLabel="EditTest.java" index="2">
 <position info="not_deleted" x="3780" y="3"/>
 </item>
-<item historyLabel="EditTest.java" index="6">
+<item historyLabel="EditTest.java" index="2">
 <position info="not_deleted" x="733" y="0"/>
 </item>
-<item historyLabel="EditTest.java" index="6">
+<item historyLabel="EditTest.java" index="2">
 <position info="not_deleted" x="710" y="11"/>
 </item>
-<item historyLabel="ExerciseController.java" index="1">
+<item historyLabel="ExerciseController.java" index="0">
 <position info="not_deleted" x="1032" y="0"/>
 </item>
-<item historyLabel="AddExerciseController.java" index="9">
+<item historyLabel="AddExerciseController.java" index="3">
 <position info="not_deleted" x="1864" y="0"/>
 </item>
-<item historyLabel="CreateQuestionController.java" index="5">
+<item historyLabel="CreateQuestionController.java" index="1">
 <position info="not_deleted" x="2514" y="0"/>
 </item>
-<item historyLabel="Application.java" index="10">
+<item historyLabel="Application.java" index="4">
 <position info="not_deleted" x="11277" y="0"/>
 </item>
-<item active="true" historyLabel="CreateQuestionController.java" index="5">
+<item historyLabel="CreateQuestionController.java" index="1">
 <position info="not_deleted" x="2514" y="0"/>
+</item>
+<item historyLabel="Application.java" index="5">
+<position info="not_deleted" x="645" y="0"/>
+</item>
+<item historyLabel="Course.java" index="6">
+<position info="not_deleted" x="4875" y="0"/>
+</item>
+<item historyLabel="LearningObj.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Note.java" index="8">
+<position info="not_deleted" x="1069" y="0"/>
+</item>
+<item historyLabel="Unit.java" index="9">
+<position info="not_deleted" x="3417" y="0"/>
+</item>
+<item historyLabel="Answer.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AnsweredTest.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Exercise.java" index="12">
+<position info="not_deleted" x="5652" y="0"/>
+</item>
+<item historyLabel="FreeText.java" index="13">
+<position info="not_deleted" x="1194" y="0"/>
+</item>
+<item historyLabel="MultipleAnswer.java" index="14">
+<position info="not_deleted" x="2172" y="0"/>
+</item>
+<item historyLabel="Question.java" index="15">
+<position info="not_deleted" x="1944" y="0"/>
+</item>
+<item historyLabel="SingleAnswer.java" index="16">
+<position info="not_deleted" x="1766" y="0"/>
+</item>
+<item historyLabel="TrueFalse.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="CourseStatistic.java" index="18">
+<position info="not_deleted" x="1049" y="0"/>
+</item>
+<item historyLabel="QuestionStatistic.java" index="19">
+<position info="not_deleted" x="291" y="0"/>
+</item>
+<item historyLabel="SingleUserStatistic.java" index="20">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Statistic.java" index="21">
+<position info="not_deleted" x="2473" y="0"/>
+</item>
+<item historyLabel="Stats.java" index="22">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Student.java" index="23">
+<position info="not_deleted" x="7478" y="0"/>
+</item>
+<item historyLabel="Teacher.java" index="24">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="User.java" index="25">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Stats.java" index="22">
+<position info="not_deleted" x="473" y="0"/>
+</item>
+<item historyLabel="ExercisesStatsController.java" index="26">
+<position info="not_deleted" x="33" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="27">
+<position info="not_deleted" x="12382" y="0"/>
+</item>
+<item historyLabel="MainTester.java" index="27">
+<position info="not_deleted" x="3077" y="34"/>
+</item>
+<item historyLabel="LogIn.java" index="28">
+<position info="not_deleted" x="2773" y="0"/>
+</item>
+<item historyLabel="General.java" index="29">
+<position info="not_deleted" x="3511" y="0"/>
+</item>
+<item historyLabel="CreateQuestion.java" index="30">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AnswerExerciseController.java" index="31">
+<position info="not_deleted" x="1191" y="0"/>
+</item>
+<item historyLabel="StudentsController.java" index="32">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="StatsController.java" index="33">
+<position info="not_deleted" x="818" y="0"/>
+</item>
+<item historyLabel="LogOutController.java" index="34">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LogInController.java" index="35">
+<position info="not_deleted" x="2056" y="0"/>
+</item>
+<item historyLabel="EditTestController.java" index="36">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="User.java" index="25">
+<position info="not_deleted" x="2298" y="0"/>
+</item>
+<item historyLabel="EditTestController.java" index="36">
+<position info="not_deleted" x="735" y="0"/>
+</item>
+<item historyLabel="CreateQuestion.java" index="30">
+<position info="not_deleted" x="487" y="0"/>
+</item>
+<item historyLabel="AddExerciseController.java" index="37">
+<position info="not_deleted" x="821" y="0"/>
+</item>
+<item active="true" historyLabel="MainTester.java" index="27">
+<position info="not_deleted" x="591" y="43"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -762,50 +858,50 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogOutController.java" tooltip="Toodle/src/gui/windows/controllers/LogOutController.java">
+<persistable path="/Toodle/src/gui/windows/controllers/LogOutController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StudentsController.java" tooltip="Toodle/src/gui/windows/controllers/StudentsController.java">
+<persistable path="/Toodle/src/gui/windows/controllers/StudentsController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" tooltip="Toodle/src/users/User.java">
+<persistable path="/Toodle/src/users/User.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Teacher.java" tooltip="Toodle/src/users/Teacher.java">
+<persistable path="/Toodle/src/users/Teacher.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TrueFalse.java" tooltip="Toodle/src/exercise/TrueFalse.java">
+<persistable path="/Toodle/src/exercise/TrueFalse.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleAnswer.java" tooltip="Toodle/src/exercise/SingleAnswer.java">
+<persistable path="/Toodle/src/exercise/SingleAnswer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Question.java" tooltip="Toodle/src/exercise/Question.java">
+<persistable path="/Toodle/src/exercise/Question.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MultipleAnswer.java" tooltip="Toodle/src/exercise/MultipleAnswer.java">
+<persistable path="/Toodle/src/exercise/MultipleAnswer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FreeText.java" tooltip="Toodle/src/exercise/FreeText.java">
+<persistable path="/Toodle/src/exercise/FreeText.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Answer.java" tooltip="Toodle/src/exercise/Answer.java">
+<persistable path="/Toodle/src/exercise/Answer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Unit.java" tooltip="Toodle/src/application/Unit.java">
+<persistable path="/Toodle/src/application/Unit.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Note.java" tooltip="Toodle/src/application/Note.java">
+<persistable path="/Toodle/src/application/Note.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LearningObj.java" tooltip="Toodle/src/application/LearningObj.java">
+<persistable path="/Toodle/src/application/LearningObj.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Course.java" tooltip="Toodle/src/application/Course.java">
+<persistable path="/Toodle/src/application/Course.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddExerciseController.java" tooltip="Toodle/src/gui/panels/controllers/AddExerciseController.java">
 <persistable path="/Toodle/src/gui/panels/controllers/AddExerciseController.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EditTestController.java" tooltip="Toodle/src/gui/windows/controllers/EditTestController.java">
-<persistable path="/Toodle/src/gui/windows/controllers/EditTestController.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StudentsCourse.java" tooltip="Toodle/src/gui/panels/StudentsCourse.java">
-<persistable path="/Toodle/src/gui/panels/StudentsCourse.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Stats.java" tooltip="Toodle/src/statistics/Stats.java">
-<persistable path="/Toodle/src/statistics/Stats.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AnsweredTest.java" tooltip="Toodle/src/exercise/AnsweredTest.java">
-<persistable path="/Toodle/src/exercise/AnsweredTest.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Exercise.java" tooltip="Toodle/src/exercise/Exercise.java">
-<persistable path="/Toodle/src/exercise/Exercise.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ExerciseController.java" tooltip="Toodle/src/gui/panels/controllers/ExerciseController.java">
-<persistable path="/Toodle/src/gui/panels/controllers/ExerciseController.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Collections.class" tooltip="java.util.Collections">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Toodle/\/usr\/lib\/jvm\/java-8-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.util(Collections.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Student.java" tooltip="Toodle/src/users/Student.java">
-<persistable path="/Toodle/src/users/Student.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SingleUserStatistic.java" tooltip="Toodle/src/statistics/SingleUserStatistic.java">
-<persistable path="/Toodle/src/statistics/SingleUserStatistic.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestionStatistic.java" tooltip="Toodle/src/statistics/QuestionStatistic.java">
-<persistable path="/Toodle/src/statistics/QuestionStatistic.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CourseStatistic.java" tooltip="Toodle/src/statistics/CourseStatistic.java">
-<persistable path="/Toodle/src/statistics/CourseStatistic.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ExercisesStatsController.java" tooltip="Toodle/src/gui/panels/controllers/ExercisesStatsController.java">
-<persistable path="/Toodle/src/gui/panels/controllers/ExercisesStatsController.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NotesController.java" tooltip="Toodle/src/gui/panels/controllers/NotesController.java">
-<persistable path="/Toodle/src/gui/panels/controllers/NotesController.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Statistic.java" tooltip="Toodle/src/statistics/Statistic.java">
-<persistable path="/Toodle/src/statistics/Statistic.java"/>
 </file>
 </mruList>
 </workbench>

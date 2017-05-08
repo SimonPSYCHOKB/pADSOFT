@@ -1383,3 +1383,311 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.core.resources 2 10035 2017-05-03 15:06:26.976
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2017-05-08 22:24:07.475 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-05-08 22:29:11.401
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://www.objectaid.com/update.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2017-05-08 22:29:11.402
+!MESSAGE No repository found at http://www.objectaid.com/update.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-05-08 22:30:39.476
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.476
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.476
+!MESSAGE Software being installed: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.476
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.476
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE International Components for Unicode for Java (ICU4J) 4.2.1.v20100412 (com.ibm.icu 4.2.1.v20100412)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE ICU4J 49.1.0 (com.ibm.icu 49.1.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.477
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE From: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE To: org.eclipse.draw2d 3.6.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.477
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE From: Graphical Editing Framework Draw2d 3.6.0.v20100525-1225 (org.eclipse.draw2d 3.6.0.v20100525-1225)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE To: package com.ibm.icu.text [3.8.1,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.477
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE From: Eclipse Platform 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9 (org.eclipse.platform.feature.group 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE To: org.eclipse.rcp.feature.group [3.8.1.dist-92A7GODFSNQBG]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.477
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE From: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.477
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE From: Eclipse RCP 3.8.1.dist-92A7GODFSNQBG (org.eclipse.rcp.feature.group 3.8.1.dist-92A7GODFSNQBG)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.477
+!MESSAGE To: com.ibm.icu [49.1.0]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-05-08 22:30:39.483
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.483
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE Software being installed: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.483
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE International Components for Unicode for Java (ICU4J) 4.2.1.v20100412 (com.ibm.icu 4.2.1.v20100412)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE ICU4J 49.1.0 (com.ibm.icu 49.1.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.483
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE From: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE To: org.eclipse.draw2d 3.6.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.483
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE From: Graphical Editing Framework Draw2d 3.6.0.v20100525-1225 (org.eclipse.draw2d 3.6.0.v20100525-1225)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE To: package com.ibm.icu.text [3.8.1,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.483
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE From: Eclipse Platform 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9 (org.eclipse.platform.feature.group 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE To: org.eclipse.rcp.feature.group [3.8.1.dist-92A7GODFSNQBG]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.483
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE From: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:30:39.483
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE From: Eclipse RCP 3.8.1.dist-92A7GODFSNQBG (org.eclipse.rcp.feature.group 3.8.1.dist-92A7GODFSNQBG)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:30:39.483
+!MESSAGE To: com.ibm.icu [49.1.0]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-05-08 22:31:23.632
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.632
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.632
+!MESSAGE Software being installed: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.632
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.632
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE International Components for Unicode for Java (ICU4J) 4.2.1.v20100412 (com.ibm.icu 4.2.1.v20100412)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE ICU4J 49.1.0 (com.ibm.icu 49.1.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.633
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE From: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE To: org.eclipse.draw2d 3.6.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.633
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE From: Graphical Editing Framework Draw2d 3.6.0.v20100525-1225 (org.eclipse.draw2d 3.6.0.v20100525-1225)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE To: package com.ibm.icu.text [3.8.1,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.633
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE From: Eclipse Platform 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9 (org.eclipse.platform.feature.group 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE To: org.eclipse.rcp.feature.group [3.8.1.dist-92A7GODFSNQBG]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.633
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE From: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.633
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE From: Eclipse RCP 3.8.1.dist-92A7GODFSNQBG (org.eclipse.rcp.feature.group 3.8.1.dist-92A7GODFSNQBG)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.633
+!MESSAGE To: com.ibm.icu [49.1.0]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-05-08 22:31:23.633
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.634
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE Software being installed: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.634
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE International Components for Unicode for Java (ICU4J) 4.2.1.v20100412 (com.ibm.icu 4.2.1.v20100412)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE ICU4J 49.1.0 (com.ibm.icu 49.1.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.634
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE From: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE To: org.eclipse.draw2d 3.6.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.634
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE From: Graphical Editing Framework Draw2d 3.6.0.v20100525-1225 (org.eclipse.draw2d 3.6.0.v20100525-1225)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE To: package com.ibm.icu.text [3.8.1,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.634
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE From: Eclipse Platform 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9 (org.eclipse.platform.feature.group 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE To: org.eclipse.rcp.feature.group [3.8.1.dist-92A7GODFSNQBG]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.634
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE From: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:31:23.634
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE From: Eclipse RCP 3.8.1.dist-92A7GODFSNQBG (org.eclipse.rcp.feature.group 3.8.1.dist-92A7GODFSNQBG)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:31:23.634
+!MESSAGE To: com.ibm.icu [49.1.0]
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-05-08 22:34:29.571
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://www.objectaid.com/update.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:636)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2017-05-08 22:34:29.572
+!MESSAGE No repository found at http://www.objectaid.com/update.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-05-08 22:35:34.389
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.389
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE Software being installed: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.389
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE International Components for Unicode for Java (ICU4J) 4.2.1.v20100412 (com.ibm.icu 4.2.1.v20100412)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE ICU4J 49.1.0 (com.ibm.icu 49.1.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.389
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE From: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE To: org.eclipse.draw2d 3.6.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.389
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE From: Graphical Editing Framework Draw2d 3.6.0.v20100525-1225 (org.eclipse.draw2d 3.6.0.v20100525-1225)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE To: package com.ibm.icu.text [3.8.1,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.389
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE From: Eclipse Platform 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9 (org.eclipse.platform.feature.group 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE To: org.eclipse.rcp.feature.group [3.8.1.dist-92A7GODFSNQBG]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.389
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE From: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.389
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE From: Eclipse RCP 3.8.1.dist-92A7GODFSNQBG (org.eclipse.rcp.feature.group 3.8.1.dist-92A7GODFSNQBG)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.389
+!MESSAGE To: com.ibm.icu [49.1.0]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-05-08 22:35:34.391
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.391
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE Software being installed: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.391
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE International Components for Unicode for Java (ICU4J) 4.2.1.v20100412 (com.ibm.icu 4.2.1.v20100412)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE ICU4J 49.1.0 (com.ibm.icu 49.1.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.391
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE From: ObjectAid Sequence Diagram (License Required) 1.2.0 (com.objectaid.uml.seq.feature.group 1.2.0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE To: org.eclipse.draw2d 3.6.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.391
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE From: Graphical Editing Framework Draw2d 3.6.0.v20100525-1225 (org.eclipse.draw2d 3.6.0.v20100525-1225)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE To: package com.ibm.icu.text [3.8.1,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.391
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE From: Eclipse Platform 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9 (org.eclipse.platform.feature.group 3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE To: org.eclipse.rcp.feature.group [3.8.1.dist-92A7GODFSNQBG]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.391
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE From: Eclipse Platform 3.7.0.debbuild (org.eclipse.platform.ide 3.7.0.debbuild)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.391
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.1.dist-A8F8_IVSG4WGSImg7oLZb9p1HecSFyJZcMPL9]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-05-08 22:35:34.392
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.392
+!MESSAGE From: Eclipse RCP 3.8.1.dist-92A7GODFSNQBG (org.eclipse.rcp.feature.group 3.8.1.dist-92A7GODFSNQBG)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-05-08 22:35:34.392
+!MESSAGE To: com.ibm.icu [49.1.0]
