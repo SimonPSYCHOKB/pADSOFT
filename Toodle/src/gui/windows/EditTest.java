@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+import application.Application;
+
 
 /**
  * 
@@ -36,9 +38,10 @@ public class EditTest extends JFrame{
 	private JButton remove;
 	private JButton cancel;
 
-	public EditTest(final Exercise e){
+	public EditTest(final Exercise e, final Application app, final General gen){
 		this.e = e;
 		final JFrame dispose = this;
+		final EditTest update = this;
 		this.setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
 		quest = new ArrayList<EditQuestion>();
 		JPanel test = new JPanel();
@@ -106,7 +109,7 @@ public class EditTest extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				CreateQuestion cq = new CreateQuestion(e, dispose);
 				cq.setControllerCancel(new CancelController(cq));
-				cq.setControllerNext(new CreateQuestionController(cq, e));
+				cq.setControllerNext(new CreateQuestionController(cq, e, update, app, gen));
 			}			
 		});
 		

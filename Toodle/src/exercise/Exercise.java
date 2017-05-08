@@ -101,7 +101,6 @@ public class Exercise extends LearningObj implements Serializable{
 	public boolean beginExercise(Student s){
 		if(dateOfEnd.before(new Date()) == true) return false;
 		if(s.getAnsweredTest(this) != null) {
-			//s.removeAnsweredTest(this);
 			return false;
 		}
 		s.addTestStudent(this);
@@ -208,10 +207,18 @@ public class Exercise extends LearningObj implements Serializable{
 		this.unit = unit;
 	}
 	
+	/**
+	 * This method changes the question that is going to be showed next
+	 * @param count - the index of the next question 
+	 */
 	public void setCount(int count){
 		this.count = count;
 	}
 	
+	/**
+	 * This method changes the weight of the exercise
+	 * @param w - new weight
+	 */
 	public void setWeigth(double w){
 		if(started == true) return;
 		weight = w;
@@ -222,6 +229,10 @@ public class Exercise extends LearningObj implements Serializable{
 		super.setVisibility(vis);
 	}
 	
+	/**
+	 * This method returns the relative weight of the exercise in its course
+	 * @return the relative weight
+	 */
 	public double getRelativeWeight(){
 		return weight/course.getTotal();
 	}

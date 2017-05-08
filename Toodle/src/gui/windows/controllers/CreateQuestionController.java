@@ -10,26 +10,37 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import application.Application;
+
 import exercise.Exercise;
 import exercise.FreeText;
 import exercise.MultipleAnswer;
 import exercise.SingleAnswer;
 import exercise.TrueFalse;
 import gui.CancelController;
+import gui.panels.controllers.DeleteTestController;
 import gui.windows.CreateMultipleAnswer;
 import gui.windows.CreateQuestion;
 import gui.windows.CreateSingleAnswer;
 import gui.windows.CreateTextQuestion;
+import gui.windows.EditTest;
+import gui.windows.General;
 
 public class CreateQuestionController implements ActionListener {
 	
 	
 	private CreateQuestion view;
 	private Exercise model;
+	private EditTest update;
+	private Application app;
+	private General gen;
 
-	public CreateQuestionController(CreateQuestion view, Exercise model){
+	public CreateQuestionController(CreateQuestion view, Exercise model, EditTest update, Application app, General gen){
 		this.view = view;
 		this.model = model;
+		this.update = update;
+		this.app = app;
+		this.gen = gen;
 	}
 
 	@Override
@@ -66,6 +77,11 @@ public class CreateQuestionController implements ActionListener {
 						return;
 					}
 					model.addQuestion(new MultipleAnswer(wording, weight, penalty, answers, options));
+					EditTest et = new EditTest(model, app, gen);
+					et.setControllerSave(new EditTestController(model, et));
+					et.setControllerDelete(new DeleteTestController(model, app, gen, et));
+					et.setControllerCancel(new CancelController(et));
+					update.dispose();
 					cma.dispose();
 					view.dispose();
 				}
@@ -97,6 +113,11 @@ public class CreateQuestionController implements ActionListener {
 						return;
 					}
 					model.addQuestion(new SingleAnswer(wording, weight, penalty, answers, options));
+					EditTest et = new EditTest(model, app, gen);
+					et.setControllerSave(new EditTestController(model, et));
+					et.setControllerDelete(new DeleteTestController(model, app, gen, et));
+					et.setControllerCancel(new CancelController(et));
+					update.dispose();
 					csa.dispose();
 					view.dispose();
 				}
@@ -118,6 +139,11 @@ public class CreateQuestionController implements ActionListener {
 					}
 					else
 						model.addQuestion(new TrueFalse(wording, weight, penalty, answer));
+					EditTest et = new EditTest(model, app, gen);
+					et.setControllerSave(new EditTestController(model, et));
+					et.setControllerDelete(new DeleteTestController(model, app, gen, et));
+					et.setControllerCancel(new CancelController(et));
+					update.dispose();
 					ctq.dispose();
 					view.dispose();
 				}		

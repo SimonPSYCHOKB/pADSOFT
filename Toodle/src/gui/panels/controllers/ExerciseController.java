@@ -49,7 +49,7 @@ public class ExerciseController extends MouseAdapter{
 	public void mouseClicked(MouseEvent me){
 		//If the current user is the teacher we display an editable test
 		if(model.getCurrentUser().equals(model.getTeacher())){
-			final EditTest et = new EditTest(e);
+			final EditTest et = new EditTest(e, model, gen);
 			et.setControllerSave(new EditTestController(e, et));
 			et.setControllerDelete(new DeleteTestController(e, model, gen, et));
 			et.setControllerCancel(new CancelController(et));

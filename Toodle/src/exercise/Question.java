@@ -38,6 +38,10 @@ public abstract class Question implements Serializable{
 		return question;
 	}
 	
+	/**
+	 * This method changes the wording of the question
+	 * @param q - the new wording
+	 */
 	public void setQuestion(String q){
 		question = q;
 	}
@@ -50,6 +54,10 @@ public abstract class Question implements Serializable{
 		return weight;
 	}
 	
+	/**
+	 * This method sets the weight of the question
+	 * @param w - the new weight
+	 */
 	public void setWeight(double w){
 		weight = w;
 	}
@@ -62,14 +70,26 @@ public abstract class Question implements Serializable{
 		return penalty;
 	}
 	
+	/**
+	 * This method sets the penalty of the question
+	 * @param p - the new penalty
+	 */
 	public void setPenalty(double p){
 		penalty = p;
 	}
 	
+	/**
+	 * This method sets the exercise of the question
+	 * @param test - the exercise
+	 */
 	public void setExercise(Exercise test){
 		this.test = test;
 	}
 	
+	/**
+	 * This method returns the relative weight of the question in its test
+	 * @return the relative weight
+	 */
 	public double getRelativeWeight(){
 		return weight/test.getTotal();
 	}

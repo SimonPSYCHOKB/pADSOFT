@@ -38,18 +38,34 @@ public class SingleAnswer extends Question implements Serializable{
 		return this.answer.equals(answer.getAnswer().get(0));
 	}
 	
+	/**
+	 * This method returns the options of the question
+	 * @return list with the options
+	 */
 	public List<String> getOptions(){
 		return Collections.unmodifiableList(options);
 	}
 	
+	/**
+	 * This method sets the options of the question
+	 * @param options - the new options
+	 */
 	public void setOptions(List<String> options){
 		this.options = options;
 	}
 	
+	/**
+	 * This method returns the answer of the question
+	 * @return the answer
+	 */
 	public String getAnswer(){
 		return answer;
 	}
 	
+	/**
+	 * This method changes the answer of the question
+	 * @param answ - the new answer
+	 */
 	public void setAnswer(String answ){
 		answer = answ;
 	}

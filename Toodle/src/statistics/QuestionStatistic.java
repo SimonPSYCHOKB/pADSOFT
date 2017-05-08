@@ -82,6 +82,10 @@ public class QuestionStatistic extends Stats implements Serializable{
 		return blankNumber;
 	}
 	
+	/**
+	 * This method returns the question of the statistic
+	 * @return the Question
+	 */
 	public Question getQuestion(){
 		return question;
 	}

@@ -66,7 +66,7 @@ public class AddExerciseController implements ActionListener{
 				gen.addPanelEast(sc);
 				
 				if(((JButton) arg0.getSource()).getText().equals("Edit")){
-					final EditTest et = new EditTest(e);
+					final EditTest et = new EditTest(e, app, gen);
 					et.setControllerSave(new EditTestController(e, et));
 					et.setControllerDelete(new DeleteTestController(e, app, gen, et));
 					et.setControllerCancel(new CancelController(et));

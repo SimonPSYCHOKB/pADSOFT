@@ -26,18 +26,34 @@ public class Note extends LearningObj implements Serializable{
 		this.text= text;
 	}
 	
+	/**
+	 * This method returns the text from the note
+	 * @return String with the text
+	 */
 	public String getTextNotes(){
 		return text;
 	}
 	
+	/**
+	 * This method returns the unit of the note
+	 * @return Unit 
+	 */
 	public Unit getUnit(){
 		return unit;
 	}
 	
+	/**
+	 * This methos modifies the text of the note
+	 * @param text - new text of the note
+	 */
 	public void setTextNotes(String text){
 		this.text = text;
 	}
 	
+	/**
+	 * This method modifies the unit of the note
+	 * @param unit - new unit of the note
+	 */
 	public void setUnit(Unit unit){
 		this.unit = unit;
 	}

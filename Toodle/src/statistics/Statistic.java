@@ -131,6 +131,10 @@ public class Statistic extends Stats implements Serializable{
 		return Collections.unmodifiableList(qestStat);
 	}
 	
+	/**
+	 * This method returns the exercise of the statistic
+	 * @return the exercise
+	 */
 	public Exercise getExercise(){
 		return test;
 	}
