@@ -21,11 +21,6 @@ public class LogOutController implements ActionListener{
 	private Application model;
 	private General view;
 	
-	/**
-	 * Constructor
-	 * @param model - the application
-	 * @param view - the general frame
-	 */
 	public LogOutController(Application model, General view) {
 		this.model = model;
 		this.view = view;

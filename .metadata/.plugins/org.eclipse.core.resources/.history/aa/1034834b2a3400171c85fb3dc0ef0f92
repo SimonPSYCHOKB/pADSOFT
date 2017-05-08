@@ -29,8 +29,7 @@ import application.Course;
  * one of the students grades in the courses he/she is registered in, the exercises in the course
  * and the questions of the tests.
  * 
- * @author Simon Valcarcel
- * @author Blanca Martin
+ * @author blanca
  *
  */
 public class StudentsController implements ActionListener{
@@ -38,11 +37,6 @@ public class StudentsController implements ActionListener{
 	private General view;
 	private Application model;
 	
-	/**
-	 * Contructor
-	 * @param view - the general frame
-	 * @param model - the application
-	 */
 	public StudentsController(General view, Application model){
 		this.view = view;
 		this.model = model;

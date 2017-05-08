@@ -41,11 +41,6 @@ public class LogInController implements ActionListener{
 	private Application model;
 	private LogIn view;
 	
-	/**
-	 * Constructor
-	 * @param model - the application
-	 * @param view - the log in window
-	 */
 	public LogInController(Application model, LogIn view){
 		this.model = model;
 		this.view = view;

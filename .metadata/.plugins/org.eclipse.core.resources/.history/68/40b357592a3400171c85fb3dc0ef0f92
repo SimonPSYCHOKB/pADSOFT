@@ -33,11 +33,6 @@ public class StatsController implements ActionListener {
 	private Application model;
 	private General view;
 	
-	/**
-	 * Contructor
-	 * @param view - the general frame
-	 * @param model - the application
-	 */
 	public StatsController(General view, Application model){
 		this.view = view;
 		this.model = model;
