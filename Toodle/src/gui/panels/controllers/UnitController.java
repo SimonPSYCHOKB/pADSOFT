@@ -11,7 +11,12 @@ import java.awt.event.ActionListener;
 
 import application.Application;
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ *The Main Unit controller for the UICourseEditable View. All other units that are subunits will be nested in here
+ *
+ */
 public class UnitController implements ActionListener{
 
 	private UICourseEditable view;

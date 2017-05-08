@@ -12,6 +12,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *Basic class that displays a Jframe upon which you can create a Free Text Question
+ */
 public class CreateTextQuestion extends JFrame{
 
 	private static final long serialVersionUID = 1L;

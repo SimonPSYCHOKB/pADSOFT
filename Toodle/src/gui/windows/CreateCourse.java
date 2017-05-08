@@ -5,8 +5,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *The JFrame that appears when a teacher wants to create a new Course. You can put the Course
+ *title, visibility, and a short description
+ */
 public class CreateCourse extends JFrame{
-
+	
 	private static final long serialVersionUID = 1L;
 	
 	private JTextField titleField;

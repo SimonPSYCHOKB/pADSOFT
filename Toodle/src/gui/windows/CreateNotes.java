@@ -16,6 +16,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *A simple JFrame that allows the creation of notes 
+ */
 public class CreateNotes extends JFrame{
 
 	private static final long serialVersionUID = 1L;

@@ -19,6 +19,13 @@ import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SpringLayout;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *This is the Frame that is called in order to create an exercise, with date of beginning, end, visbility, 
+ *punctuation and penalization
+ */
 public class CreateTest extends JFrame{
 	
 	private static final long serialVersionUID = 1L;

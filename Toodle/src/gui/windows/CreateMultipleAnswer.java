@@ -16,6 +16,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *A simple JFrame to create a Multiple Answer Question. You can mark the checkboxes with
+ *the correct answer and write up to five answers. If an answer is not written on, it 
+ *will not count
+ */
 public class CreateMultipleAnswer extends JFrame{
 
 	private static final long serialVersionUID = 1L;

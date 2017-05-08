@@ -11,6 +11,13 @@ import application.Application;
 import application.Unit;
 
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *With this controller, one can Add a subunit to a UNit. It is linked to the button of the 
+ *same name in UICourseEditable
+ */
 public class AddSubunitController implements ActionListener{
 
 	private Unit u;

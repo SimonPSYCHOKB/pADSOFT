@@ -9,6 +9,12 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *This is used for the lists of students when a teacher is viewing a course. 
+ */
 public class TablePopUp implements PopupMenuListener{
 	
 	private JTable table;

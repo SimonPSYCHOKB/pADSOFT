@@ -16,6 +16,12 @@ import application.Application;
 import application.Course;
 import application.Note;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *Opens a note, and when is closed, it refreshes the screen
+ */
 public class NotesController extends MouseAdapter{
 	
 	private Note note;
