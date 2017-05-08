@@ -17,6 +17,7 @@ import javax.swing.JTextField;
  * 
  * @author Blanca, Simon
  *
+ *A JFrame that helps you create a Unit
  */
 public class CreateUnit extends JFrame{
 

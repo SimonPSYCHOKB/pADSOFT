@@ -5,6 +5,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *This is the general Frame for the Student. It extends the abstract class and adds 
+ *support for single user statistics
+ */
 public class GeneralStudent extends General{
 	
 	private static final long serialVersionUID = 1L;

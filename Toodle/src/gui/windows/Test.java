@@ -12,7 +12,12 @@ import java.util.List;
 import javax.swing.*;
 
 
-
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *This is the JFrame associated with doing a Test. 
+ */
 public class Test extends JFrame{
 	
 	private static final long serialVersionUID = 1L;

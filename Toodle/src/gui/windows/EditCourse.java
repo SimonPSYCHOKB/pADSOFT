@@ -14,7 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import application.Course;
-
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ * This JFrame appears when you want to edit the basic parameters of a course
+ */
 public class EditCourse extends JFrame{
 
 	private static final long serialVersionUID = 1L;

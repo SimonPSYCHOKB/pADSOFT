@@ -18,6 +18,12 @@ import javax.swing.JTextArea;
 
 import application.Note;
 
+/**
+ * 
+ * @author Blanca, Simon
+ *
+ *This JFrame is called when you want to edit a note you have previously created
+ */
 public class EditNotes extends JFrame{
 
 	private static final long serialVersionUID = 1L;

@@ -9,6 +9,15 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+/**
+ * 
+ * @author Blanca, Simon
+ * 
+ * This asbtract JFrame is the foundation upon most of the Application rest. 
+ * It has the logo, as well as the options, and all the JPannels necessary for a 
+ * good user experience
+ *
+ */
 public abstract class General extends JFrame {
 
 	private static final long serialVersionUID = 1L;
