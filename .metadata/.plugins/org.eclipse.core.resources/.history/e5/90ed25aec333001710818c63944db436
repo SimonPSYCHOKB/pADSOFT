@@ -40,7 +40,7 @@ public class Application implements Serializable{
 	
 	private static List<Student> students;
 	private Teacher teacher;
-	private List<Course> courses;
+	private static List<Course> courses;
 	private User currentUser;
 
 	
@@ -56,7 +56,7 @@ public class Application implements Serializable{
 	 * This method returns the courses in the application
 	 * @return courses - List of Course
 	 */
-	public List<Course> getCourses() {
+	public  static List<Course> getCourses() {
 		return Collections.unmodifiableList(courses);
 	}
 

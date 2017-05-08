@@ -56,7 +56,7 @@ public class Application implements Serializable{
 	 * This method returns the courses in the application
 	 * @return courses - List of Course
 	 */
-	public List<Course> getCourses() {
+	public  static List<Course> getCourses() {
 		return Collections.unmodifiableList(courses);
 	}
 
