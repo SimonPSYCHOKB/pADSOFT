@@ -1,0 +1,87 @@
+package gui.panels.controllers;
+
+import exercise.AnsweredTest;
+import gui.BackController;
+import gui.panels.UIStats;
+import gui.windows.General;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
+
+import javax.swing.*;
+
+import statistics.QuestionStatistic;
+import statistics.Statistic;
+import users.Student;
+
+import application.Application;
+import application.Course;
+
+
+public class ExercisesStatsController extends MouseAdapter{
+	
+	private Course model;
+	private General view;
+	private Application app;
+	
+	public ExercisesStatsController(Course model, General view, Application app){
+		this.model = model;
+		this.view = view;
+		this.app = app;
+	}
+	
+	
+	public void mouseClicked(MouseEvent me) {
+		int row = ((JTable) me.getSource()).getSelectedRow();
+		UIStats s; 
+
+		if(app.getCurrentUser().equals(app.getTeacher())){
+			Statistic current = new Statistic(model.getTests().get(row));
+			List<QuestionStatistic> questions = current.getQuestionStatistics();
+			
+			Object[][] objs = new Object[questions.size()][5];
+			String[] titles = {"Question", "Mean", "Wrong", "Right", "Blank"};
+			
+			int i = 0;
+			for(QuestionStatistic qs : questions){
+				objs[i][0] = "Question " + i + " (" + (float) qs.getQuestion().getRelativeWeight() + " %)";
+				objs[i][1] = qs.getMean();
+				objs[i][2] = qs.getWrongNumber();
+				objs[i][3] = qs.getCorrectNumber();
+				objs[i][4] = qs.getBlankNumber();
+				i += 1;
+			}
+			s = new UIStats(objs, titles);
+
+		}
+		else{
+			Student student = app.searchStudentByName(app.getCurrentUser().getName());
+			List<AnsweredTest> ats = student.getTestsFromCourse(model);
+			Statistic stats;
+			if(ats == null || ats.get(row) == null)
+				stats = new Statistic(null, student);
+			else
+				stats = new Statistic(ats.get(row).getTest(), student);
+			List<QuestionStatistic> questions = stats.getQuestionStatistics();
+			
+			Object[][] objs = new Object[questions.size()][2];
+			String[] titles = {"Question", "Mark"};
+			
+			int i = 0;
+			for(QuestionStatistic qs :questions){
+				objs[i][0] = "Question " + i + " (" + (float) qs.getQuestion().getRelativeWeight() + " %)";
+				objs[i][1] = qs.getMean();
+				i += 1;
+			}
+			s = new UIStats(objs, titles);
+		}
+		
+		JButton back = new JButton("Back");
+		back.addActionListener(new BackController(view));
+		s.addButton(back);
+		
+		view.addPanel(s);
+		SwingUtilities.updateComponentTreeUI(view);
+	}
+}

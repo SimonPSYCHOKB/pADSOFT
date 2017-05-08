@@ -1,7 +1,0 @@
-package GUI;
-
-import java.awt.event.ActionListener;
-
-public class BackController implements ActionListener{
-
-}

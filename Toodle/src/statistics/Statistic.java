@@ -95,9 +95,10 @@ public class Statistic extends Stats implements Serializable{
 		qestStat = new ArrayList<QuestionStatistic>();
 //		if(s.getAnsweredTest(e) == null) return;
 //		ansTests.add(s.getAnsweredTest(e));
+		
 		if(s.getAnsweredTest(e) != null)
 			setMean(s.getAnsweredTest(e).getGradeTest());
-
+		
 		for(Question q : e.getQuestions()){
 			List<Answer> answ = new ArrayList<Answer>();
 			if(s.getAnsweredTest(e) == null)

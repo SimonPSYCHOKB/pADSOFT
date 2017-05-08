@@ -1,11 +1,13 @@
 package gui.panels.controllers;
 
+import exercise.Exercise;
 import gui.BackController;
 import gui.panels.UIStats;
 import gui.windows.General;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
@@ -64,8 +66,16 @@ public class ExercisesStatsController extends MouseAdapter{
 		}
 		else{
 			Student student = app.searchStudentByName(app.getCurrentUser().getName());
-			List<AnsweredTest> ats = student.getTestsFromCourse(model);
-			Statistic stats = new Statistic(ats.get(row).getTest());
+
+			List<Exercise> all = model.getTests();
+			List<Exercise> visible = new ArrayList<Exercise>();
+			for(Exercise e : all){
+				if(e.isVisibility())
+					visible.add(e);
+			}
+			Statistic stats = new Statistic(visible.get(row), student);
+			
+
 			List<QuestionStatistic> questions = stats.getQuestionStatistics();
 			
 			Object[][] objs = new Object[questions.size()][2];

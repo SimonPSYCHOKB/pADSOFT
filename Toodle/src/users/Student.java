@@ -1,6 +1,7 @@
 package users;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 
@@ -88,8 +89,7 @@ public class Student extends User implements Serializable{
 			return 0;
 		double grade = 0;
 		for(AnsweredTest ats : getTestsFromCourse(c)){
-			//Descomentar para la entrega
-//			if(ats.get(i).getTest().getDateOfEnd().before(new Date()))
+			if(ats.getTest().getDateOfEnd().before(new Date()))
 				grade = grade + ats.getRelativeGradeTest();
 		}
 		return grade/c.getTotal();

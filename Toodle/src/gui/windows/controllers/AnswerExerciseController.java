@@ -50,7 +50,6 @@ public class AnswerExerciseController implements ActionListener{
 		e.answerTest((Student) model.getCurrentUser(), answer);
 		e.finishExercise((Student) model.getCurrentUser());
 		view.dispose();
-		JOptionPane.showMessageDialog(view,((Student) model.getCurrentUser()).viewPastTest(e),((Student) model.getCurrentUser()).getAnsweredTest(e).getGradeTest() + " " , JOptionPane.ERROR_MESSAGE);
 	}
 
 }

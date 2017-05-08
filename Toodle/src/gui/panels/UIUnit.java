@@ -50,6 +50,7 @@ public class UIUnit extends JScrollPane{
 		unit.setLayout(new BoxLayout(unit, BoxLayout.PAGE_AXIS));
 		
 		for(Note n : u.getNotes()){
+			if(n.isVisibility() == false) continue;
 			JTextArea note = new JTextArea(n.toString());
 			
 			//Controllers for the course
@@ -60,6 +61,7 @@ public class UIUnit extends JScrollPane{
 		}
 		int i = 0;
 		for(Exercise e : u.getTests()){
+			if(e.isVisibility() == false) continue;
 			JLabel test;
 			if(e.getDateOfBegining().before(new Date())){
 				if(e.getDateOfEnd().before(new Date()))
@@ -85,6 +87,7 @@ public class UIUnit extends JScrollPane{
 		}
 	
 		for(Unit ss : u.getSubUnits()){
+			if(ss.isVisibility() == false) continue;
 			UIUnit sube = new UIUnit(ss, app, gen);
 			sube.setBorder(BorderFactory.createTitledBorder(ss.getName()));
 			unit.add(Box.createRigidArea(new Dimension(0,50)));

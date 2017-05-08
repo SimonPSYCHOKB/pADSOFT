@@ -1,9 +1,0 @@
-package GUI;
-
-public class CreateUnit extends JFrame{
-	
-	
-	public CreateUnit(){
-		super("Add new unit");
-	}
-}
