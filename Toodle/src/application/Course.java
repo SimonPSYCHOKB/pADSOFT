@@ -98,14 +98,26 @@ public class Course implements Serializable{
 		return Collections.unmodifiableList(units);
 	}
 	
+	/**
+	 * This method modifies the visibility of the course
+	 * @param visibility - boolean with the visibility
+	 */
 	public void setVisibility(boolean visibility){
 		this.visibility = visibility;
 	}
 	
+	/**
+	 * This method modifies the title of the course
+	 * @param title - the new title
+	 */
 	public void setTitle(String title){
 		this.title = title;
 	}
 	
+	/**
+	 * This method modifies the description of the course
+	 * @param description - the new description
+	 */
 	public void setDescription(String description){
 		this.description = description;
 	}
@@ -121,6 +133,10 @@ public class Course implements Serializable{
 		total = total + t.getWeight();
 	}
 	
+	/**
+	 * This method erases an exercise from the course
+	 * @param t - the Exercise we want to erase
+	 */
 	public void removeTest(Exercise t){
 		if(tests.contains(t) == false) return;
 		t.setCourse(null);
@@ -155,29 +171,53 @@ public class Course implements Serializable{
 		u.setCourse(this);
 	}
 	
+	/**
+	 * This method expels a student from the course
+	 * @param s - the Student to be expelled
+	 */
 	public void expelStudent(Student s){
 		expelled.add(s);
 		registered.remove(s);
 		pending.remove(s);
 	}
 	
+	/**
+	 * This method registers a student from the course
+	 * @param s - the Student to be registered
+	 */
 	public void registerStudent(Student s){
 		registered.add(s);
 		pending.remove(s);
 	}
 	
+	/**
+	 * This method saves the application of a student to register in the course
+	 * @param s - the Student that has applied
+	 */
 	public void applyStudent(Student s){
 		pending.add(s);
 	}
 	
+	/**
+	 * This method returns the registered students in the course
+	 * @return list of students registered in the course
+	 */
 	public List<Student> getRegistered(){
 		return Collections.unmodifiableList(registered);
 	}
 	
+	/**
+	 * This method returns the pending students in the course
+	 * @return list of students pending in the course
+	 */
 	public List<Student> getPending(){
 		return Collections.unmodifiableList(pending);
 	}
 	
+	/**
+	 * This method returns the expelled students in the course
+	 * @return list of students expelled in the course
+	 */
 	public List<Student> getExpelled(){
 		return Collections.unmodifiableList(expelled);
 	}

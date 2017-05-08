@@ -252,10 +252,18 @@ public class Student extends User implements Serializable{
 				answeredTests.remove(at);
 	}
 	
+	/**
+	 * This method removes an answered test of the student
+	 * @param e - the exercise whose answer has to be deleted
+	 */
 	public void removeAnsweredTest(Exercise e){
 		answeredTests.remove(getAnsweredTest(e));
 	}
 
+	/**
+	 * This method completely erases all track of a course in a student
+	 * @param course - the course to be deleted
+	 */
 	public void eraseTrackCourse(Course course) {
 		if(rejectedCourses.contains(course))
 			rejectedCourses.remove(course);

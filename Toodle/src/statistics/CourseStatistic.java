@@ -68,6 +68,10 @@ public class CourseStatistic extends Stats{
 		return course;
 	}
 	
+	/**
+	 * This method returns the statistic of the tests in the course
+	 * @return the list with the tests' statistics
+	 */
 	public List<Statistic> getStatistics(){
 		return Collections.unmodifiableList(tests);
 	}

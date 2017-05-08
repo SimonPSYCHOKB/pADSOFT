@@ -55,18 +55,34 @@ public class MultipleAnswer extends Question implements Serializable{
 		return true;
 	}
 	
+	/**
+	 * This method returns the options of the question
+	 * @return list with the options
+	 */
 	public List<String> getOptions(){
 		return Collections.unmodifiableList(options);
 	}
 	
+	/**
+	 * This method sets the options of the question
+	 * @param options - the new options
+	 */
 	public void setOptions(List<String> options){
 		this.options = options; 
 	}
 	
+	/**
+	 * This method returns the answers of the question
+	 * @return list with the answers
+	 */
 	public List<String> getAnswer(){
 		return Collections.unmodifiableList(answers);
 	}
 	
+	/**
+	 * This method sets the answers of the question
+	 * @param answers - new list with the answers
+	 */
 	public void setAnswer(List<String> answers){
 		this.answers = answers;
 	}

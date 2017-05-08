@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.swing.Box"/>
 <fullyQualifiedTypeName name="gui.panels.StudentsTable"/>
 <fullyQualifiedTypeName name="gui.panels.UIStats"/>
 <fullyQualifiedTypeName name="gui.panels.Courses"/>
 <fullyQualifiedTypeName name="gui.panels.UIAnsweredQuestion"/>
 <fullyQualifiedTypeName name="gui.windows.PastTest"/>
-<fullyQualifiedTypeName name="exercise.AnsweredTest"/>
 <fullyQualifiedTypeName name="exercise.Answer"/>
 <fullyQualifiedTypeName name="gui.panels.controllers.UIStatsController"/>
 <fullyQualifiedTypeName name="gui.panels.EditQuestion"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="gui.windows.controllers.EditTestController"/>
-<fullyQualifiedTypeName name="application.Application"/>
-<fullyQualifiedTypeName name="gui.windows.General"/>
-<fullyQualifiedTypeName name="exercise.Exercise"/>
 <fullyQualifiedTypeName name="exercise.Question"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="java.awt.Toolkit"/>
@@ -28,7 +22,6 @@
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="exercise.FreeText"/>
 <fullyQualifiedTypeName name="exercise.TrueFalse"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.swing.SpringLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JComponent"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
@@ -37,7 +30,6 @@
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="gui.windows.EditTest"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
@@ -60,4 +52,12 @@
 <fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="javax.swing.event.PopupMenuListener"/>
 <fullyQualifiedTypeName name="javax.swing.JPopupMenu"/>
+<fullyQualifiedTypeName name="exercise.AnsweredTest"/>
+<fullyQualifiedTypeName name="exercise.Exercise"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="gui.panels.controllers.CoursesTableController"/>
+<fullyQualifiedTypeName name="gui.windows.EditTest"/>
+<fullyQualifiedTypeName name="gui.windows.General"/>
+<fullyQualifiedTypeName name="application.Application"/>
 </qualifiedTypeNameHistroy>

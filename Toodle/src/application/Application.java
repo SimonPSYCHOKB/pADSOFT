@@ -21,11 +21,6 @@ import es.uam.eps.padsof.emailconnection.EmailSystem;
 import es.uam.eps.padsof.emailconnection.FailedInternetConnectionException;
 import es.uam.eps.padsof.emailconnection.InvalidEmailAddressException;
 import exercise.Exercise;
-import gui.windows.LogIn;
-
-/**
- * 
- */
 
 /**
  * @author Simon Valcarcel
@@ -150,25 +145,12 @@ public class Application implements Serializable{
 	     }
 	}
 	
-	/**
-	 * This method logs a user in the application
-	 * @param u - User that wants to log in
-	 * @param attempt - String with the password
-	 * @return true if the User belongs to the application and the password is correct, false if not
-	 */
-	/*
-	public boolean logIn(User u, String attempt){
-		if(students.contains(u) == true  && u.validatePassword(attempt)){
-			currentUser = u;
-			return true;
-		}else if ( getTeacher().equals(u) == true && u.validatePassword(attempt)){
-			currentUser= u;
-			return true;
-		}
-		return false;
-	}
-	*/
 	
+	/**
+	 * This method searches a student by his name
+	 * @param name - the name of the student 
+	 * @return Student with the student; null if the student isn't found
+	 */
 	public Student searchStudentByName(String name){
 		for(Student u : students)
 			if(u.getName().equals(name))
@@ -176,6 +158,12 @@ public class Application implements Serializable{
 		return null;
 	}
 	
+	/**
+	 * This method logs in given a name and password
+	 * @param name - name of the user
+	 * @param attempt - password of the user
+	 * @return true if the log in has been done succesfully; false if not
+	 */
 	public boolean logIn(String name, String attempt){
 		if(teacher.getName().equals(name) && teacher.validatePassword(attempt)){
 			currentUser = teacher;
@@ -192,6 +180,11 @@ public class Application implements Serializable{
 			
 	}
 	
+	/**
+	 * This method searches a course by its title
+	 * @param name - the title of the course
+	 * @return Course with the title name; null if it wasn't found
+	 */
 	public Course searchCourseByName(String name){
 		for(Course c : courses){
 			if(c.getTitle().equals(name))
@@ -240,6 +233,10 @@ public class Application implements Serializable{
 		return null;
 	}
 	
+	/**
+	 * This method deletes a course from the application
+	 * @param course - the Course we want to delete
+	 */
 	public void deleteCourse(Course course){
 		if(courses.contains(course) == false) return;
 		courses.remove(course);
@@ -395,10 +392,6 @@ public class Application implements Serializable{
 					studentsRet.add(stud);
 		return Collections.unmodifiableList(studentsRet);
 
-	}
-	
-	public void startApplication(){
-		new LogIn();
 	}
 
 }

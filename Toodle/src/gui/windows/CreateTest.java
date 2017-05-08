@@ -27,7 +27,6 @@ public class CreateTest extends JFrame{
 	private JSpinner spinner3;
 	private JCheckBox ok;
 	private JButton cancel;
-	private JButton edit;
 	private JButton done;
 
 	public CreateTest(){
@@ -89,9 +88,6 @@ public class CreateTest extends JFrame{
 		JPanel buttons = new JPanel(new FlowLayout());
 		cancel = new JButton("Cancel");
 		buttons.add(cancel);
-		edit = new JButton("Edit");
-		edit.setToolTipText("Add questions to the new test");
-		buttons.add(edit);
 		done = new JButton("Done");
 		buttons.add(done);
 		
@@ -113,10 +109,6 @@ public class CreateTest extends JFrame{
 	
 	public void setControllerDone(ActionListener al){
 		done.addActionListener(al);
-	}
-	
-	public void setControllerEdit(ActionListener al){
-		edit.addActionListener(al);
 	}
 	
 	public double getWeight(){

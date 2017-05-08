@@ -69,15 +69,27 @@ public class Unit extends LearningObj implements Serializable{
 		u.setUnit(this);
 	}
 	
+	/**
+	 * This method deletes a subunit from the unit
+	 * @param u - the subunit to be deleted
+	 */
 	public void removeUnit(Unit u){
 		if(getSubUnits().contains(u) == false) return;
 		units.remove(u);
 	}
 	
+	/**
+	 * This method returns the unit which the contains the unit
+	 * @return unit; null if the unit is not a subunit
+	 */
 	public Unit getUnit(){
 		return unit;
 	}
 	
+	/**
+	 * This method modifies the unit with contains the unit
+	 * @param u - the root unit
+	 */
 	public void setUnit(Unit u){
 		unit = u;
 	}
@@ -93,6 +105,10 @@ public class Unit extends LearningObj implements Serializable{
 		course.addTest(t);
 	}
 	
+	/**
+	 * This method deletes a test from a unit
+	 * @param t - the Exercise to be deleted
+	 */
 	public void removeTest(Exercise t){
 		if(tests.contains(t) == false) return;
 		t.setUnit(null);
@@ -109,6 +125,10 @@ public class Unit extends LearningObj implements Serializable{
 		n.setUnit(this);
 	}
 	
+	/**
+	 * This method removes notes from the unit
+	 * @param n - the notes to be deleted
+	 */
 	public void removeNotes(Note n){
 		if(notes.contains(n) == false) return;
 		notes.remove(n);
@@ -140,6 +160,10 @@ public class Unit extends LearningObj implements Serializable{
 		return name;
 	}
 	
+	/**
+	 * This method returns the exercises contained in the unit
+	 * @return list with the exercises in the unit
+	 */
 	public List<Exercise> getTests(){
 		return Collections.unmodifiableList(tests);
 	}
